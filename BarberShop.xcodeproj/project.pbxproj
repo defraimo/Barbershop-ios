@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */; };
+		A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */; };
+		A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31A522B7ACFE00FC20BE /* Main.storyboard */; };
+		A61A31AA22B7ACFE00FC20BE /* BarberShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */; };
+		A61A31AC22B7AD0000FC20BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61A31AB22B7AD0000FC20BE /* Assets.xcassets */; };
+		A61A31AF22B7AD0000FC20BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */; };
+		A61A31B822B7BBC200FC20BE /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31B722B7BBC200FC20BE /* PriceTableViewCell.swift */; };
+		A61A31BA22B7C04B00FC20BE /* PriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31B922B7C04B00FC20BE /* PriceModel.swift */; };
+		A61A31BE22B7C08600FC20BE /* PricesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31BD22B7C08600FC20BE /* PricesDataSource.swift */; };
+		A61A31C122B7C32500FC20BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31C022B7C32500FC20BE /* MainViewController.swift */; };
+		A61A31C422B9587E00FC20BE /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31C322B9587E00FC20BE /* AboutUsViewController.swift */; };
+		A61A31C722B9596500FC20BE /* AboutUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31C622B9596500FC20BE /* AboutUsTableViewCell.swift */; };
+		A61A31C922B9598200FC20BE /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31C822B9598200FC20BE /* DescriptionTableViewCell.swift */; };
+		A61A31CB22B9599900FC20BE /* BarberDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31CA22B9599900FC20BE /* BarberDescriptionTableViewCell.swift */; };
+		A61A31CD22B959AB00FC20BE /* ContactUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31CC22B959AB00FC20BE /* ContactUsTableViewCell.swift */; };
+		A61A31D222B95C8B00FC20BE /* AboutUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D122B95C8B00FC20BE /* AboutUs.swift */; };
+		A61A31D422B95DBD00FC20BE /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D322B95DBD00FC20BE /* ContactUs.swift */; };
+		A61A31D622B95DE700FC20BE /* Barber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D522B95DE700FC20BE /* Barber.swift */; };
+		A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D722B95E3C00FC20BE /* AllBarbers.swift */; };
+		A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31DC22B984E500FC20BE /* AboutUsData.swift */; };
+		A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A61A319E22B7ACFE00FC20BE /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
+		A61A31A622B7ACFE00FC20BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A61A31A922B7ACFE00FC20BE /* BarberShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BarberShop.xcdatamodel; sourceTree = "<group>"; };
+		A61A31AB22B7AD0000FC20BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A61A31AE22B7AD0000FC20BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A61A31B022B7AD0000FC20BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A61A31B722B7BBC200FC20BE /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
+		A61A31B922B7C04B00FC20BE /* PriceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceModel.swift; sourceTree = "<group>"; };
+		A61A31BD22B7C08600FC20BE /* PricesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesDataSource.swift; sourceTree = "<group>"; };
+		A61A31C022B7C32500FC20BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A61A31C322B9587E00FC20BE /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		A61A31C622B9596500FC20BE /* AboutUsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsTableViewCell.swift; sourceTree = "<group>"; };
+		A61A31C822B9598200FC20BE /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		A61A31CA22B9599900FC20BE /* BarberDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		A61A31CC22B959AB00FC20BE /* ContactUsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsTableViewCell.swift; sourceTree = "<group>"; };
+		A61A31D122B95C8B00FC20BE /* AboutUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUs.swift; sourceTree = "<group>"; };
+		A61A31D322B95DBD00FC20BE /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
+		A61A31D522B95DE700FC20BE /* Barber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barber.swift; sourceTree = "<group>"; };
+		A61A31D722B95E3C00FC20BE /* AllBarbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBarbers.swift; sourceTree = "<group>"; };
+		A61A31DC22B984E500FC20BE /* AboutUsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsData.swift; sourceTree = "<group>"; };
+		A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionAboveBarbers.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A61A319B22B7ACFE00FC20BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A61A319522B7ACFE00FC20BE = {
+			isa = PBXGroup;
+			children = (
+				A61A31A022B7ACFE00FC20BE /* BarberShop */,
+				A61A319F22B7ACFE00FC20BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A61A319F22B7ACFE00FC20BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A61A319E22B7ACFE00FC20BE /* BarberShop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31D022B95C6C00FC20BE /* generalData */,
+				A61A31C222B9586A00FC20BE /* aboutUs */,
+				A61A31BF22B7C30400FC20BE /* main */,
+				A61A31B622B7BB9A00FC20BE /* prices */,
+				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
+				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
+				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
+				A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */,
+				A61A31B022B7AD0000FC20BE /* Info.plist */,
+				A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */,
+			);
+			path = BarberShop;
+			sourceTree = "<group>";
+		};
+		A61A31B622B7BB9A00FC20BE /* prices */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31BC22B7C07300FC20BE /* data */,
+				A61A31BB22B7C06700FC20BE /* model */,
+				A61A31B722B7BBC200FC20BE /* PriceTableViewCell.swift */,
+				A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */,
+			);
+			path = prices;
+			sourceTree = "<group>";
+		};
+		A61A31BB22B7C06700FC20BE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31B922B7C04B00FC20BE /* PriceModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A61A31BC22B7C07300FC20BE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31BD22B7C08600FC20BE /* PricesDataSource.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		A61A31BF22B7C30400FC20BE /* main */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31C022B7C32500FC20BE /* MainViewController.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		A61A31C222B9586A00FC20BE /* aboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31CE22B95C4100FC20BE /* data */,
+				A61A31C522B9593200FC20BE /* cells */,
+				A61A31C322B9587E00FC20BE /* AboutUsViewController.swift */,
+			);
+			path = aboutUs;
+			sourceTree = "<group>";
+		};
+		A61A31C522B9593200FC20BE /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31C622B9596500FC20BE /* AboutUsTableViewCell.swift */,
+				A61A31C822B9598200FC20BE /* DescriptionTableViewCell.swift */,
+				A61A31CA22B9599900FC20BE /* BarberDescriptionTableViewCell.swift */,
+				A61A31CC22B959AB00FC20BE /* ContactUsTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		A61A31CE22B95C4100FC20BE /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31D122B95C8B00FC20BE /* AboutUs.swift */,
+				A61A31DC22B984E500FC20BE /* AboutUsData.swift */,
+				A61A31D322B95DBD00FC20BE /* ContactUs.swift */,
+				A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		A61A31CF22B95C5500FC20BE /* barbers */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31D522B95DE700FC20BE /* Barber.swift */,
+				A61A31D722B95E3C00FC20BE /* AllBarbers.swift */,
+			);
+			path = barbers;
+			sourceTree = "<group>";
+		};
+		A61A31D022B95C6C00FC20BE /* generalData */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31CF22B95C5500FC20BE /* barbers */,
+			);
+			path = generalData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A61A319D22B7ACFE00FC20BE /* BarberShop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A61A31B322B7AD0000FC20BE /* Build configuration list for PBXNativeTarget "BarberShop" */;
+			buildPhases = (
+				A61A319A22B7ACFE00FC20BE /* Sources */,
+				A61A319B22B7ACFE00FC20BE /* Frameworks */,
+				A61A319C22B7ACFE00FC20BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarberShop;
+			productName = BarberShop;
+			productReference = A61A319E22B7ACFE00FC20BE /* BarberShop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A61A319622B7ACFE00FC20BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Neighbors;
+				TargetAttributes = {
+					A61A319D22B7ACFE00FC20BE = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A61A319922B7ACFE00FC20BE /* Build configuration list for PBXProject "BarberShop" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A61A319522B7ACFE00FC20BE;
+			productRefGroup = A61A319F22B7ACFE00FC20BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A61A319D22B7ACFE00FC20BE /* BarberShop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A61A319C22B7ACFE00FC20BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61A31AF22B7AD0000FC20BE /* LaunchScreen.storyboard in Resources */,
+				A61A31AC22B7AD0000FC20BE /* Assets.xcassets in Resources */,
+				A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A61A319A22B7ACFE00FC20BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A61A31C422B9587E00FC20BE /* AboutUsViewController.swift in Sources */,
+				A61A31D222B95C8B00FC20BE /* AboutUs.swift in Sources */,
+				A61A31CB22B9599900FC20BE /* BarberDescriptionTableViewCell.swift in Sources */,
+				A61A31C122B7C32500FC20BE /* MainViewController.swift in Sources */,
+				A61A31D422B95DBD00FC20BE /* ContactUs.swift in Sources */,
+				A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */,
+				A61A31C722B9596500FC20BE /* AboutUsTableViewCell.swift in Sources */,
+				A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */,
+				A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */,
+				A61A31B822B7BBC200FC20BE /* PriceTableViewCell.swift in Sources */,
+				A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */,
+				A61A31BE22B7C08600FC20BE /* PricesDataSource.swift in Sources */,
+				A61A31D622B95DE700FC20BE /* Barber.swift in Sources */,
+				A61A31C922B9598200FC20BE /* DescriptionTableViewCell.swift in Sources */,
+				A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */,
+				A61A31AA22B7ACFE00FC20BE /* BarberShop.xcdatamodeld in Sources */,
+				A61A31CD22B959AB00FC20BE /* ContactUsTableViewCell.swift in Sources */,
+				A61A31BA22B7C04B00FC20BE /* PriceModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A61A31A522B7ACFE00FC20BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A61A31A622B7ACFE00FC20BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A61A31AE22B7AD0000FC20BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A61A31B122B7AD0000FC20BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A61A31B222B7AD0000FC20BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A61A31B422B7AD0000FC20BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = neighbors.BarberShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A61A31B522B7AD0000FC20BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberShop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = neighbors.BarberShop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A61A319922B7ACFE00FC20BE /* Build configuration list for PBXProject "BarberShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A61A31B122B7AD0000FC20BE /* Debug */,
+				A61A31B222B7AD0000FC20BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A61A31B322B7AD0000FC20BE /* Build configuration list for PBXNativeTarget "BarberShop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A61A31B422B7AD0000FC20BE /* Debug */,
+				A61A31B522B7AD0000FC20BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A61A31A922B7ACFE00FC20BE /* BarberShop.xcdatamodel */,
+			);
+			currentVersion = A61A31A922B7ACFE00FC20BE /* BarberShop.xcdatamodel */;
+			path = BarberShop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A61A319622B7ACFE00FC20BE /* Project object */;
+}
