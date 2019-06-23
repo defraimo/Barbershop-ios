@@ -73,12 +73,31 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "contactUsCell") as! ContactUsTableViewCell
             
-            cell.phoneLabel.text = contactUs[0]
-            cell.emailLabel.text = contactUs[1]
+            cell.phoneButton.setTitle(contactUs[0], for: .normal)
+            cell.emailButton.setTitle(contactUs[1], for: .normal)
+            
+            cell.phoneButton.addTarget(self, action: #selector(phoneButtonTapped(_:)), for: .touchDown)
+            
+            cell.emailButton.addTarget(self, action: #selector(emailButtonTapped(_:)), for: .touchDown)
             
             return cell
         }
 
+    }
+    
+    @objc func phoneButtonTapped(_ sender:UIButton){
+        let number = "0544533616"
+        if let url = URL(string: "tel://\(number)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @objc func emailButtonTapped(_ sender:UIButton){
+        let email = "neighbors.apps@gmail.com"
+        let mailURL = URL(string: "mailto:\(email)")!
+        if UIApplication.shared.canOpenURL(mailURL) {
+            UIApplication.shared.open(mailURL, options: [:], completionHandler: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

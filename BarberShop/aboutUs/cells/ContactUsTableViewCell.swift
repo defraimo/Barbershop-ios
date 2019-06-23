@@ -9,8 +9,8 @@
 import UIKit
 
 class ContactUsTableViewCell: UITableViewCell {
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
