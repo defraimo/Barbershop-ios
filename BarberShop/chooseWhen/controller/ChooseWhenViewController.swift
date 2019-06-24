@@ -9,7 +9,6 @@
 import UIKit
 
 class ChooseWhenViewController: UIViewController {
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var barbersCollection: UICollectionView!
     @IBOutlet weak var arrowRight: UIImageView!
     @IBOutlet weak var arrowLeft: UIImageView!
@@ -52,10 +51,6 @@ class ChooseWhenViewController: UIViewController {
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        
-        datePicker.maximumDate = (Calendar.current as NSCalendar).date(byAdding: .day, value: 7, to: Date(), options: [])!
-        datePicker.minimumDate = (Calendar.current as NSCalendar).date(byAdding: .day, value: 0, to: Date(), options: [])!
     }
 
 }

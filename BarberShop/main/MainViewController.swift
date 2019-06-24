@@ -69,6 +69,11 @@ class MainViewController: UIViewController {
         //setting the "getting an appoinment" image to rounded
         imageRounded.layer.cornerRadius = 42
         imageRounded.layer.masksToBounds = true
+        
+        
+        let danielDays = DatesManager(barberName: "daniel", daysAvailable: 10, additionalDays: 7)
+        danielDays.setDaysOff(days: [0])
+        print(danielDays.namedAvialibleDays)
     }
     
 
