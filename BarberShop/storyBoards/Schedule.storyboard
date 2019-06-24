@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i9E-FT-GHO">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose Barber View Controller-->
+        <scene sceneID="1o5-Y0-5TR">
+            <objects>
+                <viewController id="i9E-FT-GHO" customClass="ChooseBarberViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVz-rQ-dSy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-UZ-FDg">
+                                <rect key="frame" x="24" y="180.5" width="366" height="665.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aJP-aR-huF">
+                                    <size key="itemSize" width="192" height="237"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barberCell" id="Yl4-zu-CFJ" customClass="BarberCollectionViewCell" customModule="BarberShop" customModuleProvider="target">
+                                        <rect key="frame" x="87" y="0.0" width="192" height="237"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="237"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwt-ZF-pU4">
+                                                    <rect key="frame" x="16" y="196.5" width="160" height="24.5"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-PF-yVt">
+                                                    <rect key="frame" x="26" y="48.5" width="140" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="9sJ-50-oXu"/>
+                                                        <constraint firstAttribute="width" constant="140" id="HcM-Oo-EgC"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="centerX" secondItem="Yl4-zu-CFJ" secondAttribute="centerX" id="GDM-Mb-A6x"/>
+                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="top" secondItem="5Dw-PF-yVt" secondAttribute="bottom" constant="8" id="Js1-KV-gTK"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Gwt-ZF-pU4" secondAttribute="trailing" constant="8" id="UpO-i5-VsB"/>
+                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="centerY" secondItem="Yl4-zu-CFJ" secondAttribute="centerY" id="vv0-tQ-KOQ"/>
+                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="8" id="z0k-WJ-FRY"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="barberImage" destination="5Dw-PF-yVt" id="2DH-2M-PMC"/>
+                                            <outlet property="barberName" destination="Gwt-ZF-pU4" id="TKX-we-HOZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="i9E-FT-GHO" id="SNj-Go-eUd"/>
+                                    <outlet property="delegate" destination="i9E-FT-GHO" id="3fU-b4-UdI"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחר ספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10A-v3-jKt">
+                                <rect key="frame" x="8" y="76" width="398" height="72.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="54"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="10A-v3-jKt" firstAttribute="leading" secondItem="v9q-TR-gbF" secondAttribute="leading" constant="8" id="Qcg-I7-k31"/>
+                            <constraint firstItem="9qJ-UZ-FDg" firstAttribute="leading" secondItem="v9q-TR-gbF" secondAttribute="leading" constant="24" id="UjX-lS-lhO"/>
+                            <constraint firstItem="9qJ-UZ-FDg" firstAttribute="top" secondItem="10A-v3-jKt" secondAttribute="bottom" constant="32" id="UqG-Rx-ji3"/>
+                            <constraint firstItem="v9q-TR-gbF" firstAttribute="bottom" secondItem="9qJ-UZ-FDg" secondAttribute="bottom" constant="16" id="Wpx-At-UcM"/>
+                            <constraint firstItem="10A-v3-jKt" firstAttribute="top" secondItem="v9q-TR-gbF" secondAttribute="top" constant="32" id="YMT-ol-qhF"/>
+                            <constraint firstItem="v9q-TR-gbF" firstAttribute="trailing" secondItem="9qJ-UZ-FDg" secondAttribute="trailing" constant="24" id="YfH-pT-tlq"/>
+                            <constraint firstItem="v9q-TR-gbF" firstAttribute="trailing" secondItem="10A-v3-jKt" secondAttribute="trailing" constant="8" id="zHy-vk-0mF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v9q-TR-gbF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVg-UH-4Ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="21"/>
+        </scene>
+        <!--Choose When View Controller-->
+        <scene sceneID="Bhm-aW-kkO">
+            <objects>
+                <viewController id="Ino-8S-Ke8" customClass="ChooseWhenViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cYT-Xt-9Bm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkD-8F-iIp">
+                                <rect key="frame" x="18" y="44" width="378" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="7m7-bV-g99"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWS-TD-oIi">
+                                    <size key="itemSize" width="365" height="112"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barberChooseCell" id="xgk-Sh-xQ4" customClass="BarberChangeCollectionViewCell" customModule="BarberShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4" width="365" height="112"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="112"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-Uz-ksO">
+                                                    <rect key="frame" x="140" y="2" width="85" height="85"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="8ud-wh-H3A"/>
+                                                        <constraint firstAttribute="height" constant="85" id="QvB-8d-QSD"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-55-NHl">
+                                                    <rect key="frame" x="151" y="89" width="63" height="22"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="16"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Yxh-Uz-ksO" firstAttribute="centerX" secondItem="xgk-Sh-xQ4" secondAttribute="centerX" id="PS4-KN-cM9"/>
+                                            <constraint firstItem="PCb-55-NHl" firstAttribute="centerX" secondItem="xgk-Sh-xQ4" secondAttribute="centerX" id="Y6J-ZQ-BTg"/>
+                                            <constraint firstItem="PCb-55-NHl" firstAttribute="top" secondItem="Yxh-Uz-ksO" secondAttribute="bottom" constant="2" id="n4G-Wh-cGC"/>
+                                            <constraint firstItem="Yxh-Uz-ksO" firstAttribute="top" secondItem="xgk-Sh-xQ4" secondAttribute="top" constant="2" id="nTp-mi-Vda"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="barberImage" destination="Yxh-Uz-ksO" id="P4W-cG-EVn"/>
+                                            <outlet property="barberName" destination="PCb-55-NHl" id="AL0-Od-fIh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ino-8S-Ke8" id="0Ys-ql-7Sy"/>
+                                    <outlet property="delegate" destination="Ino-8S-Ke8" id="LXu-cd-XXU"/>
+                                </connections>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-right-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-6N-Q97">
+                                <rect key="frame" x="346" y="44" width="50" height="120"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="vbE-cY-RBd"/>
+                                    <constraint firstAttribute="height" constant="120" id="vrZ-I0-XMi"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1Qb-Fn-4El" appends="YES" id="f25-OS-nU8"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-left-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="e7V-Ae-HVz">
+                                <rect key="frame" x="18" y="44" width="50" height="120"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0ig-Kk-O3I"/>
+                                    <constraint firstAttribute="height" constant="120" id="vfH-Xc-a3p"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gYr-Mg-nsd" appends="YES" id="op5-Pe-G5H"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="qkD-8F-iIp" secondAttribute="trailing" constant="18" id="1Fr-Fa-AWn"/>
+                            <constraint firstItem="e7V-Ae-HVz" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="Gca-xu-ZJM"/>
+                            <constraint firstItem="qkD-8F-iIp" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="I2U-G7-3r2"/>
+                            <constraint firstItem="KSd-6N-Q97" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="L0W-Hz-Smy"/>
+                            <constraint firstItem="e7V-Ae-HVz" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="LpD-Ke-J1c"/>
+                            <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="KSd-6N-Q97" secondAttribute="trailing" constant="18" id="wYZ-Ul-bmW"/>
+                            <constraint firstItem="qkD-8F-iIp" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="zEP-Il-dX5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SPR-N7-ddP"/>
+                    </view>
+                    <connections>
+                        <outlet property="arrowLeft" destination="e7V-Ae-HVz" id="0rI-hx-EIr"/>
+                        <outlet property="arrowRight" destination="KSd-6N-Q97" id="0N4-LP-2mR"/>
+                        <outlet property="barbersCollection" destination="qkD-8F-iIp" id="AET-Id-EfB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHp-Ot-SzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1Qb-Fn-4El">
+                    <connections>
+                        <action selector="arrowRightTapped:" destination="Ino-8S-Ke8" id="BFf-0q-UGh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="gYr-Mg-nsd">
+                    <connections>
+                        <action selector="arrowLeftTapped:" destination="Ino-8S-Ke8" id="78q-BG-XVf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2446.376811594203" y="18.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="keyboard-left-arrow-button" width="306" height="306"/>
+        <image name="keyboard-right-arrow-button" width="306" height="306"/>
+    </resources>
+</document>
