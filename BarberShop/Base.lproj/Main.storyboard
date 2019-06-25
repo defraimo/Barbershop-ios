@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="A1N-rU-l4w">
-                                <rect key="frame" x="0.0" y="549" width="414" height="347.00000000000006"/>
+                                <rect key="frame" x="0.0" y="549" width="414" height="347"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="huU-gd-viO">
                                 <rect key="frame" x="0.0" y="528" width="414" height="1"/>
@@ -28,13 +28,13 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="aBP-gq-p8h">
-                                <rect key="frame" x="0.0" y="520" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="516" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="795-CY-DbW"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YI-LK-mbt">
-                                <rect key="frame" x="260.5" y="680" width="59" height="45"/>
+                                <rect key="frame" x="260.5" y="676" width="59" height="45"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="24"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="מחירון">
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjM-uA-QQg">
-                                <rect key="frame" x="68" y="680" width="112" height="45"/>
+                                <rect key="frame" x="68" y="676" width="112" height="45"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="24"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="איך מגיעים?">
@@ -70,10 +70,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_seperator" translatesAutoresizingMaskIntoConstraints="NO" id="f7V-5e-eFl">
-                                <rect key="frame" x="26" y="749" width="362" height="12"/>
+                                <rect key="frame" x="26" y="745" width="362" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הזמנת תור" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFi-en-kbk">
-                                <rect key="frame" x="131" y="566.5" width="152.5" height="49.5"/>
+                                <rect key="frame" x="131" y="562.5" width="152.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="36"/>
                                 <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -103,13 +103,13 @@
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="sAq-zo-y5S">
-                                <rect key="frame" x="0.0" y="648" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="644" width="414" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="1H1-6J-50i"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="249" image="switching_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="M8q-1y-JnR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="440"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="436"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,11 +156,16 @@
                                 <segue destination="KUX-a4-sr0" kind="show" id="LSL-eZ-08B"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="menu_icon" id="hqI-JY-Rje"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="menu_icon" id="hqI-JY-Rje">
+                            <connections>
+                                <action selector="openMenu:" destination="T02-lw-fcr" id="04l-rf-Rz6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageRounded" destination="aBP-gq-p8h" id="ZaH-Oq-3p3"/>
                         <outlet property="instagram" destination="Wgj-Jg-emv" id="zPr-LR-ASg"/>
+                        <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
                         <outlet property="whatsupp" destination="5uw-ct-FCt" id="R4j-ed-CAA"/>
                     </connections>
                 </viewController>
@@ -175,6 +180,101 @@
                         <action selector="instagramTapped:" destination="T02-lw-fcr" id="S2n-8T-j5n"/>
                     </connections>
                 </tapGestureRecognizer>
+                <view contentMode="scaleToFill" id="sDz-JR-TSq">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="419"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-K7-7jM">
+                            <rect key="frame" x="43.5" y="99" width="153" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="u8l-T7-LSy"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="wHX-Cx-q8l">
+                            <rect key="frame" x="43.5" y="205" width="153" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="jhK-VP-CdU"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-SA-1Th">
+                            <rect key="frame" x="43.5" y="262" width="153" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="MHf-fT-a9y"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="5WO-u2-qjc">
+                            <rect key="frame" x="43.5" y="319" width="153" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="xO7-4t-xFz"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="K1I-cP-0kr">
+                            <rect key="frame" x="43.5" y="148" width="153" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="DmE-Oc-CQr"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x26-qc-OnO">
+                            <rect key="frame" x="77.5" y="60" width="85" height="39"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                            <state key="normal" title="הזמנת תור">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvf-rn-LRy">
+                            <rect key="frame" x="74.5" y="166" width="91" height="39"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                            <state key="normal" title="תנאי שימוש">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO4-EE-6tP">
+                            <rect key="frame" x="87.5" y="223" width="65" height="39"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                            <state key="normal" title="צור קשר">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyJ-wc-6Q5">
+                            <rect key="frame" x="92" y="280" width="56" height="39"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                            <state key="normal" title="התנתק">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mJ-5F-lg1">
+                            <rect key="frame" x="95.5" y="109" width="49" height="39"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                            <state key="normal" title="מחירון">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="x26-qc-OnO" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="0gG-nB-yS0"/>
+                        <constraint firstItem="xI0-K7-7jM" firstAttribute="top" secondItem="x26-qc-OnO" secondAttribute="bottom" id="D5g-xX-LFZ"/>
+                        <constraint firstItem="Spb-SA-1Th" firstAttribute="top" secondItem="OO4-EE-6tP" secondAttribute="bottom" id="EjK-R0-3pe"/>
+                        <constraint firstItem="Spb-SA-1Th" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="GPa-Xb-zsw"/>
+                        <constraint firstItem="K1I-cP-0kr" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="ISB-Sf-fhu"/>
+                        <constraint firstItem="8mJ-5F-lg1" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="JpM-MN-Hle"/>
+                        <constraint firstItem="wHX-Cx-q8l" firstAttribute="top" secondItem="yvf-rn-LRy" secondAttribute="bottom" id="NxO-4v-weD"/>
+                        <constraint firstItem="OO4-EE-6tP" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="OWx-Y9-uPV"/>
+                        <constraint firstItem="K1I-cP-0kr" firstAttribute="top" secondItem="8mJ-5F-lg1" secondAttribute="bottom" id="QZ3-iv-FqS"/>
+                        <constraint firstItem="xI0-K7-7jM" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="RpF-9Q-xt2"/>
+                        <constraint firstItem="5WO-u2-qjc" firstAttribute="top" secondItem="HyJ-wc-6Q5" secondAttribute="bottom" id="Vcr-uN-Szs"/>
+                        <constraint firstItem="OO4-EE-6tP" firstAttribute="top" secondItem="wHX-Cx-q8l" secondAttribute="bottom" constant="8" id="Xyu-hc-Xip"/>
+                        <constraint firstItem="HyJ-wc-6Q5" firstAttribute="top" secondItem="Spb-SA-1Th" secondAttribute="bottom" constant="8" id="cIF-Ea-yC6"/>
+                        <constraint firstItem="8mJ-5F-lg1" firstAttribute="top" secondItem="xI0-K7-7jM" secondAttribute="bottom" id="cmg-gs-eBS"/>
+                        <constraint firstItem="HyJ-wc-6Q5" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="eBF-zI-w3P"/>
+                        <constraint firstItem="yvf-rn-LRy" firstAttribute="top" secondItem="K1I-cP-0kr" secondAttribute="bottom" constant="8" id="flp-ZE-Arn"/>
+                        <constraint firstItem="wHX-Cx-q8l" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="ize-PQ-P6d"/>
+                        <constraint firstItem="5WO-u2-qjc" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="kC3-nt-9uo"/>
+                        <constraint firstItem="x26-qc-OnO" firstAttribute="top" secondItem="YWS-ol-9Ss" secondAttribute="top" constant="16" id="tnI-WA-grg"/>
+                        <constraint firstItem="yvf-rn-LRy" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="xwi-yc-kuP"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="YWS-ol-9Ss"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="243.47826086956525" y="19.419642857142858"/>
         </scene>
@@ -380,7 +480,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="pxU-CF-cHG">
-                                                    <rect key="frame" x="20" y="11" width="358" height="186.00000000000006"/>
+                                                    <rect key="frame" x="20" y="11" width="358" height="186"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1X9-UH-OFI">
                                                     <rect key="frame" x="250" y="19" width="120" height="120"/>
@@ -563,6 +663,7 @@
         <image name="main_down_green" width="357" height="196"/>
         <image name="main_seperator" width="369" height="12"/>
         <image name="menu_icon" width="33" height="32"/>
+        <image name="menu_under_line" width="153" height="12"/>
         <image name="phone" width="75" height="75"/>
         <image name="switching_pic1" width="358" height="346"/>
         <image name="vertical_price_line" width="17" height="1045"/>

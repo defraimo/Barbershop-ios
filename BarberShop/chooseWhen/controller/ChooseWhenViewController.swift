@@ -43,6 +43,7 @@ class ChooseWhenViewController: UIViewController {
             
         }
     }
+    @IBOutlet weak var datePicker: UIPickerView!
     
     
     override func viewDidLoad() {
@@ -71,7 +72,30 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         
         return cell
     }
-    
-    
 }
 
+let daniel = BarbersSchedule()
+let danielsDays = daniel.allDays
+let danielsAvialibleDays = daniel.avialibleDays
+
+extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return danielsDays.count
+    }
+    
+    //sets the title and the color of the picker component
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        if row < danielsAvialibleDays{
+            let attributedString = NSAttributedString(string: danielsDays[row].description, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+            return attributedString
+        }
+        else{
+            let attributedString = NSAttributedString(string: danielsDays[row].description, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 255/255, green: 110/255, blue: 100/255, alpha: 250/255)])
+            return attributedString
+        }
+    }
+}

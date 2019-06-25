@@ -38,5 +38,4 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
-    
 }

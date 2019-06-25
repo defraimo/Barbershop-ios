@@ -53,12 +53,42 @@ class MainViewController: UIViewController {
         }
     }
     
+    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    
+    @IBOutlet var menuView: UIView!
+    @IBAction func openMenu(_ sender: UIBarButtonItem) {
+        menuView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
+        
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let midX = self?.view.frame.midX,
+                let midY = self?.view.frame.midY else {return}
+            
+            self?.menuView.center = CGPoint(x: midX, y: 0.8*midY)
+        }
+        
+        self.view.addSubview(menuView)
+        
+        menuView.isHidden = false
+        
+        menuView.layer.shadowColor = UIColor.black.cgColor
+        menuView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        menuView.layer.shadowOpacity = 0.5
+        menuView.layer.masksToBounds = false
+        menuView.layer.shadowRadius = 10
+        menuView.layer.cornerRadius = 30
+        
+        blurEffect.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //setting the background
+        //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)
+        
+        //setting the menu background color
+        menuView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
         //change the navigation title color
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -70,11 +100,39 @@ class MainViewController: UIViewController {
         imageRounded.layer.cornerRadius = 42
         imageRounded.layer.masksToBounds = true
         
-        
-        let danielDays = DatesManager(barberName: "daniel", daysAvailable: 10, additionalDays: 7)
-        danielDays.setDaysOff(days: [0])
-        print(danielDays.namedAvialibleDays)
+        addBlurView()
     }
     
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        releaseMenu()
+    }
+    
+    func addBlurView(){
+        
+        self.view.addSubview(blurEffect)
+        
+        blurEffect.translatesAutoresizingMaskIntoConstraints = false
+        
+//        blurEffect.frame = self.view.bounds
+        
+        NSLayoutConstraint.activate([blurEffect.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
+                                     blurEffect.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0),
+                                     blurEffect.topAnchor.constraint(equalTo: self.view.superview?.topAnchor ?? self.view.topAnchor, constant: 0),
+                                     blurEffect.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)])
+        
+        blurEffect.isHidden = true
+    }
+    
+    func releaseMenu(){
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            guard let midX = self?.view.frame.midX,
+                let midY = self?.view.frame.midY else {return}
+            self?.menuView.center = CGPoint(x: midX, y: -midY)
+        }) { (isCompleted) in
+            self.blurEffect.isHidden = true
+            self.menuView.removeFromSuperview()
+        }
+    }
+    
 }

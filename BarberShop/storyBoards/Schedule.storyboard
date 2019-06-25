@@ -77,6 +77,14 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-hs-Pj0">
+                                <rect key="frame" x="344" y="76" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Ino-8S-Ke8" kind="show" id="a0f-yw-tfB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -104,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkD-8F-iIp">
-                                <rect key="frame" x="18" y="44" width="378" height="120"/>
+                                <rect key="frame" x="18" y="60" width="378" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="7m7-bV-g99"/>
@@ -155,7 +163,7 @@
                                     <outlet property="delegate" destination="Ino-8S-Ke8" id="LXu-cd-XXU"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-right-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-6N-Q97">
+                            <imageView clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-right-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-6N-Q97">
                                 <rect key="frame" x="346" y="44" width="50" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -166,7 +174,7 @@
                                     <outletCollection property="gestureRecognizers" destination="1Qb-Fn-4El" appends="YES" id="f25-OS-nU8"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-left-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="e7V-Ae-HVz">
+                            <imageView clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-left-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="e7V-Ae-HVz">
                                 <rect key="frame" x="18" y="44" width="50" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -177,16 +185,34 @@
                                     <outletCollection property="gestureRecognizers" destination="gYr-Mg-nsd" appends="YES" id="op5-Pe-G5H"/>
                                 </connections>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחר תאריך" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYC-Of-zAv">
+                                <rect key="frame" x="125.5" y="204" width="163" height="49"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="36"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIv-UB-KWS">
+                                <rect key="frame" x="0.0" y="257" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ino-8S-Ke8" id="ppx-cX-a8F"/>
+                                    <outlet property="delegate" destination="Ino-8S-Ke8" id="BKJ-Rf-xEW"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="qkD-8F-iIp" secondAttribute="trailing" constant="18" id="1Fr-Fa-AWn"/>
+                            <constraint firstItem="hYC-Of-zAv" firstAttribute="centerX" secondItem="cYT-Xt-9Bm" secondAttribute="centerX" id="93g-mr-twf"/>
+                            <constraint firstItem="uIv-UB-KWS" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="99g-aZ-IX1"/>
                             <constraint firstItem="e7V-Ae-HVz" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="Gca-xu-ZJM"/>
                             <constraint firstItem="qkD-8F-iIp" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="I2U-G7-3r2"/>
                             <constraint firstItem="KSd-6N-Q97" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="L0W-Hz-Smy"/>
                             <constraint firstItem="e7V-Ae-HVz" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="LpD-Ke-J1c"/>
+                            <constraint firstItem="uIv-UB-KWS" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="PM2-vw-rME"/>
+                            <constraint firstItem="hYC-Of-zAv" firstAttribute="top" secondItem="qkD-8F-iIp" secondAttribute="bottom" constant="24" id="SSB-q4-cMW"/>
+                            <constraint firstItem="uIv-UB-KWS" firstAttribute="top" secondItem="hYC-Of-zAv" secondAttribute="bottom" constant="4" id="bSh-jx-47l"/>
                             <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="KSd-6N-Q97" secondAttribute="trailing" constant="18" id="wYZ-Ul-bmW"/>
-                            <constraint firstItem="qkD-8F-iIp" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="zEP-Il-dX5"/>
+                            <constraint firstItem="qkD-8F-iIp" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" constant="16" id="zEP-Il-dX5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SPR-N7-ddP"/>
                     </view>
@@ -194,6 +220,7 @@
                         <outlet property="arrowLeft" destination="e7V-Ae-HVz" id="0rI-hx-EIr"/>
                         <outlet property="arrowRight" destination="KSd-6N-Q97" id="0N4-LP-2mR"/>
                         <outlet property="barbersCollection" destination="qkD-8F-iIp" id="AET-Id-EfB"/>
+                        <outlet property="datePicker" destination="uIv-UB-KWS" id="8FR-Sl-lHb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHp-Ot-SzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,5 +11,6 @@ import Foundation
 struct Appointment {
     var barber:Barber
     var client:String //TO CHANGE!!!!!!
-    var dayAndTime:AppointmentDay
+    var day:AppointmentDate
+    var time:AppointmentTime
 }
