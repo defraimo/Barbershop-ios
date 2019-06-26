@@ -14,7 +14,9 @@ class BarberCollectionViewCell: UICollectionViewCell {
     
     func populate(barber:Barber){
         barberImage.image = barber.image
-        barberImage.layer.cornerRadius = 72
+        let width = barberImage.frame.width
+        barberImage.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: width, height: width))
+        barberImage.layer.cornerRadius = barberImage.frame.width/2
         barberName.text = barber.name
     }
 }

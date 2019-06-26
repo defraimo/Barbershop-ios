@@ -136,7 +136,6 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
-				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
 				A659A09822BFD71000274F40 /* datesAndTme */,
 				A659A00E22BD465D00274F40 /* chooseWhen */,
 				A659A00622BD0F3C00274F40 /* makingAppointment */,
@@ -146,6 +145,7 @@
 				A61A31BF22B7C30400FC20BE /* main */,
 				A61A31B622B7BB9A00FC20BE /* prices */,
 				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
+				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
 				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
 				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
 				A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */,

@@ -21,7 +21,7 @@ class ChooseBarberViewController: UIViewController {
 
 private let reuseIdentifier = "barberCell"
 
-extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return barbers.count
@@ -37,5 +37,14 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat =  10
+        let collectionViewSize = collectionView.frame.size.width - padding
+        
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
+    }
+    
+    
     
 }

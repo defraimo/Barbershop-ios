@@ -43,22 +43,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-PF-yVt">
-                                                    <rect key="frame" x="26" y="48.5" width="140" height="140"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="140" id="9sJ-50-oXu"/>
-                                                        <constraint firstAttribute="width" constant="140" id="HcM-Oo-EgC"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="32" y="76" width="128" height="112.5"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="centerX" secondItem="Yl4-zu-CFJ" secondAttribute="centerX" id="GDM-Mb-A6x"/>
-                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="top" secondItem="5Dw-PF-yVt" secondAttribute="bottom" constant="8" id="Js1-KV-gTK"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Gwt-ZF-pU4" secondAttribute="trailing" constant="8" id="UpO-i5-VsB"/>
-                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="centerY" secondItem="Yl4-zu-CFJ" secondAttribute="centerY" id="vv0-tQ-KOQ"/>
-                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="8" id="z0k-WJ-FRY"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Gwt-ZF-pU4" secondAttribute="trailing" constant="8" id="CgP-48-B1t"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Gwt-ZF-pU4" secondAttribute="bottom" constant="8" id="Ikb-Qx-KaM"/>
+                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="8" id="KZY-v2-TpZ"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="5Dw-PF-yVt" secondAttribute="trailing" constant="24" id="Wxj-q1-dxO"/>
+                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="top" secondItem="5Dw-PF-yVt" secondAttribute="bottom" constant="8" id="ZWR-GT-NDT"/>
+                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="24" id="m3k-cG-NE8"/>
+                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="top" secondItem="Yl4-zu-CFJ" secondAttribute="topMargin" constant="24" id="qee-Cf-93g"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="barberImage" destination="5Dw-PF-yVt" id="2DH-2M-PMC"/>
