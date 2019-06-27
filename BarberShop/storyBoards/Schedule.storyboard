@@ -197,7 +197,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIv-UB-KWS">
-                                <rect key="frame" x="0.0" y="257" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="253" width="414" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ino-8S-Ke8" id="ppx-cX-a8F"/>
                                     <outlet property="delegate" destination="Ino-8S-Ke8" id="BKJ-Rf-xEW"/>
@@ -215,7 +215,7 @@
                             <constraint firstItem="e7V-Ae-HVz" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="LpD-Ke-J1c"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="PM2-vw-rME"/>
                             <constraint firstItem="hYC-Of-zAv" firstAttribute="top" secondItem="qkD-8F-iIp" secondAttribute="bottom" constant="24" id="SSB-q4-cMW"/>
-                            <constraint firstItem="uIv-UB-KWS" firstAttribute="top" secondItem="hYC-Of-zAv" secondAttribute="bottom" constant="4" id="bSh-jx-47l"/>
+                            <constraint firstItem="uIv-UB-KWS" firstAttribute="top" secondItem="hYC-Of-zAv" secondAttribute="bottom" id="bSh-jx-47l"/>
                             <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="KSd-6N-Q97" secondAttribute="trailing" constant="18" id="wYZ-Ul-bmW"/>
                             <constraint firstItem="qkD-8F-iIp" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" constant="16" id="zEP-Il-dX5"/>
                         </constraints>

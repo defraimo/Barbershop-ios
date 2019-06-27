@@ -19,6 +19,10 @@ class BarberCollectionViewCell: UICollectionViewCell {
         barberImage.layer.cornerRadius = barberImage.frame.height/2
         barberImage.layer.masksToBounds = false
         barberImage.clipsToBounds = true
+        barberImage.layer.shadowColor = UIColor.black.cgColor
+        barberImage.layer.shadowOpacity = 1
+        barberImage.layer.shadowOffset = CGSize(width: 2, height: 2)
+        barberImage.layer.shadowRadius = barberImage.frame.height/2
         barberName.text = barber.name
     }
 }

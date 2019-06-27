@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0834385628931BA8E6EDF714 /* Pods_BarberShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126DB524BC07E375A4372EA1 /* Pods_BarberShop.framework */; };
+		A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73722C4D77400AC9FF4 /* ANCustomView.swift */; };
 		A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */; };
 		A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */; };
 		A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31A522B7ACFE00FC20BE /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		126DB524BC07E375A4372EA1 /* Pods_BarberShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarberShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A240B181F026D50B292C1D9 /* Pods-BarberShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.debug.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.debug.xcconfig"; sourceTree = "<group>"; };
 		7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.release.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.release.xcconfig"; sourceTree = "<group>"; };
+		A614D73722C4D77400AC9FF4 /* ANCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCustomView.swift; sourceTree = "<group>"; };
 		A61A319E22B7ACFE00FC20BE /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */,
 				A61A31B022B7AD0000FC20BE /* Info.plist */,
 				A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */,
+				A614D73722C4D77400AC9FF4 /* ANCustomView.swift */,
 			);
 			path = BarberShop;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */,
 				A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */,
 				A61A31B822B7BBC200FC20BE /* PriceTableViewCell.swift in Sources */,
+				A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */,
 				A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */,
 				A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */,
 				A659A09F22C0195700274F40 /* Appointment.swift in Sources */,

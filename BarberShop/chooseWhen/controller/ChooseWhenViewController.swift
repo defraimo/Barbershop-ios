@@ -52,46 +52,44 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var datePicker: UIPickerView!
     
     
-    fileprivate func imageEnteryAnimation() {
-        var collectionView:UICollectionView?
+    fileprivate func imageEntryAnimation() {
         
         //set all the vies to invisible
-        //and cast the view that is a collactionView so we can use his position values
         for view in view.subviews{
             view.alpha = 0
-            if ((view as? UICollectionView) != nil){
-                collectionView = (view as! UICollectionView)
-            }
         }
         
         //scroll the collaction view to the chosen barber posiotion from the lase screen
-        collectionView?.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
+        barbersCollection.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
         
-        let collectionPosition = collectionView!.center
+        let collectionPosition = barbersCollection.layoutAttributesForItem(at: chosenBarberIndex!)?.center ?? barbersCollection.center
         
         //find the collactionView position in the global view
-        let pointInGlobalView = collectionView?.convert(collectionPosition, to: view)
+        let pointInGlobalView = barbersCollection.convert(collectionPosition, to: view)
         
         //add the imageView that passes from the last screen to the view
         self.view.addSubview(imageView!)
         
         //animate the imageView
-        UIView.animate(withDuration: 0.4, animations: {
-            imageView?.transform = CGAffineTransform(translationX: pointInGlobalView!.x, y: pointInGlobalView!.y)
+        UIView.animate(withDuration: 0.3, animations: {
+            imageView?.center = pointInGlobalView
             imageView?.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
             imageView?.alpha = 0.4
         }) { (_) in
             //animate all the views to fade in
             UIView.animate(withDuration: 0.05, animations: {
-                for view in self.view.subviews{
-                    if ((view as? UIImageView) != nil){
-                        //set the arrows alpha to 0.3 for a design reasons
-                        view.alpha = 0.3
+                self.barbersCollection.alpha = 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                    for view in self.view.subviews{
+                        if ((view as? UIImageView) != nil){
+                            //set the arrows alpha to 0.3 for a design reasons
+                            view.alpha = 0.3
+                        }
+                        else{
+                            view.alpha = 1
+                        }
                     }
-                    else{
-                        view.alpha = 1
-                    }
-                }
+                })
             })
             //remove the image from the view
             imageView?.removeFromSuperview()
@@ -106,7 +104,7 @@ class ChooseWhenViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItem?.title = "חזור"
         
-        imageEnteryAnimation()
+        imageEntryAnimation()
         
     }
 
@@ -127,8 +125,8 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         cell.populate(barber:barber)
         
         //animate a little spring motion when created
-        UIView.animate(withDuration: 0.2, delay: 0.4, usingSpringWithDamping: 0.4, initialSpringVelocity: 20, options: [], animations: {
-            cell.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        UIView.animate(withDuration: 0.2, delay: 0.4, usingSpringWithDamping: 0.5, initialSpringVelocity: 20, options: [], animations: {
+            cell.transform = CGAffineTransform(scaleX: 1.12, y: 1.12)
         })
         
         return cell

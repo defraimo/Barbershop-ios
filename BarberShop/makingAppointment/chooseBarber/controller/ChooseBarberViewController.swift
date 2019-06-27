@@ -74,7 +74,7 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         self.view.addSubview(imageView!)
         
         //animate the imageView to pop and fade all the rest of the view
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.24, animations: {
             
             collectionView.alpha = 0
             self.chooseBarberLabel.alpha = 0
