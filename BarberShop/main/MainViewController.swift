@@ -13,57 +13,20 @@ class MainViewController: UIViewController {
     let userName =  "daniel_radshun"
     
     @IBOutlet weak var imageRounded: UIImageView!
-    @IBOutlet weak var whatsupp: UIImageView!
-    @IBOutlet weak var instagram: UIImageView!
-    @IBAction func whatsuppTapped(_ sender: UITapGestureRecognizer) {
-        let urlWhats = "whatsapp://send?phone=(\(barberPhone))"
-        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
-            if let whatsappURL = URL(string: urlString) {
-                if UIApplication.shared.canOpenURL(whatsappURL){
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(whatsappURL)
-                    }
-                }
-                else {
-                    print("Install Whatsapp")
-                }
-            }
-        }
-    }
-    @IBAction func instagramTapped(_ sender: UITapGestureRecognizer) {
-        let appURL = NSURL(string: "instagram://user?screen_name=\(userName)")!
-        let webURL = NSURL(string: "https://instagram.com/\(userName)")!
-        
-        if UIApplication.shared.canOpenURL(appURL as URL) {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(appURL as URL)
-            }
-        } else {
-            //redirect to safari because the user doesn't have Instagram
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(webURL as URL)
-            }
-        }
-    }
     
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     
     @IBOutlet var menuView: UIView!
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
         menuView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
-        
-        UIView.animate(withDuration: 0.3) { [weak self] in
+                
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: { [weak self] in
             guard let midX = self?.view.frame.midX,
                 let midY = self?.view.frame.midY else {return}
             
             self?.menuView.center = CGPoint(x: midX, y: 0.8*midY)
-        }
+            self?.view.layoutIfNeeded()
+        })
         
         self.view.addSubview(menuView)
         
@@ -82,6 +45,104 @@ class MainViewController: UIViewController {
         
         blurEffect.isHidden = false
     }
+    
+    //pressing effects
+    @IBOutlet weak var pricesButton: UIButton!
+    @IBAction func showPrices(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
+            self.pricesButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.pricesButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                self.performSegue(withIdentifier: "toPrices", sender: nil)
+            })
+        }) { (_) in
+            self.pricesButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+    @IBOutlet weak var aboutUsButton: UIButton!
+    @IBAction func showAboutUs(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
+            self.aboutUsButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.aboutUsButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                self.performSegue(withIdentifier: "toAboutUs", sender: nil)
+            })
+        }) { (_) in
+            self.aboutUsButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+    @IBOutlet weak var howWeGetThereButton: UIButton!
+    @IBAction func showHowWeGetThere(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
+            self.howWeGetThereButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.howWeGetThereButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                self.performSegue(withIdentifier: "toHowWeGetThere", sender: nil)
+            })
+        }) { (_) in
+            self.howWeGetThereButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+    @IBOutlet weak var whatsupButton: UIButton!
+    @IBAction func goToWhatsUp(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
+            self.whatsupButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.whatsupButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                
+                let urlWhats = "whatsapp://send?phone=(\(self.barberPhone))"
+                if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+                    if let whatsappURL = URL(string: urlString) {
+                        if UIApplication.shared.canOpenURL(whatsappURL){
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+                            } else {
+                                UIApplication.shared.openURL(whatsappURL)
+                            }
+                        }
+                        else {
+                            print("Install Whatsapp")
+                        }
+                    }
+                }
+                
+            })
+        }) { (_) in
+            self.whatsupButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+    @IBOutlet weak var instagramButton: UIButton!
+    @IBAction func goToInstagram(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
+            self.instagramButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.instagramButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                
+                let appURL = NSURL(string: "instagram://user?screen_name=\(self.userName)")!
+                let webURL = NSURL(string: "https://instagram.com/\(self.userName)")!
+                
+                if UIApplication.shared.canOpenURL(appURL as URL) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(appURL as URL)
+                    }
+                } else {
+                    //redirect to safari because the user doesn't have Instagram
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(webURL as URL)
+                    }
+                }
+                
+            })
+        }) { (_) in
+            self.instagramButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

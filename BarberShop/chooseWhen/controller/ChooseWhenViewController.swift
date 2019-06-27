@@ -52,6 +52,8 @@ class ChooseWhenViewController: UIViewController {
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
+        self.navigationItem.leftBarButtonItem?.title = "חזור"
+        
     }
 
 }

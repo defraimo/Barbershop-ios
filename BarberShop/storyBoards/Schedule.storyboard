@@ -37,26 +37,29 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwt-ZF-pU4">
-                                                    <rect key="frame" x="16" y="196.5" width="160" height="24.5"/>
+                                                    <rect key="frame" x="16" y="208" width="160" height="13"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-PF-yVt">
-                                                    <rect key="frame" x="32" y="76" width="128" height="112.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-PF-yVt">
+                                                    <rect key="frame" x="24" y="68" width="144" height="132"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="5Dw-PF-yVt" secondAttribute="height" multiplier="120:110" id="ojh-Kv-frc"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Gwt-ZF-pU4" secondAttribute="trailing" constant="8" id="CgP-48-B1t"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="Gwt-ZF-pU4" secondAttribute="bottom" constant="8" id="Ikb-Qx-KaM"/>
-                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="8" id="KZY-v2-TpZ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="5Dw-PF-yVt" secondAttribute="trailing" constant="24" id="Wxj-q1-dxO"/>
-                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="top" secondItem="5Dw-PF-yVt" secondAttribute="bottom" constant="8" id="ZWR-GT-NDT"/>
-                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="24" id="m3k-cG-NE8"/>
-                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="top" secondItem="Yl4-zu-CFJ" secondAttribute="topMargin" constant="24" id="qee-Cf-93g"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Gwt-ZF-pU4" secondAttribute="bottom" constant="8" id="2lr-Xu-NXx"/>
+                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="16" id="4KY-uw-gnX"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="5Dw-PF-yVt" secondAttribute="trailing" constant="16" id="KHK-rw-4Ah"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Gwt-ZF-pU4" secondAttribute="trailing" constant="8" id="Yrn-Wl-pa3"/>
+                                            <constraint firstItem="5Dw-PF-yVt" firstAttribute="top" secondItem="Yl4-zu-CFJ" secondAttribute="topMargin" constant="16" id="bcL-mm-NE8"/>
+                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="top" secondItem="5Dw-PF-yVt" secondAttribute="bottom" constant="8" id="pjk-b3-5dN"/>
+                                            <constraint firstItem="Gwt-ZF-pU4" firstAttribute="leading" secondItem="Yl4-zu-CFJ" secondAttribute="leadingMargin" constant="8" id="zbh-nt-2na"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="barberImage" destination="5Dw-PF-yVt" id="2DH-2M-PMC"/>
@@ -75,14 +78,6 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-hs-Pj0">
-                                <rect key="frame" x="344" y="76" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="Ino-8S-Ke8" kind="show" id="a0f-yw-tfB"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -96,6 +91,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v9q-TR-gbF"/>
                     </view>
+                    <connections>
+                        <outlet property="chooseBarberLabel" destination="10A-v3-jKt" id="uRQ-Sj-p1K"/>
+                        <segue destination="Ino-8S-Ke8" kind="show" identifier="toSelectWhen" animates="NO" id="lLR-5L-Lo6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVg-UH-4Ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,5 +238,6 @@
     <resources>
         <image name="keyboard-left-arrow-button" width="306" height="306"/>
         <image name="keyboard-right-arrow-button" width="306" height="306"/>
+        <image name="profile_pic1" width="2001" height="2015"/>
     </resources>
 </document>

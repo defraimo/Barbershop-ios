@@ -16,7 +16,9 @@ class BarberCollectionViewCell: UICollectionViewCell {
         barberImage.image = barber.image
         let width = barberImage.frame.width
         barberImage.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: width, height: width))
-        barberImage.layer.cornerRadius = barberImage.frame.width/2
+        barberImage.layer.cornerRadius = barberImage.frame.height/2
+        barberImage.layer.masksToBounds = false
+        barberImage.clipsToBounds = true
         barberName.text = barber.name
     }
 }

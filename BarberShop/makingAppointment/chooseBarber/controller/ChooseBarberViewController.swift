@@ -9,7 +9,8 @@
 import UIKit
 
 class ChooseBarberViewController: UIViewController {
-
+    @IBOutlet weak var chooseBarberLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,12 +40,43 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat =  10
+        let padding: CGFloat = 10
         let collectionViewSize = collectionView.frame.size.width - padding
         
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var point = collectionView.layoutAttributesForItem(at: indexPath)?.center ?? collectionView.center
+        let pointInGlobalView = collectionView.convert(point, to: collectionView.superview)
+        
+        if point.x > view.center.x{
+            point = view.center
+        }
+        
+        let imageView = UIImageView(image: barbers[indexPath.item].image)
+        imageView.frame = CGRect(x: point.x, y: pointInGlobalView.y, width: 120, height: 120)
+        imageView.layer.cornerRadius = imageView.frame.height/2
+        imageView.layer.masksToBounds = false
+        imageView.clipsToBounds = true
+        self.view.addSubview(imageView)
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            
+            collectionView.alpha = 0
+            self.chooseBarberLabel.alpha = 0
+            imageView.transform = CGAffineTransform(scaleX: 8, y: 8)
+            imageView.alpha = 0
+            
+        }) { (_) in
+            self.performSegue(withIdentifier: "toSelectWhen", sender: nil)
+            imageView.removeFromSuperview()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                collectionView.alpha = 1
+                self.chooseBarberLabel.alpha = 1
+            })
+        }
+    }
     
 }

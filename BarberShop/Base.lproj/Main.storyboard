@@ -42,7 +42,7 @@
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Rf3-FA-YiT"/>
+                                    <action selector="showPrices:" destination="T02-lw-fcr" eventType="touchUpInside" id="2d1-fv-4Ts"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjM-uA-QQg">
@@ -54,7 +54,7 @@
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZRW-cM-CYk" kind="show" id="5L3-of-E4W"/>
+                                    <action selector="showHowWeGetThere:" destination="T02-lw-fcr" eventType="touchUpInside" id="iPZ-dV-kPd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FF-M9-PQC">
@@ -66,7 +66,7 @@
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fgm-7W-7C1" kind="show" id="31M-e0-Fpr"/>
+                                    <action selector="showAboutUs:" destination="T02-lw-fcr" eventType="touchUpInside" id="ta8-fi-6xL"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_seperator" translatesAutoresizingMaskIntoConstraints="NO" id="f7V-5e-eFl">
@@ -80,28 +80,6 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whatsapp" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-ct-FCt">
-                                <rect key="frame" x="140.5" y="784" width="50" height="50"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="bE4-tn-SZM"/>
-                                    <constraint firstAttribute="height" constant="50" id="gS6-6Z-pu0"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="cUc-Zn-Ry6" appends="YES" id="0Hg-Vm-RsH"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram" translatesAutoresizingMaskIntoConstraints="NO" id="Wgj-Jg-emv">
-                                <rect key="frame" x="58" y="784" width="50" height="50"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dnR-NY-0T4"/>
-                                    <constraint firstAttribute="width" constant="50" id="wyy-t9-JiS"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="N9v-hf-RA8" appends="YES" id="7Hw-xv-7Kw"/>
-                                </connections>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="sAq-zo-y5S">
                                 <rect key="frame" x="0.0" y="644" width="414" height="1"/>
                                 <constraints>
@@ -111,6 +89,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="249" image="switching_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="M8q-1y-JnR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="436"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icW-Jn-xC8">
+                                <rect key="frame" x="140.5" y="784" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KpL-s6-u7z"/>
+                                    <constraint firstAttribute="width" constant="50" id="ZXY-ut-dAM"/>
+                                </constraints>
+                                <state key="normal" image="whatsapp"/>
+                                <connections>
+                                    <action selector="goToWhatsUp:" destination="T02-lw-fcr" eventType="touchUpInside" id="80u-Nt-f6T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLZ-Te-0dB">
+                                <rect key="frame" x="58" y="784" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="B9c-fD-Wu1"/>
+                                    <constraint firstAttribute="height" constant="50" id="fsc-HF-VrW"/>
+                                </constraints>
+                                <state key="normal" image="Instagram"/>
+                                <connections>
+                                    <action selector="goToInstagram:" destination="T02-lw-fcr" eventType="touchUpInside" id="3Ng-FH-G5U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -121,25 +121,25 @@
                             <constraint firstItem="huU-gd-viO" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.18" id="7wQ-7w-yzS"/>
                             <constraint firstItem="aBP-gq-p8h" firstAttribute="top" secondItem="M8q-1y-JnR" secondAttribute="bottom" constant="-8" id="9Gt-yM-Szn"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.6" id="9zw-Ei-iHc"/>
+                            <constraint firstItem="YLZ-Te-0dB" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.4" id="EoU-ii-RiQ"/>
                             <constraint firstItem="sAq-zo-y5S" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="Fgc-H7-v0F"/>
                             <constraint firstAttribute="bottom" secondItem="A1N-rU-l4w" secondAttribute="bottom" id="G19-es-h3r"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="huU-gd-viO" secondAttribute="trailing" id="K12-bL-tFg"/>
                             <constraint firstItem="M8q-1y-JnR" firstAttribute="top" secondItem="SjH-XB-Ar3" secondAttribute="top" id="KXW-sl-ixF"/>
                             <constraint firstItem="f7V-5e-eFl" firstAttribute="top" secondItem="1YI-LK-mbt" secondAttribute="bottom" constant="24" id="KeT-Sh-l6f"/>
                             <constraint firstItem="f7V-5e-eFl" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" constant="26" id="LXy-Sz-uhk"/>
+                            <constraint firstItem="SjH-XB-Ar3" firstAttribute="bottom" secondItem="icW-Jn-xC8" secondAttribute="bottom" constant="28" id="Ngu-wz-DmK"/>
+                            <constraint firstItem="SjH-XB-Ar3" firstAttribute="bottom" secondItem="YLZ-Te-0dB" secondAttribute="bottom" constant="28" id="OPU-pE-wya"/>
                             <constraint firstItem="M8q-1y-JnR" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="OYh-nP-1Wf"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="f7V-5e-eFl" secondAttribute="trailing" constant="26" id="OvP-Kg-hit"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="OxB-Tc-yFf"/>
                             <constraint firstItem="0FF-M9-PQC" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="1.4" id="P6B-Pb-yXx"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="trailing" secondItem="SjH-XB-Ar3" secondAttribute="trailing" id="PLD-le-mgL"/>
-                            <constraint firstItem="5uw-ct-FCt" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.8" id="RjC-vR-KCz"/>
-                            <constraint firstItem="SjH-XB-Ar3" firstAttribute="bottom" secondItem="Wgj-Jg-emv" secondAttribute="bottom" constant="28" id="V4A-Wt-vEu"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="top" secondItem="aBP-gq-p8h" secondAttribute="bottom" constant="32" id="VlD-Uz-Hzy"/>
-                            <constraint firstItem="SjH-XB-Ar3" firstAttribute="bottom" secondItem="5uw-ct-FCt" secondAttribute="bottom" constant="28" id="ahx-jR-ItC"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="bottom" secondItem="0FF-M9-PQC" secondAttribute="bottom" constant="32" id="bow-Zj-WfU"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="M8q-1y-JnR" secondAttribute="trailing" id="f62-03-BfS"/>
+                            <constraint firstItem="icW-Jn-xC8" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.8" id="mU3-Jm-90H"/>
                             <constraint firstItem="1YI-LK-mbt" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="1.4" id="mZH-Wv-rHw"/>
-                            <constraint firstItem="Wgj-Jg-emv" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.4" id="pXv-rc-kx6"/>
                             <constraint firstItem="aBP-gq-p8h" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="pxb-xm-zEl"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="top" secondItem="huU-gd-viO" secondAttribute="bottom" constant="20" id="sNO-28-q9j"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="sAq-zo-y5S" secondAttribute="trailing" id="vL7-LG-hXn"/>
@@ -163,23 +163,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aboutUsButton" destination="0FF-M9-PQC" id="cEf-1H-vbR"/>
+                        <outlet property="howWeGetThereButton" destination="bjM-uA-QQg" id="DDf-eW-HID"/>
                         <outlet property="imageRounded" destination="aBP-gq-p8h" id="ZaH-Oq-3p3"/>
-                        <outlet property="instagram" destination="Wgj-Jg-emv" id="zPr-LR-ASg"/>
+                        <outlet property="instagramButton" destination="YLZ-Te-0dB" id="DZH-kb-vVc"/>
                         <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
-                        <outlet property="whatsupp" destination="5uw-ct-FCt" id="R4j-ed-CAA"/>
+                        <outlet property="pricesButton" destination="1YI-LK-mbt" id="ubp-eU-H9Y"/>
+                        <outlet property="whatsupButton" destination="icW-Jn-xC8" id="f7c-Jk-m3V"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toPrices" id="Y70-gu-cad"/>
+                        <segue destination="fgm-7W-7C1" kind="show" identifier="toAboutUs" id="cq2-XH-Wee"/>
+                        <segue destination="ZRW-cM-CYk" kind="show" identifier="toHowWeGetThere" id="qLb-7b-S3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEc-mb-nAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="cUc-Zn-Ry6">
-                    <connections>
-                        <action selector="whatsuppTapped:" destination="T02-lw-fcr" id="tGY-hV-dEs"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="N9v-hf-RA8">
-                    <connections>
-                        <action selector="instagramTapped:" destination="T02-lw-fcr" id="S2n-8T-j5n"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <view contentMode="scaleToFill" id="sDz-JR-TSq">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="334"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -610,7 +606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LuO-zN-KsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242.0289855072464" y="692.41071428571422"/>
+            <point key="canvasLocation" x="243" y="800"/>
         </scene>
         <!--How To Get There View Controller-->
         <scene sceneID="dvw-Lp-PWL">
@@ -625,7 +621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1c-NU-bNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="691"/>
+            <point key="canvasLocation" x="958" y="800"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pkp-h2-6lH">
