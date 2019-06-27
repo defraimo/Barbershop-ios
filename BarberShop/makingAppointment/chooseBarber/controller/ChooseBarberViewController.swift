@@ -18,9 +18,15 @@ class ChooseBarberViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
     }
 
+    
 }
 
 private let reuseIdentifier = "barberCell"
+
+var pointX:CGFloat?
+var pointY:CGFloat?
+var imageView:UIImageView?
+var barberIndex:IndexPath?
 
 extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -48,30 +54,37 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        var point = collectionView.layoutAttributesForItem(at: indexPath)?.center ?? collectionView.center
+        //define the index that passed to the next screen
+        barberIndex = indexPath
+        
+        //define the collection view point in the global view
+        let point = collectionView.layoutAttributesForItem(at: indexPath)?.center ?? collectionView.center
         let pointInGlobalView = collectionView.convert(point, to: collectionView.superview)
         
-        if point.x > view.center.x{
-            point = view.center
-        }
+        //minus a constant value to fix the position of the new image
+        pointX = pointInGlobalView.x - view.frame.maxX/9
+        pointY = pointInGlobalView.y - view.frame.maxY/11.4
         
-        let imageView = UIImageView(image: barbers[indexPath.item].image)
-        imageView.frame = CGRect(x: point.x, y: pointInGlobalView.y, width: 120, height: 120)
-        imageView.layer.cornerRadius = imageView.frame.height/2
-        imageView.layer.masksToBounds = false
-        imageView.clipsToBounds = true
-        self.view.addSubview(imageView)
+        //init the imageView woth all the properties and add it to the view
+        imageView = UIImageView(image: barbers[indexPath.item].image)
+        imageView!.frame = CGRect(x: pointX!, y: pointY!, width: 80, height: 80)
+        imageView!.layer.cornerRadius = imageView!.frame.height/2
+        imageView!.layer.masksToBounds = false
+        imageView!.clipsToBounds = true
+        self.view.addSubview(imageView!)
         
-        UIView.animate(withDuration: 0.4, animations: {
+        //animate the imageView to pop and fade all the rest of the view
+        UIView.animate(withDuration: 0.3, animations: {
             
             collectionView.alpha = 0
             self.chooseBarberLabel.alpha = 0
-            imageView.transform = CGAffineTransform(scaleX: 8, y: 8)
-            imageView.alpha = 0
+            imageView!.transform = CGAffineTransform(scaleX: 2, y: 2)
             
         }) { (_) in
+            //pass to the next screen
             self.performSegue(withIdentifier: "toSelectWhen", sender: nil)
-            imageView.removeFromSuperview()
+            imageView!.removeFromSuperview()
+            //after a little delay we set back the alpha to 1 so when the user presses back the current view will be seen
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 collectionView.alpha = 1
                 self.chooseBarberLabel.alpha = 1
@@ -79,4 +92,19 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = segue.identifier, let dest = segue.destination as? ChooseWhenViewController else {return}
+        
+        if id == "toSelectWhen"{
+            //pass all the nessesery data
+            //the position og the imageView
+            dest.passedPointX = pointX!
+            dest.passedPointY = pointY!
+            //the imageView inselt
+            dest.chosenBarberImage = imageView!
+            //the chosen barber indexPath
+            dest.chosenBarberIndex = barberIndex
+        }
+    }
+
 }
