@@ -107,7 +107,7 @@ class ChooseWhenViewController: UIViewController {
         imageEntryAnimation()
         
     }
-
+   
 }
 
 private let reuseIdentifier = "barberChooseCell"

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0834385628931BA8E6EDF714 /* Pods_BarberShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126DB524BC07E375A4372EA1 /* Pods_BarberShop.framework */; };
+		6302287522C768B700B242C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6302287422C768B700B242C6 /* GoogleService-Info.plist */; };
 		A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73722C4D77400AC9FF4 /* ANCustomView.swift */; };
 		A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */; };
 		A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		126DB524BC07E375A4372EA1 /* Pods_BarberShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarberShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A240B181F026D50B292C1D9 /* Pods-BarberShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.debug.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.debug.xcconfig"; sourceTree = "<group>"; };
+		6302287422C768B700B242C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.release.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.release.xcconfig"; sourceTree = "<group>"; };
 		A614D73722C4D77400AC9FF4 /* ANCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCustomView.swift; sourceTree = "<group>"; };
 		A61A319E22B7ACFE00FC20BE /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				A61A31B022B7AD0000FC20BE /* Info.plist */,
 				A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */,
 				A614D73722C4D77400AC9FF4 /* ANCustomView.swift */,
+				6302287422C768B700B242C6 /* GoogleService-Info.plist */,
 			);
 			path = BarberShop;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			files = (
 				A61A31AF22B7AD0000FC20BE /* LaunchScreen.storyboard in Resources */,
 				A61A31AC22B7AD0000FC20BE /* Assets.xcassets in Resources */,
+				6302287522C768B700B242C6 /* GoogleService-Info.plist in Resources */,
 				A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */,
 				A6413D0022C0DC9700FA1768 /* Schedule.storyboard in Resources */,
 			);
