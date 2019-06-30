@@ -72,14 +72,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_seperator" translatesAutoresizingMaskIntoConstraints="NO" id="f7V-5e-eFl">
                                 <rect key="frame" x="26" y="745" width="362" height="16"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הזמנת תור" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFi-en-kbk">
-                                <rect key="frame" x="131" y="562.5" width="152.5" height="49.5"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="36"/>
-                                <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="sAq-zo-y5S">
                                 <rect key="frame" x="0.0" y="644" width="414" height="1"/>
                                 <constraints>
@@ -111,12 +103,24 @@
                                     <action selector="goToInstagram:" destination="T02-lw-fcr" eventType="touchUpInside" id="3Ng-FH-G5U"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJi-FK-DRv">
+                                <rect key="frame" x="131" y="551" width="152" height="61"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="36"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="הזמנת תור">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeAppointment:" destination="T02-lw-fcr" eventType="touchUpInside" id="pBi-kq-9KD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="huU-gd-viO" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="0D7-OU-dnJ"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="aBP-gq-p8h" secondAttribute="trailing" id="3Nn-yU-Yln"/>
-                            <constraint firstItem="sAq-zo-y5S" firstAttribute="top" secondItem="UFi-en-kbk" secondAttribute="bottom" constant="32" id="5jh-cK-J7S"/>
+                            <constraint firstItem="sAq-zo-y5S" firstAttribute="top" secondItem="KJi-FK-DRv" secondAttribute="bottom" constant="32" id="3bn-hs-Ag9"/>
                             <constraint firstItem="0FF-M9-PQC" firstAttribute="top" secondItem="f7V-5e-eFl" secondAttribute="bottom" constant="24" id="7Xf-sP-IEf"/>
                             <constraint firstItem="huU-gd-viO" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.18" id="7wQ-7w-yzS"/>
                             <constraint firstItem="aBP-gq-p8h" firstAttribute="top" secondItem="M8q-1y-JnR" secondAttribute="bottom" constant="-8" id="9Gt-yM-Szn"/>
@@ -135,6 +139,7 @@
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="OxB-Tc-yFf"/>
                             <constraint firstItem="0FF-M9-PQC" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="1.4" id="P6B-Pb-yXx"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="trailing" secondItem="SjH-XB-Ar3" secondAttribute="trailing" id="PLD-le-mgL"/>
+                            <constraint firstItem="KJi-FK-DRv" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" id="TJD-eB-KB2"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="top" secondItem="aBP-gq-p8h" secondAttribute="bottom" constant="32" id="VlD-Uz-Hzy"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="bottom" secondItem="0FF-M9-PQC" secondAttribute="bottom" constant="32" id="bow-Zj-WfU"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="M8q-1y-JnR" secondAttribute="trailing" id="f62-03-BfS"/>
@@ -145,7 +150,6 @@
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="sAq-zo-y5S" secondAttribute="trailing" id="vL7-LG-hXn"/>
                             <constraint firstItem="sAq-zo-y5S" firstAttribute="top" secondItem="aBP-gq-p8h" secondAttribute="bottom" id="wiH-dM-qZU"/>
                             <constraint firstItem="f7V-5e-eFl" firstAttribute="top" secondItem="bjM-uA-QQg" secondAttribute="bottom" constant="24" id="wsZ-L1-RyC"/>
-                            <constraint firstItem="UFi-en-kbk" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" id="xei-dR-hCS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SjH-XB-Ar3"/>
                     </view>
@@ -164,9 +168,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="aboutUsButton" destination="0FF-M9-PQC" id="cEf-1H-vbR"/>
+                        <outlet property="appointmentBtn" destination="KJi-FK-DRv" id="MKh-Bb-Mfo"/>
                         <outlet property="howWeGetThereButton" destination="bjM-uA-QQg" id="DDf-eW-HID"/>
                         <outlet property="imageRounded" destination="aBP-gq-p8h" id="ZaH-Oq-3p3"/>
                         <outlet property="instagramButton" destination="YLZ-Te-0dB" id="DZH-kb-vVc"/>
+                        <outlet property="loginOrSignupView" destination="kc7-ea-sxB" id="zYv-1q-65t"/>
                         <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
                         <outlet property="pricesButton" destination="1YI-LK-mbt" id="ubp-eU-H9Y"/>
                         <outlet property="whatsupButton" destination="icW-Jn-xC8" id="f7c-Jk-m3V"/>
@@ -176,36 +182,117 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEc-mb-nAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="kc7-ea-sxB">
+                    <rect key="frame" x="0.0" y="0.0" width="318" height="171"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="הזינו מספר פלאפון להזדהות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXG-Qv-P4E">
+                            <rect key="frame" x="32" y="16" width="254" height="25.5"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="18"/>
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <size key="shadowOffset" width="1" height="1"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZl-DQ-qDh">
+                            <rect key="frame" x="134" y="90" width="50" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="e6F-uw-RX9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="22"/>
+                            <size key="titleShadowOffset" width="1" height="1"/>
+                            <state key="normal" title="אישור ">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מספר  פלאפון" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gml-PG-b9B">
+                            <rect key="frame" x="32" y="49.5" width="254" height="30"/>
+                            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="18"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-ec-TZm">
+                            <rect key="frame" x="32" y="123" width="254" height="5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="5GM-VR-X1w"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3O7-oj-pOJ">
+                            <rect key="frame" x="80" y="128" width="158" height="35"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW1-H3-3OD">
+                                    <rect key="frame" x="0.0" y="0.0" width="74" height="35"/>
+                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="17"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="הירשם כאן">
+                                        <color key="titleColor" red="0.64305084185828554" green="0.75581761512789358" blue="0.76296517782404938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1" text="לקוח חדש?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zs-cg-tEh">
+                                    <rect key="frame" x="82" y="0.0" width="76" height="35"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="xXG-Qv-P4E" secondAttribute="trailing" constant="32" id="1E9-PV-QEK"/>
+                        <constraint firstAttribute="trailing" secondItem="Brg-ec-TZm" secondAttribute="trailing" constant="32" id="8SG-DS-j9p"/>
+                        <constraint firstAttribute="trailing" secondItem="3O7-oj-pOJ" secondAttribute="trailing" constant="80" id="BIu-2L-4lP"/>
+                        <constraint firstItem="5l3-MF-pxX" firstAttribute="trailing" secondItem="eZl-DQ-qDh" secondAttribute="trailing" constant="134" id="Ieb-ez-1V7"/>
+                        <constraint firstItem="3O7-oj-pOJ" firstAttribute="top" secondItem="Brg-ec-TZm" secondAttribute="bottom" id="Iev-3f-fiV"/>
+                        <constraint firstItem="eZl-DQ-qDh" firstAttribute="top" secondItem="gml-PG-b9B" secondAttribute="bottom" constant="8" id="OCI-km-sQ1"/>
+                        <constraint firstItem="Brg-ec-TZm" firstAttribute="top" secondItem="eZl-DQ-qDh" secondAttribute="bottom" constant="8" id="SBM-0L-mQm"/>
+                        <constraint firstItem="gml-PG-b9B" firstAttribute="leading" secondItem="5l3-MF-pxX" secondAttribute="leading" constant="32" id="ZG9-7I-XFD"/>
+                        <constraint firstItem="Brg-ec-TZm" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="32" id="Zva-WY-KVD"/>
+                        <constraint firstItem="xXG-Qv-P4E" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="32" id="ebn-YP-3Ei"/>
+                        <constraint firstItem="gml-PG-b9B" firstAttribute="top" secondItem="xXG-Qv-P4E" secondAttribute="bottom" constant="8" id="qbR-Ed-vQK"/>
+                        <constraint firstItem="xXG-Qv-P4E" firstAttribute="top" secondItem="kc7-ea-sxB" secondAttribute="top" constant="16" id="ruF-Vc-McC"/>
+                        <constraint firstItem="5l3-MF-pxX" firstAttribute="trailing" secondItem="gml-PG-b9B" secondAttribute="trailing" constant="32" id="sBg-aD-PcY"/>
+                        <constraint firstItem="3O7-oj-pOJ" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="80" id="tMM-fM-FMG"/>
+                        <constraint firstItem="eZl-DQ-qDh" firstAttribute="leading" secondItem="5l3-MF-pxX" secondAttribute="leading" constant="134" id="tjg-Gg-lZB"/>
+                        <constraint firstAttribute="bottom" secondItem="3O7-oj-pOJ" secondAttribute="bottom" constant="8" id="um5-95-3bv"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="5l3-MF-pxX"/>
+                </view>
                 <view contentMode="scaleToFill" id="sDz-JR-TSq">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="334"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-K7-7jM">
-                            <rect key="frame" x="43.5" y="107" width="153" height="10"/>
+                            <rect key="frame" x="112" y="107" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="u8l-T7-LSy"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="wHX-Cx-q8l">
-                            <rect key="frame" x="43.5" y="221" width="153" height="10"/>
+                            <rect key="frame" x="112" y="221" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="jhK-VP-CdU"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-SA-1Th">
-                            <rect key="frame" x="43.5" y="278" width="153" height="10"/>
+                            <rect key="frame" x="112" y="278" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="MHf-fT-a9y"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="5WO-u2-qjc">
-                            <rect key="frame" x="43.5" y="335" width="153" height="10"/>
+                            <rect key="frame" x="112" y="335" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="xO7-4t-xFz"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="K1I-cP-0kr">
-                            <rect key="frame" x="43.5" y="164" width="153" height="10"/>
+                            <rect key="frame" x="112" y="164" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="DmE-Oc-CQr"/>
                             </constraints>
@@ -315,19 +402,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IV8-ep-0a4">
-                                                    <rect key="frame" x="56" y="52" width="25" height="30"/>
+                                                    <rect key="frame" x="56.5" y="52" width="25" height="30"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תספורת" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puj-oJ-NBB">
-                                                    <rect key="frame" x="146" y="52" width="74" height="30"/>
+                                                    <rect key="frame" x="145.5" y="52" width="74" height="30"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="lOD-Nq-ao2">
-                                                    <rect key="frame" x="105" y="11" width="17" height="112"/>
+                                                    <rect key="frame" x="105.5" y="11" width="16" height="112"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
