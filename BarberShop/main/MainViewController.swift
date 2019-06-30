@@ -14,7 +14,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var imageRounded: UIImageView!
     
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    lazy var blurEffect = {
+        return UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    }()
     
     @IBOutlet var menuView: UIView!
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
@@ -142,6 +144,46 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBOutlet var loginOrSignupView: UIView!
+    @IBOutlet weak var appointmentBtn: UIButton!
+    @IBAction func makeAppointment(_ sender: UIButton) {
+        //placed above screen
+        loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
+
+        //animation of the button press
+        UIView.animate(withDuration: 0.1, animations: {
+            self.appointmentBtn.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        }) { (b) in
+            UIView.animate(withDuration: 0.1, animations: {
+                self.appointmentBtn.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        }
+        //animation displaying the loginOrSingup View:
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: { [weak self] in
+            
+            guard let center = self?.view.center else {return}
+            self?.loginOrSignupView.center = center
+            
+            self?.view.layoutIfNeeded()
+            })
+        
+        self.view.addSubview(loginOrSignupView)
+        
+        //setting up the menu:
+        loginOrSignupView.alpha = 1
+        loginOrSignupView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        loginOrSignupView.layer.shadowColor = UIColor.black.cgColor
+        loginOrSignupView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        loginOrSignupView.layer.shadowOpacity = 0.5
+        loginOrSignupView.layer.masksToBounds = false
+        loginOrSignupView.layer.cornerRadius = 25
+        loginOrSignupView.layer.shadowRadius = 10
+        
+        //hiding the nav bar
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //blur effect for the background
+        blurEffect.isHidden = false
+            }
     
     
     override func viewDidLoad() {
@@ -172,7 +214,20 @@ class MainViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+       
+        guard let touch = touches.first else {return}
+        
+        
+        
+        if loginOrSignupView.frame.contains(touch.location(in: self.view)){
+            return
+        }else if menuView.frame.contains(touch.location(in: self.view)){
+            return
+        }
         releaseMenu()
+        releaseLoginOrSignupMenu()
+
+        
     }
     
  
@@ -197,6 +252,16 @@ class MainViewController: UIViewController {
         }) { (isCompleted) in
             self.blurEffect.isHidden = true
             self.menuView.removeFromSuperview()
+        }
+    }
+    
+    func releaseLoginOrSignupMenu(){
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.loginOrSignupView.alpha = 0
+        }) { (isCompleted) in
+            self.blurEffect.isHidden = true
+            self.loginOrSignupView.removeFromSuperview()
         }
     }
     

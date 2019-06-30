@@ -110,7 +110,7 @@ class ChooseWhenViewController: UIViewController {
         currentlyShownSchedule = barbersSchedule[chosenBarberIndex!.row]
         currentlyDaysNamed = currentlyShownSchedule?.namedDays
     }
-
+   
 }
 
 private let reuseIdentifier = "barberChooseCell"
