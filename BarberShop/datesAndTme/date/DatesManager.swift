@@ -9,20 +9,28 @@
 import Foundation
 
 class DatesManager {
-    private let barberName:String
+//    private let barberName:String
     private var daysAvailable:Int
     private var additionalDays:Int
     private (set) var daysOff:[Int]?
     private (set) var datesOff:[AppointmentDate]?
     
-    init(barberName:String, daysAvailable:Int, additionalDays:Int) {
+    init(/*barberName:String, */daysAvailable:Int, additionalDays:Int) {
         self.daysAvailable = daysAvailable
         self.additionalDays = additionalDays
-        self.barberName = barberName
+//        self.barberName = barberName
     }
     
     func getAvialibleDays() -> Int{
         return daysAvailable
+    }
+    
+    func setAvialibleDays(numberOfDays:Int){
+        daysAvailable = numberOfDays
+    }
+    
+    func setadditionalDays(numberOfDays:Int){
+        additionalDays = numberOfDays
     }
     
     var daysToShow:Int{
@@ -115,55 +123,5 @@ class DatesManager {
         
         return allDays
     }
-    
-    /*
-     var namedAvialibleDays:[String]{
-     let currentDate = CurrentDate()
-     let currentDay = currentDate.currentDay - 1
-     
-     var allDays:[Int] = []
-     
-     //puts all the avialible days into array
-     for day in currentDay..<(daysAvailable + currentDay){
-     allDays.append(day % 7)
-     }
-     
-     //takes out the off days from the avialible days array
-     if daysOff != nil{
-     var dayIndex = 0
-     while dayIndex < allDays.count-1{
-     for offday in daysOff!{
-     //minus 1 from the day value becuase the method passes values from 1, and not from 0
-     if (offday - 1) == allDays[dayIndex]{
-     allDays.remove(at: dayIndex)
-     }
-     }
-     dayIndex += 1
-     }
-     }
-     
-     
-     let namedDays = currentDate.namedDays
-     
-     var allDaysNamed:[String] = []
-     for day in allDays{
-     allDaysNamed.append(namedDays[day])
-     }
-     
-     if allDays[0] == currentDay{
-     allDaysNamed[0] = "היום"
-     if allDaysNamed.count > 1{
-     if allDays[1] == currentDay+1{
-     allDaysNamed[1] = "מחר"
-     }
-     }
-     }
-     else if allDays[0] == currentDay+1{
-     allDaysNamed[0] = "מחר"
-     }
-     
-     
-     return allDaysNamed
-     }
-     */
+
 }

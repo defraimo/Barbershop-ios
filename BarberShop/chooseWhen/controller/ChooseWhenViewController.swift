@@ -51,7 +51,6 @@ class ChooseWhenViewController: UIViewController {
     }
     @IBOutlet weak var datePicker: UIPickerView!
     
-    
     fileprivate func imageEntryAnimation() {
         
         //set all the vies to invisible
@@ -62,6 +61,7 @@ class ChooseWhenViewController: UIViewController {
         //scroll the collaction view to the chosen barber posiotion from the lase screen
         barbersCollection.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
         
+        //getting the position of the current item
         let collectionPosition = barbersCollection.layoutAttributesForItem(at: chosenBarberIndex!)?.center ?? barbersCollection.center
         
         //find the collactionView position in the global view
@@ -73,7 +73,7 @@ class ChooseWhenViewController: UIViewController {
         //animate the imageView
         UIView.animate(withDuration: 0.3, animations: {
             imageView?.center = pointInGlobalView
-            imageView?.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+            imageView?.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             imageView?.alpha = 0.4
         }) { (_) in
             //animate all the views to fade in
@@ -106,6 +106,9 @@ class ChooseWhenViewController: UIViewController {
         
         imageEntryAnimation()
         
+        //set the picker date array to the chosen barber from the last screen
+        currentlyShownSchedule = barbersSchedule[chosenBarberIndex!.row]
+        currentlyDaysNamed = currentlyShownSchedule?.namedDays
     }
 
 }
@@ -126,16 +129,31 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         
         //animate a little spring motion when created
         UIView.animate(withDuration: 0.2, delay: 0.4, usingSpringWithDamping: 0.5, initialSpringVelocity: 20, options: [], animations: {
-            cell.transform = CGAffineTransform(scaleX: 1.12, y: 1.12)
+            cell.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         })
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //set the picker date array to the chosen barber from the collectionView
+        currentlyShownSchedule = barbersSchedule[indexPath.row]
+        currentlyDaysNamed = currentlyShownSchedule?.namedDays
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.datePicker.alpha = 0
+        }) { (_) in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.datePicker.alpha = 1
+            })
+            self.datePicker.reloadAllComponents()
+        }
+    }
 }
 
-let daniel = BarbersSchedule()
-let danielsDays = daniel.allDays
-let danielsAvialibleDays = daniel.avialibleDays
+let barbersSchedule = BarbersSchedule().allBarbersShedule
+var currentlyShownSchedule:DatesManager?
+var currentlyDaysNamed:[PickerDates]?
 
 extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -143,18 +161,23 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return danielsDays.count
+        return currentlyDaysNamed?.count ?? 0
     }
     
     //sets the title and the color of the picker component
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        if row < danielsAvialibleDays{
-            let attributedString = NSAttributedString(string: danielsDays[row].description, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        if row < currentlyShownSchedule!.getAvialibleDays(){
+            let attributedString = NSAttributedString(string: currentlyDaysNamed![row].description, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
             return attributedString
         }
         else{
-            let attributedString = NSAttributedString(string: danielsDays[row].description, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 255/255, green: 110/255, blue: 100/255, alpha: 250/255)])
+            let attributedString = NSAttributedString(string: currentlyDaysNamed![row].description, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 255/255, green: 110/255, blue: 100/255, alpha: 250/255)])
             return attributedString
         }
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
 }

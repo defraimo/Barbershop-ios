@@ -165,6 +165,9 @@ class MainViewController: UIViewController {
         imageRounded.layer.masksToBounds = true
         
         addBlurView()
+        
+        let timeManager = TimeManager().workingHours
+        print(timeManager)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

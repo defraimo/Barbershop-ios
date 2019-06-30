@@ -9,20 +9,11 @@
 import Foundation
 
 class BarbersSchedule{
-    var danielDays:DatesManager
-    
-    var avialibleDays:Int{
-        return danielDays.getAvialibleDays()
-    }
-    
-    var allDays:[PickerDates]{
-        return danielDays.namedDays
-    }
+    var allBarbersShedule:[DatesManager] = []
     
     init() {
-        danielDays =
-        DatesManager(barberName: "daniel", daysAvailable: 10, additionalDays: 7)
-        danielDays.setDaysOff(days: [6,7])
-        danielDays.addDatesOff(dates: [AppointmentDate(day: 26, month: 6, year: 2019)])
+        for barber in AllBarbers().allBarbers{
+            allBarbersShedule.append((barber.schedule ?? nil)!)
+        }
     }
 }

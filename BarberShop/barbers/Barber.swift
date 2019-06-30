@@ -12,4 +12,5 @@ struct Barber {
     var name:String
     var description:String?
     var image:UIImage
+    var schedule:DatesManager?
 }

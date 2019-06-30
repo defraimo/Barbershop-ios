@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0834385628931BA8E6EDF714 /* Pods_BarberShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 126DB524BC07E375A4372EA1 /* Pods_BarberShop.framework */; };
 		A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73722C4D77400AC9FF4 /* ANCustomView.swift */; };
+		A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73922C5462400AC9FF4 /* TimeManager.swift */; };
+		A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73B22C6595C00AC9FF4 /* Time.swift */; };
 		A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */; };
 		A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */; };
 		A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31A522B7ACFE00FC20BE /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 		3A240B181F026D50B292C1D9 /* Pods-BarberShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.debug.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.debug.xcconfig"; sourceTree = "<group>"; };
 		7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.release.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.release.xcconfig"; sourceTree = "<group>"; };
 		A614D73722C4D77400AC9FF4 /* ANCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCustomView.swift; sourceTree = "<group>"; };
+		A614D73922C5462400AC9FF4 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		A614D73B22C6595C00AC9FF4 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		A61A319E22B7ACFE00FC20BE /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
@@ -144,9 +148,9 @@
 				A659A00322BD023800274F40 /* howToGetThere */,
 				A61A31CF22B95C5500FC20BE /* barbers */,
 				A61A31C222B9586A00FC20BE /* aboutUs */,
-				A61A31BF22B7C30400FC20BE /* main */,
 				A61A31B622B7BB9A00FC20BE /* prices */,
 				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
+				A61A31BF22B7C30400FC20BE /* main */,
 				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
 				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
 				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
@@ -257,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				A659A0A222C0198700274F40 /* AppointmentTime.swift */,
+				A614D73922C5462400AC9FF4 /* TimeManager.swift */,
+				A614D73B22C6595C00AC9FF4 /* Time.swift */,
 			);
 			path = time;
 			sourceTree = "<group>";
@@ -508,7 +514,9 @@
 				A61A31D622B95DE700FC20BE /* Barber.swift in Sources */,
 				A659A01522BD46F500274F40 /* ChooseWhenViewController.swift in Sources */,
 				A659A00922BD0F9D00274F40 /* ChooseBarberViewController.swift in Sources */,
+				A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */,
 				A6413D0222C0FC4900FA1768 /* PickerDates.swift in Sources */,
+				A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */,
 				A659A09A22BFD76C00274F40 /* DatesManager.swift in Sources */,
 				A61A31C922B9598200FC20BE /* DescriptionTableViewCell.swift in Sources */,
 				A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */,

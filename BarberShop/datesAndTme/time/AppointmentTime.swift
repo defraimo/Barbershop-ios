@@ -9,6 +9,19 @@
 import Foundation
 
 struct AppointmentTime {
-    var hours:Int
-    var minutes:Int
+    var minHour:Int
+    var maxHour:Int
+    var minMinutes:Int
+    var maxMinutes:Int
+    var intervals:Int
+    var workingTime:[String]
+    
+    init() {
+        minHour = 0
+        maxHour = 0
+        minMinutes = 0
+        maxMinutes = 0
+        intervals = 0
+        workingTime = []
+    }
 }
