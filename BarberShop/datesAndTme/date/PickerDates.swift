@@ -12,6 +12,7 @@ struct PickerDates:CustomStringConvertible {
     var dayOfWeek:Int
     var namedDayOfWeek:String
     var date:AppointmentDate
+    var timeAvialible:TimeManager?
     
     var description:String{
         return "\(namedDayOfWeek) (\(date.description))"
