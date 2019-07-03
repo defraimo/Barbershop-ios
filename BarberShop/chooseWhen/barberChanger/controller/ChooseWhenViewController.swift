@@ -133,8 +133,6 @@ class ChooseWhenViewController: UIViewController {
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
-        self.navigationItem.leftBarButtonItem?.title = "חזור"
-        
         imageEntryAnimation()
         
         //set the picker date array to the chosen barber from the last screen
