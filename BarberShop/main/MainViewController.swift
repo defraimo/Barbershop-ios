@@ -144,7 +144,75 @@ class MainViewController: UIViewController {
         }
     }
     
+
+    @IBAction func signUp(_ sender: UIButton) {
+        //init the storyboard because it is in another file now
+        let storyBoard =  UIStoryboard(name: "SignUp", bundle: nil)
+        
+        //init the viewController:
+        guard let signUpVc = storyBoard.instantiateViewController(withIdentifier: "toSignUp") as? SingUPViewController else {return}
+        //presenting the controller modally:
+        present(signUpVc, animated: true, completion: nil)
+        
+        //releasing the view:
+        releaseLoginOrSignupMenu()
+    }
+    @IBAction func signInSendCode(_ sender: UIButton) {
+        //releasing the previous view:
+        releaseLoginOrSignupMenu()
+        presentAuthCodeView()
+    }
+    //a func for presenting AuthCode view,
+    //makes it easier to present it from other view controllers
+    func presentAuthCodeView(){
+        //placed under the screen:
+        authCodeView.center = CGPoint(x: view.frame.midX, y: 2*view.frame.midY)
+        
+        //animation displaying the loginOrSingup View:
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: { [weak self] in
+            
+            guard let center = self?.view.center else {return}
+            self?.authCodeView.center = center
+            
+            self?.view.layoutIfNeeded()
+        })
+        self.view.addSubview(authCodeView)
+        
+        //setting up the menu:
+        authCodeView.alpha = 1
+        authCodeView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        authCodeView.layer.shadowColor = UIColor.black.cgColor
+        authCodeView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        authCodeView.layer.shadowOpacity = 0.5
+        authCodeView.layer.masksToBounds = false
+        authCodeView.layer.cornerRadius = 25
+        authCodeView.layer.shadowRadius = 10
+        
+        //hiding the nav bar
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //blur effect for the background
+        blurEffect.isHidden = false
+        
+        //textfield placeholder in white:
+        for view in authCodeView.subviews{
+            guard let textField = view as? UITextField else {return}
+            
+            if textField.responds(to: #selector(setter: textField.attributedPlaceholder)) {
+                let color = UIColor.lightGray
+                textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [
+                    NSAttributedString.Key.foregroundColor: color
+                    ])
+            } else {
+                print("Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0")
+            }
+        }
+    }
+    
+    //the alert view that recieves the auth code from firebase:
+    @IBOutlet var authCodeView: UIView!
+    //alert for logging in or going to the sign up page:
     @IBOutlet var loginOrSignupView: UIView!
+    //outlet for animation:
     @IBOutlet weak var appointmentBtn: UIButton!
     @IBAction func makeAppointment(_ sender: UIButton) {
         //placed above screen
@@ -185,7 +253,6 @@ class MainViewController: UIViewController {
         blurEffect.isHidden = false
             }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -219,20 +286,19 @@ class MainViewController: UIViewController {
         
         
         
-        if loginOrSignupView.frame.contains(touch.location(in: self.view)){
-            return
-        }else if menuView.frame.contains(touch.location(in: self.view)){
-            return
+        if !loginOrSignupView.frame.contains(touch.location(in: self.view)) && loginOrSignupView.isDescendant(of: view){
+            releaseLoginOrSignupMenu()
+        }else if !menuView.frame.contains(touch.location(in: self.view)) && menuView.isDescendant(of: view){
+            releaseMenu()
+        }else if !authCodeView.frame.contains(touch.location(in: self.view)) && authCodeView.isDescendant(of: view){
+            releaseCodeAuthMenu()
         }
-        releaseMenu()
-        releaseLoginOrSignupMenu()
 
         
     }
     
  
     func addBlurView(){
- 
         self.view.addSubview(blurEffect)
         
         blurEffect.translatesAutoresizingMaskIntoConstraints = false
@@ -258,10 +324,22 @@ class MainViewController: UIViewController {
     func releaseLoginOrSignupMenu(){
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         UIView.animate(withDuration: 0.2, animations: { [weak self] in
-            self?.loginOrSignupView.alpha = 0
+            guard let midX = self?.view.frame.midX , let midY = self?.view.frame.midY else {return}
+            self?.loginOrSignupView.center = CGPoint(x: midX, y: -midY)
+            self?.blurEffect.isHidden = true
+        }) { (isCompleted) in
+            self.loginOrSignupView.removeFromSuperview()
+        }
+    }
+    
+    func releaseCodeAuthMenu(){
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            guard let midX = self?.view.frame.midX , let midY = self?.view.frame.midY else {return}
+            self?.authCodeView.center = CGPoint(x: midX, y: -midY)
         }) { (isCompleted) in
             self.blurEffect.isHidden = true
-            self.loginOrSignupView.removeFromSuperview()
+            self.authCodeView.removeFromSuperview()
         }
     }
     
