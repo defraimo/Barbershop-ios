@@ -14,7 +14,7 @@ class TimeManager{
     var minMinutes:Int
     var maxMinutes:Int
     var intervals:Int
-    var freeTime:[TimeRange]
+    var freeTime:[TimeRange]?
     
     func defineGlobalProperties(minHours:Int, minMinutes:Int, maxHours:Int, maxMinutes:Int){
         self.minHour = minHours
@@ -50,19 +50,21 @@ class TimeManager{
             else{
                 break
             }
-            for time in freeTime{
-                if hours == time.fromTime.hours &&
-                    minutes >= time.fromTime.minutes &&
-                    hours <= time.toTime.hours{
-                    isInRange = false
-                }
-                else if hours > time.fromTime.hours &&
-                        hours < time.toTime.hours{
-                    isInRange = false
-                }
-                else if hours == time.toTime.hours &&
-                    minutes <= time.toTime.minutes{
-                    isInRange = false
+            if freeTime != nil{
+                for time in freeTime!{
+                    if hours == time.fromTime.hours &&
+                        minutes >= time.fromTime.minutes &&
+                        hours <= time.toTime.hours{
+                        isInRange = false
+                    }
+                    else if hours > time.fromTime.hours &&
+                            hours < time.toTime.hours{
+                        isInRange = false
+                    }
+                    else if hours == time.toTime.hours &&
+                        minutes <= time.toTime.minutes{
+                        isInRange = false
+                    }
                 }
             }
             if isInRange{
@@ -74,16 +76,22 @@ class TimeManager{
     }
     
 //    init() {
-//        barberTime = AppointmentTime()
+//        minHour = 11
+//        maxHour = 19
+//        minMinutes = 30
+//        maxMinutes = 50
+//        intervals = 14
+//        freeTime = [TimeRange(fromTime: Time(hours: 12, minutes: 20), toTime: Time(hours: 13, minutes: 10)),
+//                    TimeRange(fromTime: Time(hours: 16, minutes: 0), toTime: Time(hours: 17, minutes: 0))]
 //    }
     
-    init() {
-        minHour = 11
-        maxHour = 19
-        minMinutes = 30
-        maxMinutes = 50
-        intervals = 14
-        freeTime = [TimeRange(fromTime: Time(hours: 12, minutes: 20), toTime: Time(hours: 13, minutes: 10)),
-                    TimeRange(fromTime: Time(hours: 16, minutes: 0), toTime: Time(hours: 17, minutes: 0))]
+    init(minHour:Int, minMinutes:Int, maxHour:Int, maxMinutes:Int, intervals:Int, freeTime:[TimeRange]?) {
+        self.minHour = minHour
+        self.minMinutes = minMinutes
+        self.maxHour = maxHour
+        self.maxMinutes = maxMinutes
+        self.intervals = intervals
+        self.freeTime = freeTime
     }
+    
 }

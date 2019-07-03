@@ -166,7 +166,7 @@
                                     <outlet property="delegate" destination="Ino-8S-Ke8" id="LXu-cd-XXU"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-right-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-6N-Q97">
+                            <imageView clipsSubviews="YES" alpha="0.29999999999999999" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-right-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-6N-Q97">
                                 <rect key="frame" x="346" y="44" width="50" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -196,17 +196,87 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIv-UB-KWS">
-                                <rect key="frame" x="0.0" y="253" width="414" height="216"/>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIv-UB-KWS">
+                                <rect key="frame" x="0.0" y="253" width="414" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uIv-UB-KWS" secondAttribute="height" multiplier="23:10" id="SGT-n5-wd2"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="Ino-8S-Ke8" id="ppx-cX-a8F"/>
                                     <outlet property="delegate" destination="Ino-8S-Ke8" id="BKJ-Rf-xEW"/>
                                 </connections>
                             </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWO-tg-heq">
+                                <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחר שעה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3r-78-8TW">
+                                        <rect key="frame" x="138" y="16" width="138" height="49"/>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="36"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <size key="shadowOffset" width="0.5" height="0.5"/>
+                                    </label>
+                                    <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zb-FC-EPc">
+                                        <rect key="frame" x="0.0" y="65" width="414" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7Zb-FC-EPc" secondAttribute="height" multiplier="23:10" id="Ysd-x6-34A"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Ino-8S-Ke8" id="bW5-VI-0jj"/>
+                                            <outlet property="delegate" destination="Ino-8S-Ke8" id="bpc-if-ak4"/>
+                                        </connections>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39R-H5-LoN">
+                                        <rect key="frame" x="127" y="253" width="160" height="44"/>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
+                                        <state key="normal" title="הזמן תור" backgroundImage="button_white"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.32946558564660255" green="0.57969146573604058" blue="0.3458954722089298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="7Zb-FC-EPc" firstAttribute="top" secondItem="b3r-78-8TW" secondAttribute="bottom" id="6ee-rn-l1e"/>
+                                    <constraint firstItem="7Zb-FC-EPc" firstAttribute="leading" secondItem="EWO-tg-heq" secondAttribute="leading" id="FnC-Ds-vRm"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Zb-FC-EPc" secondAttribute="trailing" id="Gmx-uM-CZa"/>
+                                    <constraint firstItem="b3r-78-8TW" firstAttribute="top" secondItem="EWO-tg-heq" secondAttribute="top" constant="16" id="Ier-rm-xXe"/>
+                                    <constraint firstItem="39R-H5-LoN" firstAttribute="centerX" secondItem="EWO-tg-heq" secondAttribute="centerX" id="Luy-cs-wcY"/>
+                                    <constraint firstItem="39R-H5-LoN" firstAttribute="top" secondItem="7Zb-FC-EPc" secondAttribute="bottom" constant="8" id="lRQ-3X-eyW"/>
+                                    <constraint firstItem="b3r-78-8TW" firstAttribute="centerX" secondItem="EWO-tg-heq" secondAttribute="centerX" id="tcY-S5-IzJ"/>
+                                    <constraint firstAttribute="height" id="zGx-jO-aJj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bke-5K-Cme">
+                                <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dm-aC-rnq">
+                                        <rect key="frame" x="75" y="106.5" width="264" height="47"/>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="17"/>
+                                        <size key="titleShadowOffset" width="0.5" height="0.5"/>
+                                        <state key="normal" title="שלח לי התראה כשיפתחו תורים" backgroundImage="button_white_long"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טרם נפתחו תורים ליום זה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-0C-lUd">
+                                        <rect key="frame" x="48" y="32" width="318.5" height="42.5"/>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="31"/>
+                                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.5" height="0.5"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3294655856" green="0.57969146569999996" blue="0.3458954722" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="8dm-aC-rnq" firstAttribute="centerX" secondItem="bke-5K-Cme" secondAttribute="centerX" id="D66-t9-q3F"/>
+                                    <constraint firstItem="8dm-aC-rnq" firstAttribute="top" secondItem="bwL-0C-lUd" secondAttribute="bottom" constant="32" id="Iku-f3-sml"/>
+                                    <constraint firstItem="bwL-0C-lUd" firstAttribute="top" secondItem="bke-5K-Cme" secondAttribute="top" constant="32" id="WUq-QB-iEQ"/>
+                                    <constraint firstItem="bwL-0C-lUd" firstAttribute="centerX" secondItem="bke-5K-Cme" secondAttribute="centerX" id="i6X-RZ-taX"/>
+                                    <constraint firstAttribute="height" id="xhW-w4-Xxc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="qkD-8F-iIp" secondAttribute="trailing" constant="18" id="1Fr-Fa-AWn"/>
+                            <constraint firstItem="bke-5K-Cme" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="6xy-9b-zzS"/>
                             <constraint firstItem="hYC-Of-zAv" firstAttribute="centerX" secondItem="cYT-Xt-9Bm" secondAttribute="centerX" id="93g-mr-twf"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="99g-aZ-IX1"/>
                             <constraint firstItem="e7V-Ae-HVz" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="Gca-xu-ZJM"/>
@@ -214,8 +284,13 @@
                             <constraint firstItem="KSd-6N-Q97" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="L0W-Hz-Smy"/>
                             <constraint firstItem="e7V-Ae-HVz" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="LpD-Ke-J1c"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="PM2-vw-rME"/>
+                            <constraint firstItem="EWO-tg-heq" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="Qg4-SM-rSf"/>
                             <constraint firstItem="hYC-Of-zAv" firstAttribute="top" secondItem="qkD-8F-iIp" secondAttribute="bottom" constant="24" id="SSB-q4-cMW"/>
+                            <constraint firstItem="bke-5K-Cme" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="WQz-Pn-RKW"/>
+                            <constraint firstAttribute="bottom" secondItem="EWO-tg-heq" secondAttribute="bottom" id="YaU-Bl-Bqg"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="top" secondItem="hYC-Of-zAv" secondAttribute="bottom" id="bSh-jx-47l"/>
+                            <constraint firstAttribute="bottom" secondItem="bke-5K-Cme" secondAttribute="bottom" id="lTB-nT-NDw"/>
+                            <constraint firstItem="EWO-tg-heq" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="oE7-WN-65j"/>
                             <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="KSd-6N-Q97" secondAttribute="trailing" constant="18" id="wYZ-Ul-bmW"/>
                             <constraint firstItem="qkD-8F-iIp" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" constant="16" id="zEP-Il-dX5"/>
                         </constraints>
@@ -226,6 +301,11 @@
                         <outlet property="arrowRight" destination="KSd-6N-Q97" id="0N4-LP-2mR"/>
                         <outlet property="barbersCollection" destination="qkD-8F-iIp" id="AET-Id-EfB"/>
                         <outlet property="datePicker" destination="uIv-UB-KWS" id="8FR-Sl-lHb"/>
+                        <outlet property="sendMeNotificationHeight" destination="xhW-w4-Xxc" id="xIz-ld-Ih5"/>
+                        <outlet property="sendMeNotificationView" destination="bke-5K-Cme" id="pqf-F7-LSK"/>
+                        <outlet property="timePicker" destination="7Zb-FC-EPc" id="HUV-vJ-ZD6"/>
+                        <outlet property="timeView" destination="EWO-tg-heq" id="eOF-vb-7jI"/>
+                        <outlet property="timeViewHeight" destination="zGx-jO-aJj" id="rW6-Ez-QHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHp-Ot-SzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,6 +324,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_white" width="160" height="44"/>
+        <image name="button_white_long" width="264" height="47"/>
         <image name="keyboard-left-arrow-button" width="306" height="306"/>
         <image name="keyboard-right-arrow-button" width="306" height="306"/>
         <image name="profile_pic1" width="2001" height="2015"/>

@@ -14,9 +14,9 @@ struct Time:CustomStringConvertible {
     
     var description: String{
         if minutes < 10{
-            return "\(hours):0\(minutes)"
+            return "\(hours) : 0\(minutes)"
         }
-        return "\(hours):\(minutes)"
+        return "\(hours) : \(minutes)"
     }
 }
 
