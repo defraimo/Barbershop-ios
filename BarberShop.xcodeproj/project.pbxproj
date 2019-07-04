@@ -12,7 +12,7 @@
 		6302287822C76FD900B242C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6302287722C76FD800B242C6 /* User.swift */; };
 		63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF769822CA0994006631E5 /* SignUp.storyboard */; };
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
-		63EF769D22CB8E70006631E5 /* validation+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769C22CB8E70006631E5 /* validation+extensions.swift */; };
+		63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */; };
 		A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73722C4D77400AC9FF4 /* ANCustomView.swift */; };
 		A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73922C5462400AC9FF4 /* TimeManager.swift */; };
 		A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73B22C6595C00AC9FF4 /* Time.swift */; };
@@ -37,6 +37,11 @@
 		A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D722B95E3C00FC20BE /* AllBarbers.swift */; };
 		A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31DC22B984E500FC20BE /* AboutUsData.swift */; };
 		A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */; };
+		A61D2D1A22CCA481002DC7CB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D1922CCA481002DC7CB /* UIView+Extension.swift */; };
+		A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2322CD08C7002DC7CB /* ChooseHaircutViewController.swift */; };
+		A61D2D2622CD08F5002DC7CB /* HaircutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2522CD08F5002DC7CB /* HaircutTableViewCell.swift */; };
+		A61D2D2A22CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */; };
+		A61D2D2D22CD2ABC002DC7CB /* HaircutDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2C22CD2ABC002DC7CB /* HaircutDetailsTableViewCell.swift */; };
 		A6413D0022C0DC9700FA1768 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */; };
 		A6413D0222C0FC4900FA1768 /* PickerDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6413D0122C0FC4900FA1768 /* PickerDates.swift */; };
 		A6413D0922C220D300FA1768 /* BarbersSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6413D0822C220D300FA1768 /* BarbersSchedule.swift */; };
@@ -59,7 +64,7 @@
 		6302287722C76FD800B242C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		63EF769822CA0994006631E5 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		63EF769A22CA09FA006631E5 /* SingUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPViewController.swift; sourceTree = "<group>"; };
-		63EF769C22CB8E70006631E5 /* validation+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "validation+extensions.swift"; sourceTree = "<group>"; };
+		63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extensions.swift"; sourceTree = "<group>"; };
 		7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.release.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.release.xcconfig"; sourceTree = "<group>"; };
 		A614D73722C4D77400AC9FF4 /* ANCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCustomView.swift; sourceTree = "<group>"; };
 		A614D73922C5462400AC9FF4 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
@@ -87,6 +92,11 @@
 		A61A31D722B95E3C00FC20BE /* AllBarbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBarbers.swift; sourceTree = "<group>"; };
 		A61A31DC22B984E500FC20BE /* AboutUsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsData.swift; sourceTree = "<group>"; };
 		A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionAboveBarbers.swift; sourceTree = "<group>"; };
+		A61D2D1922CCA481002DC7CB /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A61D2D2322CD08C7002DC7CB /* ChooseHaircutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHaircutViewController.swift; sourceTree = "<group>"; };
+		A61D2D2522CD08F5002DC7CB /* HaircutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutTableViewCell.swift; sourceTree = "<group>"; };
+		A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A61D2D2C22CD2ABC002DC7CB /* HaircutDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		A6413D0122C0FC4900FA1768 /* PickerDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDates.swift; sourceTree = "<group>"; };
 		A6413D0822C220D300FA1768 /* BarbersSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbersSchedule.swift; sourceTree = "<group>"; };
@@ -119,7 +129,6 @@
 			children = (
 				6302287722C76FD800B242C6 /* User.swift */,
 				63EF769A22CA09FA006631E5 /* SingUPViewController.swift */,
-				63EF769C22CB8E70006631E5 /* validation+extensions.swift */,
 			);
 			path = authentication;
 			sourceTree = "<group>";
@@ -162,17 +171,17 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				A61D2D1822CCA45F002DC7CB /* extensions */,
 				6302287622C76F5600B242C6 /* authentication */,
 				A659A09822BFD71000274F40 /* datesAndTme */,
-				A659A00E22BD465D00274F40 /* chooseWhen */,
 				A659A00622BD0F3C00274F40 /* makingAppointment */,
 				A659A00322BD023800274F40 /* howToGetThere */,
 				A61A31CF22B95C5500FC20BE /* barbers */,
 				A61A31C222B9586A00FC20BE /* aboutUs */,
 				A61A31B622B7BB9A00FC20BE /* prices */,
-				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
 				A61A31BF22B7C30400FC20BE /* main */,
 				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
+				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
 				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
 				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
 				A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */,
@@ -260,6 +269,42 @@
 			path = barbers;
 			sourceTree = "<group>";
 		};
+		A61D2D1822CCA45F002DC7CB /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A61D2D1922CCA481002DC7CB /* UIView+Extension.swift */,
+				63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		A61D2D2222CD0899002DC7CB /* chooseHaircut */ = {
+			isa = PBXGroup;
+			children = (
+				A61D2D2822CD0908002DC7CB /* cell */,
+				A61D2D2722CD08F9002DC7CB /* controller */,
+			);
+			path = chooseHaircut;
+			sourceTree = "<group>";
+		};
+		A61D2D2722CD08F9002DC7CB /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A61D2D2322CD08C7002DC7CB /* ChooseHaircutViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		A61D2D2822CD0908002DC7CB /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				A61D2D2522CD08F5002DC7CB /* HaircutTableViewCell.swift */,
+				A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */,
+				A61D2D2C22CD2ABC002DC7CB /* HaircutDetailsTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		A6413CFE22C0DBEB00FA1768 /* storyBoards */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +362,8 @@
 		A659A00622BD0F3C00274F40 /* makingAppointment */ = {
 			isa = PBXGroup;
 			children = (
+				A61D2D2222CD0899002DC7CB /* chooseHaircut */,
+				A659A00E22BD465D00274F40 /* chooseWhen */,
 				A659A00722BD0F8400274F40 /* chooseBarber */,
 			);
 			path = makingAppointment;
@@ -517,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */,
 				A61A31C422B9587E00FC20BE /* AboutUsViewController.swift in Sources */,
 				A61A31D222B95C8B00FC20BE /* AboutUs.swift in Sources */,
 				A61A31CB22B9599900FC20BE /* BarberDescriptionTableViewCell.swift in Sources */,
@@ -527,8 +575,10 @@
 				A659A01322BD46CC00274F40 /* BarberChangeCollectionViewCell.swift in Sources */,
 				A659A00D22BD0FC300274F40 /* BarberCollectionViewCell.swift in Sources */,
 				A61A31C722B9596500FC20BE /* AboutUsTableViewCell.swift in Sources */,
+				A61D2D2622CD08F5002DC7CB /* HaircutTableViewCell.swift in Sources */,
 				A659A0A122C0197400274F40 /* AppointmentDate.swift in Sources */,
 				A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */,
+				A61D2D2A22CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift in Sources */,
 				A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */,
 				A61A31B822B7BBC200FC20BE /* PriceTableViewCell.swift in Sources */,
 				A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */,
@@ -544,12 +594,14 @@
 				A6413D0222C0FC4900FA1768 /* PickerDates.swift in Sources */,
 				A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */,
 				A659A09A22BFD76C00274F40 /* DatesManager.swift in Sources */,
+				A61D2D2D22CD2ABC002DC7CB /* HaircutDetailsTableViewCell.swift in Sources */,
 				A61A31C922B9598200FC20BE /* DescriptionTableViewCell.swift in Sources */,
 				A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */,
 				A61A31AA22B7ACFE00FC20BE /* BarberShop.xcdatamodeld in Sources */,
+				A61D2D1A22CCA481002DC7CB /* UIView+Extension.swift in Sources */,
 				A6413D0922C220D300FA1768 /* BarbersSchedule.swift in Sources */,
 				A61A31CD22B959AB00FC20BE /* ContactUsTableViewCell.swift in Sources */,
-				63EF769D22CB8E70006631E5 /* validation+extensions.swift in Sources */,
+				63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */,
 				A659A09C22BFDAB200274F40 /* CurrentDate.swift in Sources */,
 				A61A31BA22B7C04B00FC20BE /* PriceModel.swift in Sources */,
 				63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */,

@@ -127,13 +127,14 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var sendMeNotificationView: UIView!
     @IBOutlet weak var sendMeNotificationHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var schedule: UIButton!
+    @IBOutlet weak var sendNotification: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
-        
-        self.navigationItem.leftBarButtonItem?.title = "חזור"
         
         imageEntryAnimation()
         
@@ -153,6 +154,9 @@ class ChooseWhenViewController: UIViewController {
         //set the sendMeNotificationView background and corner radius
         sendMeNotificationView.backgroundColor = UIColor(patternImage: UIImage(named: "green_background.png")!)
         sendMeNotificationView.layer.cornerRadius = 22
+        
+        schedule.setRoundedSquareToWhite()
+        sendNotification.setRoundedSquareToWhite()
     }
    
 }
