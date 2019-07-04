@@ -9,20 +9,40 @@
 import UIKit
 
 //EMAIL VALIDATION WITH REGEX:
-let _firstpart = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?"
-let _serverpart = "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}"
-let _emailRegex = _firstpart + "@" + _serverpart + "[A-Za-z]{2,8}"
-let _emailPredicate = NSPredicate(format: "SELF MATCHES %@", _emailRegex)
+let firstPart = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?"
+let serverPart = "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}"
+let emailRegex = firstPart + "@" + serverPart + "[A-Za-z]{2,8}"
+let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+//full name validation:
+//let fullNameRegex = "^[a-zA-Z]{2,20}$"
+//let fullNamePredicate = NSPredicate(format: "SELF MATCHES %@", fullNameRegex)
 
 extension String {
     func isEmail() -> Bool {
-        return _emailPredicate.evaluate(with: self)
+        return emailPredicate.evaluate(with: self)
+    }
+    func isPhoneNumber() -> Bool{
+            let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+            return self.rangeOfCharacter(from: invalidCharacters) == nil && self.count == 10 && self.first == "0"
+    }
+    
+    func isFullName() -> Bool{
+        return self.contains(" ")
+//        return fullNamePredicate.evaluate(with: self)
     }
 }
 
 extension UITextField {
     func isEmail() -> Bool {
         return (self.text ?? "").isEmail()
+    }
+    
+    func isPhoneNumber() -> Bool {
+            return (self.text ?? "").isPhoneNumber()
+    }
+    
+    func isFullName() -> Bool{
+        return (self.text ?? "").isFullName()
     }
     
     func setError(hasError: Bool){

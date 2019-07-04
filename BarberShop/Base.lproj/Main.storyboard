@@ -281,6 +281,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                             <connections>
                                 <action selector="phoneNumCheck:" destination="T02-lw-fcr" eventType="editingChanged" id="0vw-B2-3vf"/>
+                                <outlet property="delegate" destination="T02-lw-fcr" id="vkJ-5U-gWe"/>
                             </connections>
                         </textField>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-ec-TZm">

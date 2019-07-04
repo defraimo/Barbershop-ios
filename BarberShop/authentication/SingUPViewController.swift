@@ -10,6 +10,12 @@ import UIKit
 
 class SingUPViewController: UIViewController {
     var isGenderPicked = false
+    
+    //lines beneath the textfields(for error setting)
+    @IBOutlet weak var phoneLine: UIImageView!
+    @IBOutlet weak var nameLine: UIImageView!
+    @IBOutlet weak var emailLine: UIImageView!
+    
 
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var nameField: UITextField!
@@ -23,15 +29,34 @@ class SingUPViewController: UIViewController {
     //outlet for animation:
     @IBOutlet weak var signupBtn: UIButton!
     @IBAction func signup(_ sender: UIButton) {
+        if !phoneField.isPhoneNumber(){
+            setErrorToLine(sender: phoneLine, hasError: true)
+            return
+        }else{
+            setErrorToLine(sender: phoneLine, hasError: false)
+        }
+        if !nameField.isFullName(){
+            setErrorToLine(sender: nameLine, hasError: true)
+            return
+        }else{
+            setErrorToLine(sender: nameLine, hasError: false)
+        }
+        if !emailField.isEmail() && emailField.text!.count > 0{
+            setErrorToLine(sender: emailLine, hasError: true)
+            return
+        }else{
+            setErrorToLine(sender: emailLine, hasError: false)
+        }
         if !isGenderPicked{
             genderPick.tintColor = UIColor.red
-        }else{
-            dismiss(animated: true) {
-                //getting the reference to mainViewController:
-                guard let mainVC = UIApplication.shared.keyWindow?.rootViewController?.children[0] as? MainViewController else {return}
-                //presenting the send code view after done dismiossing:
-                mainVC.presentAuthCodeView()
-            }
+            return
+        }
+        
+        dismiss(animated: true) {
+            //getting the reference to mainViewController:
+            guard let mainVC = UIApplication.shared.keyWindow?.rootViewController?.children[0] as? MainViewController else {return}
+            //presenting the send code view after done dismiossing:
+            mainVC.presentAuthCodeView()
         }
     }
     
@@ -59,6 +84,16 @@ class SingUPViewController: UIViewController {
         } else {
             print("Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0")
             }
+        }
+    }
+}
+
+extension SingUPViewController{
+    func setErrorToLine(sender: UIImageView ,hasError:Bool){
+        if hasError{
+            sender.image = #imageLiteral(resourceName: "horizontal error thin line")
+        }else{
+            sender.image = #imageLiteral(resourceName: "horizontal thin line")
         }
     }
 }
