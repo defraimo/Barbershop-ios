@@ -61,6 +61,7 @@ class MainViewController: UIViewController {
             self.pricesButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
     }
+    
     @IBOutlet weak var aboutUsButton: UIButton!
     @IBAction func showAboutUs(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
@@ -73,6 +74,7 @@ class MainViewController: UIViewController {
             self.aboutUsButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
     }
+    
     @IBOutlet weak var howWeGetThereButton: UIButton!
     @IBAction func showHowWeGetThere(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
@@ -85,6 +87,7 @@ class MainViewController: UIViewController {
             self.howWeGetThereButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
     }
+    
     @IBOutlet weak var whatsupButton: UIButton!
     @IBAction func goToWhatsUp(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
@@ -113,6 +116,7 @@ class MainViewController: UIViewController {
             self.whatsupButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
     }
+    
     @IBOutlet weak var instagramButton: UIButton!
     @IBAction func goToInstagram(_ sender: UIButton) {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
@@ -157,10 +161,32 @@ class MainViewController: UIViewController {
         //releasing the view:
         releaseLoginOrSignupMenu()
     }
+    //listener to 
+    @IBOutlet weak var phoneNumberField: UITextField!
+    @IBAction func phoneNumCheck(_ sender: UITextField) {
+        let count = sender.text!.count
+        if count != 10{
+            sender.setError(hasError: true)
+            if count == 0{
+                sender.setError(hasError: false)
+            }
+        }else{
+            sender.setError(hasError: false)
+        }
+    }
+    
     @IBAction func signInSendCode(_ sender: UIButton) {
-        //releasing the previous view:
-        releaseLoginOrSignupMenu()
-        presentAuthCodeView()
+        if let count = phoneNumberField.text?.count{
+            if count == 0{
+            phoneNumberField.placeholder = "שדה זה הוא חובה"
+            phoneNumberField.setError(hasError: true )
+            }else {
+                //releasing the previous view:
+                releaseLoginOrSignupMenu()
+                presentAuthCodeView()
+            }
+        }
+       
     }
     //a func for presenting AuthCode view,
     //makes it easier to present it from other view controllers

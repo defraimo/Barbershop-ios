@@ -26,12 +26,11 @@ class SingUPViewController: UIViewController {
         if !isGenderPicked{
             genderPick.tintColor = UIColor.red
         }else{
-            //after it is does dismissing we call the authCode alert:
             dismiss(animated: true) {
-                //MARk: DOESNT PRESENT THE VIEW!
-                guard let vc = self.presentingViewController as? MainViewController else {return}
-            
-                vc.presentAuthCodeView()
+                //getting the reference to mainViewController:
+                guard let mainVC = UIApplication.shared.keyWindow?.rootViewController?.children[0] as? MainViewController else {return}
+                //presenting the send code view after done dismiossing:
+                mainVC.presentAuthCodeView()
             }
         }
     }
