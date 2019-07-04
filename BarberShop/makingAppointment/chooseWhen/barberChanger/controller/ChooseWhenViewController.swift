@@ -127,6 +127,9 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var sendMeNotificationView: UIView!
     @IBOutlet weak var sendMeNotificationHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var schedule: UIButton!
+    @IBOutlet weak var sendNotification: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -151,6 +154,9 @@ class ChooseWhenViewController: UIViewController {
         //set the sendMeNotificationView background and corner radius
         sendMeNotificationView.backgroundColor = UIColor(patternImage: UIImage(named: "green_background.png")!)
         sendMeNotificationView.layer.cornerRadius = 22
+        
+        schedule.setRoundedSquareToWhite()
+        sendNotification.setRoundedSquareToWhite()
     }
    
 }

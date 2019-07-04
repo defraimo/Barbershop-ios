@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i9E-FT-GHO">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,6 +10,182 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Choose Haircut View Controller-->
+        <scene sceneID="kRc-Uf-HSE">
+            <objects>
+                <viewController id="Lq4-5W-o12" customClass="ChooseHaircutViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uLB-od-PrV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחירת סוג שירות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30o-2r-53X">
+                                <rect key="frame" x="40" y="76" width="334.33333333333331" height="65.666666666666686"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="48"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ycj-To-nXT">
+                                <rect key="frame" x="16" y="157.66666666666669" width="382" height="696.33333333333326"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.2523272081657833" green="0.3818805520304569" blue="0.10847132833901463" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="haircutCell" rowHeight="100" id="hUL-gL-uOa" customClass="HaircutTableViewCell" customModule="BarberShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="382" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hUL-gL-uOa" id="Qqh-sC-dvD">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="99.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gpq-Wa-0I0">
+                                                    <rect key="frame" x="36" y="27" width="318" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1G-yG-osX">
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="3WV-Y6-G7H"/>
+                                                                <constraint firstAttribute="width" constant="40" id="Dhy-nY-i6O"/>
+                                                            </constraints>
+                                                            <state key="normal" image="info_icon"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" text="סוג תספורת" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6P-LA-X7t">
+                                                            <rect key="frame" x="56" y="5.3333333333333375" width="262" height="29.666666666666671"/>
+                                                            <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gpq-Wa-0I0" firstAttribute="top" secondItem="Qqh-sC-dvD" secondAttribute="topMargin" constant="16" id="Qrb-N6-UoG"/>
+                                                <constraint firstItem="Gpq-Wa-0I0" firstAttribute="leading" secondItem="Qqh-sC-dvD" secondAttribute="leadingMargin" constant="16" id="U4S-af-sVu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Gpq-Wa-0I0" secondAttribute="trailing" constant="8" id="aal-oV-a7r"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="haircutType" destination="X6P-LA-X7t" id="SjT-yW-v9H"/>
+                                            <outlet property="infoButton" destination="o1G-yG-osX" id="owS-Cg-Ooj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="105" id="CU2-LA-DHE" customClass="HaircutDetailsTableViewCell" customModule="BarberShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="382" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CU2-LA-DHE" id="xpO-th-KMr">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="104.66666666666667"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-Ys-qgJ">
+                                                    <rect key="frame" x="16" y="6" width="342" height="50"/>
+                                                    <subviews>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KlV-wG-p7Z">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="0qw-bh-392"/>
+                                                                <constraint firstAttribute="height" constant="50" id="DmD-Bd-LgV"/>
+                                                            </constraints>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nLV-dU-8NA">
+                                                                <size key="itemSize" width="50" height="50"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barbersHaircut" id="5rh-yP-ngv" customClass="HaircutDetailsCollectionViewCell" customModule="BarberShop" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-KX-4yv">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="50" id="Osv-YZ-Kj5"/>
+                                                                                    <constraint firstAttribute="width" constant="50" id="zrl-Ru-zNL"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Circled" value="YES"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                    </view>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="wsB-KX-4yv" firstAttribute="top" secondItem="5rh-yP-ngv" secondAttribute="top" id="WAC-mr-zAN"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="wsB-KX-4yv" secondAttribute="bottom" id="kVk-Be-rjm"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="wsB-KX-4yv" secondAttribute="trailing" id="kwV-Ey-DkH"/>
+                                                                        <constraint firstItem="wsB-KX-4yv" firstAttribute="leading" secondItem="5rh-yP-ngv" secondAttribute="leading" id="rZ4-1E-Rhr"/>
+                                                                    </constraints>
+                                                                    <connections>
+                                                                        <outlet property="barberImage" destination="wsB-KX-4yv" id="PYm-fJ-09Y"/>
+                                                                    </connections>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                        </collectionView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="40₪" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-yy-bb7">
+                                                            <rect key="frame" x="220" y="11.666666666666668" width="122" height="27.000000000000004"/>
+                                                            <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ספרים" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxr-qI-PEv">
+                                                    <rect key="frame" x="96.333333333333329" y="64" width="36.666666666666671" height="19"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחיר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="who-Ly-V26">
+                                                    <rect key="frame" x="323.33333333333331" y="64" width="28.666666666666686" height="19"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hCd-Ys-qgJ" firstAttribute="top" secondItem="xpO-th-KMr" secondAttribute="top" constant="6" id="8Lh-cB-iUT"/>
+                                                <constraint firstItem="sxr-qI-PEv" firstAttribute="top" secondItem="hCd-Ys-qgJ" secondAttribute="bottom" constant="8" id="AYH-jX-17M"/>
+                                                <constraint firstAttribute="trailing" secondItem="hCd-Ys-qgJ" secondAttribute="trailing" constant="24" id="Jzq-Jf-xxB"/>
+                                                <constraint firstItem="who-Ly-V26" firstAttribute="top" secondItem="hCd-Ys-qgJ" secondAttribute="bottom" constant="8" id="UmH-d6-UcY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="who-Ly-V26" secondAttribute="trailing" constant="10" id="bbC-J0-jAu"/>
+                                                <constraint firstItem="hCd-Ys-qgJ" firstAttribute="leading" secondItem="xpO-th-KMr" secondAttribute="leading" constant="16" id="h0U-bh-UHh"/>
+                                                <constraint firstItem="sxr-qI-PEv" firstAttribute="centerX" secondItem="xpO-th-KMr" secondAttribute="centerX" multiplier="0.6" id="qV5-2a-mQW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="barbersCollection" destination="KlV-wG-p7Z" id="oug-BZ-fNp"/>
+                                            <outlet property="priceLabel" destination="DVo-yy-bb7" id="fvo-fs-Xqa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lq4-5W-o12" id="Ebr-F3-BLC"/>
+                                    <outlet property="delegate" destination="Lq4-5W-o12" id="rTq-as-U01"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rNC-RF-J4t" firstAttribute="bottom" secondItem="ycj-To-nXT" secondAttribute="bottom" constant="8" id="8oJ-zl-PUW"/>
+                            <constraint firstItem="ycj-To-nXT" firstAttribute="top" secondItem="30o-2r-53X" secondAttribute="bottom" constant="16" id="E33-ai-sFK"/>
+                            <constraint firstItem="rNC-RF-J4t" firstAttribute="trailing" secondItem="ycj-To-nXT" secondAttribute="trailing" constant="16" id="GGI-UU-8ei"/>
+                            <constraint firstItem="30o-2r-53X" firstAttribute="top" secondItem="rNC-RF-J4t" secondAttribute="top" constant="32" id="bvl-w0-0LN"/>
+                            <constraint firstItem="ycj-To-nXT" firstAttribute="leading" secondItem="rNC-RF-J4t" secondAttribute="leading" constant="16" id="eGP-qb-wr5"/>
+                            <constraint firstItem="30o-2r-53X" firstAttribute="centerX" secondItem="uLB-od-PrV" secondAttribute="centerX" id="t7X-d0-F8c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rNC-RF-J4t"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AeU-8M-T4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942.02898550724649" y="20.758928571428569"/>
+        </scene>
         <!--Choose Barber View Controller-->
         <scene sceneID="1o5-Y0-5TR">
             <objects>
@@ -19,25 +195,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-UZ-FDg">
-                                <rect key="frame" x="24" y="181.5" width="366" height="664.5"/>
+                                <rect key="frame" x="24" y="181.66666666666669" width="366" height="664.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aJP-aR-huF">
-                                    <size key="itemSize" width="192" height="237"/>
+                                    <size key="itemSize" width="192" height="276"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barberCell" id="Yl4-zu-CFJ" customClass="BarberCollectionViewCell" customModule="BarberShop" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="0.0" width="192" height="237"/>
+                                        <rect key="frame" x="87" y="0.0" width="192" height="276"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="192" height="237"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="276"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwt-ZF-pU4">
-                                                    <rect key="frame" x="16" y="208" width="160" height="13"/>
+                                                    <rect key="frame" x="16" y="220" width="160" height="40"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -45,9 +221,9 @@
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-PF-yVt">
-                                                    <rect key="frame" x="24" y="68" width="144" height="132"/>
+                                                    <rect key="frame" x="24" y="68" width="144" height="144"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="5Dw-PF-yVt" secondAttribute="height" multiplier="120:110" id="ojh-Kv-frc"/>
+                                                        <constraint firstAttribute="width" secondItem="5Dw-PF-yVt" secondAttribute="height" multiplier="110:110" id="ojh-Kv-frc"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -74,8 +250,8 @@
                                     <outlet property="delegate" destination="i9E-FT-GHO" id="3fU-b4-UdI"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחר ספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10A-v3-jKt">
-                                <rect key="frame" x="8" y="76" width="398" height="73.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחירת ספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10A-v3-jKt">
+                                <rect key="frame" x="8" y="76" width="398" height="73.666666666666686"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="54"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -102,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVg-UH-4Ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="21"/>
+            <point key="canvasLocation" x="1686.9565217391305" y="20.758928571428569"/>
         </scene>
         <!--Choose When View Controller-->
         <scene sceneID="Bhm-aW-kkO">
@@ -116,7 +292,9 @@
                                 <rect key="frame" x="18" y="60" width="378" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="7m7-bV-g99"/>
+                                    <constraint firstAttribute="height" constant="120" id="7m7-bV-g99">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                                    </constraint>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWS-TD-oIi">
                                     <size key="itemSize" width="365" height="112"/>
@@ -188,8 +366,8 @@
                                     <outletCollection property="gestureRecognizers" destination="gYr-Mg-nsd" appends="YES" id="op5-Pe-G5H"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחר תאריך" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYC-Of-zAv">
-                                <rect key="frame" x="125" y="204" width="164" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחירת תאריך" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYC-Of-zAv">
+                                <rect key="frame" x="108" y="204" width="198" height="49"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="36"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -209,8 +387,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWO-tg-heq">
                                 <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחר שעה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3r-78-8TW">
-                                        <rect key="frame" x="138" y="16" width="138" height="49"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחירת שעה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3r-78-8TW">
+                                        <rect key="frame" x="121.00000000000001" y="16" width="172.33333333333337" height="49"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="36"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -228,9 +406,9 @@
                                         </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39R-H5-LoN">
-                                        <rect key="frame" x="127" y="253" width="160" height="44"/>
+                                        <rect key="frame" x="170.66666666666666" y="253" width="73" height="39"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
-                                        <state key="normal" title="הזמן תור" backgroundImage="button_white"/>
+                                        <state key="normal" title="הזמן תור"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32946558564660255" green="0.57969146573604058" blue="0.3458954722089298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -249,13 +427,13 @@
                                 <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dm-aC-rnq">
-                                        <rect key="frame" x="75" y="106.5" width="264" height="47"/>
+                                        <rect key="frame" x="100.66666666666669" y="106.66666666666663" width="213" height="35"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="17"/>
                                         <size key="titleShadowOffset" width="0.5" height="0.5"/>
-                                        <state key="normal" title="שלח לי התראה כשיפתחו תורים" backgroundImage="button_white_long"/>
+                                        <state key="normal" title="שלח לי התראה כשיפתחו תורים"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טרם נפתחו תורים ליום זה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-0C-lUd">
-                                        <rect key="frame" x="48" y="32" width="318.5" height="42.5"/>
+                                        <rect key="frame" x="48" y="31.999999999999996" width="318" height="42.666666666666657"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="31"/>
                                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -301,8 +479,10 @@
                         <outlet property="arrowRight" destination="KSd-6N-Q97" id="0N4-LP-2mR"/>
                         <outlet property="barbersCollection" destination="qkD-8F-iIp" id="AET-Id-EfB"/>
                         <outlet property="datePicker" destination="uIv-UB-KWS" id="8FR-Sl-lHb"/>
+                        <outlet property="schedule" destination="39R-H5-LoN" id="xvP-43-Mu2"/>
                         <outlet property="sendMeNotificationHeight" destination="xhW-w4-Xxc" id="xIz-ld-Ih5"/>
                         <outlet property="sendMeNotificationView" destination="bke-5K-Cme" id="pqf-F7-LSK"/>
+                        <outlet property="sendNotification" destination="8dm-aC-rnq" id="lMy-0M-NjQ"/>
                         <outlet property="timePicker" destination="7Zb-FC-EPc" id="HUV-vJ-ZD6"/>
                         <outlet property="timeView" destination="EWO-tg-heq" id="eOF-vb-7jI"/>
                         <outlet property="timeViewHeight" destination="zGx-jO-aJj" id="rW6-Ez-QHr"/>
@@ -324,8 +504,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_white" width="160" height="44"/>
-        <image name="button_white_long" width="264" height="47"/>
+        <image name="info_icon" width="100" height="100"/>
         <image name="keyboard-left-arrow-button" width="306" height="306"/>
         <image name="keyboard-right-arrow-button" width="306" height="306"/>
         <image name="profile_pic1" width="2001" height="2015"/>
