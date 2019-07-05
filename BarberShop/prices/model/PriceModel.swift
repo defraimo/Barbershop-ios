@@ -10,5 +10,31 @@ import Foundation
 
 struct PriceModel {
     var servies:String
-    var price:String
+    var priceRange:PriceRange
+    var barbers:[Barber]
+    
+    init(servies:String, priceRange:PriceRange, barbers:[Barber]?) {
+        self.servies = servies
+        self.priceRange = priceRange
+        if barbers != nil{
+            self.barbers = barbers!
+        }
+        else{
+            self.barbers = AllBarbers.shared.allBarbers
+        }
+    }
+}
+
+struct PriceRange:CustomStringConvertible {
+    var lowestPrice:Int
+    var heighestPrice:Int?
+    
+    var description: String{
+        if heighestPrice != nil{
+            return "\(lowestPrice)₪ - \(heighestPrice!)₪"
+        }
+        else{
+            return "\(lowestPrice)₪"
+        }
+    }
 }

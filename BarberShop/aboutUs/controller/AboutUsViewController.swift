@@ -21,7 +21,7 @@ class AboutUsViewController: UIViewController {
 
 var aboutUs = AboutUsData().aboutUsArr
 var descriptionLine = DescriptionAboveBarbers().descriptionText
-var barbers = AllBarbers().allBarbers
+var barbers = AllBarbers.shared.allBarbers
 var contactUs = ContactUs().contactDetails
 
 let firstCount = aboutUs.count

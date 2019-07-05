@@ -11,6 +11,8 @@ import UIKit
 class ChooseBarberViewController: UIViewController {
     @IBOutlet weak var chooseBarberLabel: UILabel!
     
+    var barbers:[Barber]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,14 +33,14 @@ var barberIndex:IndexPath?
 extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return barbers.count
+        return barbers?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BarberCollectionViewCell
         
-        let barber = barbers[indexPath.row]
+        let barber = barbers![indexPath.row]
         
         cell.populate(barber:barber)
         
@@ -49,7 +51,12 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         let padding: CGFloat = 10
         let collectionViewSize = collectionView.frame.size.width - padding
         
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
+        if barbers!.count > 2{
+            return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
+        }
+        else{
+            return CGSize(width: collectionViewSize/1.9, height: collectionViewSize/1.5)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -66,7 +73,7 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         pointY = pointInGlobalView.y - view.frame.maxY/11.4
         
         //init the imageView woth all the properties and add it to the view
-        imageView = UIImageView(image: barbers[indexPath.item].image)
+        imageView = UIImageView(image: barbers![indexPath.item].image)
         imageView!.frame = CGRect(x: pointX!, y: pointY!, width: 80, height: 80)
         imageView!.layer.cornerRadius = imageView!.frame.height/2
         imageView!.layer.masksToBounds = false
@@ -82,7 +89,7 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
             
         }) { (_) in
             //pass to the next screen
-            self.performSegue(withIdentifier: "toSelectWhen", sender: nil)
+            self.performSegue(withIdentifier: "toSelectWhen", sender: self.barbers)
             imageView!.removeFromSuperview()
             //after a little delay we set back the alpha to 1 so when the user presses back the current view will be seen
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
@@ -93,7 +100,15 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let id = segue.identifier, let dest = segue.destination as? ChooseWhenViewController else {return}
+        guard let id = segue.identifier,
+                let dest = segue.destination as? ChooseWhenViewController,
+                let specializedBarbers = sender as? [Barber]
+                else {return}
+        
+        //set the navigation back item title of the next screen
+        let backItem = UIBarButtonItem()
+        backItem.title = "בחירת ספר"
+        navigationItem.backBarButtonItem = backItem
         
         if id == "toSelectWhen"{
             //pass all the nessesery data
@@ -104,6 +119,9 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
             dest.chosenBarberImage = imageView!
             //the chosen barber indexPath
             dest.chosenBarberIndex = barberIndex
+            
+            //pass the specialized barbers
+            dest.barbers = specializedBarbers
         }
     }
 

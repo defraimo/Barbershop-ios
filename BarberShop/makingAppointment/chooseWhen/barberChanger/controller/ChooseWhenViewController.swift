@@ -10,20 +10,34 @@ import UIKit
 
 class ChooseWhenViewController: UIViewController {
     
+    var barbers:[Barber]?
+    
     var passedPointX:CGFloat?
     var passedPointY:CGFloat?
     var chosenBarberImage:UIImageView?
     var chosenBarberIndex:IndexPath?
     
+    @IBOutlet weak var datePicker: UIPickerView!
+    @IBOutlet weak var timePicker: UIPickerView!
+    
+    @IBOutlet weak var timeView: UIView!
+    @IBOutlet weak var timeViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var sendMeNotificationView: UIView!
+    @IBOutlet weak var sendMeNotificationHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var schedule: UIButton!
+    @IBOutlet weak var sendNotification: UIButton!
+    
     @IBOutlet weak var barbersCollection: UICollectionView!
     @IBOutlet weak var arrowRight: UIImageView!
     @IBOutlet weak var arrowLeft: UIImageView!
     @IBAction func arrowRightTapped(_ sender: UITapGestureRecognizer) {
-        if chosenBarberIndex!.row < barbers.count{
+        if chosenBarberIndex!.row < barbers!.count{
             chosenBarberIndex!.row += 1
             barbersCollection.scrollToItem(at: IndexPath(row: chosenBarberIndex!.row, section: 0), at: .right, animated: true)
         }
-        if chosenBarberIndex!.row == barbers.count - 1{
+        if chosenBarberIndex!.row == barbers!.count - 1{
             UIView.animate(withDuration: 0.1) {
                 self.arrowRight.alpha = 0
             }
@@ -39,7 +53,6 @@ class ChooseWhenViewController: UIViewController {
             chosenBarberIndex!.row -= 1
             barbersCollection.scrollToItem(at: IndexPath(row: chosenBarberIndex!.row, section: 0), at: .right, animated: true)
         }
-        print(chosenBarberIndex!.row)
         if chosenBarberIndex!.row == 0{
             UIView.animate(withDuration: 0.1) {
                 self.arrowLeft.alpha = 0
@@ -51,8 +64,6 @@ class ChooseWhenViewController: UIViewController {
             }
         }
     }
-    @IBOutlet weak var datePicker: UIPickerView!
-    @IBOutlet weak var timePicker: UIPickerView!
     
     fileprivate func imageEntryAnimation() {
         
@@ -70,8 +81,11 @@ class ChooseWhenViewController: UIViewController {
         //find the collactionView position in the global view
         let pointInGlobalView = barbersCollection.convert(collectionPosition, to: view)
         
-        //add the imageView that passes from the last screen to the view
-        self.view.addSubview(imageView!)
+        //if there is only one barber so the image is not passed
+        if imageView != nil {
+            //add the imageView that passes from the last screen to the view
+            self.view.addSubview(imageView!)
+        }
         
         //animate the imageView
         UIView.animate(withDuration: 0.3, animations: {
@@ -87,7 +101,7 @@ class ChooseWhenViewController: UIViewController {
                         if ((view as? UIImageView) != nil){
                             //setting the arrows to invisble if they are at the first or last index
                             if self.chosenBarberIndex!.row == 0 && view.tag == 0 ||
-                                self.chosenBarberIndex!.row == barbers.count - 1 && view.tag == 1{
+                                self.chosenBarberIndex!.row == self.barbers!.count - 1 && view.tag == 1{
                                 view.alpha = 0
                             }
                             else {
@@ -121,22 +135,14 @@ class ChooseWhenViewController: UIViewController {
             imageView?.removeFromSuperview()
         }
     }
-    @IBOutlet weak var timeView: UIView!
-    @IBOutlet weak var timeViewHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var sendMeNotificationView: UIView!
-    @IBOutlet weak var sendMeNotificationHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var schedule: UIButton!
-    @IBOutlet weak var sendNotification: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
-        imageEntryAnimation()
+       imageEntryAnimation()
         
         //set the picker date array to the chosen barber from the last screen
         let chosenRow = chosenBarberIndex!.row
@@ -155,6 +161,7 @@ class ChooseWhenViewController: UIViewController {
         sendMeNotificationView.backgroundColor = UIColor(patternImage: UIImage(named: "green_background.png")!)
         sendMeNotificationView.layer.cornerRadius = 22
         
+        //set the buttons to sqaure rounded white outlines
         schedule.setRoundedSquareToWhite()
         sendNotification.setRoundedSquareToWhite()
     }
@@ -165,18 +172,27 @@ private let reuseIdentifier = "barberChooseCell"
 
 extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return barbers.count
+        return barbers?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BarberChangeCollectionViewCell
         
-        let barber = barbers[indexPath.row]
+        let barber = barbers![indexPath.row]
         
         cell.populate(barber:barber)
         
+        var delay = 0.4
+        var duration = 0.2
+        
+        //if there is only one barber so the image is not passed
+        if imageView != nil{
+            delay = 0
+            duration = 0.4
+        }
+        
         //animate a little spring motion when created
-        UIView.animate(withDuration: 0.2, delay: 0.4, usingSpringWithDamping: 0.5, initialSpringVelocity: 20, options: [], animations: {
+        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 20, options: [], animations: {
             cell.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         })
         

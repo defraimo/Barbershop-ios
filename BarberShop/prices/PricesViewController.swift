@@ -24,7 +24,7 @@ class PricesViewController: UIViewController {
 
 }
 
-let pricesList = PricesDataSource().pricesList
+let pricesList = PricesDataSource.shared.pricesList
 
 extension PricesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +37,13 @@ extension PricesViewController: UITableViewDelegate, UITableViewDataSource{
         let priceItem = pricesList[indexPath.row]
         
         cell.serviesLabel.text = priceItem.servies
-        cell.priceLabel.text  = priceItem.price
+        cell.priceLabel.text  = priceItem.priceRange.description
+        if priceItem.priceRange.heighestPrice != nil{
+            cell.priceLabel.font = cell.priceLabel.font.withSize(14)
+        }
+        else{
+            cell.priceLabel.font = cell.priceLabel.font.withSize(22)
+        }
         cell.backgroundColor = UIColor.clear
         cell.backgroundView = nil
         

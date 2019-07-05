@@ -22,7 +22,7 @@ class ChooseHaircutViewController: UIViewController {
 
 }
 
-let prices = PricesDataSource().pricesList
+let prices = PricesDataSource.shared.pricesList
 //to do singleton
 
 var isDetailsShown = false
@@ -41,18 +41,22 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
         let haircut = prices[indexPath.row]
         
         cell.haircutType.setTitle(haircut.servies, for: .normal)
-        cell.priceLabel.text = haircut.price
-        cell.setBarbers(barbers)
+        cell.priceLabel.text = haircut.priceRange.description
+        if haircut.priceRange.heighestPrice != nil{
+            cell.priceLabel.font = cell.priceLabel.font.withSize(14)
+        }
+        else{
+            cell.priceLabel.font = cell.priceLabel.font.withSize(20)
+        }
+        cell.setBarbers(haircut.barbers)
         
         cell.infoButton.setImage(infoOrClose, for: .normal)
         
         cell.haircutType.tag = indexPath.row
-        cell.haircutType.addTarget(self, action: #selector(haitcutChosen(_:)), for: .touchUpInside)
+        cell.haircutType.addTarget(self, action: #selector(haircutChosen(_:)), for: .touchUpInside)
         
         cell.infoButton.tag = indexPath.row
         cell.infoButton.addTarget(self, action: #selector(showDetails(_:)), for: .touchUpInside)
-        
-        cell.sizeToFit()
         
         return cell
     }
@@ -66,23 +70,49 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
         return 80
     }
     
-    @objc func haitcutChosen(_ sender:UIButton){
+    @objc func haircutChosen(_ sender:UIButton){
         let chosenIndex = sender.tag
-        performSegue(withIdentifier: "toChooseBarber", sender: nil)
+        let specializedBarbers = prices[chosenIndex].barbers
+        if specializedBarbers.count > 1{
+            performSegue(withIdentifier: "toChooseBarber", sender: specializedBarbers)
+        }
+        else{
+            performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: specializedBarbers)
+        }
     }
     
     @objc func showDetails(_ sender:UIButton){
         isDetailsShown = !isDetailsShown
         if isDetailsShown{
             infoOrClose = #imageLiteral(resourceName: "close_icon")
+            chosenCellRow = sender.tag
         }
         else{
             infoOrClose = #imageLiteral(resourceName: "info_icon")
         }
         
-        chosenCellRow = sender.tag
-        
         chooseServiesTable.reloadRows(at: [IndexPath(row: chosenCellRow!, section: 0)], with: .automatic)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = segue.identifier,
+                let specializedBarbers = sender as? [Barber]
+                else {return}
+        
+        //set the navigation back item title of the next screens
+        let backItem = UIBarButtonItem()
+        backItem.title = "בחירת סוג שירות"
+        navigationItem.backBarButtonItem = backItem
+        
+        if id == "toChooseBarber"{
+            guard let dest = segue.destination as? ChooseBarberViewController else {return}
+            dest.barbers = specializedBarbers
+        }
+        else if id == "toSelectWhenWithOneBarber"{
+            guard let dest = segue.destination as? ChooseWhenViewController else {return}
+            dest.barbers = specializedBarbers
+            dest.chosenBarberIndex = IndexPath(row: 0, section: 0)
+        }
     }
     
 }

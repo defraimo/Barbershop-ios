@@ -10,6 +10,8 @@ import Foundation
 
 class AllBarbers {
     
+    static let shared = AllBarbers()
+    
     var allBarbers:[Barber] = []
     
     func addBarber(_ barber:Barber){

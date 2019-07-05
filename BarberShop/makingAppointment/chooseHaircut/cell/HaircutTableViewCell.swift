@@ -32,6 +32,7 @@ class HaircutTableViewCell: UITableViewCell {
     
     func setBarbers(_ barbers:[Barber]){
         self.barbers = barbers
+        barbersCollection.reloadData()
     }
 
 }
@@ -48,6 +49,5 @@ extension HaircutTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
     }
-    
     
 }

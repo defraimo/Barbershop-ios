@@ -26,7 +26,7 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ycj-To-nXT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ycj-To-nXT">
                                 <rect key="frame" x="8" y="162.66666666666669" width="398" height="699.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.29767143099999999" green="0.58218009260000003" blue="0.67105132649999999" alpha="0.39506635273972601" colorSpace="custom" customColorSpace="displayP3"/>
@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="28" width="398" height="191"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hUL-gL-uOa" id="Qqh-sC-dvD">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="191"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="190.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.32000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="uYm-4A-k9M">
@@ -151,11 +151,11 @@
                                             <constraints>
                                                 <constraint firstItem="uYm-4A-k9M" firstAttribute="leading" secondItem="Qqh-sC-dvD" secondAttribute="leadingMargin" constant="4" id="1Cx-vl-TYc"/>
                                                 <constraint firstItem="who-Ly-V26" firstAttribute="top" secondItem="hCd-Ys-qgJ" secondAttribute="bottom" constant="8" id="8hq-jO-ePV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="who-Ly-V26" secondAttribute="trailing" constant="24" id="BMB-sb-O8r"/>
                                                 <constraint firstItem="hCd-Ys-qgJ" firstAttribute="leading" secondItem="Qqh-sC-dvD" secondAttribute="leadingMargin" constant="16" id="Oyq-Nu-WHo"/>
                                                 <constraint firstItem="Gpq-Wa-0I0" firstAttribute="top" secondItem="Qqh-sC-dvD" secondAttribute="topMargin" constant="4" id="Qrb-N6-UoG"/>
                                                 <constraint firstItem="Gpq-Wa-0I0" firstAttribute="leading" secondItem="Qqh-sC-dvD" secondAttribute="leadingMargin" constant="16" id="U4S-af-sVu"/>
                                                 <constraint firstItem="sxr-qI-PEv" firstAttribute="centerX" secondItem="Qqh-sC-dvD" secondAttribute="centerX" multiplier="0.6" id="UA9-HO-WcH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="who-Ly-V26" secondAttribute="trailing" constant="24" id="Xdi-4q-l2z"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Gpq-Wa-0I0" secondAttribute="trailing" constant="16" id="aal-oV-a7r"/>
                                                 <constraint firstItem="uYm-4A-k9M" firstAttribute="trailing" secondItem="Qqh-sC-dvD" secondAttribute="trailingMargin" id="jyl-eY-A6l"/>
                                                 <constraint firstItem="hCd-Ys-qgJ" firstAttribute="top" secondItem="Gpq-Wa-0I0" secondAttribute="bottom" constant="24" id="q8E-lH-ODA"/>
@@ -174,6 +174,11 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="Lq4-5W-o12" id="Ebr-F3-BLC"/>
                                     <outlet property="delegate" destination="Lq4-5W-o12" id="rTq-as-U01"/>
@@ -195,6 +200,7 @@
                     <connections>
                         <outlet property="chooseServiesTable" destination="ycj-To-nXT" id="kth-Un-HVi"/>
                         <segue destination="i9E-FT-GHO" kind="show" identifier="toChooseBarber" id="GFA-kx-gRg"/>
+                        <segue destination="Ino-8S-Ke8" kind="show" identifier="toSelectWhenWithOneBarber" id="mSu-eZ-bim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeU-8M-T4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,7 +233,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="192" height="276"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwt-ZF-pU4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" text="שם הספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwt-ZF-pU4">
                                                     <rect key="frame" x="16" y="220" width="160" height="40"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -423,7 +429,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39R-H5-LoN">
                                         <rect key="frame" x="170.66666666666666" y="253" width="73" height="39"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
-                                        <state key="normal" title="הזמן תור"/>
+                                        <state key="normal" title="הזמן תור">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32946558564660255" green="0.57969146573604058" blue="0.3458954722089298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -525,4 +533,7 @@
         <image name="main_down_green" width="357" height="196"/>
         <image name="profile_pic1" width="2001" height="2015"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lLR-5L-Lo6"/>
+    </inferredMetricsTieBreakers>
 </document>
