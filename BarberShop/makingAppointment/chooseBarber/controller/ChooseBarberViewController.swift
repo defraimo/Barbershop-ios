@@ -51,9 +51,11 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         let padding: CGFloat = 10
         let collectionViewSize = collectionView.frame.size.width - padding
         
+        //if there are more than two barbers present 2 in each row
         if barbers!.count > 2{
             return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
         }
+        //else present them one above another
         else{
             return CGSize(width: collectionViewSize/1.9, height: collectionViewSize/1.5)
         }
