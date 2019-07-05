@@ -176,6 +176,7 @@
                         <outlet property="instagramButton" destination="YLZ-Te-0dB" id="DZH-kb-vVc"/>
                         <outlet property="loginOrSignupView" destination="kc7-ea-sxB" id="zYv-1q-65t"/>
                         <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
+                        <outlet property="phoneNumberField" destination="gml-PG-b9B" id="RJY-KR-r7Z"/>
                         <outlet property="pricesButton" destination="1YI-LK-mbt" id="ubp-eU-H9Y"/>
                         <outlet property="whatsupButton" destination="icW-Jn-xC8" id="f7c-Jk-m3V"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toPrices" id="Y70-gu-cad"/>
@@ -278,6 +279,10 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="18"/>
                             <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            <connections>
+                                <action selector="phoneNumCheck:" destination="T02-lw-fcr" eventType="editingChanged" id="0vw-B2-3vf"/>
+                                <outlet property="delegate" destination="T02-lw-fcr" id="vkJ-5U-gWe"/>
+                            </connections>
                         </textField>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-ec-TZm">
                             <rect key="frame" x="32" y="123" width="254" height="5"/>
