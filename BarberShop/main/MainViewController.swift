@@ -12,6 +12,9 @@ class MainViewController: UIViewController {
     let barberPhone = "0544533616"
     let userName =  "daniel_radshun"
     
+    var user:User?
+    var userPhoneNum:String?
+    
     @IBOutlet weak var imageRounded: UIImageView!
     
     lazy var blurEffect = {
@@ -181,6 +184,8 @@ class MainViewController: UIViewController {
             phoneNumberField.placeholder = "שדה זה הוא חובה"
             phoneNumberField.setError(hasError: true )
             }else {
+                //phone number was already checked, it's ok to explicitly unwrap it:
+                userPhoneNum = phoneNumberField.text!
                 //releasing the previous view:
                 releaseLoginOrSignupMenu()
                 presentAuthCodeView()
