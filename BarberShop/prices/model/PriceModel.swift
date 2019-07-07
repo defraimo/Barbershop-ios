@@ -11,11 +11,13 @@ import Foundation
 struct PriceModel {
     var servies:String
     var priceRange:PriceRange
+    var duration:Int?
     var barbers:[Barber]
     
-    init(servies:String, priceRange:PriceRange, barbers:[Barber]?) {
+    init(servies:String, priceRange:PriceRange, duration:Int?, barbers:[Barber]?) {
         self.servies = servies
         self.priceRange = priceRange
+        self.duration = duration
         if barbers != nil{
             self.barbers = barbers!
         }

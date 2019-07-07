@@ -13,4 +13,6 @@ struct Appointment {
     var client:String //TO CHANGE!!!!!!
     var day:AppointmentDate
     var time:AppointmentTime
+    var price:PriceModel
+    var isAvailible:Bool
 }

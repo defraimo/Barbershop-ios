@@ -15,6 +15,7 @@ class TimeManager{
     var maxMinutes:Int
     var intervals:Int
     var freeTime:[TimeRange]?
+    var serviesDuration:Int?
     
     func defineGlobalProperties(minHours:Int, minMinutes:Int, maxHours:Int, maxMinutes:Int){
         self.minHour = minHours
@@ -28,9 +29,19 @@ class TimeManager{
     }
     
     var workingHours:[Time]{
+        return getWorkingHours(withIntervals: intervals)
+    }
+    
+    private func getWorkingHours(withIntervals intervals:Int) -> [Time]{
         var workingTime:[Time] = []
         var minutes = minMinutes
         var hours = minHour
+        
+//        for _ in 0..<index{
+//            minutes = (minutes + intervals)%60
+//            hours += Int((minutes + intervals)/60)
+//        }
+        
         var isInRange = true
         workingTime.append(Time(hours: hours, minutes: minutes))
         while true {
@@ -58,7 +69,7 @@ class TimeManager{
                         isInRange = false
                     }
                     else if hours > time.fromTime.hours &&
-                            hours < time.toTime.hours{
+                        hours < time.toTime.hours{
                         isInRange = false
                     }
                     else if hours == time.toTime.hours &&
@@ -75,15 +86,53 @@ class TimeManager{
         return workingTime
     }
     
-//    init() {
-//        minHour = 11
-//        maxHour = 19
-//        minMinutes = 30
-//        maxMinutes = 50
-//        intervals = 14
-//        freeTime = [TimeRange(fromTime: Time(hours: 12, minutes: 20), toTime: Time(hours: 13, minutes: 10)),
-//                    TimeRange(fromTime: Time(hours: 16, minutes: 0), toTime: Time(hours: 17, minutes: 0))]
-//    }
+    /*
+    var hoursForServies:[Time]{
+        let normalIntervals = getWorkingHours(withIntervals: intervals, startFromIndex: 0)
+        
+        var timesToLoop = Int(serviesDuration! / intervals)
+        if serviesDuration! / intervals - Int(serviesDuration! / intervals) > 0{
+            timesToLoop += 1
+        }
+        
+        var containsTime:[[Time]] = [[]]
+        
+        for index in 0..<timesToLoop{
+            let serviesTimeIntervals = getWorkingHours(withIntervals: serviesDuration!, startFromIndex: index)
+            containsTime.append(normalIntervals.filter{serviesTimeIntervals.contains($0)})
+        }
+        
+//        let serviesTimeIntervals0 = getWorkingHours(withIntervals: serviesDuration!, startFromIndex: 0)
+//        let serviesTimeIntervals1 = getWorkingHours(withIntervals: serviesDuration!, startFromIndex: 1)
+//
+//        let containsTime0 = normalIntervals.filter{serviesTimeIntervals0.contains($0)}
+//        let containsTime1 = normalIntervals.filter{serviesTimeIntervals1.contains($0)}
+        
+//        var unique = Array(Set(containsTime0 + containsTime1))
+        
+        var unique:[Time] = []
+        
+        for time in containsTime{
+            unique = Array(Set(unique + time))
+        }
+        
+        unique.sort { (t1, t2) -> Bool in
+            if t1.hours == t2.hours{
+                return t1.minutes < t2.minutes
+            }
+            return t1.hours < t2.hours
+        }
+        
+        return unique
+    }
+ 
+    
+    func setServiesDuration(_ duration:Int) -> [Time]{
+        self.serviesDuration = duration
+        return hoursForServies
+    }
+ 
+ */
     
     init(minHour:Int, minMinutes:Int, maxHour:Int, maxMinutes:Int, intervals:Int, freeTime:[TimeRange]?) {
         self.minHour = minHour

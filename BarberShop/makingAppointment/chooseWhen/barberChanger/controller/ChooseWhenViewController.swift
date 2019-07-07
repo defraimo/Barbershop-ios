@@ -164,7 +164,8 @@ class ChooseWhenViewController: UIViewController {
         //set the buttons to sqaure rounded white outlines
         schedule.setRoundedSquareToWhite()
         sendNotification.setRoundedSquareToWhite()
-    }
+        
+        }
    
 }
 
@@ -186,7 +187,7 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         var duration = 0.2
         
         //if there is only one barber so the image is not passed
-        if imageView != nil{
+        if imageView == nil{
             delay = 0
             duration = 0.4
         }
@@ -271,6 +272,8 @@ var currentlyShownSchedule:DatesManager?
 var currentlyDaysNamed:[PickerDates]?
 var avialibleTimeForChosenDay:[Time]?
 
+//let serviesTime = currentlyDaysNamed![0].timeAvialible?.setServiesDuration(45)
+
 extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -306,7 +309,10 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
             }
         }
         else{
-            pickerLabel.text = avialibleTimeForChosenDay![row].description
+            
+//            serviesTime![row]
+            
+            pickerLabel.text = avialibleTimeForChosenDay?[row].description
             pickerLabel.font = UIFont(name: "SinhalaSangamMN-Bold", size: 24)
             pickerLabel.textColor = #colorLiteral(red: 0.2299421132, green: 0.2285816669, blue: 0.2309920788, alpha: 1)
         }

@@ -122,7 +122,9 @@ class DatesManager {
         
         //set the timeManager
         let timeRange = [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))]
-        let time = TimeManager(minHour: 11, minMinutes: 30, maxHour: 19, maxMinutes: 20, intervals: 20, freeTime: timeRange)
+        let time = TimeManager(minHour: 11, minMinutes: 30, maxHour: 19, maxMinutes: 20, intervals: 36, freeTime: timeRange)
+        
+        //DO TO -> CHANGE TO "TIME"
         
         for index in 0..<daysAvailable{
             allDays[index].timeAvialible = time

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Time:CustomStringConvertible {
+struct Time:CustomStringConvertible,Hashable {
     var hours:Int
     var minutes:Int
     
@@ -18,6 +18,7 @@ struct Time:CustomStringConvertible {
         }
         return "\(hours) : \(minutes)"
     }
+    
 }
 
 struct TimeRange {

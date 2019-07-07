@@ -6,7 +6,7 @@
 //  Copyright © 2019 Neighbors. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class BarbersSchedule{
     var allBarbersShedule:[DatesManager] = []
@@ -16,4 +16,34 @@ class BarbersSchedule{
             allBarbersShedule.append((barber.schedule ?? nil)!)
         }
     }
+}
+
+
+@IBDesignable
+public class M: UIButton {
+    
+    @IBInspectable
+    var radius: CGFloat = 10{
+        didSet{
+            
+            self.layer.cornerRadius = radius
+        }
+    }
+    
+    @IBInspectable
+    var radiusColor: UIColor = UIColor.black{
+        didSet{
+            
+            self.layer.cornerRadius = radius
+        }
+    }
+    
+    
+    @IBInspectable
+    var borderWidth: CGFloat = 3{
+        didSet{
+              self.layer.borderWidth = borderWidth
+        }
+    }
+   
 }
