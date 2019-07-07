@@ -178,6 +178,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBAction func signInSendCode(_ sender: UIButton) {
         if let count = phoneNumberField.text?.count{
             if count == 0{
@@ -195,6 +196,9 @@ class MainViewController: UIViewController {
     }
     //a func for presenting AuthCode view,
     //makes it easier to present it from other view controllers
+    @IBAction func sendCodeBtn(_ sender: UIButton) {
+        activityIndicator.startAnimating()
+    }
     func presentAuthCodeView(){
         //placed under the screen:
         authCodeView.center = CGPoint(x: view.frame.midX, y: 2*view.frame.midY)
