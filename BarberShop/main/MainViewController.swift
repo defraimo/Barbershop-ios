@@ -12,6 +12,9 @@ class MainViewController: UIViewController {
     let barberPhone = "0544533616"
     let userName =  "daniel_radshun"
     
+    var user:User?
+    var userPhoneNum:String?
+    
     @IBOutlet weak var imageRounded: UIImageView!
     
     lazy var blurEffect = {
@@ -175,12 +178,15 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBAction func signInSendCode(_ sender: UIButton) {
         if let count = phoneNumberField.text?.count{
             if count == 0{
             phoneNumberField.placeholder = "שדה זה הוא חובה"
             phoneNumberField.setError(hasError: true )
             }else {
+                //phone number was already checked, it's ok to explicitly unwrap it:
+                userPhoneNum = phoneNumberField.text!
                 //releasing the previous view:
                 releaseLoginOrSignupMenu()
                 presentAuthCodeView()
@@ -190,6 +196,9 @@ class MainViewController: UIViewController {
     }
     //a func for presenting AuthCode view,
     //makes it easier to present it from other view controllers
+    @IBAction func sendCodeBtn(_ sender: UIButton) {
+        activityIndicator.startAnimating()
+    }
     func presentAuthCodeView(){
         //placed under the screen:
         authCodeView.center = CGPoint(x: view.frame.midX, y: 2*view.frame.midY)

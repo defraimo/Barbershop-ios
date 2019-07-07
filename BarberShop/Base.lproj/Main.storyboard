@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="A1N-rU-l4w">
-                                <rect key="frame" x="0.0" y="549" width="414" height="347"/>
+                                <rect key="frame" x="0.0" y="549" width="414" height="347.00000000000006"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="huU-gd-viO">
                                 <rect key="frame" x="0.0" y="528" width="414" height="1"/>
@@ -28,13 +28,13 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="aBP-gq-p8h">
-                                <rect key="frame" x="0.0" y="516" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="520" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="795-CY-DbW"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YI-LK-mbt">
-                                <rect key="frame" x="260.5" y="676" width="59" height="45"/>
+                                <rect key="frame" x="260.5" y="680" width="59" height="45"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="24"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="מחירון">
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjM-uA-QQg">
-                                <rect key="frame" x="68" y="676" width="112" height="45"/>
+                                <rect key="frame" x="68" y="680" width="112" height="45"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="24"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="איך מגיעים?">
@@ -70,16 +70,16 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_seperator" translatesAutoresizingMaskIntoConstraints="NO" id="f7V-5e-eFl">
-                                <rect key="frame" x="26" y="745" width="362" height="16"/>
+                                <rect key="frame" x="26" y="749" width="362" height="12"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="sAq-zo-y5S">
-                                <rect key="frame" x="0.0" y="644" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="648" width="414" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="1H1-6J-50i"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="249" image="switching_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="M8q-1y-JnR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="436"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="440"/>
                                 <color key="tintColor" red="0.37790864706039429" green="0.51709049940109253" blue="0.54510420560836792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icW-Jn-xC8">
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJi-FK-DRv">
-                                <rect key="frame" x="131" y="551" width="152" height="61"/>
+                                <rect key="frame" x="131" y="555" width="152" height="61"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="36"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="הזמנת תור">
@@ -169,6 +169,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="aboutUsButton" destination="0FF-M9-PQC" id="cEf-1H-vbR"/>
+                        <outlet property="activityIndicator" destination="GPz-LS-pJu" id="EnK-5t-tqi"/>
                         <outlet property="appointmentBtn" destination="KJi-FK-DRv" id="MKh-Bb-Mfo"/>
                         <outlet property="authCodeView" destination="CXM-Zd-eUb" id="5m5-lc-tPv"/>
                         <outlet property="howWeGetThereButton" destination="bjM-uA-QQg" id="DDf-eW-HID"/>
@@ -181,7 +182,7 @@
                         <outlet property="whatsupButton" destination="icW-Jn-xC8" id="f7c-Jk-m3V"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toPrices" id="Y70-gu-cad"/>
                         <segue destination="fgm-7W-7C1" kind="show" identifier="toAboutUs" id="cq2-XH-Wee"/>
-                        <segue destination="ZRW-cM-CYk" kind="show" identifier="toHowWeGetThere" id="qLb-7b-S3t"/>
+                        <segue destination="naP-3X-nno" kind="show" identifier="toHowWeGetThere" id="qLb-7b-S3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEc-mb-nAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,14 +190,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="115"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="קוד אימות" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ktl-ml-yg9">
-                            <rect key="frame" x="86" y="16" width="70" height="23"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="הכנס קוד אימות" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ktl-ml-yg9">
+                            <rect key="frame" x="66.5" y="16" width="107" height="27"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="קוד אימות יישלח בעוד מספר שניות" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j2-GK-Yt1">
-                            <rect key="frame" x="16" y="44" width="208" height="14"/>
+                            <rect key="frame" x="16" y="48" width="208" height="14"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="14" id="35j-nS-F9f"/>
                             </constraints>
@@ -205,44 +206,48 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NT-KR-vm7">
-                            <rect key="frame" x="88" y="66" width="64" height="33"/>
+                            <rect key="frame" x="88" y="70" width="64" height="37"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="64" id="Tfk-IV-I1H"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
                             <size key="titleShadowOffset" width="1" height="1"/>
-                            <state key="normal" title="שלח">
+                            <state key="normal" title="שלח קוד">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="sendCodeBtn:" destination="T02-lw-fcr" eventType="touchUpInside" id="dAi-C8-Pea"/>
+                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="slf-8S-542">
-                            <rect key="frame" x="32" y="39" width="176" height="5"/>
+                            <rect key="frame" x="32" y="43" width="176.00000000000011" height="5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="5" id="B4e-Gy-Kow"/>
                             </constraints>
                         </imageView>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-LS-pJu">
-                            <rect key="frame" x="52" y="74" width="20" height="25"/>
+                            <rect key="frame" x="52" y="78" width="20" height="21"/>
                             <color key="color" red="0.58822089092837915" green="0.80380405854960857" blue="0.85195303174213199" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Ktl-ml-yg9" firstAttribute="leading" secondItem="CXM-Zd-eUb" secondAttribute="leading" constant="86" id="0fV-Pu-IFQ"/>
+                        <constraint firstItem="Ktl-ml-yg9" firstAttribute="centerX" secondItem="CXM-Zd-eUb" secondAttribute="centerX" id="7yD-oG-Ggj"/>
                         <constraint firstItem="Ktl-ml-yg9" firstAttribute="top" secondItem="CXM-Zd-eUb" secondAttribute="top" constant="16" id="D7I-k8-E1G"/>
                         <constraint firstItem="9NT-KR-vm7" firstAttribute="leading" secondItem="GPz-LS-pJu" secondAttribute="trailing" constant="16" id="SPL-Pn-pvI"/>
+                        <constraint firstItem="slf-8S-542" firstAttribute="centerX" secondItem="CXM-Zd-eUb" secondAttribute="centerX" id="TP8-mX-G4X"/>
                         <constraint firstItem="3j2-GK-Yt1" firstAttribute="trailing" secondItem="CXM-Zd-eUb" secondAttribute="trailingMargin" id="UbH-ll-Zfe"/>
                         <constraint firstAttribute="bottom" secondItem="GPz-LS-pJu" secondAttribute="bottom" constant="16" id="Uue-cB-7zd"/>
                         <constraint firstItem="slf-8S-542" firstAttribute="top" secondItem="Ktl-ml-yg9" secondAttribute="bottom" id="V1r-yV-v2P"/>
+                        <constraint firstAttribute="trailing" secondItem="slf-8S-542" secondAttribute="trailing" constant="32" id="Ywk-zr-kvG"/>
                         <constraint firstItem="9NT-KR-vm7" firstAttribute="top" secondItem="3j2-GK-Yt1" secondAttribute="bottom" constant="8" id="c17-1U-4xk"/>
                         <constraint firstItem="3j2-GK-Yt1" firstAttribute="leading" secondItem="CXM-Zd-eUb" secondAttribute="leadingMargin" id="nH0-gi-1jQ"/>
                         <constraint firstItem="3j2-GK-Yt1" firstAttribute="top" secondItem="slf-8S-542" secondAttribute="bottom" id="qqG-qm-N7d"/>
-                        <constraint firstItem="slf-8S-542" firstAttribute="centerX" secondItem="3j2-GK-Yt1" secondAttribute="centerX" id="rLl-H8-3lt"/>
                         <constraint firstItem="3j2-GK-Yt1" firstAttribute="centerX" secondItem="9NT-KR-vm7" secondAttribute="centerX" id="rxN-iq-7oF"/>
                         <constraint firstItem="GPz-LS-pJu" firstAttribute="top" secondItem="3j2-GK-Yt1" secondAttribute="bottom" constant="16" id="s2D-Y7-wt3"/>
                         <constraint firstItem="slf-8S-542" firstAttribute="leading" secondItem="CXM-Zd-eUb" secondAttribute="leading" constant="32" id="tbn-bD-A5A"/>
-                        <constraint firstAttribute="bottom" secondItem="9NT-KR-vm7" secondAttribute="bottom" constant="16" id="tmY-4N-tvH"/>
+                        <constraint firstAttribute="bottom" secondItem="9NT-KR-vm7" secondAttribute="bottom" constant="8" id="tmY-4N-tvH"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="goF-BC-X5s"/>
                 </view>
@@ -637,7 +642,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="pxU-CF-cHG">
-                                                    <rect key="frame" x="20" y="11" width="358" height="186"/>
+                                                    <rect key="frame" x="20" y="11" width="358" height="186.00000000000006"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1X9-UH-OFI">
                                                     <rect key="frame" x="250" y="19" width="120" height="120"/>
@@ -769,21 +774,6 @@
             </objects>
             <point key="canvasLocation" x="243" y="800"/>
         </scene>
-        <!--How To Get There View Controller-->
-        <scene sceneID="dvw-Lp-PWL">
-            <objects>
-                <viewController id="ZRW-cM-CYk" customClass="HowToGetThereViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4J0-oS-V9d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="P09-9P-xwO"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E1c-NU-bNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="958" y="800"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pkp-h2-6lH">
             <objects>
@@ -809,6 +799,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcN-LH-v6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1687" y="21"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="hcX-a8-uaY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Location" id="naP-3X-nno" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcI-dc-Vyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="552"/>
         </scene>
     </scenes>
     <resources>

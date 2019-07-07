@@ -10,6 +10,7 @@ import Foundation
 struct User {
     let number:String
     let fullName:String
+    //woman is 0, man is 1:
     let gender:Int
-    let email:String
+    let email:String?
 }

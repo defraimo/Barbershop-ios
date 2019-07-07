@@ -52,9 +52,12 @@ class SingUPViewController: UIViewController {
             return
         }
         
+        let newUser = User(number: phoneField.text!, fullName: nameField.text!, gender: genderPick.selectedSegmentIndex, email: emailField.text)
         dismiss(animated: true) {
             //getting the reference to mainViewController:
             guard let mainVC = UIApplication.shared.keyWindow?.rootViewController?.children[0] as? MainViewController else {return}
+            //init the user:
+            mainVC.user = newUser
             //presenting the send code view after done dismiossing:
             mainVC.presentAuthCodeView()
         }
