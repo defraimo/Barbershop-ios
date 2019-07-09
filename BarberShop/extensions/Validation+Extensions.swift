@@ -68,12 +68,22 @@ extension UIButton{
         self.addTarget(self, action: #selector(stopHighlight), for: .touchUpInside)
         self.addTarget(self, action: #selector(stopHighlight), for: .touchUpOutside)
     }
-    
+    func setRoundedSquareToGreen(){
+        self.layer.borderWidth = 1
+        self.layer.borderColor = #colorLiteral(red: 0.3364608288, green: 0.5219866633, blue: 0.5498081446, alpha: 1)
+        self.layer.cornerRadius = 10
+        self.contentEdgeInsets = UIEdgeInsets(top: 7,left: 11,bottom: 7,right: 11)
+        self.setTitleColor(#colorLiteral(red: 0.6617865562, green: 0.6578548551, blue: 0.6648103595, alpha: 1), for: .highlighted)
+        
+        self.addTarget(self, action: #selector(startHighlight), for: .touchDown)
+        self.addTarget(self, action: #selector(stopHighlight), for: .touchUpInside)
+        self.addTarget(self, action: #selector(stopHighlight), for: .touchUpOutside)
+    }
     @objc private func startHighlight(_ sender: UIButton) {
-        self.layer.borderColor = #colorLiteral(red: 0.6617865562, green: 0.6578548551, blue: 0.6648103595, alpha: 1)
+        self.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
     }
     @objc private func stopHighlight(_ sender: UIButton) {
-        self.layer.borderColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        self.layer.borderColor = #colorLiteral(red: 0.3364608288, green: 0.5219866633, blue: 0.5498081446, alpha: 1)
     }
 }
 

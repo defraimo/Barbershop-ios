@@ -16,7 +16,8 @@ class SingUPViewController: UIViewController {
     @IBOutlet weak var nameLine: UIImageView!
     @IBOutlet weak var emailLine: UIImageView!
     
-
+    @IBOutlet weak var signupTitle: UILabel!
+    
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -75,7 +76,13 @@ class SingUPViewController: UIViewController {
     fileprivate func pageDesign(){
         //controller background color:
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-
+        
+        signupBtn.setRoundedSquareToGreen()
+        //setting the button label size to be responsive
+        signupBtn.titleLabel!.adjustsFontSizeToFitWidth = true
+        signupBtn.titleLabel!.minimumScaleFactor = 0.2
+  
+        
         //placeholder color to white:
         let textfields = [phoneField!, nameField!, emailField!]
         for textField in textfields{
