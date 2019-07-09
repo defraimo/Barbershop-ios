@@ -72,6 +72,7 @@ extension HowToGetThereViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? AddressAnotation else {return nil}
         
+        //reuse id:
         var view = mapView.dequeueReusableAnnotationView(withIdentifier: "barbershop")
         
         //init the view:
