@@ -10,6 +10,7 @@ import UIKit
 
 class ChooseHaircutViewController: UIViewController {
     @IBOutlet weak var chooseServiesTable: UITableView!
+    @IBOutlet weak var chooseServiesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,10 @@ class ChooseHaircutViewController: UIViewController {
         
         //set the info picture to "info" first
         infoOrClose = #imageLiteral(resourceName: "info_icon")
+        
+        //setting the label size to be responsive
+        chooseServiesLabel.adjustsFontSizeToFitWidth = true
+        chooseServiesLabel.minimumScaleFactor = 0.2
     }
 
 }

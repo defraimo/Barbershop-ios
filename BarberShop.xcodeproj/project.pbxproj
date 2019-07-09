@@ -20,6 +20,9 @@
 		A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73722C4D77400AC9FF4 /* ANCustomView.swift */; };
 		A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73922C5462400AC9FF4 /* TimeManager.swift */; };
 		A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73B22C6595C00AC9FF4 /* Time.swift */; };
+		A618D59622D3AC9E00A93D5E /* AppointmentUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59522D3AC9E00A93D5E /* AppointmentUnit.swift */; };
+		A618D59822D3AFF700A93D5E /* ScheduleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59722D3AFF700A93D5E /* ScheduleDataManager.swift */; };
+		A618D59A22D499EC00A93D5E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59922D499EC00A93D5E /* Day.swift */; };
 		A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */; };
 		A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */; };
 		A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31A522B7ACFE00FC20BE /* Main.storyboard */; };
@@ -46,7 +49,7 @@
 		A61D2D2622CD08F5002DC7CB /* HaircutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2522CD08F5002DC7CB /* HaircutTableViewCell.swift */; };
 		A61D2D2A22CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */; };
 		A6413D0022C0DC9700FA1768 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */; };
-		A6413D0222C0FC4900FA1768 /* PickerDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6413D0122C0FC4900FA1768 /* PickerDates.swift */; };
+		A6413D0222C0FC4900FA1768 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6413D0122C0FC4900FA1768 /* DayData.swift */; };
 		A6413D0922C220D300FA1768 /* BarbersSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6413D0822C220D300FA1768 /* BarbersSchedule.swift */; };
 		A659A00522BD029300274F40 /* HowToGetThereViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A00422BD029300274F40 /* HowToGetThereViewController.swift */; };
 		A659A00922BD0F9D00274F40 /* ChooseBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A00822BD0F9D00274F40 /* ChooseBarberViewController.swift */; };
@@ -76,6 +79,9 @@
 		A614D73722C4D77400AC9FF4 /* ANCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCustomView.swift; sourceTree = "<group>"; };
 		A614D73922C5462400AC9FF4 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		A614D73B22C6595C00AC9FF4 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		A618D59522D3AC9E00A93D5E /* AppointmentUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentUnit.swift; sourceTree = "<group>"; };
+		A618D59722D3AFF700A93D5E /* ScheduleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataManager.swift; sourceTree = "<group>"; };
+		A618D59922D499EC00A93D5E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		A61A319E22B7ACFE00FC20BE /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +110,7 @@
 		A61D2D2522CD08F5002DC7CB /* HaircutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutTableViewCell.swift; sourceTree = "<group>"; };
 		A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
-		A6413D0122C0FC4900FA1768 /* PickerDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDates.swift; sourceTree = "<group>"; };
+		A6413D0122C0FC4900FA1768 /* DayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayData.swift; sourceTree = "<group>"; };
 		A6413D0822C220D300FA1768 /* BarbersSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbersSchedule.swift; sourceTree = "<group>"; };
 		A659A00422BD029300274F40 /* HowToGetThereViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToGetThereViewController.swift; sourceTree = "<group>"; };
 		A659A00822BD0F9D00274F40 /* ChooseBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBarberViewController.swift; sourceTree = "<group>"; };
@@ -328,7 +334,7 @@
 				A659A0A022C0197400274F40 /* AppointmentDate.swift */,
 				A659A09922BFD76C00274F40 /* DatesManager.swift */,
 				A659A09B22BFDAB200274F40 /* CurrentDate.swift */,
-				A6413D0122C0FC4900FA1768 /* PickerDates.swift */,
+				A6413D0122C0FC4900FA1768 /* DayData.swift */,
 			);
 			path = date;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 		A6413D0722C220B500FA1768 /* barbersSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				A618D59722D3AFF700A93D5E /* ScheduleDataManager.swift */,
 				A6413D0822C220D300FA1768 /* BarbersSchedule.swift */,
 			);
 			path = barbersSchedule;
@@ -452,6 +459,8 @@
 			isa = PBXGroup;
 			children = (
 				A659A09E22C0195700274F40 /* Appointment.swift */,
+				A618D59522D3AC9E00A93D5E /* AppointmentUnit.swift */,
+				A618D59922D499EC00A93D5E /* Day.swift */,
 			);
 			path = appointment;
 			sourceTree = "<group>";
@@ -582,6 +591,7 @@
 			files = (
 				A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */,
 				A61A31C422B9587E00FC20BE /* AboutUsViewController.swift in Sources */,
+				A618D59622D3AC9E00A93D5E /* AppointmentUnit.swift in Sources */,
 				A61A31D222B95C8B00FC20BE /* AboutUs.swift in Sources */,
 				633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */,
 				A61A31CB22B9599900FC20BE /* BarberDescriptionTableViewCell.swift in Sources */,
@@ -602,6 +612,7 @@
 				A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */,
 				A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */,
 				A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */,
+				A618D59A22D499EC00A93D5E /* Day.swift in Sources */,
 				A659A09F22C0195700274F40 /* Appointment.swift in Sources */,
 				A659A00522BD029300274F40 /* HowToGetThereViewController.swift in Sources */,
 				A61A31BE22B7C08600FC20BE /* PricesDataSource.swift in Sources */,
@@ -609,7 +620,7 @@
 				A659A01522BD46F500274F40 /* ChooseWhenViewController.swift in Sources */,
 				A659A00922BD0F9D00274F40 /* ChooseBarberViewController.swift in Sources */,
 				A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */,
-				A6413D0222C0FC4900FA1768 /* PickerDates.swift in Sources */,
+				A6413D0222C0FC4900FA1768 /* DayData.swift in Sources */,
 				A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */,
 				A659A09A22BFD76C00274F40 /* DatesManager.swift in Sources */,
 				A61A31C922B9598200FC20BE /* DescriptionTableViewCell.swift in Sources */,
@@ -617,6 +628,7 @@
 				A61A31AA22B7ACFE00FC20BE /* BarberShop.xcdatamodeld in Sources */,
 				A61D2D1A22CCA481002DC7CB /* UIView+Extension.swift in Sources */,
 				A6413D0922C220D300FA1768 /* BarbersSchedule.swift in Sources */,
+				A618D59822D3AFF700A93D5E /* ScheduleDataManager.swift in Sources */,
 				A61A31CD22B959AB00FC20BE /* ContactUsTableViewCell.swift in Sources */,
 				63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */,
 				A659A09C22BFDAB200274F40 /* CurrentDate.swift in Sources */,

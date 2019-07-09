@@ -10,5 +10,5 @@ import Foundation
 
 struct AppointmentTime {
     var time:Time
-    var minutesLength:Int
+    var units:Int
 }

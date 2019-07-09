@@ -22,6 +22,7 @@ class ChooseWhenViewController: UIViewController {
     
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var timeViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var timeViewLabel: UILabel!
     
     @IBOutlet weak var sendMeNotificationView: UIView!
     @IBOutlet weak var sendMeNotificationHeight: NSLayoutConstraint!
@@ -165,6 +166,10 @@ class ChooseWhenViewController: UIViewController {
         schedule.setRoundedSquareToWhite()
         sendNotification.setRoundedSquareToWhite()
         
+        //setting the label size to be responsive
+        timeViewLabel.adjustsFontSizeToFitWidth = true
+        timeViewLabel.minimumScaleFactor = 0.2
+        
         }
    
 }
@@ -198,6 +203,10 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         })
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -267,9 +276,13 @@ extension UICollectionView {
     }
 }
 
+extension ChooseWhenViewController:UICollectionViewDelegateFlowLayout{
+    
+}
+
 let barbersSchedule = BarbersSchedule().allBarbersShedule
 var currentlyShownSchedule:DatesManager?
-var currentlyDaysNamed:[PickerDates]?
+var currentlyDaysNamed:[DayData]?
 var avialibleTimeForChosenDay:[Time]?
 
 //let serviesTime = currentlyDaysNamed![0].timeAvialible?.setServiesDuration(45)

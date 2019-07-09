@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PickerDates:CustomStringConvertible {
+struct DayData:CustomStringConvertible {
     var dayOfWeek:Int
     var namedDayOfWeek:String
     var date:AppointmentDate
