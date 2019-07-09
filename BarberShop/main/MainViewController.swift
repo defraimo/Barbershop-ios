@@ -49,6 +49,7 @@ class MainViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         blurEffect.isHidden = false
+        
     }
     
     //pressing effects
@@ -312,6 +313,13 @@ class MainViewController: UIViewController {
         imageRounded.layer.masksToBounds = true
         
         addBlurView()
+        
+        let barber1Dates = DatesManager(daysAvailable: 10, additionalDays: 7)
+        barber1Dates.setDaysOff(days: [6,7])
+        
+        let barber1Time = TimeManager(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
+        
+        ScheduleDataManager().initBarberSchedule(barberIndex: 0, dates: barber1Dates, availableTime: barber1Time)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

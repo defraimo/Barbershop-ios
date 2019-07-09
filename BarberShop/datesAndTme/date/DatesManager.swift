@@ -48,12 +48,12 @@ class DatesManager {
         datesOff! += dates
     }
     
-    var namedDays:[PickerDates]{
+    var namedDays:[DayData]{
         let currentDate = CurrentDate()
         let currentDay = currentDate.currentDay - 1
         
         //all the days that shown
-        var allDays:[PickerDates] = []
+        var allDays:[DayData] = []
         
         //the array of the days names
         let namedDays = currentDate.namedDays
@@ -65,7 +65,7 @@ class DatesManager {
             //use the func to find the date for the specific day
             let updatedDate = currentDate.addToCurrentDate(numberOfDays: day - currentDay)
             //append the new day to all days array
-            allDays.append(PickerDates(dayOfWeek: dayNumber ,namedDayOfWeek: namedDays[dayNumber] , date: updatedDate, timeAvialible: nil))
+            allDays.append(DayData(dayOfWeek: dayNumber ,namedDayOfWeek: namedDays[dayNumber] , date: updatedDate, timeAvialible: nil))
         }
         
         //removes out the off days from the avialible days array
@@ -122,7 +122,7 @@ class DatesManager {
         
         //set the timeManager
         let timeRange = [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))]
-        let time = TimeManager(minHour: 11, minMinutes: 30, maxHour: 19, maxMinutes: 20, intervals: 36, freeTime: timeRange)
+        let time = TimeManager(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 36, freeTime: timeRange)
         
         //DO TO -> CHANGE TO "TIME"
         

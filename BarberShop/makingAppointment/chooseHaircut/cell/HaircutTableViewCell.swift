@@ -22,6 +22,10 @@ class HaircutTableViewCell: UITableViewCell {
         // Initialization code
         barbersCollection.delegate = self
         barbersCollection.dataSource = self
+        
+        //setting the label size to be responsive
+        priceLabel.adjustsFontSizeToFitWidth = true
+        priceLabel.minimumScaleFactor = 0.2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

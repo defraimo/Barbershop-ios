@@ -1,8 +1,8 @@
 //
-//  BarbershopAnnotationView.swift
+//  BarbershopAnnotationVieww.swift
 //  BarberShop
 //
-//  Created by Daniel Fraimovich on 09/07/2019.
+//  Created by Daniel Radshun on 09/07/2019.
 //  Copyright © 2019 Neighbors. All rights reserved.
 //
 

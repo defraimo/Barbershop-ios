@@ -9,19 +9,15 @@
 import Foundation
 
 class TimeManager{
-    var minHour:Int
-    var maxHour:Int
-    var minMinutes:Int
-    var maxMinutes:Int
+    var minTime:Time
+    var maxTime:Time
     var intervals:Int
     var freeTime:[TimeRange]?
     var serviesDuration:Int?
     
-    func defineGlobalProperties(minHours:Int, minMinutes:Int, maxHours:Int, maxMinutes:Int){
-        self.minHour = minHours
-        self.maxHour = maxHours
-        self.minMinutes = minMinutes
-        self.maxMinutes = maxMinutes
+    func defineGlobalProperties(minTime:Time, maxTime:Time){
+        self.minTime = minTime
+        self.maxTime = maxTime
     }
     
     func defineGlobalInterval(minutes:Int){
@@ -29,18 +25,15 @@ class TimeManager{
     }
     
     var workingHours:[Time]{
-        return getWorkingHours(withIntervals: intervals)
+        return getWorkingHours()
     }
     
-    private func getWorkingHours(withIntervals intervals:Int) -> [Time]{
+    private func getWorkingHours() -> [Time]{
         var workingTime:[Time] = []
-        var minutes = minMinutes
-        var hours = minHour
-        
-//        for _ in 0..<index{
-//            minutes = (minutes + intervals)%60
-//            hours += Int((minutes + intervals)/60)
-//        }
+        var minutes = minTime.minutes
+        var hours = minTime.hours
+        let maxMinutes = maxTime.minutes
+        let maxHour = maxTime.hours
         
         var isInRange = true
         workingTime.append(Time(hours: hours, minutes: minutes))
@@ -80,6 +73,57 @@ class TimeManager{
             }
             if isInRange{
                 workingTime.append(Time(hours: hours, minutes: minutes))
+            }
+        }
+        
+        return workingTime
+    }
+    
+    func getDailyUnits(forDay day:DayData) -> [AppointmentUnit]{
+        var workingTime:[AppointmentUnit] = []
+        var minutes = minTime.minutes
+        var hours = minTime.hours
+        let maxMinutes = maxTime.minutes
+        let maxHour = maxTime.hours
+        
+        var isInRange = true
+        workingTime.append(AppointmentUnit(date: day, startingTime: Time(hours: hours, minutes: minutes), isAvailable: true))
+        while true {
+            minutes += intervals
+            let additionalHours = Int(minutes / 60)
+            minutes = minutes % 60
+            if additionalHours + hours < maxHour{
+                if additionalHours > 0{
+                    hours += additionalHours
+                }
+                isInRange = true
+            }
+            else if additionalHours + hours == maxHour && minutes <= maxMinutes{
+                hours += additionalHours
+                isInRange = true
+            }
+            else{
+                break
+            }
+            if freeTime != nil{
+                for time in freeTime!{
+                    if hours == time.fromTime.hours &&
+                        minutes >= time.fromTime.minutes &&
+                        hours <= time.toTime.hours{
+                        isInRange = false
+                    }
+                    else if hours > time.fromTime.hours &&
+                        hours < time.toTime.hours{
+                        isInRange = false
+                    }
+                    else if hours == time.toTime.hours &&
+                        minutes <= time.toTime.minutes{
+                        isInRange = false
+                    }
+                }
+            }
+            if isInRange{
+                workingTime.append(AppointmentUnit(date: day, startingTime: Time(hours: hours, minutes: minutes), isAvailable: true))
             }
         }
         
@@ -134,11 +178,9 @@ class TimeManager{
  
  */
     
-    init(minHour:Int, minMinutes:Int, maxHour:Int, maxMinutes:Int, intervals:Int, freeTime:[TimeRange]?) {
-        self.minHour = minHour
-        self.minMinutes = minMinutes
-        self.maxHour = maxHour
-        self.maxMinutes = maxMinutes
+    init(minTime:Time, maxTime:Time, intervals:Int, freeTime:[TimeRange]?) {
+        self.minTime = minTime
+        self.maxTime = maxTime
         self.intervals = intervals
         self.freeTime = freeTime
     }

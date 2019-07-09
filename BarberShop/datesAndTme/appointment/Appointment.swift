@@ -11,8 +11,6 @@ import Foundation
 struct Appointment {
     var barber:Barber
     var client:String //TO CHANGE!!!!!!
-    var day:AppointmentDate
-    var time:AppointmentTime
+    var units:[AppointmentUnit]
     var price:PriceModel
-    var isAvailible:Bool
 }
