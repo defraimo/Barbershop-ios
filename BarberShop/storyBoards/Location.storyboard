@@ -77,6 +77,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="ZRW-cM-CYk" id="3al-yF-5JF"/>
+                                </connections>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="1" verticalCompressionResistancePriority="1" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Yrf-9t-wgx">
                                 <rect key="frame" x="119.66666666666667" y="645.66666666666663" width="135.66666666666663" height="25"/>

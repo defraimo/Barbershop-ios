@@ -197,6 +197,8 @@ class MainViewController: UIViewController {
     //a func for presenting AuthCode view,
     //makes it easier to present it from other view controllers
     @IBAction func sendCodeBtn(_ sender: UIButton) {
+        sender.setTitle("שולח", for: .normal)
+        activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
     func presentAuthCodeView(){
@@ -223,6 +225,7 @@ class MainViewController: UIViewController {
         authCodeView.layer.cornerRadius = 25
         authCodeView.layer.shadowRadius = 10
         
+        activityIndicator.isHidden = true
         //hiding the nav bar
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //blur effect for the background

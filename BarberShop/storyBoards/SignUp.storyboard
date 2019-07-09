@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vau-aT-HOc">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController storyboardIdentifier="toSignUp" title="Sign Up" id="vau-aT-HOc" customClass="SingUPViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="glZ-lR-DGL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="NaN-oV-cLS">
-                                <rect key="frame" x="64" y="189" width="258" height="202"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="NaN-oV-cLS">
+                                <rect key="frame" x="64" y="245.66666666666663" width="219" height="203"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="5gu-tm-NOm">
-                                        <rect key="frame" x="0.0" y="0.0" width="258" height="46"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="5gu-tm-NOm">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="46.333333333333336"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="*מס פלאפון" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-D6-SWm">
-                                                <rect key="frame" x="0.0" y="0.0" width="258" height="27"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="*מס פלאפון" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-D6-SWm">
+                                                <rect key="frame" x="0.0" y="0.0" width="219" height="27"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -33,52 +33,52 @@
                                                     <outlet property="delegate" destination="vau-aT-HOc" id="uX2-6K-6n5"/>
                                                 </connections>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="796-07-Q4T">
-                                                <rect key="frame" x="0.0" y="19" width="258" height="27"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="796-07-Q4T">
+                                                <rect key="frame" x="0.0" y="19.000000000000028" width="219" height="27.333333333333329"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-9" translatesAutoresizingMaskIntoConstraints="NO" id="Vck-V0-WBo">
-                                        <rect key="frame" x="0.0" y="78" width="258" height="46"/>
+                                        <rect key="frame" x="0.0" y="78.333333333333343" width="219" height="46.333333333333343"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="*שם מלא" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48e-Yz-qT6">
-                                                <rect key="frame" x="0.0" y="0.0" width="258" height="27.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="219" height="27.666666666666668"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="B3G-In-TjQ">
-                                                <rect key="frame" x="0.0" y="18.5" width="258" height="27.5"/>
+                                                <rect key="frame" x="0.0" y="18.666666666666686" width="219" height="27.666666666666671"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-8" translatesAutoresizingMaskIntoConstraints="NO" id="UBe-Ot-WRj">
-                                        <rect key="frame" x="0.0" y="156" width="258" height="46"/>
+                                        <rect key="frame" x="0.0" y="156.66666666666666" width="219" height="46.333333333333343"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" אימייל" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-7V-jRu">
-                                                <rect key="frame" x="0.0" y="0.0" width="258" height="27"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="219" height="27.333333333333332"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-mZ-9nw">
-                                                <rect key="frame" x="0.0" y="19" width="258" height="27"/>
+                                                <rect key="frame" x="0.0" y="19.333333333333371" width="219" height="27"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="7Ip-hx-kvc">
-                                <rect key="frame" x="330" y="177" width="20" height="112"/>
+                                <rect key="frame" x="291" y="233.66666666666663" width="20" height="203"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="M23-sn-OWR">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="46.333333333333336"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-e3-NAy">
-                                        <rect key="frame" x="0.0" y="48" width="20" height="16"/>
+                                        <rect key="frame" x="0.0" y="78.333333333333343" width="20" height="46.333333333333343"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="9AE-ex-qho">
-                                        <rect key="frame" x="0.0" y="96" width="20" height="16"/>
+                                        <rect key="frame" x="0.0" y="156.66666666666666" width="20" height="46.333333333333343"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -86,8 +86,9 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ns1-PK-KPw">
-                                <rect key="frame" x="159" y="547" width="96" height="53"/>
+                                <rect key="frame" x="139.66666666666666" y="581.66666666666663" width="96" height="40.333333333333371"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="הירשם/י">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,24 +98,23 @@
                                     <action selector="signup:" destination="vau-aT-HOc" eventType="touchUpInside" id="mpZ-3b-Ti6"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="749" image="header sign up" translatesAutoresizingMaskIntoConstraints="NO" id="3DZ-JQ-hXn">
-                                <rect key="frame" x="64" y="76" width="286" height="16"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" verticalCompressionResistancePriority="1" image="barber icon white" translatesAutoresizingMaskIntoConstraints="NO" id="3DZ-JQ-hXn">
+                                <rect key="frame" x="64" y="76" width="247" height="73"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="Circled" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="הרשמה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn1-zZ-VyM">
-                                <rect key="frame" x="16" y="108" width="382" height="49"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="הרשמה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn1-zZ-VyM">
+                                <rect key="frame" x="16" y="165" width="343" height="48.666666666666657"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="WJL-hX-10y">
-                                <rect key="frame" x="157" y="423" width="100" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="EXv-bK-xUC"/>
-                                    <constraint firstAttribute="width" constant="100" id="W4T-PG-3T6"/>
-                                </constraints>
+                                <rect key="frame" x="135" y="480.66666666666669" width="105" height="50.000000000000057"/>
                                 <segments>
                                     <segment title="" image="gender women"/>
                                     <segment title="" image="gender men"/>
@@ -124,16 +124,16 @@
                                     <action selector="genderPicked:" destination="vau-aT-HOc" eventType="valueChanged" id="eNG-g1-TK6"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="* שדה חובה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-YF-TlD">
-                                <rect key="frame" x="159.5" y="608" width="95.5" height="222"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="* שדה חובה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpM-YF-TlD">
+                                <rect key="frame" x="147" y="630" width="81.333333333333314" height="24"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7ew-bT-k4X">
-                                <rect key="frame" x="157" y="463" width="100" height="20"/>
+                                <rect key="frame" x="137.66666666666666" y="529.66666666666663" width="100" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="אישה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCb-Qy-gah">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
@@ -154,7 +154,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4y-sO-hrm">
-                                <rect key="frame" x="265" y="407" width="9.5" height="27"/>
+                                <rect key="frame" x="248" y="464.66666666666669" width="9.6666666666666856" height="27"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -183,25 +183,31 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ad7-Gv-WGQ" firstAttribute="leading" secondItem="08x-4D-pEW" secondAttribute="trailing" id="0HU-fz-FgK"/>
-                            <constraint firstItem="Cay-IF-z7Y" firstAttribute="bottom" secondItem="gpM-YF-TlD" secondAttribute="bottom" constant="32" id="0XV-1L-p39"/>
+                            <constraint firstItem="Ns1-PK-KPw" firstAttribute="height" secondItem="glZ-lR-DGL" secondAttribute="height" multiplier="0.05" id="0h3-Eb-AHC"/>
                             <constraint firstItem="gpM-YF-TlD" firstAttribute="centerX" secondItem="glZ-lR-DGL" secondAttribute="centerX" id="6gb-3k-vBu"/>
                             <constraint firstItem="gpM-YF-TlD" firstAttribute="top" secondItem="Ns1-PK-KPw" secondAttribute="bottom" constant="8" id="6ia-0v-z9B"/>
-                            <constraint firstItem="Ns1-PK-KPw" firstAttribute="top" secondItem="7ew-bT-k4X" secondAttribute="bottom" constant="64" id="92V-WK-Rp6"/>
+                            <constraint firstItem="WJL-hX-10y" firstAttribute="height" secondItem="glZ-lR-DGL" secondAttribute="height" multiplier="0.06" id="80i-tR-PpY"/>
+                            <constraint firstItem="Ns1-PK-KPw" firstAttribute="top" secondItem="7ew-bT-k4X" secondAttribute="bottom" constant="32" id="92V-WK-Rp6"/>
+                            <constraint firstItem="Pn1-zZ-VyM" firstAttribute="height" secondItem="glZ-lR-DGL" secondAttribute="height" multiplier="0.06" id="AUW-Fa-ydm"/>
                             <constraint firstItem="WJL-hX-10y" firstAttribute="top" secondItem="NaN-oV-cLS" secondAttribute="bottom" constant="32" id="B0x-9b-Gow"/>
                             <constraint firstItem="08x-4D-pEW" firstAttribute="top" secondItem="Cay-IF-z7Y" secondAttribute="top" id="BB7-OJ-6Sb"/>
                             <constraint firstItem="7Ip-hx-kvc" firstAttribute="leading" secondItem="NaN-oV-cLS" secondAttribute="trailing" constant="8" id="CsM-gh-Ti0"/>
                             <constraint firstItem="Pn1-zZ-VyM" firstAttribute="top" secondItem="3DZ-JQ-hXn" secondAttribute="bottom" constant="16" id="Doy-UG-xJP"/>
-                            <constraint firstItem="7Ip-hx-kvc" firstAttribute="top" secondItem="Pn1-zZ-VyM" secondAttribute="bottom" constant="20" id="Gk9-sJ-hEy"/>
+                            <constraint firstItem="7Ip-hx-kvc" firstAttribute="top" secondItem="Pn1-zZ-VyM" secondAttribute="bottom" constant="20" id="GDj-uI-5LV"/>
                             <constraint firstItem="Ns1-PK-KPw" firstAttribute="centerX" secondItem="glZ-lR-DGL" secondAttribute="centerX" id="HzS-5e-YXT"/>
                             <constraint firstItem="i4y-sO-hrm" firstAttribute="leading" secondItem="WJL-hX-10y" secondAttribute="trailing" constant="8" id="ILv-nZ-6xU"/>
                             <constraint firstItem="7ew-bT-k4X" firstAttribute="top" secondItem="WJL-hX-10y" secondAttribute="bottom" id="IP7-UF-gxT"/>
                             <constraint firstItem="3DZ-JQ-hXn" firstAttribute="leading" secondItem="Cay-IF-z7Y" secondAttribute="leading" constant="64" id="LUs-XF-zYp"/>
                             <constraint firstItem="08x-4D-pEW" firstAttribute="leading" secondItem="Cay-IF-z7Y" secondAttribute="leading" constant="8" id="LaE-uQ-94h"/>
                             <constraint firstItem="7ew-bT-k4X" firstAttribute="centerX" secondItem="glZ-lR-DGL" secondAttribute="centerX" id="LxF-dt-ZIv"/>
+                            <constraint firstItem="7Ip-hx-kvc" firstAttribute="height" secondItem="glZ-lR-DGL" secondAttribute="height" multiplier="0.25" id="Qsl-vU-cWl"/>
                             <constraint firstItem="Ad7-Gv-WGQ" firstAttribute="top" secondItem="Cay-IF-z7Y" secondAttribute="top" id="RB8-R3-FFw"/>
                             <constraint firstAttribute="trailing" secondItem="7Ip-hx-kvc" secondAttribute="trailing" constant="64" id="V7o-he-Zst"/>
+                            <constraint firstItem="NaN-oV-cLS" firstAttribute="height" secondItem="glZ-lR-DGL" secondAttribute="height" multiplier="0.25" id="WA2-6l-vwI"/>
+                            <constraint firstItem="3DZ-JQ-hXn" firstAttribute="height" secondItem="glZ-lR-DGL" secondAttribute="height" multiplier="0.09" id="XFn-fi-k9h"/>
                             <constraint firstItem="7Ip-hx-kvc" firstAttribute="leading" secondItem="NaN-oV-cLS" secondAttribute="trailing" constant="8" id="a4u-cm-Kf5"/>
                             <constraint firstItem="WJL-hX-10y" firstAttribute="centerX" secondItem="glZ-lR-DGL" secondAttribute="centerX" id="ebd-az-E2m"/>
+                            <constraint firstItem="WJL-hX-10y" firstAttribute="width" secondItem="glZ-lR-DGL" secondAttribute="width" multiplier="0.28" id="h7y-Q8-TLD"/>
                             <constraint firstItem="Cay-IF-z7Y" firstAttribute="trailing" secondItem="3DZ-JQ-hXn" secondAttribute="trailing" constant="64" id="hjy-LM-7Ca"/>
                             <constraint firstItem="i4y-sO-hrm" firstAttribute="top" secondItem="NaN-oV-cLS" secondAttribute="bottom" constant="16" id="m8R-wr-GOs"/>
                             <constraint firstItem="3DZ-JQ-hXn" firstAttribute="top" secondItem="Cay-IF-z7Y" secondAttribute="top" constant="32" id="tOM-Am-j5P"/>
@@ -214,6 +220,7 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="Doy-UG-xJP"/>
+                                <include reference="B0x-9b-Gow"/>
                                 <include reference="92V-WK-Rp6"/>
                             </mask>
                         </variation>
@@ -229,6 +236,7 @@
                         <outlet property="phoneField" destination="eJY-D6-SWm" id="DGP-bO-wqk"/>
                         <outlet property="phoneLine" destination="796-07-Q4T" id="egF-Iv-Stq"/>
                         <outlet property="signupBtn" destination="Ns1-PK-KPw" id="9xo-kz-CcG"/>
+                        <outlet property="signupTitle" destination="Pn1-zZ-VyM" id="7Vf-l1-PeD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74S-CH-vwn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,10 +246,10 @@
     </scenes>
     <resources>
         <image name="arrow left" width="25" height="25"/>
+        <image name="barber icon white" width="172" height="269"/>
         <image name="email" width="24" height="17"/>
         <image name="gender men" width="512" height="512"/>
         <image name="gender women" width="512" height="512"/>
-        <image name="header sign up" width="70" height="70"/>
         <image name="horizontal thin line" width="443" height="11"/>
         <image name="name" width="48" height="48"/>
         <image name="phone" width="48" height="48"/>

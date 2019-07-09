@@ -14,6 +14,7 @@
 		633ED44722D0CC1300D64BAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633ED44622D0CC1300D64BAB /* MapKit.framework */; };
 		633ED44922D0D11400D64BAB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44822D0D11400D64BAB /* Address.swift */; };
 		633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44A22D0D31000D64BAB /* AddressAnotation.swift */; };
+		633ED44F22D487C600D64BAB /* BarbershopAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44E22D487C600D64BAB /* BarbershopAnnotationView.swift */; };
 		63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF769822CA0994006631E5 /* SignUp.storyboard */; };
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
 		63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */; };
@@ -69,6 +70,7 @@
 		633ED44622D0CC1300D64BAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		633ED44822D0D11400D64BAB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		633ED44A22D0D31000D64BAB /* AddressAnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAnotation.swift; sourceTree = "<group>"; };
+		633ED44E22D487C600D64BAB /* BarbershopAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbershopAnnotationView.swift; sourceTree = "<group>"; };
 		63EF769822CA0994006631E5 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		63EF769A22CA09FA006631E5 /* SingUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPViewController.swift; sourceTree = "<group>"; };
 		63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extensions.swift"; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				A659A00422BD029300274F40 /* HowToGetThereViewController.swift */,
 				633ED44822D0D11400D64BAB /* Address.swift */,
 				633ED44A22D0D31000D64BAB /* AddressAnotation.swift */,
+				633ED44E22D487C600D64BAB /* BarbershopAnnotationView.swift */,
 			);
 			path = howToGetThere;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				A659A01522BD46F500274F40 /* ChooseWhenViewController.swift in Sources */,
 				A659A00922BD0F9D00274F40 /* ChooseBarberViewController.swift in Sources */,
 				A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */,
+				633ED44F22D487C600D64BAB /* BarbershopAnnotationView.swift in Sources */,
 				A6413D0222C0FC4900FA1768 /* PickerDates.swift in Sources */,
 				A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */,
 				A659A09A22BFD76C00274F40 /* DatesManager.swift in Sources */,
