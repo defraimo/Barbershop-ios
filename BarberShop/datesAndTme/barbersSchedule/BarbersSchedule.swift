@@ -10,12 +10,20 @@ import UIKit
 
 class BarbersSchedule{
     var allBarbersShedule:[DatesManager] = []
-    
+
     init() {
         for barber in AllBarbers().allBarbers{
             allBarbersShedule.append((barber.schedule ?? nil)!)
         }
     }
+    
+//    var allBarbersShedule:[[Day]] = [[]]
+//
+//    init() {
+//        for barber in AllBarbers().allBarbers{
+//            allBarbersShedule.append((barber.daysSchedule ?? nil)!)
+//        }
+//    }
 }
 
 

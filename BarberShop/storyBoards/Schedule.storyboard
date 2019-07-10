@@ -39,7 +39,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.32000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="uYm-4A-k9M">
-                                                    <rect key="frame" x="20" y="164" width="358" height="16"/>
+                                                    <rect key="frame" x="20" y="76" width="358" height="104.00000000000006"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rounded">
                                                             <real key="value" value="8"/>
@@ -47,10 +47,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gpq-Wa-0I0">
-                                                    <rect key="frame" x="36" y="15" width="326" height="133"/>
+                                                    <rect key="frame" x="36" y="15" width="326" height="45"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1G-yG-osX">
-                                                            <rect key="frame" x="0.0" y="54" width="25" height="25"/>
+                                                            <rect key="frame" x="0.0" y="10" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="3WV-Y6-G7H"/>
                                                                 <constraint firstAttribute="width" constant="25" id="Dhy-nY-i6O"/>
@@ -58,7 +58,7 @@
                                                             <state key="normal" image="info_icon"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-tG-8Ww">
-                                                            <rect key="frame" x="41" y="44" width="285" height="45"/>
+                                                            <rect key="frame" x="41" y="0.0" width="285" height="45"/>
                                                             <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
                                                             <state key="normal" title="סוג תספורת">
                                                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,7 +67,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-Ys-qgJ">
-                                                    <rect key="frame" x="36" y="172" width="324" height="50"/>
+                                                    <rect key="frame" x="36" y="84" width="324" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="100" image="keyboard-left-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="Wp8-PD-KmZ">
                                                             <rect key="frame" x="0.0" y="5" width="13" height="40"/>
@@ -125,7 +125,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="40₪" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-yy-bb7">
-                                                            <rect key="frame" x="209" y="11.666666666666657" width="115" height="27"/>
+                                                            <rect key="frame" x="209" y="11.666666666666671" width="115" height="27"/>
                                                             <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -138,13 +138,13 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ספרים" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxr-qI-PEv">
-                                                    <rect key="frame" x="101" y="230" width="36.666666666666657" height="19"/>
+                                                    <rect key="frame" x="101" y="142" width="36.666666666666657" height="19"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחיר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="who-Ly-V26">
-                                                    <rect key="frame" x="325.33333333333331" y="230" width="28.666666666666686" height="19"/>
+                                                    <rect key="frame" x="325.33333333333331" y="142" width="28.666666666666686" height="19"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -313,30 +313,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkD-8F-iIp">
-                                <rect key="frame" x="18" y="60.000000000000007" width="378" height="107.66666666666669"/>
+                                <rect key="frame" x="0.0" y="59.999999999999993" width="414" height="125.33333333333331"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qWS-TD-oIi">
-                                    <size key="itemSize" width="365" height="112"/>
+                                    <size key="itemSize" width="412" height="115"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barberChooseCell" id="xgk-Sh-xQ4" customClass="BarberChangeCollectionViewCell" customModule="BarberShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-2" width="365" height="112"/>
+                                        <rect key="frame" x="0.0" y="5" width="412" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="365" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="412" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-Uz-ksO">
-                                                    <rect key="frame" x="139.33333333333334" y="2" width="86.333333333333343" height="86.333333333333329"/>
+                                                    <rect key="frame" x="163" y="2" width="86" height="86.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Yxh-Uz-ksO" secondAttribute="height" multiplier="1:1" id="cKV-BR-8Zq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-55-NHl">
-                                                    <rect key="frame" x="151" y="90.333333333333329" width="63" height="25.666666666666671"/>
+                                                    <rect key="frame" x="174.66666666666666" y="90.333333333333329" width="63" height="23"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="16"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -346,11 +346,11 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Yxh-Uz-ksO" firstAttribute="height" secondItem="xgk-Sh-xQ4" secondAttribute="height" multiplier="0.77" id="3WA-kj-i09"/>
+                                            <constraint firstItem="Yxh-Uz-ksO" firstAttribute="height" secondItem="xgk-Sh-xQ4" secondAttribute="height" multiplier="0.75" id="3WA-kj-i09"/>
                                             <constraint firstItem="Yxh-Uz-ksO" firstAttribute="centerX" secondItem="xgk-Sh-xQ4" secondAttribute="centerX" id="PS4-KN-cM9"/>
                                             <constraint firstItem="PCb-55-NHl" firstAttribute="centerX" secondItem="xgk-Sh-xQ4" secondAttribute="centerX" id="Y6J-ZQ-BTg"/>
                                             <constraint firstItem="PCb-55-NHl" firstAttribute="top" secondItem="Yxh-Uz-ksO" secondAttribute="bottom" constant="2" id="n4G-Wh-cGC"/>
-                                            <constraint firstItem="PCb-55-NHl" firstAttribute="height" secondItem="xgk-Sh-xQ4" secondAttribute="height" multiplier="0.23" id="nI6-9h-OAq"/>
+                                            <constraint firstItem="PCb-55-NHl" firstAttribute="height" secondItem="xgk-Sh-xQ4" secondAttribute="height" multiplier="0.2" id="nI6-9h-OAq"/>
                                             <constraint firstItem="Yxh-Uz-ksO" firstAttribute="top" secondItem="xgk-Sh-xQ4" secondAttribute="top" constant="2" id="nTp-mi-Vda"/>
                                         </constraints>
                                         <connections>
@@ -365,29 +365,21 @@
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" alpha="0.29999999999999999" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-right-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="KSd-6N-Q97">
-                                <rect key="frame" x="346" y="44" width="50" height="120"/>
+                                <rect key="frame" x="346.33333333333331" y="68" width="49.666666666666686" height="80.666666666666686"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="vbE-cY-RBd"/>
-                                    <constraint firstAttribute="height" constant="120" id="vrZ-I0-XMi"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="1Qb-Fn-4El" appends="YES" id="f25-OS-nU8"/>
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyboard-left-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="e7V-Ae-HVz">
-                                <rect key="frame" x="18" y="44" width="50" height="120"/>
+                                <rect key="frame" x="17.999999999999996" y="68" width="49.666666666666657" height="80.666666666666686"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="0ig-Kk-O3I"/>
-                                    <constraint firstAttribute="height" constant="120" id="vfH-Xc-a3p"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="gYr-Mg-nsd" appends="YES" id="op5-Pe-G5H"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחירת תאריך" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYC-Of-zAv">
-                                <rect key="frame" x="108" y="191.66666666666666" width="198" height="53.666666666666657"/>
+                                <rect key="frame" x="108" y="203.33333333333334" width="198" height="54.000000000000028"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="36"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -395,7 +387,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIv-UB-KWS">
-                                <rect key="frame" x="0.0" y="245.33333333333337" width="414" height="215"/>
+                                <rect key="frame" x="0.0" y="257.33333333333331" width="414" height="215"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ino-8S-Ke8" id="ppx-cX-a8F"/>
                                     <outlet property="delegate" destination="Ino-8S-Ke8" id="BKJ-Rf-xEW"/>
@@ -426,6 +418,9 @@
                                         <state key="normal" title="הזמן תור">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="schedule:" destination="Ino-8S-Ke8" eventType="touchUpInside" id="VKv-Lz-bbj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32946558564660255" green="0.57969146573604058" blue="0.3458954722089298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -477,22 +472,26 @@
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="height" secondItem="cYT-Xt-9Bm" secondAttribute="height" multiplier="0.24" id="0kZ-LG-LGc"/>
-                            <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="qkD-8F-iIp" secondAttribute="trailing" constant="18" id="1Fr-Fa-AWn"/>
+                            <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="qkD-8F-iIp" secondAttribute="trailing" id="1Fr-Fa-AWn"/>
+                            <constraint firstItem="e7V-Ae-HVz" firstAttribute="height" secondItem="cYT-Xt-9Bm" secondAttribute="height" multiplier="0.09" id="6oK-j2-11v"/>
                             <constraint firstItem="bke-5K-Cme" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="6xy-9b-zzS"/>
                             <constraint firstItem="hYC-Of-zAv" firstAttribute="centerX" secondItem="cYT-Xt-9Bm" secondAttribute="centerX" id="93g-mr-twf"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="99g-aZ-IX1"/>
-                            <constraint firstItem="e7V-Ae-HVz" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="Gca-xu-ZJM"/>
-                            <constraint firstItem="qkD-8F-iIp" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="I2U-G7-3r2"/>
-                            <constraint firstItem="KSd-6N-Q97" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" id="L0W-Hz-Smy"/>
+                            <constraint firstItem="KSd-6N-Q97" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" constant="24" id="EeX-H2-Kx2"/>
+                            <constraint firstItem="qkD-8F-iIp" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="I2U-G7-3r2"/>
+                            <constraint firstItem="KSd-6N-Q97" firstAttribute="width" secondItem="cYT-Xt-9Bm" secondAttribute="width" multiplier="0.12" id="IJT-Jg-EvM"/>
                             <constraint firstItem="e7V-Ae-HVz" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" constant="18" id="LpD-Ke-J1c"/>
                             <constraint firstItem="hYC-Of-zAv" firstAttribute="height" secondItem="cYT-Xt-9Bm" secondAttribute="height" multiplier="0.06" id="Nb1-p3-4bP"/>
+                            <constraint firstItem="KSd-6N-Q97" firstAttribute="height" secondItem="cYT-Xt-9Bm" secondAttribute="height" multiplier="0.09" id="P0C-p3-nho"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="PM2-vw-rME"/>
                             <constraint firstItem="EWO-tg-heq" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="Qg4-SM-rSf"/>
-                            <constraint firstItem="hYC-Of-zAv" firstAttribute="top" secondItem="qkD-8F-iIp" secondAttribute="bottom" constant="24" id="SSB-q4-cMW"/>
+                            <constraint firstItem="hYC-Of-zAv" firstAttribute="top" secondItem="qkD-8F-iIp" secondAttribute="bottom" constant="18" id="SSB-q4-cMW"/>
                             <constraint firstItem="bke-5K-Cme" firstAttribute="trailing" secondItem="SPR-N7-ddP" secondAttribute="trailing" id="WQz-Pn-RKW"/>
-                            <constraint firstItem="qkD-8F-iIp" firstAttribute="height" secondItem="cYT-Xt-9Bm" secondAttribute="height" multiplier="0.12" id="XWq-ZP-srt"/>
+                            <constraint firstItem="qkD-8F-iIp" firstAttribute="height" secondItem="cYT-Xt-9Bm" secondAttribute="height" multiplier="0.14" id="XWq-ZP-srt"/>
+                            <constraint firstItem="e7V-Ae-HVz" firstAttribute="width" secondItem="cYT-Xt-9Bm" secondAttribute="width" multiplier="0.12" id="Y20-m6-H00"/>
                             <constraint firstAttribute="bottom" secondItem="EWO-tg-heq" secondAttribute="bottom" id="YaU-Bl-Bqg"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="top" secondItem="hYC-Of-zAv" secondAttribute="bottom" id="bSh-jx-47l"/>
+                            <constraint firstItem="e7V-Ae-HVz" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" constant="24" id="hdL-h3-RJB"/>
                             <constraint firstAttribute="bottom" secondItem="bke-5K-Cme" secondAttribute="bottom" id="lTB-nT-NDw"/>
                             <constraint firstItem="EWO-tg-heq" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="oE7-WN-65j"/>
                             <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="KSd-6N-Q97" secondAttribute="trailing" constant="18" id="wYZ-Ul-bmW"/>
@@ -505,14 +504,15 @@
                         <outlet property="arrowRight" destination="KSd-6N-Q97" id="0N4-LP-2mR"/>
                         <outlet property="barbersCollection" destination="qkD-8F-iIp" id="AET-Id-EfB"/>
                         <outlet property="datePicker" destination="uIv-UB-KWS" id="8FR-Sl-lHb"/>
-                        <outlet property="schedule" destination="39R-H5-LoN" id="xvP-43-Mu2"/>
+                        <outlet property="scheduleButton" destination="39R-H5-LoN" id="xvP-43-Mu2"/>
                         <outlet property="sendMeNotificationHeight" destination="xhW-w4-Xxc" id="xIz-ld-Ih5"/>
                         <outlet property="sendMeNotificationView" destination="bke-5K-Cme" id="pqf-F7-LSK"/>
-                        <outlet property="sendNotification" destination="8dm-aC-rnq" id="lMy-0M-NjQ"/>
+                        <outlet property="sendNotificationButton" destination="8dm-aC-rnq" id="lMy-0M-NjQ"/>
                         <outlet property="timePicker" destination="7Zb-FC-EPc" id="HUV-vJ-ZD6"/>
                         <outlet property="timeView" destination="EWO-tg-heq" id="eOF-vb-7jI"/>
                         <outlet property="timeViewHeight" destination="zGx-jO-aJj" id="rW6-Ez-QHr"/>
                         <outlet property="timeViewLabel" destination="bwL-0C-lUd" id="RzB-Re-DoV"/>
+                        <segue destination="fBi-Id-OJe" kind="show" identifier="toSumUp" id="Z1g-vG-xLs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHp-Ot-SzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -529,91 +529,119 @@
             </objects>
             <point key="canvasLocation" x="2446.376811594203" y="18.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Sum Up View Controller-->
         <scene sceneID="TIK-ay-cdW">
             <objects>
-                <viewController id="fBi-Id-OJe" sceneMemberID="viewController">
+                <viewController id="fBi-Id-OJe" customClass="SumUpViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C23-YH-yXz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סיכום" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zww-ie-xDs">
-                                <rect key="frame" x="24" y="76" width="366" height="77.333333333333314"/>
+                                <rect key="frame" x="124.33333333333333" y="121" width="165.33333333333337" height="71.666666666666686"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="56"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="d2v-ev-jOa">
-                                <rect key="frame" x="45" y="211" width="247" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="d2v-ev-jOa">
+                                <rect key="frame" x="31" y="227.66666666666666" width="269" height="10.666666666666657"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-1G-eBh">
-                                <rect key="frame" x="122" y="671" width="248" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-1G-eBh">
+                                <rect key="frame" x="114" y="689" width="269" height="10.666666666666629"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="NkL-mo-auo">
-                                <rect key="frame" x="77" y="183" width="11" height="442"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="NkL-mo-auo">
+                                <rect key="frame" x="74.666666666666671" y="201.66666666666663" width="16.333333333333329" height="448"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="Ehz-gy-rzU">
-                                <rect key="frame" x="321" y="266" width="11" height="442"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="Ehz-gy-rzU">
+                                <rect key="frame" x="323" y="277.66666666666669" width="16.333333333333314" height="448.00000000000006"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="SVa-mb-Xqi">
-                                <rect key="frame" x="159" y="266" width="97" height="353.66666666666669"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סוג שירות" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-S2-mOB">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="32.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם ספר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04L-WD-OLb">
-                                        <rect key="frame" x="9.3333333333333357" y="80.333333333333329" width="78.666666666666657" height="32.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtr-oe-PiS">
-                                        <rect key="frame" x="17.666666666666671" y="160.66666666666666" width="62" height="32.333333333333343"/>
-                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReQ-Xd-XZm">
-                                        <rect key="frame" x="26" y="241.00000000000003" width="45" height="32.333333333333343"/>
-                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחיר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgv-bj-Uez">
-                                        <rect key="frame" x="24" y="321.33333333333331" width="49" height="32.333333333333314"/>
-                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F99-9O-gZK">
-                                <rect key="frame" x="180" y="745" width="59" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סוג שירות" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD7-S2-mOB">
+                                <rect key="frame" x="158.66666666666666" y="510.66666666666674" width="97" height="36"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtr-oe-PiS">
+                                <rect key="frame" x="176" y="358.33333333333331" width="62" height="36"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReQ-Xd-XZm">
+                                <rect key="frame" x="184.66666666666666" y="434.66666666666669" width="45" height="35.666666666666686"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחיר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgv-bj-Uez">
+                                <rect key="frame" x="182.66666666666666" y="587" width="49" height="35.666666666666629"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F99-9O-gZK">
+                                <rect key="frame" x="181" y="748" width="52" height="45"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="28"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
                                 <state key="normal" title="הזמן">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם ספר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04L-WD-OLb">
+                                <rect key="frame" x="167.66666666666666" y="282.33333333333331" width="78.666666666666657" height="35.666666666666686"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Zww-ie-xDs" firstAttribute="leading" secondItem="lzJ-6d-Sol" secondAttribute="leading" constant="24" id="HC0-sO-X7o"/>
-                            <constraint firstItem="lzJ-6d-Sol" firstAttribute="trailing" secondItem="Zww-ie-xDs" secondAttribute="trailing" constant="24" id="LIF-yt-048"/>
-                            <constraint firstItem="Zww-ie-xDs" firstAttribute="top" secondItem="lzJ-6d-Sol" secondAttribute="top" constant="32" id="gww-zo-jWi"/>
+                            <constraint firstItem="NkL-mo-auo" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="0.95" id="0f1-qL-X0z"/>
+                            <constraint firstItem="5u7-1G-eBh" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.012" id="3HK-hn-q0V"/>
+                            <constraint firstItem="F99-9O-gZK" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="3Us-BP-zO2"/>
+                            <constraint firstItem="ReQ-Xd-XZm" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.04" id="4Io-nC-nDX"/>
+                            <constraint firstItem="Ehz-gy-rzU" firstAttribute="width" secondItem="C23-YH-yXz" secondAttribute="width" multiplier="0.04" id="4yL-qf-q7V"/>
+                            <constraint firstItem="d2v-ev-jOa" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" multiplier="0.8" id="6YN-49-fsV"/>
+                            <constraint firstItem="04L-WD-OLb" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.04" id="9z6-5h-rSc"/>
+                            <constraint firstItem="ReQ-Xd-XZm" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="Dws-Gf-lgt"/>
+                            <constraint firstItem="xtr-oe-PiS" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="HQY-Az-4Nx"/>
+                            <constraint firstItem="Ehz-gy-rzU" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.5" id="LI0-Qc-iAh"/>
+                            <constraint firstItem="5u7-1G-eBh" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" multiplier="1.2" id="Nbg-Qu-PaM"/>
+                            <constraint firstItem="Zww-ie-xDs" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.08" id="O2k-Db-HPd"/>
+                            <constraint firstItem="d2v-ev-jOa" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.012" id="ONX-4x-xy5"/>
+                            <constraint firstItem="5u7-1G-eBh" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="1.55" id="PgN-s9-fV3"/>
+                            <constraint firstItem="d2v-ev-jOa" firstAttribute="width" secondItem="C23-YH-yXz" secondAttribute="width" multiplier="0.65" id="RP0-CM-G3I"/>
+                            <constraint firstItem="NkL-mo-auo" firstAttribute="width" secondItem="C23-YH-yXz" secondAttribute="width" multiplier="0.04" id="SLz-kg-eXf"/>
+                            <constraint firstItem="Zww-ie-xDs" firstAttribute="width" secondItem="C23-YH-yXz" secondAttribute="width" multiplier="0.4" id="TVc-Pz-1TK"/>
+                            <constraint firstItem="Zww-ie-xDs" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="0.35" id="VXU-nd-J5b"/>
+                            <constraint firstItem="Wgv-bj-Uez" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="1.35" id="WDT-ap-4P3"/>
+                            <constraint firstItem="xtr-oe-PiS" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.04" id="XjV-UR-eNL"/>
+                            <constraint firstItem="d2v-ev-jOa" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="0.52" id="YWr-mq-JYF"/>
+                            <constraint firstItem="Ehz-gy-rzU" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="1.12" id="ZxT-7l-6nW"/>
+                            <constraint firstItem="Ehz-gy-rzU" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" multiplier="1.6" id="dIW-vE-Txz"/>
+                            <constraint firstItem="F99-9O-gZK" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.05" id="efz-2h-1G8"/>
+                            <constraint firstItem="F99-9O-gZK" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="1.72" id="h5k-nC-O8h"/>
+                            <constraint firstItem="Zww-ie-xDs" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="jLh-Pi-Kut"/>
+                            <constraint firstItem="XD7-S2-mOB" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.04" id="kLk-Uz-RKs"/>
+                            <constraint firstItem="xtr-oe-PiS" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="0.84" id="lkh-iz-i7C"/>
+                            <constraint firstItem="ReQ-Xd-XZm" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="1.01" id="m5X-5l-Qg2"/>
+                            <constraint firstItem="XD7-S2-mOB" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="1.18" id="mIi-8A-X1h"/>
+                            <constraint firstItem="NkL-mo-auo" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.5" id="nOR-sq-c6x"/>
+                            <constraint firstItem="04L-WD-OLb" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="0.67" id="qD9-kv-K6t"/>
+                            <constraint firstItem="NkL-mo-auo" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" multiplier="0.4" id="rkk-Xy-zuh"/>
+                            <constraint firstItem="04L-WD-OLb" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="tDk-tt-ED9"/>
+                            <constraint firstItem="Wgv-bj-Uez" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="ttQ-Ck-0YC"/>
+                            <constraint firstItem="XD7-S2-mOB" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="wMh-5q-dO4"/>
+                            <constraint firstItem="Wgv-bj-Uez" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.04" id="xFg-wv-Map"/>
+                            <constraint firstItem="5u7-1G-eBh" firstAttribute="width" secondItem="C23-YH-yXz" secondAttribute="width" multiplier="0.65" id="yLI-f1-z6A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lzJ-6d-Sol"/>
                     </view>
+                    <connections>
+                        <outlet property="scheduleButton" destination="F99-9O-gZK" id="KXa-0r-ZVa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhq-dH-pQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

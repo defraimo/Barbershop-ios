@@ -27,8 +27,8 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var sendMeNotificationView: UIView!
     @IBOutlet weak var sendMeNotificationHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var schedule: UIButton!
-    @IBOutlet weak var sendNotification: UIButton!
+    @IBOutlet weak var scheduleButton: UIButton!
+    @IBOutlet weak var sendNotificationButton: UIButton!
     
     @IBOutlet weak var barbersCollection: UICollectionView!
     @IBOutlet weak var arrowRight: UIImageView!
@@ -65,6 +65,11 @@ class ChooseWhenViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func schedule(_ sender: UIButton) {
+        performSegue(withIdentifier: "toSumUp", sender: nil)
+    }
+    
     
     fileprivate func imageEntryAnimation() {
         
@@ -151,6 +156,9 @@ class ChooseWhenViewController: UIViewController {
         currentlyDaysNamed = currentlyShownSchedule?.namedDays
         avialibleTimeForChosenDay = currentlyDaysNamed![chosenRow].timeAvialible?.workingHours
         
+//        currentlyDaysNamed = currentlyShownSchedule?[0].date
+//        avialibleTimeForChosenDay = currentlyDaysNamed![chosenRow].timeAvialible?.workingHours
+        
         //scroll to see the collection item in the middle
         self.barbersCollection.scrollToNearestVisibleCollectionViewCell()
         
@@ -163,12 +171,16 @@ class ChooseWhenViewController: UIViewController {
         sendMeNotificationView.layer.cornerRadius = 22
         
         //set the buttons to sqaure rounded white outlines
-        schedule.setRoundedSquareToWhite()
-        sendNotification.setRoundedSquareToWhite()
+        scheduleButton.setRoundedSquareToWhite()
+        sendNotificationButton.setRoundedSquareToWhite()
         
         //setting the label size to be responsive
         timeViewLabel.adjustsFontSizeToFitWidth = true
         timeViewLabel.minimumScaleFactor = 0.2
+        
+        //setting the size of the barberCollection cell
+        let layout = self.barbersCollection.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.itemSize = CGSize(width: self.view.frame.width, height: self.view.frame.height*0.13)
         
         }
    
@@ -281,11 +293,14 @@ extension ChooseWhenViewController:UICollectionViewDelegateFlowLayout{
 }
 
 let barbersSchedule = BarbersSchedule().allBarbersShedule
+
+//var currentlyShownSchedule:[Day]?
+//var currentlyDaysNamed:[DayData]?
+//var avialibleTimeForChosenDay:[Time]?
+
 var currentlyShownSchedule:DatesManager?
 var currentlyDaysNamed:[DayData]?
 var avialibleTimeForChosenDay:[Time]?
-
-//let serviesTime = currentlyDaysNamed![0].timeAvialible?.setServiesDuration(45)
 
 extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -322,9 +337,6 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
             }
         }
         else{
-            
-//            serviesTime![row]
-            
             pickerLabel.text = avialibleTimeForChosenDay?[row].description
             pickerLabel.font = UIFont(name: "SinhalaSangamMN-Bold", size: 24)
             pickerLabel.textColor = #colorLiteral(red: 0.2299421132, green: 0.2285816669, blue: 0.2309920788, alpha: 1)
