@@ -81,7 +81,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var howWeGetThereButton: UIButton!
     @IBAction func showHowWeGetThere(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 50, options: [], animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.howWeGetThereButton.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.howWeGetThereButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
@@ -294,6 +294,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DAO.shared.printUser()
 
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
@@ -309,8 +310,10 @@ class MainViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         //setting the "getting an appoinment" image to rounded
-        imageRounded.layer.cornerRadius = 42
-        imageRounded.layer.masksToBounds = true
+//        imageRounded.layer.cornerRadius = 42
+//        imageRounded.layer.masksToBounds = true
+
+        
         
         addBlurView()
         

@@ -50,7 +50,5 @@ class ScheduleDataManager {
         }
         
         allBarbers[index].daysSchedule = days
-        
-        print(allBarbers)
-    }
+        }
 }

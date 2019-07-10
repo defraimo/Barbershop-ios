@@ -14,6 +14,7 @@
 		633ED44722D0CC1300D64BAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633ED44622D0CC1300D64BAB /* MapKit.framework */; };
 		633ED44922D0D11400D64BAB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44822D0D11400D64BAB /* Address.swift */; };
 		633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44A22D0D31000D64BAB /* AddressAnotation.swift */; };
+		63EF105622D4BA2300D0B993 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF105522D4BA2300D0B993 /* DAO.swift */; };
 		63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF769822CA0994006631E5 /* SignUp.storyboard */; };
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
 		63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */; };
@@ -73,6 +74,7 @@
 		633ED44622D0CC1300D64BAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		633ED44822D0D11400D64BAB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		633ED44A22D0D31000D64BAB /* AddressAnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAnotation.swift; sourceTree = "<group>"; };
+		63EF105522D4BA2300D0B993 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		63EF769822CA0994006631E5 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		63EF769A22CA09FA006631E5 /* SingUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPViewController.swift; sourceTree = "<group>"; };
 		63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extensions.swift"; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			path = authentication;
 			sourceTree = "<group>";
 		};
+		63EF105422D4B48700D0B993 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				63EF105522D4BA2300D0B993 /* DAO.swift */,
+			);
+			path = database;
+			sourceTree = "<group>";
+		};
 		825884E206CC3F332B534F6C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 			children = (
 				A61D2D1822CCA45F002DC7CB /* extensions */,
 				6302287622C76F5600B242C6 /* authentication */,
+				63EF105422D4B48700D0B993 /* database */,
 				A659A09822BFD71000274F40 /* datesAndTme */,
 				A659A00622BD0F3C00274F40 /* makingAppointment */,
 				A659A00322BD023800274F40 /* howToGetThere */,
@@ -612,6 +623,7 @@
 				A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */,
 				A61D2D2A22CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift in Sources */,
 				A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */,
+				63EF105622D4BA2300D0B993 /* DAO.swift in Sources */,
 				A61A31B822B7BBC200FC20BE /* PriceTableViewCell.swift in Sources */,
 				A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */,
 				A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */,

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct User {
+struct User{
     let number:String
     let fullName:String
     //woman is 0, man is 1:
