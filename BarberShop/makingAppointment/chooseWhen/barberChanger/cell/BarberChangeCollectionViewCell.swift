@@ -13,8 +13,7 @@ class BarberChangeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var barberName: UILabel!
     
     func populate(barber:Barber){
-        barberImage.image = barber.image
-        barberImage.layer.cornerRadius = 42
+        barberImage.image = barber.image.circleMasked
         barberName.text = barber.name
     }
 }

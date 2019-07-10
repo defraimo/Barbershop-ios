@@ -38,9 +38,7 @@ class ScheduleDataManager {
         let barberDates = dates
         var allBarbers = AllBarbers.shared.allBarbers
         var days:[Day] = []
-        
-        barberDates.setDaysOff(days: [6,7])
-        
+                
         let barberTime = availableTime
         
         for day in barberDates.namedDays{
