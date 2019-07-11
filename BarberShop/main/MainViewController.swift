@@ -15,7 +15,6 @@ class MainViewController: UIViewController {
     
     var user:User?
     var userPhoneNum:String?
-    var currentUser:User?
     
     
     @IBOutlet weak var imageRounded: UIImageView!
@@ -161,6 +160,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var appointmentBtn: UIButton!
     //when ״הזמן תור״ is pressed:
     @IBAction func makeAppointment(_ sender: UIButton) {
+        //if there is a signed in user, it will go straight to haircuts:
+        if Auth.auth().currentUser != nil {
+            print("we got somebody")
+        }
         //placed above screen
         loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
         
@@ -334,7 +337,6 @@ class MainViewController: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -349,9 +351,7 @@ class MainViewController: UIViewController {
         //change the navigation title color
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        //name of signed in user on top:
-//        currentUser = DAO.shared.getUser(Auth.auth().currentUser?.uid ?? "")
-//        self.navigationController?.navigationItem.title = currentUser?.fullName
+    
         
         //change the navigation item color
         self.navigationController?.navigationBar.tintColor = UIColor.white
