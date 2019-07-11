@@ -39,7 +39,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.32000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="uYm-4A-k9M">
-                                                    <rect key="frame" x="20" y="76" width="358" height="104.00000000000006"/>
+                                                    <rect key="frame" x="20" y="164" width="358" height="16"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rounded">
                                                             <real key="value" value="8"/>
@@ -47,10 +47,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Gpq-Wa-0I0">
-                                                    <rect key="frame" x="36" y="15" width="326" height="45"/>
+                                                    <rect key="frame" x="36" y="15" width="326" height="133"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1G-yG-osX">
-                                                            <rect key="frame" x="0.0" y="10" width="25" height="25"/>
+                                                            <rect key="frame" x="0.0" y="54" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="3WV-Y6-G7H"/>
                                                                 <constraint firstAttribute="width" constant="25" id="Dhy-nY-i6O"/>
@@ -58,7 +58,7 @@
                                                             <state key="normal" image="info_icon"/>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="500" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-tG-8Ww">
-                                                            <rect key="frame" x="41" y="0.0" width="285" height="45"/>
+                                                            <rect key="frame" x="41" y="44" width="285" height="45"/>
                                                             <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
                                                             <state key="normal" title="סוג תספורת">
                                                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,7 +67,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-Ys-qgJ">
-                                                    <rect key="frame" x="36" y="84" width="324" height="50"/>
+                                                    <rect key="frame" x="36" y="172" width="324" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="100" image="keyboard-left-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="Wp8-PD-KmZ">
                                                             <rect key="frame" x="0.0" y="5" width="13" height="40"/>
@@ -125,7 +125,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="40₪" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-yy-bb7">
-                                                            <rect key="frame" x="209" y="11.666666666666671" width="115" height="27"/>
+                                                            <rect key="frame" x="209" y="11.666666666666657" width="115" height="27"/>
                                                             <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -138,13 +138,13 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ספרים" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxr-qI-PEv">
-                                                    <rect key="frame" x="101" y="142" width="36.666666666666657" height="19"/>
+                                                    <rect key="frame" x="101" y="230" width="36.666666666666657" height="19"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחיר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="who-Ly-V26">
-                                                    <rect key="frame" x="325.33333333333331" y="142" width="28.666666666666686" height="19"/>
+                                                    <rect key="frame" x="325.33333333333331" y="230" width="28.666666666666686" height="19"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
