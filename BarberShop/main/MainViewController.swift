@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainViewController: UIViewController {
     let barberPhone = "0544533616"
@@ -14,6 +15,8 @@ class MainViewController: UIViewController {
     
     var user:User?
     var userPhoneNum:String?
+    var currentUser:User?
+    
     
     @IBOutlet weak var imageRounded: UIImageView!
     
@@ -152,7 +155,50 @@ class MainViewController: UIViewController {
         }
     }
     
-
+    //alert for logging in or going to the sign up page:
+    @IBOutlet var loginOrSignupView: UIView!
+    //outlet for animation:
+    @IBOutlet weak var appointmentBtn: UIButton!
+    //when ״הזמן תור״ is pressed:
+    @IBAction func makeAppointment(_ sender: UIButton) {
+        //placed above screen
+        loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
+        
+        //animation of the button press
+        UIView.animate(withDuration: 0.1, animations: {
+            self.appointmentBtn.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        }) { (b) in
+            UIView.animate(withDuration: 0.1, animations: {
+                self.appointmentBtn.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        }
+        //animation displaying the loginOrSingup View:
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: { [weak self] in
+            
+            guard let center = self?.view.center else {return}
+            self?.loginOrSignupView.center = center
+            
+            self?.view.layoutIfNeeded()
+        })
+        
+        self.view.addSubview(loginOrSignupView)
+        
+        //setting up the menu:
+        loginOrSignupView.alpha = 1
+        loginOrSignupView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        loginOrSignupView.layer.shadowColor = UIColor.black.cgColor
+        loginOrSignupView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        loginOrSignupView.layer.shadowOpacity = 0.5
+        loginOrSignupView.layer.masksToBounds = false
+        loginOrSignupView.layer.cornerRadius = 25
+        loginOrSignupView.layer.shadowRadius = 10
+        
+        //hiding the nav bar
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //blur effect for the background
+        blurEffect.isHidden = false
+    }
+    //when "הירשם" is pressed:
     @IBAction func signUp(_ sender: UIButton) {
         //init the storyboard because it is in another file now
         let storyBoard =  UIStoryboard(name: "SignUp", bundle: nil)
@@ -165,8 +211,9 @@ class MainViewController: UIViewController {
         //releasing the view:
         releaseLoginOrSignupMenu()
     }
-    //listener to 
+    
     @IBOutlet weak var phoneNumberField: UITextField!
+    //listener of the phone field to check the correct phone number is inserted:
     @IBAction func phoneNumCheck(_ sender: UITextField) {
         let count = sender.text!.count
         if count != 10{
@@ -179,7 +226,6 @@ class MainViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBAction func signInSendCode(_ sender: UIButton) {
         if let count = phoneNumberField.text?.count{
             if count == 0{
@@ -195,13 +241,13 @@ class MainViewController: UIViewController {
         }
        
     }
+  
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var codeField: UITextField!
     //a func for presenting AuthCode view,
     //makes it easier to present it from other view controllers
-    @IBAction func sendCodeBtn(_ sender: UIButton) {
-        sender.setTitle("שולח", for: .normal)
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-    }
+    //the alert view that recieves the auth code from firebase:
+    @IBOutlet var authCodeView: UIView!
     func presentAuthCodeView(){
         //placed under the screen:
         authCodeView.center = CGPoint(x: view.frame.midX, y: 2*view.frame.midY)
@@ -216,6 +262,13 @@ class MainViewController: UIViewController {
         })
         self.view.addSubview(authCodeView)
         
+        //getting the verification id:
+        DAO.shared.getVerificationId(userPhoneNum!)
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+
+        
         //setting up the menu:
         authCodeView.alpha = 1
         authCodeView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
@@ -226,7 +279,6 @@ class MainViewController: UIViewController {
         authCodeView.layer.cornerRadius = 25
         authCodeView.layer.shadowRadius = 10
         
-        activityIndicator.isHidden = true
         //hiding the nav bar
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //blur effect for the background
@@ -245,56 +297,47 @@ class MainViewController: UIViewController {
                 print("Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0")
             }
         }
+        
     }
     
-    //the alert view that recieves the auth code from firebase:
-    @IBOutlet var authCodeView: UIView!
-    //alert for logging in or going to the sign up page:
-    @IBOutlet var loginOrSignupView: UIView!
-    //outlet for animation:
-    @IBOutlet weak var appointmentBtn: UIButton!
-    @IBAction func makeAppointment(_ sender: UIButton) {
-        //placed above screen
-        loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
-
-        //animation of the button press
-        UIView.animate(withDuration: 0.1, animations: {
-            self.appointmentBtn.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-        }) { (b) in
-            UIView.animate(withDuration: 0.1, animations: {
-                self.appointmentBtn.transform = CGAffineTransform(scaleX: 1, y: 1)
+    @IBAction func sendCodeBtn(_ sender: UIButton) {
+        if codeField.text == ""{
+            codeField.setError(hasError: true)
+            return
+        }else{
+           let code = codeField.text!
+            DAO.shared.verifyUser(code, completion: { [weak self] in
+                if let user = self?.user{
+                    guard let uid = Auth.auth().currentUser?.uid else {return}
+                    
+                    DAO.shared.saveNewUser(user, uid: uid)
+                    //MARK: not tested yet:
+                    self?.navigationItem.title = user.fullName
+                    
+                    self?.activityIndicator.isHidden = true
+                    self?.activityIndicator.stopAnimating()
+                }
             })
+           
+            
+            //the loading has ended:
+//            activityIndicator.stopAnimating()
+//            activityIndicator.isHidden = true
         }
-        //animation displaying the loginOrSingup View:
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: { [weak self] in
-            
-            guard let center = self?.view.center else {return}
-            self?.loginOrSignupView.center = center
-            
-            self?.view.layoutIfNeeded()
-            })
+        releaseCodeAuthMenu()
+    }
+
+    @IBAction func signOut(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
         
-        self.view.addSubview(loginOrSignupView)
-        
-        //setting up the menu:
-        loginOrSignupView.alpha = 1
-        loginOrSignupView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
-        loginOrSignupView.layer.shadowColor = UIColor.black.cgColor
-        loginOrSignupView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        loginOrSignupView.layer.shadowOpacity = 0.5
-        loginOrSignupView.layer.masksToBounds = false
-        loginOrSignupView.layer.cornerRadius = 25
-        loginOrSignupView.layer.shadowRadius = 10
-        
-        //hiding the nav bar
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        //blur effect for the background
-        blurEffect.isHidden = false
-            }
-    
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        DAO.shared.printUser()
 
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
@@ -305,6 +348,10 @@ class MainViewController: UIViewController {
         
         //change the navigation title color
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        //name of signed in user on top:
+//        currentUser = DAO.shared.getUser(Auth.auth().currentUser?.uid ?? "")
+//        self.navigationController?.navigationItem.title = currentUser?.fullName
         
         //change the navigation item color
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -343,7 +390,6 @@ class MainViewController: UIViewController {
         
     }
     
- 
     func addBlurView(){
         self.view.addSubview(blurEffect)
         
@@ -386,12 +432,13 @@ class MainViewController: UIViewController {
             guard let midX = self?.view.frame.midX , let midY = self?.view.frame.midY else {return}
             self?.authCodeView.center = CGPoint(x: midX, y: -midY)
         }) { (isCompleted) in
+            self.codeField.text = ""
             self.blurEffect.isHidden = true
             self.authCodeView.removeFromSuperview()
         }
     }
-    
 }
+
 extension MainViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
