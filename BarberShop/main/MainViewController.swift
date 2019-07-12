@@ -17,12 +17,12 @@ class MainViewController: UIViewController {
     var userPhoneNum:String?
     
     
-    @IBOutlet weak var imageRounded: UIImageView!
-    
     lazy var blurEffect = {
         return UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     }()
     
+    @IBOutlet weak var roundedView: UIView!
+    @IBOutlet weak var roundedViewHeight: NSLayoutConstraint!
     @IBOutlet var menuView: UIView!
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
         menuView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
@@ -164,6 +164,13 @@ class MainViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             print("we got somebody")
         }
+        
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.roundedViewHeight.constant = self.view.frame.height
+//        }) { (_) in
+//            self.roundedViewHeight.constant = self.view.frame.height * 0.72
+//        }
+        
         //placed above screen
         loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
         
@@ -270,7 +277,6 @@ class MainViewController: UIViewController {
         
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-
         
         //setting up the menu:
         authCodeView.alpha = 1
@@ -351,8 +357,6 @@ class MainViewController: UIViewController {
         //change the navigation title color
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-    
-        
         //change the navigation item color
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
@@ -360,8 +364,6 @@ class MainViewController: UIViewController {
 //        imageRounded.layer.cornerRadius = 42
 //        imageRounded.layer.masksToBounds = true
 
-        
-        
         addBlurView()
         
         let barber1Dates = DatesManager(daysAvailable: 10, additionalDays: 7)
@@ -370,6 +372,21 @@ class MainViewController: UIViewController {
         let barber1Time = TimeManager(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
         
         ScheduleDataManager().initBarberSchedule(barberIndex: 0, dates: barber1Dates, availableTime: barber1Time)
+        
+        roundedView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        roundedView.layer.cornerRadius = 14
+        
+        //setting the label size to be responsive
+        adjustsButtonFont(appointmentBtn)
+        adjustsButtonFont(pricesButton)
+        adjustsButtonFont(aboutUsButton)
+        adjustsButtonFont(howWeGetThereButton)
+    }
+    
+    func adjustsButtonFont(_ button:UIButton){
+        //setting the label size to be responsive
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.minimumScaleFactor = 0.2
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
