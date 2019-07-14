@@ -69,12 +69,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-Ys-qgJ">
                                                     <rect key="frame" x="36" y="84" width="324" height="50"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="100" image="keyboard-left-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="Wp8-PD-KmZ">
-                                                            <rect key="frame" x="0.0" y="5" width="13" height="40"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="ef5-2e-dA2"/>
-                                                            </constraints>
-                                                        </imageView>
+                                                        <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcW-2c-UAQ">
+                                                            <rect key="frame" x="0.0" y="18.333333333333329" width="13" height="13.333333333333336"/>
+                                                            <state key="normal" image="keyboard-left-arrow-button"/>
+                                                            <connections>
+                                                                <action selector="arrowLeft:" destination="hUL-gL-uOa" eventType="touchUpInside" id="tmC-QP-aVb"/>
+                                                            </connections>
+                                                        </button>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KlV-wG-p7Z">
                                                             <rect key="frame" x="33" y="0.0" width="123" height="50"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,12 +119,13 @@
                                                                 </collectionViewCell>
                                                             </cells>
                                                         </collectionView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="251" horizontalCompressionResistancePriority="100" image="keyboard-right-arrow-button" translatesAutoresizingMaskIntoConstraints="NO" id="xE9-d4-rki">
-                                                            <rect key="frame" x="176" y="5" width="13" height="40"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="23U-eJ-36R"/>
-                                                            </constraints>
-                                                        </imageView>
+                                                        <button opaque="NO" alpha="0.40000000000000002" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iC5-Xa-vHs">
+                                                            <rect key="frame" x="176" y="18.333333333333329" width="13" height="13.333333333333336"/>
+                                                            <state key="normal" image="keyboard-right-arrow-button"/>
+                                                            <connections>
+                                                                <action selector="arrowRight:" destination="hUL-gL-uOa" eventType="touchUpInside" id="TNP-9F-1Yw"/>
+                                                            </connections>
+                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="40₪" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-yy-bb7">
                                                             <rect key="frame" x="209" y="11.666666666666671" width="115" height="27"/>
                                                             <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
@@ -132,9 +134,9 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Wp8-PD-KmZ" firstAttribute="width" secondItem="hCd-Ys-qgJ" secondAttribute="width" multiplier="0.04" id="5Rb-iA-FYg"/>
+                                                        <constraint firstItem="VcW-2c-UAQ" firstAttribute="width" secondItem="hCd-Ys-qgJ" secondAttribute="width" multiplier="0.04" id="0dL-DT-XVs"/>
                                                         <constraint firstItem="KlV-wG-p7Z" firstAttribute="width" secondItem="hCd-Ys-qgJ" secondAttribute="width" multiplier="0.38" id="7sJ-6o-SVP"/>
-                                                        <constraint firstItem="xE9-d4-rki" firstAttribute="width" secondItem="hCd-Ys-qgJ" secondAttribute="width" multiplier="0.04" id="oal-d0-Gf7"/>
+                                                        <constraint firstItem="iC5-Xa-vHs" firstAttribute="width" secondItem="hCd-Ys-qgJ" secondAttribute="width" multiplier="0.04" id="QUm-JU-ggh"/>
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ספרים" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxr-qI-PEv">
@@ -153,6 +155,7 @@
                                             <constraints>
                                                 <constraint firstItem="uYm-4A-k9M" firstAttribute="leading" secondItem="Qqh-sC-dvD" secondAttribute="leadingMargin" id="1Cx-vl-TYc"/>
                                                 <constraint firstItem="who-Ly-V26" firstAttribute="top" secondItem="hCd-Ys-qgJ" secondAttribute="bottom" constant="8" id="8hq-jO-ePV"/>
+                                                <constraint firstItem="VcW-2c-UAQ" firstAttribute="height" secondItem="uYm-4A-k9M" secondAttribute="height" multiplier="0.13" id="B68-Ol-JUP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="who-Ly-V26" secondAttribute="trailing" constant="24" id="BMB-sb-O8r"/>
                                                 <constraint firstItem="hCd-Ys-qgJ" firstAttribute="leading" secondItem="Qqh-sC-dvD" secondAttribute="leadingMargin" constant="16" id="Oyq-Nu-WHo"/>
                                                 <constraint firstItem="Gpq-Wa-0I0" firstAttribute="top" secondItem="Qqh-sC-dvD" secondAttribute="topMargin" constant="4" id="Qrb-N6-UoG"/>
@@ -160,6 +163,7 @@
                                                 <constraint firstItem="sxr-qI-PEv" firstAttribute="centerX" secondItem="Qqh-sC-dvD" secondAttribute="centerX" multiplier="0.6" id="UA9-HO-WcH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Gpq-Wa-0I0" secondAttribute="trailing" constant="16" id="aal-oV-a7r"/>
                                                 <constraint firstItem="uYm-4A-k9M" firstAttribute="trailing" secondItem="Qqh-sC-dvD" secondAttribute="trailingMargin" id="jyl-eY-A6l"/>
+                                                <constraint firstItem="iC5-Xa-vHs" firstAttribute="height" secondItem="uYm-4A-k9M" secondAttribute="height" multiplier="0.13" id="nXQ-i2-ck5"/>
                                                 <constraint firstItem="hCd-Ys-qgJ" firstAttribute="top" secondItem="Gpq-Wa-0I0" secondAttribute="bottom" constant="24" id="q8E-lH-ODA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hCd-Ys-qgJ" secondAttribute="trailing" constant="18" id="rbM-1O-XUZ"/>
                                                 <constraint firstItem="uYm-4A-k9M" firstAttribute="top" secondItem="Gpq-Wa-0I0" secondAttribute="bottom" constant="16" id="tdi-1Z-GIa"/>
@@ -169,7 +173,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="barbersCollection" destination="KlV-wG-p7Z" id="2b7-D9-cr2"/>
+                                            <outlet property="barbersCollection" destination="KlV-wG-p7Z" id="PHf-6g-egy"/>
                                             <outlet property="haircutType" destination="bWJ-tG-8Ww" id="0hb-V3-Pn8"/>
                                             <outlet property="infoButton" destination="o1G-yG-osX" id="owS-Cg-Ooj"/>
                                             <outlet property="priceLabel" destination="DVo-yy-bb7" id="BNe-fs-f9G"/>
@@ -207,6 +211,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeU-8M-T4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WQj-mm-t3K"/>
             </objects>
             <point key="canvasLocation" x="942.02898550724649" y="20.758928571428569"/>
         </scene>
