@@ -46,14 +46,24 @@
                                             <action selector="makeAppointment:" destination="T02-lw-fcr" eventType="touchUpInside" id="pBi-kq-9KD"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-pU-trr">
+                                        <rect key="frame" x="0.0" y="526" width="414" height="119"/>
+                                        <connections>
+                                            <action selector="makeAppointment:" destination="T02-lw-fcr" eventType="touchUpInside" id="R9f-ye-lYj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="M8q-1y-JnR" secondAttribute="trailing" id="1mJ-Bb-0BU"/>
+                                    <constraint firstItem="7tC-pU-trr" firstAttribute="leading" secondItem="lzM-Or-Tlp" secondAttribute="leading" id="6Ce-0B-Tr5"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="width" secondItem="lzM-Or-Tlp" secondAttribute="width" multiplier="0.38" id="A46-zQ-Qxe"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="centerY" secondItem="lzM-Or-Tlp" secondAttribute="centerY" multiplier="1.8" id="Kdi-d9-y6d"/>
+                                    <constraint firstAttribute="bottom" secondItem="7tC-pU-trr" secondAttribute="bottom" id="Kgq-cY-9d6"/>
+                                    <constraint firstAttribute="trailing" secondItem="7tC-pU-trr" secondAttribute="trailing" id="Plt-Yh-5Je"/>
                                     <constraint firstItem="M8q-1y-JnR" firstAttribute="leading" secondItem="lzM-Or-Tlp" secondAttribute="leading" id="XvZ-KK-bbS"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="height" secondItem="lzM-Or-Tlp" secondAttribute="height" multiplier="0.04" id="YfH-mj-RQV"/>
+                                    <constraint firstItem="7tC-pU-trr" firstAttribute="top" secondItem="M8q-1y-JnR" secondAttribute="bottom" id="jEv-RI-4dh"/>
                                     <constraint firstItem="M8q-1y-JnR" firstAttribute="height" secondItem="lzM-Or-Tlp" secondAttribute="height" multiplier="0.68" id="lfx-Si-Wdx"/>
                                     <constraint firstItem="M8q-1y-JnR" firstAttribute="centerY" secondItem="lzM-Or-Tlp" secondAttribute="centerY" multiplier="0.95" id="rkt-Sq-Sk7"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="centerX" secondItem="lzM-Or-Tlp" secondAttribute="centerX" id="zkq-CZ-j7I"/>

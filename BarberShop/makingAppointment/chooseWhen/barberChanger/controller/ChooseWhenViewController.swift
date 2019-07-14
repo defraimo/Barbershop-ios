@@ -17,6 +17,8 @@ class ChooseWhenViewController: UIViewController {
     var chosenBarberImage:UIImageView?
     var chosenBarberIndex:IndexPath?
     
+    var cellWasReloaded = false
+    
     @IBOutlet weak var datePicker: UIPickerView!
     @IBOutlet weak var timePicker: UIPickerView!
     
@@ -240,21 +242,42 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
 //        }
 //    }
     
-    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-        //set the picker date array to the chosen barber from the collectionView
-        currentlyShownSchedule = barbersSchedule[indexPath.row]
-        currentlyDaysNamed = currentlyShownSchedule?.namedDays
-        chosenBarberIndex = indexPath
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            self.datePicker.alpha = 0
-        }) { (_) in
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if !cellWasReloaded{
+            cellWasReloaded = true
+            //set the picker date array to the chosen barber from the collectionView
+            currentlyShownSchedule = barbersSchedule[indexPath.row]
+            currentlyDaysNamed = currentlyShownSchedule?.namedDays
+            chosenBarberIndex = indexPath
+            
             UIView.animate(withDuration: 0.3, animations: {
-                self.datePicker.alpha = 1
-            })
-            self.datePicker.reloadAllComponents()
+                self.datePicker.alpha = 0
+            }) { (_) in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.datePicker.alpha = 1
+                })
+                self.datePicker.reloadAllComponents()
+            }
+            return
         }
+        cellWasReloaded = false
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+//        //set the picker date array to the chosen barber from the collectionView
+//        currentlyShownSchedule = barbersSchedule[indexPath.row]
+//        currentlyDaysNamed = currentlyShownSchedule?.namedDays
+//        chosenBarberIndex = indexPath
+//
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.datePicker.alpha = 0
+//        }) { (_) in
+//            UIView.animate(withDuration: 0.3, animations: {
+//                self.datePicker.alpha = 1
+//            })
+//            self.datePicker.reloadAllComponents()
+//        }
+//    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.barbersCollection.scrollToNearestVisibleCollectionViewCell()

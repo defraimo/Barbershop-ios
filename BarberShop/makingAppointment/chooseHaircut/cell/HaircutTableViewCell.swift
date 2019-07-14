@@ -15,7 +15,22 @@ class HaircutTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var barbersCollection: UICollectionView!
     
+    @IBAction func arrowRight(_ sender: UIButton) {
+        barbersCollection.scrollToItem(at: IndexPath(row: currentBarberIndex, section: 0), at: .right, animated: true)
+        if barbers!.count > currentBarberIndex + 1{
+            currentBarberIndex += 1
+        }
+    }
+    @IBAction func arrowLeft(_ sender: UIButton) {
+        barbersCollection.scrollToItem(at: IndexPath(row: currentBarberIndex, section: 0), at: .left, animated: true)
+        if currentBarberIndex - 1 >= 0{
+            currentBarberIndex -= 1
+        }
+    }
+    
+    
     var barbers:[Barber]?
+    var currentBarberIndex = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -56,6 +71,10 @@ extension HaircutTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: .barberChosenFromInfo, object: nil, userInfo: ["barber": barbers![indexPath.item]])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        currentBarberIndex = indexPath.row
     }
     
 }

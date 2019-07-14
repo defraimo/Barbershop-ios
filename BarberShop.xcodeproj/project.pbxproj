@@ -186,6 +186,13 @@
 			path = sumUpAppointment;
 			sourceTree = "<group>";
 		};
+		A618D5C922DB0B6100A93D5E /* datesAndTimeManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = datesAndTimeManager;
+			sourceTree = "<group>";
+		};
 		A61A319522B7ACFE00FC20BE = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +214,7 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				A618D5C922DB0B6100A93D5E /* datesAndTimeManager */,
 				A61D2D1822CCA45F002DC7CB /* extensions */,
 				6302287622C76F5600B242C6 /* authentication */,
 				63EF105422D4B48700D0B993 /* database */,
