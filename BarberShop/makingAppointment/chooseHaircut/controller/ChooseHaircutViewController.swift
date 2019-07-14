@@ -24,6 +24,16 @@ class ChooseHaircutViewController: UIViewController {
         //setting the label size to be responsive
         chooseServiesLabel.adjustsFontSizeToFitWidth = true
         chooseServiesLabel.minimumScaleFactor = 0.2
+        
+        NotificationCenter.default.addObserver(forName: .barberChosenFromInfo, object: nil, queue: .main) { [weak self] (notification) in
+            guard let barber = notification.userInfo?["barber"] as? Barber else {return}
+            self?.performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: [barber])
+        }
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .barberChosenFromInfo, object: nil)
     }
 
 }

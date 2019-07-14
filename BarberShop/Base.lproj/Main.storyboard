@@ -98,14 +98,20 @@
                                 <rect key="frame" x="26" y="749" width="362" height="16"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icW-Jn-xC8">
-                                <rect key="frame" x="144" y="787.5" width="43.5" height="46.5"/>
+                                <rect key="frame" x="142.5" y="787.5" width="46.5" height="46.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="icW-Jn-xC8" secondAttribute="height" multiplier="1:1" id="h3h-Xk-ylA"/>
+                                </constraints>
                                 <state key="normal" image="whatsapp"/>
                                 <connections>
                                     <action selector="goToWhatsUp:" destination="T02-lw-fcr" eventType="touchUpInside" id="80u-Nt-f6T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLZ-Te-0dB">
-                                <rect key="frame" x="61" y="787.5" width="43.5" height="46.5"/>
+                                <rect key="frame" x="59.5" y="787.5" width="46.5" height="46.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YLZ-Te-0dB" secondAttribute="height" multiplier="1:1" id="IhJ-s3-4oD"/>
+                                </constraints>
                                 <state key="normal" image="Instagram"/>
                                 <connections>
                                     <action selector="goToInstagram:" destination="T02-lw-fcr" eventType="touchUpInside" id="3Ng-FH-G5U"/>
@@ -126,11 +132,9 @@
                             <constraint firstItem="lzM-Or-Tlp" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="D9x-vj-Htx"/>
                             <constraint firstItem="YLZ-Te-0dB" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.4" id="EoU-ii-RiQ"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.57" id="HEf-nQ-oYf"/>
-                            <constraint firstItem="icW-Jn-xC8" firstAttribute="width" secondItem="7yZ-hN-txD" secondAttribute="width" multiplier="0.105" id="Jdd-WL-Z5X"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="huU-gd-viO" secondAttribute="trailing" id="K12-bL-tFg"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="trailing" secondItem="SjH-XB-Ar3" secondAttribute="trailing" id="KC4-Di-HNK"/>
                             <constraint firstItem="f7V-5e-eFl" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" constant="26" id="LXy-Sz-uhk"/>
-                            <constraint firstItem="YLZ-Te-0dB" firstAttribute="width" secondItem="7yZ-hN-txD" secondAttribute="width" multiplier="0.105" id="Mcd-ZD-6wh"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="f7V-5e-eFl" secondAttribute="trailing" constant="26" id="OvP-Kg-hit"/>
                             <constraint firstItem="0FF-M9-PQC" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="1.4" id="P6B-Pb-yXx"/>
                             <constraint firstItem="icW-Jn-xC8" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.81" id="TUe-SW-BQI"/>
