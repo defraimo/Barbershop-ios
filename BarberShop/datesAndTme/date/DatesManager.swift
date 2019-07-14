@@ -10,7 +10,7 @@ import Foundation
 
 class DatesManager {
 //    private let barberName:String
-    private var daysAvailable:Int
+    var daysAvailable:Int = 0
     private var additionalDays:Int
     private (set) var daysOff:[Int]?
     private (set) var datesOff:[AppointmentDate]?

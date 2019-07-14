@@ -81,6 +81,10 @@ class ChooseWhenViewController: UIViewController {
         //scroll the collaction view to the chosen barber posiotion from the lase screen
         barbersCollection.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
         
+        //----------------------------------------------
+        //TODO FIX THE MOVING INTO THE SELECTED BARBER
+        //----------------------------------------------
+        
         //getting the position of the current item
         let collectionPosition = barbersCollection.layoutAttributesForItem(at: chosenBarberIndex!)?.center ?? barbersCollection.center
         

@@ -54,4 +54,12 @@ extension HaircutTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NotificationCenter.default.post(name: .barberChosenFromInfo, object: nil, userInfo: ["barber": barbers![indexPath.item]])
+    }
+    
+}
+
+extension Notification.Name{
+    static let barberChosenFromInfo = Notification.Name(rawValue: "barberChosenFromInfo")
 }
