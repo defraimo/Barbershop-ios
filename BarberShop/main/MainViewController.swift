@@ -442,7 +442,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
-        let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-        return string.rangeOfCharacter(from: invalidCharacters) == nil && text.first == "0"
+//        let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        return string.rangeOfCharacter(from: invalidCharacters) == nil
     }
 }
