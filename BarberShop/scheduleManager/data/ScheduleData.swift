@@ -11,29 +11,37 @@ import Foundation
 class ScheduleData{
     var allDates:AllDates?
     var displayedDates:[AppointmentDate]?
+    var barber:Barber?
+    var avialibleDaysCount:Int = 0
+    var notificationDaysCount:Int = 0
     
-    init() {
+    init(barber:Barber) {
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
-        
+        let currentDay = CurrentDate().currentMonthDay
         
         for i in 0..<7{
             //after getting from data base
             let timeAvailible = TimeManager(id: 14072019, minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
             
             
-            avialibleDays.append(AppointmentDate(id: 14072019, date: MyDate(day: 14+i, month: 7, year: 2019), dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
+            avialibleDays.append(AppointmentDate(id: 14072019, date: MyDate(day: currentDay+i, month: 7, year: 2019), dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
         }
         
         for i in 7..<12{
             //after getting from data base
-            notificationDays.append(AppointmentDate(id: 14072019, date: MyDate(day: 18+i, month: 7, year: 2019), dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
+            notificationDays.append(AppointmentDate(id: 14072019, date: MyDate(day: currentDay+i, month: 7, year: 2019), dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
         }
         
         //get the barber from the data base
-        allDates = AllDates(barber: 0, availebleDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barber: barber.id, availebleDays: avialibleDays, notificationDays: notificationDays)
         
         displayedDates = allDates?.getDisplayedDates()
+        
+        
+        avialibleDaysCount = avialibleDays.count
+        notificationDaysCount = notificationDays.count
+        
         
         let units = displayedDates?[0].time?.getDailyUnits()
         

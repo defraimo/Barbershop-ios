@@ -403,8 +403,6 @@ class MainViewController: UIViewController {
         adjustsButtonFont(aboutUsButton)
         adjustsButtonFont(howWeGetThereButton)
         
-        
-        ScheduleData()
     }
     
     func adjustsButtonFont(_ button:UIButton){

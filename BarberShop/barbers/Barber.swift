@@ -10,6 +10,7 @@ import UIKit
 
 struct Barber {
     var name:String
+    var id:Int
     var description:String?
     var image:UIImage
     var schedule:DatesManager?
