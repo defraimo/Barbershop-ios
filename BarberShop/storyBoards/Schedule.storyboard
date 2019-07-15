@@ -13,7 +13,7 @@
         <!--Choose Haircut View Controller-->
         <scene sceneID="kRc-Uf-HSE">
             <objects>
-                <viewController id="Lq4-5W-o12" customClass="ChooseHaircutViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="toHaircuts" id="Lq4-5W-o12" customClass="ChooseHaircutViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uLB-od-PrV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -663,6 +663,6 @@
         <image name="vertical_price_line" width="17" height="1045"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lLR-5L-Lo6"/>
+        <segue reference="mSu-eZ-bim"/>
     </inferredMetricsTieBreakers>
 </document>
