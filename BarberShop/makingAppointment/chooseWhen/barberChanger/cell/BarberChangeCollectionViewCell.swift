@@ -16,4 +16,21 @@ class BarberChangeCollectionViewCell: UICollectionViewCell {
         barberImage.image = barber.image.circleMasked
         barberName.text = barber.name
     }
+ 
+    
+    override func didTransition(from oldLayout: UICollectionViewLayout, to newLayout: UICollectionViewLayout) {
+         print("didTransition")
+    }
+    
+//    override func prepareForReuse() {
+//        print("Reuse")
+//    }
+//
+//    override func didMoveToSuperview() {
+//        print("Hello")
+//    }
+    
+    
 }
+
+

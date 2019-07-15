@@ -17,7 +17,7 @@ class ChooseWhenViewController: UIViewController {
     var chosenBarberImage:UIImageView?
     var chosenBarberIndex:IndexPath?
     
-    var cellWasReloaded = false
+    var cellWasReloaded:[Bool] = []
     
     @IBOutlet weak var datePicker: UIPickerView!
     @IBOutlet weak var timePicker: UIPickerView!
@@ -70,6 +70,19 @@ class ChooseWhenViewController: UIViewController {
     
     @IBAction func schedule(_ sender: UIButton) {
         performSegue(withIdentifier: "toSumUp", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dest = segue.destination as? SumUpViewController, let id = segue.identifier else {return}
+        
+        //set the navigation back item title of the next screen
+        let backItem = UIBarButtonItem()
+        backItem.title = "בחירת תור"
+        navigationItem.backBarButtonItem = backItem
+        
+        if id == "toSumUp"{
+            
+        }
     }
     
     
@@ -162,6 +175,17 @@ class ChooseWhenViewController: UIViewController {
         currentlyDaysNamed = currentlyShownSchedule?.namedDays
         avialibleTimeForChosenDay = currentlyDaysNamed![chosenRow].timeAvialible?.workingHours
         
+        if barbers != nil{
+            for i in 0..<barbers!.count{
+                if i == chosenRow{
+                    cellWasReloaded.append(true)
+                }
+                else{
+                    cellWasReloaded.append(false)
+                }
+            }
+        }
+        
 //        currentlyDaysNamed = currentlyShownSchedule?[0].date
 //        avialibleTimeForChosenDay = currentlyDaysNamed![chosenRow].timeAvialible?.workingHours
         
@@ -227,28 +251,22 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        //set the picker date array to the chosen barber from the collectionView
-//        currentlyShownSchedule = barbersSchedule[indexPath.row]
-//        currentlyDaysNamed = currentlyShownSchedule?.namedDays
-//
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.datePicker.alpha = 0
-//        }) { (_) in
-//            UIView.animate(withDuration: 0.3, animations: {
-//                self.datePicker.alpha = 1
-//            })
-//            self.datePicker.reloadAllComponents()
-//        }
-//    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if !cellWasReloaded{
-            cellWasReloaded = true
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let visible = barbersCollection.indexPathsForVisibleItems
+        
+        guard visible.count == 1 else {
+            return
+        }
+        
+        let visibleRow = visible.first!.row
+        
+        if cellWasReloaded[visibleRow] == false{
+        
             //set the picker date array to the chosen barber from the collectionView
-            currentlyShownSchedule = barbersSchedule[indexPath.row]
+            currentlyShownSchedule = barbersSchedule[visibleRow]
             currentlyDaysNamed = currentlyShownSchedule?.namedDays
-            chosenBarberIndex = indexPath
+            chosenBarberIndex = visible.first!
             
             UIView.animate(withDuration: 0.3, animations: {
                 self.datePicker.alpha = 0
@@ -258,26 +276,25 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
                 })
                 self.datePicker.reloadAllComponents()
             }
-            return
+            
+            for i in 0..<barbers!.count{
+                if i == visibleRow{
+                    cellWasReloaded[i] = true
+                }
+                else{
+                    cellWasReloaded[i] = false
+                }
+            }
         }
-        cellWasReloaded = false
+        
+//        guard let attrs = barbersCollection.layoutAttributesForItem(at: visible[0]) else {return}
+        
+        
+//        let x = barbersCollection.layoutAttributesForItem(at: IndexPath(item: 1, section: 0))?.frame.origin.x
+        
+//        guard let layout = self.barbersCollection.collectionViewLayout as? UICollectionViewFlowLayout else {return}
+        
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-//        //set the picker date array to the chosen barber from the collectionView
-//        currentlyShownSchedule = barbersSchedule[indexPath.row]
-//        currentlyDaysNamed = currentlyShownSchedule?.namedDays
-//        chosenBarberIndex = indexPath
-//
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.datePicker.alpha = 0
-//        }) { (_) in
-//            UIView.animate(withDuration: 0.3, animations: {
-//                self.datePicker.alpha = 1
-//            })
-//            self.datePicker.reloadAllComponents()
-//        }
-//    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.barbersCollection.scrollToNearestVisibleCollectionViewCell()
@@ -352,7 +369,7 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
         if pickerView.tag == 1{
             pickerLabel.font = UIFont(name: "SinhalaSangamMN", size: 24)
             
-            if row < currentlyShownSchedule!.getAvialibleDays(){
+            if row < currentlyShownSchedule!.daysAvailable{
                 pickerLabel.text = currentlyDaysNamed![row].description
                 pickerLabel.textColor = UIColor.white
                 

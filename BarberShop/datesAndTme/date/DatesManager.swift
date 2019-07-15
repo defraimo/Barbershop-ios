@@ -11,18 +11,14 @@ import Foundation
 class DatesManager {
 //    private let barberName:String
     var daysAvailable:Int = 0
-    private var additionalDays:Int
-    private (set) var daysOff:[Int]?
-    private (set) var datesOff:[AppointmentDate]?
+    var notificationDays:Int = 0
+    var daysOff:[Int]?
+    var datesOff:[AppDate]?
     
     init(/*barberName:String, */daysAvailable:Int, additionalDays:Int) {
         self.daysAvailable = daysAvailable
-        self.additionalDays = additionalDays
+        self.notificationDays = additionalDays
 //        self.barberName = barberName
-    }
-    
-    func getAvialibleDays() -> Int{
-        return daysAvailable
     }
     
     func setAvialibleDays(numberOfDays:Int){
@@ -30,18 +26,18 @@ class DatesManager {
     }
     
     func setadditionalDays(numberOfDays:Int){
-        additionalDays = numberOfDays
+        notificationDays = numberOfDays
     }
     
     var daysToShow:Int{
-        return daysAvailable + additionalDays
+        return daysAvailable + notificationDays
     }
     
     func setDaysOff(days:[Int]){
         daysOff = days
     }
     
-    func addDatesOff(dates:[AppointmentDate]){
+    func addDatesOff(dates:[AppDate]){
         if datesOff == nil{
             datesOff = []
         }
@@ -56,7 +52,7 @@ class DatesManager {
         var allDays:[DayData] = []
         
         //the array of the days names
-        let namedDays = currentDate.namedDays
+        let namedDays = CurrentDate.namedDays
         
         //puts all the avialible days into array
         for day in currentDay..<(daysToShow + currentDay){
@@ -80,7 +76,7 @@ class DatesManager {
                             daysAvailable -= 1
                         }
                         else{
-                            additionalDays -= 1
+                            notificationDays -= 1
                         }
                     }
                 }
@@ -99,7 +95,7 @@ class DatesManager {
                             daysAvailable -= 1
                         }
                         else{
-                            additionalDays -= 1
+                            notificationDays -= 1
                         }
                     }
                 }
@@ -122,7 +118,7 @@ class DatesManager {
         
         //set the timeManager
         let timeRange = [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))]
-        let time = TimeManager(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 36, freeTime: timeRange)
+        let time = TimeManage(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 36, freeTime: timeRange)
         
         //DO TO -> CHANGE TO "TIME"
         

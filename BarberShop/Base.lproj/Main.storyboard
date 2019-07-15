@@ -192,6 +192,9 @@
                         <outlet property="pricesButton" destination="1YI-LK-mbt" id="ubp-eU-H9Y"/>
                         <outlet property="roundedView" destination="lzM-Or-Tlp" id="hpi-5a-Xm5"/>
                         <outlet property="roundedViewHeight" destination="jcn-my-5c9" id="XMI-Mb-Zc0"/>
+                        <outlet property="switchingImages" destination="M8q-1y-JnR" id="RF0-WY-Ajz"/>
+                        <outlet property="upperView" destination="lzM-Or-Tlp" id="zWF-86-yF1"/>
+                        <outlet property="upperViewHeight" destination="jcn-my-5c9" id="Qdl-yb-ovk"/>
                         <outlet property="whatsupButton" destination="icW-Jn-xC8" id="f7c-Jk-m3V"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toPrices" id="Y70-gu-cad"/>
                         <segue destination="fgm-7W-7C1" kind="show" identifier="toAboutUs" id="cq2-XH-Wee"/>

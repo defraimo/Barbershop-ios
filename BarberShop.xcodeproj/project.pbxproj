@@ -19,13 +19,19 @@
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
 		63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */; };
 		A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73722C4D77400AC9FF4 /* ANCustomView.swift */; };
-		A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73922C5462400AC9FF4 /* TimeManager.swift */; };
+		A614D73A22C5462400AC9FF4 /* TimeManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73922C5462400AC9FF4 /* TimeManage.swift */; };
 		A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73B22C6595C00AC9FF4 /* Time.swift */; };
 		A618D59622D3AC9E00A93D5E /* AppointmentUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59522D3AC9E00A93D5E /* AppointmentUnit.swift */; };
 		A618D59822D3AFF700A93D5E /* ScheduleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59722D3AFF700A93D5E /* ScheduleDataManager.swift */; };
 		A618D59A22D499EC00A93D5E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59922D499EC00A93D5E /* Day.swift */; };
 		A618D59C22D4A9D100A93D5E /* BarbershopAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59B22D4A9D100A93D5E /* BarbershopAnnotationView.swift */; };
 		A618D59F22D50DFE00A93D5E /* SumUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D59E22D50DFE00A93D5E /* SumUpViewController.swift */; };
+		A618D5CB22DB74A000A93D5E /* AllDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D5CA22DB74A000A93D5E /* AllDates.swift */; };
+		A618D5CD22DB756300A93D5E /* AppointmentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D5CC22DB756300A93D5E /* AppointmentDate.swift */; };
+		A618D5CF22DB762B00A93D5E /* MyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D5CE22DB762B00A93D5E /* MyDate.swift */; };
+		A618D5D122DB779000A93D5E /* TimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D5D022DB779000A93D5E /* TimeUnit.swift */; };
+		A618D5D522DB7EAF00A93D5E /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D5D422DB7EAF00A93D5E /* TimeManager.swift */; };
+		A618D5D722DBA1E800A93D5E /* ScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618D5D622DBA1E800A93D5E /* ScheduleData.swift */; };
 		A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */; };
 		A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */; };
 		A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31A522B7ACFE00FC20BE /* Main.storyboard */; };
@@ -62,7 +68,7 @@
 		A659A09A22BFD76C00274F40 /* DatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A09922BFD76C00274F40 /* DatesManager.swift */; };
 		A659A09C22BFDAB200274F40 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A09B22BFDAB200274F40 /* CurrentDate.swift */; };
 		A659A09F22C0195700274F40 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A09E22C0195700274F40 /* Appointment.swift */; };
-		A659A0A122C0197400274F40 /* AppointmentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A0A022C0197400274F40 /* AppointmentDate.swift */; };
+		A659A0A122C0197400274F40 /* AppDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A0A022C0197400274F40 /* AppDate.swift */; };
 		A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A0A222C0198700274F40 /* AppointmentTime.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,13 +87,19 @@
 		63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extensions.swift"; sourceTree = "<group>"; };
 		7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.release.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.release.xcconfig"; sourceTree = "<group>"; };
 		A614D73722C4D77400AC9FF4 /* ANCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCustomView.swift; sourceTree = "<group>"; };
-		A614D73922C5462400AC9FF4 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		A614D73922C5462400AC9FF4 /* TimeManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManage.swift; sourceTree = "<group>"; };
 		A614D73B22C6595C00AC9FF4 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		A618D59522D3AC9E00A93D5E /* AppointmentUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentUnit.swift; sourceTree = "<group>"; };
 		A618D59722D3AFF700A93D5E /* ScheduleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDataManager.swift; sourceTree = "<group>"; };
 		A618D59922D499EC00A93D5E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		A618D59B22D4A9D100A93D5E /* BarbershopAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbershopAnnotationView.swift; sourceTree = "<group>"; };
 		A618D59E22D50DFE00A93D5E /* SumUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumUpViewController.swift; sourceTree = "<group>"; };
+		A618D5CA22DB74A000A93D5E /* AllDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDates.swift; sourceTree = "<group>"; };
+		A618D5CC22DB756300A93D5E /* AppointmentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDate.swift; sourceTree = "<group>"; };
+		A618D5CE22DB762B00A93D5E /* MyDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDate.swift; sourceTree = "<group>"; };
+		A618D5D022DB779000A93D5E /* TimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnit.swift; sourceTree = "<group>"; };
+		A618D5D422DB7EAF00A93D5E /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		A618D5D622DBA1E800A93D5E /* ScheduleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleData.swift; sourceTree = "<group>"; };
 		A61A319E22B7ACFE00FC20BE /* BarberShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A61A31A322B7ACFE00FC20BE /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +138,7 @@
 		A659A09922BFD76C00274F40 /* DatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesManager.swift; sourceTree = "<group>"; };
 		A659A09B22BFDAB200274F40 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
 		A659A09E22C0195700274F40 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
-		A659A0A022C0197400274F40 /* AppointmentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDate.swift; sourceTree = "<group>"; };
+		A659A0A022C0197400274F40 /* AppDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDate.swift; sourceTree = "<group>"; };
 		A659A0A222C0198700274F40 /* AppointmentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,11 +198,52 @@
 			path = sumUpAppointment;
 			sourceTree = "<group>";
 		};
-		A618D5C922DB0B6100A93D5E /* datesAndTimeManager */ = {
+		A618D5C922DB0B6100A93D5E /* scheduleManager */ = {
 			isa = PBXGroup;
 			children = (
+				A618D5DB22DC84AF00A93D5E /* data */,
+				A618D5DA22DC849F00A93D5E /* time */,
+				A618D5D922DC841800A93D5E /* date */,
+				A618D5D822DC83A300A93D5E /* models */,
 			);
-			path = datesAndTimeManager;
+			path = scheduleManager;
+			sourceTree = "<group>";
+		};
+		A618D5D822DC83A300A93D5E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				A659A09E22C0195700274F40 /* Appointment.swift */,
+				A614D73B22C6595C00AC9FF4 /* Time.swift */,
+				A618D5CE22DB762B00A93D5E /* MyDate.swift */,
+				A618D5D022DB779000A93D5E /* TimeUnit.swift */,
+				A659A09B22BFDAB200274F40 /* CurrentDate.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		A618D5D922DC841800A93D5E /* date */ = {
+			isa = PBXGroup;
+			children = (
+				A618D5CA22DB74A000A93D5E /* AllDates.swift */,
+				A618D5CC22DB756300A93D5E /* AppointmentDate.swift */,
+			);
+			path = date;
+			sourceTree = "<group>";
+		};
+		A618D5DA22DC849F00A93D5E /* time */ = {
+			isa = PBXGroup;
+			children = (
+				A618D5D422DB7EAF00A93D5E /* TimeManager.swift */,
+			);
+			path = time;
+			sourceTree = "<group>";
+		};
+		A618D5DB22DC84AF00A93D5E /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A618D5D622DBA1E800A93D5E /* ScheduleData.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 		A61A319522B7ACFE00FC20BE = {
@@ -214,7 +267,7 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
-				A618D5C922DB0B6100A93D5E /* datesAndTimeManager */,
+				A618D5C922DB0B6100A93D5E /* scheduleManager */,
 				A61D2D1822CCA45F002DC7CB /* extensions */,
 				6302287622C76F5600B242C6 /* authentication */,
 				63EF105422D4B48700D0B993 /* database */,
@@ -363,9 +416,8 @@
 		A6413D0522C21EF100FA1768 /* date */ = {
 			isa = PBXGroup;
 			children = (
-				A659A0A022C0197400274F40 /* AppointmentDate.swift */,
+				A659A0A022C0197400274F40 /* AppDate.swift */,
 				A659A09922BFD76C00274F40 /* DatesManager.swift */,
-				A659A09B22BFDAB200274F40 /* CurrentDate.swift */,
 				A6413D0122C0FC4900FA1768 /* DayData.swift */,
 			);
 			path = date;
@@ -375,8 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				A659A0A222C0198700274F40 /* AppointmentTime.swift */,
-				A614D73922C5462400AC9FF4 /* TimeManager.swift */,
-				A614D73B22C6595C00AC9FF4 /* Time.swift */,
+				A614D73922C5462400AC9FF4 /* TimeManage.swift */,
 			);
 			path = time;
 			sourceTree = "<group>";
@@ -491,7 +542,6 @@
 		A659A09D22C0193D00274F40 /* appointment */ = {
 			isa = PBXGroup;
 			children = (
-				A659A09E22C0195700274F40 /* Appointment.swift */,
 				A618D59522D3AC9E00A93D5E /* AppointmentUnit.swift */,
 				A618D59922D499EC00A93D5E /* Day.swift */,
 			);
@@ -623,8 +673,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */,
+				A618D5CD22DB756300A93D5E /* AppointmentDate.swift in Sources */,
 				A61A31C422B9587E00FC20BE /* AboutUsViewController.swift in Sources */,
+				A618D5D522DB7EAF00A93D5E /* TimeManager.swift in Sources */,
 				A618D59622D3AC9E00A93D5E /* AppointmentUnit.swift in Sources */,
+				A618D5D122DB779000A93D5E /* TimeUnit.swift in Sources */,
 				A618D59C22D4A9D100A93D5E /* BarbershopAnnotationView.swift in Sources */,
 				A61A31D222B95C8B00FC20BE /* AboutUs.swift in Sources */,
 				633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */,
@@ -638,7 +691,7 @@
 				A61A31C722B9596500FC20BE /* AboutUsTableViewCell.swift in Sources */,
 				A61D2D2622CD08F5002DC7CB /* HaircutTableViewCell.swift in Sources */,
 				633ED44922D0D11400D64BAB /* Address.swift in Sources */,
-				A659A0A122C0197400274F40 /* AppointmentDate.swift in Sources */,
+				A659A0A122C0197400274F40 /* AppDate.swift in Sources */,
 				A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */,
 				A61D2D2A22CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift in Sources */,
 				A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */,
@@ -655,15 +708,18 @@
 				A659A01522BD46F500274F40 /* ChooseWhenViewController.swift in Sources */,
 				A618D59F22D50DFE00A93D5E /* SumUpViewController.swift in Sources */,
 				A659A00922BD0F9D00274F40 /* ChooseBarberViewController.swift in Sources */,
-				A614D73A22C5462400AC9FF4 /* TimeManager.swift in Sources */,
+				A618D5D722DBA1E800A93D5E /* ScheduleData.swift in Sources */,
+				A614D73A22C5462400AC9FF4 /* TimeManage.swift in Sources */,
 				A6413D0222C0FC4900FA1768 /* DayData.swift in Sources */,
 				A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */,
 				A659A09A22BFD76C00274F40 /* DatesManager.swift in Sources */,
 				A61A31C922B9598200FC20BE /* DescriptionTableViewCell.swift in Sources */,
 				A61A31A222B7ACFE00FC20BE /* AppDelegate.swift in Sources */,
+				A618D5CF22DB762B00A93D5E /* MyDate.swift in Sources */,
 				A61A31AA22B7ACFE00FC20BE /* BarberShop.xcdatamodeld in Sources */,
 				A61D2D1A22CCA481002DC7CB /* UIView+Extension.swift in Sources */,
 				A6413D0922C220D300FA1768 /* BarbersSchedule.swift in Sources */,
+				A618D5CB22DB74A000A93D5E /* AllDates.swift in Sources */,
 				A618D59822D3AFF700A93D5E /* ScheduleDataManager.swift in Sources */,
 				A61A31CD22B959AB00FC20BE /* ContactUsTableViewCell.swift in Sources */,
 				63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class MainViewController: UIViewController {
-    let barberPhone = "0544533616"
+    let barberPhone = "+972544533616"
     let userName =  "daniel_radshun"
     
     var user:User?
@@ -160,16 +160,36 @@ class MainViewController: UIViewController {
     @IBOutlet weak var appointmentBtn: UIButton!
     //when ״הזמן תור״ is pressed:
     @IBAction func makeAppointment(_ sender: UIButton) {
+        
+        animateView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+        
         //if there is a signed in user, it will go straight to haircuts:
         if Auth.auth().currentUser != nil {
             print("we got somebody")
         }
         
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.roundedViewHeight.constant = self.view.frame.height
-//        }) { (_) in
-//            self.roundedViewHeight.constant = self.view.frame.height * 0.72
-//        }
+            self.loginOrSignUpFunc()
+            
+        }
+    }
+    @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var upperViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var switchingImages: UIImageView!
+    
+    func animateView(){
+        //---------------------------
+        //add animation to the button
+        //---------------------------
+    }
+    
+    fileprivate func loginOrSignUpFunc() {
+        //        UIView.animate(withDuration: 0.3, animations: {
+        //            self.roundedViewHeight.constant = self.view.frame.height
+        //        }) { (_) in
+        //            self.roundedViewHeight.constant = self.view.frame.height * 0.72
+        //        }
         
         //placed above screen
         loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
@@ -208,6 +228,7 @@ class MainViewController: UIViewController {
         //blur effect for the background
         blurEffect.isHidden = false
     }
+    
     //when "הירשם" is pressed:
     @IBAction func signUp(_ sender: UIButton) {
         //init the storyboard because it is in another file now
@@ -369,7 +390,7 @@ class MainViewController: UIViewController {
         let barber1Dates = DatesManager(daysAvailable: 10, additionalDays: 7)
         barber1Dates.setDaysOff(days: [6,7])
         
-        let barber1Time = TimeManager(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
+        let barber1Time = TimeManage(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
         
         ScheduleDataManager().initBarberSchedule(barberIndex: 0, dates: barber1Dates, availableTime: barber1Time)
         
@@ -381,6 +402,9 @@ class MainViewController: UIViewController {
         adjustsButtonFont(pricesButton)
         adjustsButtonFont(aboutUsButton)
         adjustsButtonFont(howWeGetThereButton)
+        
+        
+        ScheduleData()
     }
     
     func adjustsButtonFont(_ button:UIButton){

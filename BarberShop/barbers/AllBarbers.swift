@@ -29,7 +29,7 @@ class AllBarbers {
         allBarbers[barberIndex].schedule?.setDaysOff(days: days)
     }
     
-    func addDatesOff(barberIndex:Int, dates:[AppointmentDate]){
+    func addDatesOff(barberIndex:Int, dates:[AppDate]){
         allBarbers[barberIndex].schedule?.addDatesOff(dates: dates)
     }
 }

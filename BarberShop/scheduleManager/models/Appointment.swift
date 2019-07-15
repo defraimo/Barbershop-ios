@@ -12,5 +12,5 @@ struct Appointment {
     var barber:Barber
     var client:String //TO CHANGE!!!!!!
     var units:[AppointmentUnit]
-    var price:PriceModel
+    var servies:PriceModel
 }

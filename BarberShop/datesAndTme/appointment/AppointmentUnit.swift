@@ -9,7 +9,6 @@
 import Foundation
 
 struct AppointmentUnit {
-    var date:DayData
-    var startingTime:Time
+    var duration:Int
     var isAvailable:Bool
 }
