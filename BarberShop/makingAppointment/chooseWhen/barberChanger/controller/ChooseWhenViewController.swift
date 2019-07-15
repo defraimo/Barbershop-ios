@@ -40,6 +40,7 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var sendNotificationButton: UIButton!
     
     @IBOutlet weak var barbersCollection: UICollectionView!
+    
     @IBOutlet weak var arrowRight: UIImageView!
     @IBOutlet weak var arrowLeft: UIImageView!
     @IBAction func arrowRightTapped(_ sender: UITapGestureRecognizer) {
@@ -80,7 +81,9 @@ class ChooseWhenViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dest = segue.destination as? SumUpViewController, let id = segue.identifier else {return}
+        guard let dest = segue.destination as? SumUpViewController,
+            let id = segue.identifier
+            else {return}
         
         //set the navigation back item title of the next screen
         let backItem = UIBarButtonItem()
@@ -140,7 +143,6 @@ class ChooseWhenViewController: UIViewController {
                                 //set the arrows alpha to 0.3 for a design reasons
                                 view.alpha = 0.3
                             }
-                            
                         }
                         else{
                             view.alpha = 1
@@ -527,9 +529,5 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
         }
 
     }
-    
-    //flow layout
-    //uicollection snap to center delegate
-    //circlar view
     
 }
