@@ -171,10 +171,16 @@ class MainViewController: UIViewController {
         
         //if there is a signed in user, it will go straight to haircuts:
         if Auth.auth().currentUser != nil {
-            print("we got somebody")
+            //init the storyboard because it is in another file now
+            let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+            
+            //init the viewController:
+            guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+            
+            self.navigationController?.pushViewController(scheduleVc, animated: true)
+        }else{
+            loginOrSignUpFunc()
         }
-        
-        loginOrSignUpFunc()
     }
     
     
@@ -351,15 +357,20 @@ class MainViewController: UIViewController {
                     guard let uid = Auth.auth().currentUser?.uid else {return}
                     
                     DAO.shared.saveNewUser(user, uid: uid)
+                    
                     //MARK: not tested yet:
                     self?.navigationItem.title = user.fullName
                     
-                    self?.activityIndicator.isHidden = true
-                    self?.activityIndicator.stopAnimating()
+                    //init the storyboard because it is in another file now
+                    let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+                    
+                    //init the viewController:
+                    guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+                    
+                    self?.navigationController?.pushViewController(scheduleVc, animated: true)
                 }
             })
-           
-            
+        
             //the loading has ended:
 //            activityIndicator.stopAnimating()
 //            activityIndicator.isHidden = true
@@ -390,6 +401,8 @@ class MainViewController: UIViewController {
         
         //change the navigation item color
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        //sets the codefield as a listener to autofill:
+        codeField.textContentType = .oneTimeCode
         
         //setting the "getting an appoinment" image to rounded
 //        imageRounded.layer.cornerRadius = 42
