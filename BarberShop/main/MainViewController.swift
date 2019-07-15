@@ -163,16 +163,12 @@ class MainViewController: UIViewController {
         
         animateView()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-        
         //if there is a signed in user, it will go straight to haircuts:
         if Auth.auth().currentUser != nil {
             print("we got somebody")
         }
         
-            self.loginOrSignUpFunc()
-            
-        }
+        loginOrSignUpFunc()
     }
     
     
