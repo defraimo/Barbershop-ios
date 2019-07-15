@@ -91,8 +91,10 @@ class ScheduleData{
                 var isAvailible = true
                 //iterate to check forward all the units
                 for _ in 0..<numberOfUnitsNeeded{
-                    //check if the units num is matching the index so we can make sure it doesn't fall on a break time
-                    if allUnits[num].index != num{
+                    //check if the units are in the array limit and if the difference indexes between two following units is 1
+                    if num+1 < allUnits.count &&
+                        allUnits[num+1].index - allUnits[num].index != 1{
+                        
                         isAvailible = false
                     }
                     //if the unit is availible so make iAvailible false

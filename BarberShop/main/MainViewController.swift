@@ -174,9 +174,7 @@ class MainViewController: UIViewController {
             
         }
     }
-    @IBOutlet weak var upperView: UIView!
-    @IBOutlet weak var upperViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var switchingImages: UIImageView!
+    
     
     func animateView(){
         //---------------------------

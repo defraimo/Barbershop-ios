@@ -234,6 +234,7 @@ class ChooseWhenViewController: UIViewController {
     
     func fetchTimeForChosenDay(index:Int){
         timeForChosenDay = scheduleData?.getDisplayTimeFor(dateIndex: index)
+//        timeForChosenDay = scheduleData?.getDisplayTimeUnitsWith(intervals: 40, forDateIndex: index)
     }
    
 }
