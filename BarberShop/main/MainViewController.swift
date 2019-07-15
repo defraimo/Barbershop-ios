@@ -353,29 +353,23 @@ class MainViewController: UIViewController {
         }else{
            let code = codeField.text!
             DAO.shared.verifyUser(code, completion: { [weak self] in
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
                 if let user = self?.user{
                     guard let uid = Auth.auth().currentUser?.uid else {return}
-                    
                     DAO.shared.saveNewUser(user, uid: uid)
-                    
-                    //MARK: not tested yet:
-                    self?.navigationItem.title = user.fullName
-                    
-                    //init the storyboard because it is in another file now
-                    let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
-                    
-                    //init the viewController:
-                    guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
-                    
-                    self?.navigationController?.pushViewController(scheduleVc, animated: true)
                 }
+                //init the storyboard because it is in another file now
+                let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+                
+                //init the viewController:
+                guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+                
+                self?.releaseCodeAuthMenu()
+                
+                self?.navigationController?.pushViewController(scheduleVc, animated: true)
             })
-        
-            //the loading has ended:
-//            activityIndicator.stopAnimating()
-//            activityIndicator.isHidden = true
         }
-        releaseCodeAuthMenu()
     }
 
     @IBAction func signOut(_ sender: UIButton) {
@@ -388,7 +382,6 @@ class MainViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)
@@ -426,8 +419,7 @@ class MainViewController: UIViewController {
         adjustsButtonFont(aboutUsButton)
         adjustsButtonFont(howWeGetThereButton)
         
-    }
-    
+    }    
     func adjustsButtonFont(_ button:UIButton){
         //setting the label size to be responsive
         button.titleLabel?.adjustsFontSizeToFitWidth = true
