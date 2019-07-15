@@ -18,7 +18,7 @@ class ScheduleDataManager {
         let barber1Dates = DatesManager(daysAvailable: 10, additionalDays: 7)
         barber1Dates.setDaysOff(days: [6,7])
         
-        let barber1Time = TimeManager(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
+        let barber1Time = TimeManage(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
         
         for day in barber1Dates.namedDays{
             availableUnits.append(barber1Time.getDailyUnits(forDay: day))
@@ -28,13 +28,13 @@ class ScheduleDataManager {
     func printUnits(){
         for unit in availableUnits{
             for param in unit{
-                print("\(param.date.date) \(param.startingTime) \(param.isAvailable)")
+                print("\(param.duration) \(param.isAvailable)")
             }
         }
     }
     
     
-    func initBarberSchedule(barberIndex index:Int, dates:DatesManager, availableTime:TimeManager){
+    func initBarberSchedule(barberIndex index:Int, dates:DatesManager, availableTime:TimeManage){
         let barberDates = dates
         var allBarbers = AllBarbers.shared.allBarbers
         var days:[Day] = []

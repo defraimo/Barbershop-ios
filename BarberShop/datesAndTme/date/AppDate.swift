@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AppointmentDate:CustomStringConvertible, Equatable {
+struct AppDate:CustomStringConvertible, Equatable {
     var day:Int
     var month:Int
     var year:Int
@@ -18,7 +18,7 @@ struct AppointmentDate:CustomStringConvertible, Equatable {
     }
     
     //comparing func
-    public static func ==(lhs: AppointmentDate, rhs: AppointmentDate) -> Bool{
+    public static func ==(lhs: AppDate, rhs: AppDate) -> Bool{
         return
             lhs.day == rhs.day &&
             lhs.month == rhs.month &&

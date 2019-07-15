@@ -11,6 +11,7 @@ import Foundation
 class CurrentDate{
     private let date:Date
     private let calendar:Calendar
+    
     var currentYear:Int{
         return calendar.component(.year, from: date)
     }
@@ -23,12 +24,12 @@ class CurrentDate{
     var currentDay:Int{
         return calendar.component(.weekday, from: date)
     }
-    func addToCurrentDate(numberOfDays:Int) -> AppointmentDate{
+    func addToCurrentDate(numberOfDays:Int) -> AppDate{
         let newDate = calendar.date(byAdding: .day, value: numberOfDays, to: date)
-        return AppointmentDate(day: calendar.component(.day, from:newDate!), month: calendar.component(.month, from:newDate!), year: calendar.component(.year, from:newDate!))
+        return AppDate(day: calendar.component(.day, from:newDate!), month: calendar.component(.month, from:newDate!), year: calendar.component(.year, from:newDate!))
     }
     
-    let namedDays = [
+    static let namedDays = [
                                             "יום ראשון",
                                             "יום שני",
                                             "יום שלישי",
@@ -37,6 +38,10 @@ class CurrentDate{
                                             "יום שישי",
                                             "יום שבת"
     ]
+    
+    func getNameOfDay(_ dayIndex:Int) -> String{
+        return CurrentDate.namedDays[dayIndex % 7]
+    }
     
     init() {
         date = Date()
