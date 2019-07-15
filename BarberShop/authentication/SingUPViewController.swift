@@ -27,6 +27,10 @@ class SingUPViewController: UIViewController {
         genderPick.tintColor = UIColor.white
     }
     
+    @IBAction func doneText(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
     //outlet for animation:
     @IBOutlet weak var signupBtn: UIButton!
     @IBAction func signup(_ sender: UIButton) {
@@ -109,4 +113,8 @@ extension SingUPViewController{
             sender.image = #imageLiteral(resourceName: "horizontal thin line")
         }
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }

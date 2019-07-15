@@ -188,10 +188,14 @@
                         <outlet property="instagramButton" destination="YLZ-Te-0dB" id="DZH-kb-vVc"/>
                         <outlet property="loginOrSignupView" destination="kc7-ea-sxB" id="zYv-1q-65t"/>
                         <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
+                        <outlet property="newCustomer" destination="0Zs-cg-tEh" id="kxR-BB-1lK"/>
                         <outlet property="phoneNumberField" destination="gml-PG-b9B" id="RJY-KR-r7Z"/>
                         <outlet property="pricesButton" destination="1YI-LK-mbt" id="ubp-eU-H9Y"/>
                         <outlet property="roundedView" destination="lzM-Or-Tlp" id="hpi-5a-Xm5"/>
                         <outlet property="roundedViewHeight" destination="jcn-my-5c9" id="XMI-Mb-Zc0"/>
+                        <outlet property="signInLabel1" destination="xXG-Qv-P4E" id="Tbr-Xl-RXA"/>
+                        <outlet property="signInSendCodeBtn" destination="eZl-DQ-qDh" id="OSO-8U-vdK"/>
+                        <outlet property="signUpHereBtn" destination="bW1-H3-3OD" id="Ng1-BQ-gzn"/>
                         <outlet property="whatsupButton" destination="icW-Jn-xC8" id="f7c-Jk-m3V"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toPrices" id="Y70-gu-cad"/>
                         <segue destination="fgm-7W-7C1" kind="show" identifier="toAboutUs" id="cq2-XH-Wee"/>
@@ -268,7 +272,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="318" height="171"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="הזינו מספר פלאפון להזדהות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXG-Qv-P4E">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="הזינו מספר פלאפון להזדהות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXG-Qv-P4E">
                             <rect key="frame" x="32" y="16" width="254" height="25.5"/>
                             <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="18"/>
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -277,10 +281,7 @@
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZl-DQ-qDh">
-                            <rect key="frame" x="134" y="90" width="50" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="e6F-uw-RX9"/>
-                            </constraints>
+                            <rect key="frame" x="79.5" y="87.5" width="159" height="34"/>
                             <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="22"/>
                             <size key="titleShadowOffset" width="1" height="1"/>
                             <state key="normal" title="אישור ">
@@ -291,7 +292,7 @@
                                 <action selector="signInSendCode:" destination="T02-lw-fcr" eventType="touchUpInside" id="PKE-EA-eSN"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מספר  פלאפון" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gml-PG-b9B">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="מספר  פלאפון" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gml-PG-b9B">
                             <rect key="frame" x="32" y="49.5" width="254" height="30"/>
                             <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="textColor"/>
@@ -303,16 +304,16 @@
                             </connections>
                         </textField>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-ec-TZm">
-                            <rect key="frame" x="32" y="123" width="254" height="5"/>
+                            <rect key="frame" x="32" y="129.5" width="254" height="5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="5" id="5GM-VR-X1w"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3O7-oj-pOJ">
-                            <rect key="frame" x="80" y="128" width="158" height="35"/>
+                            <rect key="frame" x="79.5" y="134.5" width="159" height="28.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW1-H3-3OD">
-                                    <rect key="frame" x="0.0" y="0.0" width="74" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="76.5" height="28.5"/>
                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="17"/>
                                     <size key="titleShadowOffset" width="1" height="1"/>
                                     <state key="normal" title="הירשם כאן">
@@ -323,8 +324,8 @@
                                         <action selector="signUp:" destination="T02-lw-fcr" eventType="touchUpInside" id="vZ1-oP-bNg"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1" text="לקוח חדש?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zs-cg-tEh">
-                                    <rect key="frame" x="82" y="0.0" width="76" height="35"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1" text="לקוח חדש?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zs-cg-tEh">
+                                    <rect key="frame" x="84.5" y="0.0" width="74.5" height="28.5"/>
                                     <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -332,25 +333,29 @@
                                     <size key="shadowOffset" width="1" height="1"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="bW1-H3-3OD" firstAttribute="width" secondItem="3O7-oj-pOJ" secondAttribute="width" multiplier="0.48" id="Ul7-0a-H29"/>
+                            </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="xXG-Qv-P4E" secondAttribute="trailing" constant="32" id="1E9-PV-QEK"/>
                         <constraint firstAttribute="trailing" secondItem="Brg-ec-TZm" secondAttribute="trailing" constant="32" id="8SG-DS-j9p"/>
-                        <constraint firstAttribute="trailing" secondItem="3O7-oj-pOJ" secondAttribute="trailing" constant="80" id="BIu-2L-4lP"/>
-                        <constraint firstItem="5l3-MF-pxX" firstAttribute="trailing" secondItem="eZl-DQ-qDh" secondAttribute="trailing" constant="134" id="Ieb-ez-1V7"/>
+                        <constraint firstItem="3O7-oj-pOJ" firstAttribute="centerX" secondItem="kc7-ea-sxB" secondAttribute="centerX" id="FhF-XW-McS"/>
                         <constraint firstItem="3O7-oj-pOJ" firstAttribute="top" secondItem="Brg-ec-TZm" secondAttribute="bottom" id="Iev-3f-fiV"/>
+                        <constraint firstItem="eZl-DQ-qDh" firstAttribute="width" secondItem="kc7-ea-sxB" secondAttribute="width" multiplier="0.5" id="Mha-Vx-k8i"/>
+                        <constraint firstItem="eZl-DQ-qDh" firstAttribute="centerX" secondItem="kc7-ea-sxB" secondAttribute="centerX" id="NlP-k3-LyT"/>
                         <constraint firstItem="eZl-DQ-qDh" firstAttribute="top" secondItem="gml-PG-b9B" secondAttribute="bottom" constant="8" id="OCI-km-sQ1"/>
                         <constraint firstItem="Brg-ec-TZm" firstAttribute="top" secondItem="eZl-DQ-qDh" secondAttribute="bottom" constant="8" id="SBM-0L-mQm"/>
                         <constraint firstItem="gml-PG-b9B" firstAttribute="leading" secondItem="5l3-MF-pxX" secondAttribute="leading" constant="32" id="ZG9-7I-XFD"/>
                         <constraint firstItem="Brg-ec-TZm" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="32" id="Zva-WY-KVD"/>
                         <constraint firstItem="xXG-Qv-P4E" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="32" id="ebn-YP-3Ei"/>
+                        <constraint firstItem="3O7-oj-pOJ" firstAttribute="width" secondItem="kc7-ea-sxB" secondAttribute="width" multiplier="0.5" id="er3-PX-cBw"/>
+                        <constraint firstItem="eZl-DQ-qDh" firstAttribute="height" secondItem="kc7-ea-sxB" secondAttribute="height" multiplier="0.2" id="l27-DV-hRw"/>
                         <constraint firstItem="gml-PG-b9B" firstAttribute="top" secondItem="xXG-Qv-P4E" secondAttribute="bottom" constant="8" id="qbR-Ed-vQK"/>
                         <constraint firstItem="xXG-Qv-P4E" firstAttribute="top" secondItem="kc7-ea-sxB" secondAttribute="top" constant="16" id="ruF-Vc-McC"/>
                         <constraint firstItem="5l3-MF-pxX" firstAttribute="trailing" secondItem="gml-PG-b9B" secondAttribute="trailing" constant="32" id="sBg-aD-PcY"/>
-                        <constraint firstItem="3O7-oj-pOJ" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="80" id="tMM-fM-FMG"/>
-                        <constraint firstItem="eZl-DQ-qDh" firstAttribute="leading" secondItem="5l3-MF-pxX" secondAttribute="leading" constant="134" id="tjg-Gg-lZB"/>
                         <constraint firstAttribute="bottom" secondItem="3O7-oj-pOJ" secondAttribute="bottom" constant="8" id="um5-95-3bv"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="5l3-MF-pxX"/>

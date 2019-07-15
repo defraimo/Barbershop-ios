@@ -6,13 +6,18 @@
 //  Copyright © 2019 Neighbors. All rights reserved.
 //
 
+
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
 class DAO{
     static var shared = DAO()
+    //database ref:
     var ref:DatabaseReference!
+    //storage ref:
+    let storage = Storage.storage()
     var verId:String?
     
     

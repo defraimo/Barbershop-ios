@@ -158,6 +158,12 @@ class MainViewController: UIViewController {
     @IBOutlet var loginOrSignupView: UIView!
     //outlet for animation:
     @IBOutlet weak var appointmentBtn: UIButton!
+    
+    @IBOutlet weak var signInLabel1: UILabel!
+    @IBOutlet weak var signInSendCodeBtn: UIButton!
+    @IBOutlet weak var newCustomer: UILabel!
+    @IBOutlet weak var signUpHereBtn: UIButton!
+    
     //when ״הזמן תור״ is pressed:
     @IBAction func makeAppointment(_ sender: UIButton) {
         //if there is a signed in user, it will go straight to haircuts:
@@ -165,15 +171,19 @@ class MainViewController: UIViewController {
             print("we got somebody")
         }
         
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.roundedViewHeight.constant = self.view.frame.height
-//        }) { (_) in
-//            self.roundedViewHeight.constant = self.view.frame.height * 0.72
-//        }
-        
         //placed above screen
         loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
+        //setting up the size:
+        var frm = loginOrSignupView.frame
+        frm.size.width = self.view.frame.width*0.8
+        loginOrSignupView.frame = frm
         
+        newCustomer.adjustsFontSizeToFitWidth = true
+        newCustomer.minimumScaleFactor = 0.4
+        signUpHereBtn.titleLabel!.adjustsFontSizeToFitWidth = true
+        signUpHereBtn.titleLabel!.minimumScaleFactor = 0.4
+        signInLabel1.adjustsFontSizeToFitWidth = true
+        signInLabel1.minimumScaleFactor = 0.4
         //animation of the button press
         UIView.animate(withDuration: 0.1, animations: {
             self.appointmentBtn.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
@@ -202,7 +212,7 @@ class MainViewController: UIViewController {
         loginOrSignupView.layer.masksToBounds = false
         loginOrSignupView.layer.cornerRadius = 25
         loginOrSignupView.layer.shadowRadius = 10
-        
+      
         //hiding the nav bar
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //blur effect for the background
@@ -235,7 +245,7 @@ class MainViewController: UIViewController {
             sender.setError(hasError: false)
         }
     }
-    
+  
     @IBAction func signInSendCode(_ sender: UIButton) {
         if let count = phoneNumberField.text?.count{
             if count == 0{
@@ -392,6 +402,9 @@ class MainViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
        
+        //releases the keyboard when done editing:
+        self.view.endEditing(true)
+        
         guard let touch = touches.first else {return}
         
         

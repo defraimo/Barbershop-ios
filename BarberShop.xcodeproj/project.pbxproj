@@ -14,6 +14,10 @@
 		633ED44722D0CC1300D64BAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633ED44622D0CC1300D64BAB /* MapKit.framework */; };
 		633ED44922D0D11400D64BAB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44822D0D11400D64BAB /* Address.swift */; };
 		633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44A22D0D31000D64BAB /* AddressAnotation.swift */; };
+		63489AC122DC8A260055DA64 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63489AC022DC8A260055DA64 /* Shop.storyboard */; };
+		63489AC422DC8B190055DA64 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC322DC8B190055DA64 /* ShopViewController.swift */; };
+		63489AC622DC8B2D0055DA64 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */; };
+		63489AC822DC9AF40055DA64 /* DBStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC722DC9AF40055DA64 /* DBStorage.swift */; };
 		63EF105622D4BA2300D0B993 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF105522D4BA2300D0B993 /* DAO.swift */; };
 		63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF769822CA0994006631E5 /* SignUp.storyboard */; };
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
@@ -75,6 +79,10 @@
 		633ED44622D0CC1300D64BAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		633ED44822D0D11400D64BAB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		633ED44A22D0D31000D64BAB /* AddressAnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAnotation.swift; sourceTree = "<group>"; };
+		63489AC022DC8A260055DA64 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
+		63489AC322DC8B190055DA64 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		63489AC722DC9AF40055DA64 /* DBStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBStorage.swift; sourceTree = "<group>"; };
 		63EF105522D4BA2300D0B993 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		63EF769822CA0994006631E5 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		63EF769A22CA09FA006631E5 /* SingUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPViewController.swift; sourceTree = "<group>"; };
@@ -152,10 +160,20 @@
 			path = authentication;
 			sourceTree = "<group>";
 		};
+		63489AC222DC8AFA0055DA64 /* shop */ = {
+			isa = PBXGroup;
+			children = (
+				63489AC322DC8B190055DA64 /* ShopViewController.swift */,
+				63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */,
+			);
+			path = shop;
+			sourceTree = "<group>";
+		};
 		63EF105422D4B48700D0B993 /* database */ = {
 			isa = PBXGroup;
 			children = (
 				63EF105522D4BA2300D0B993 /* DAO.swift */,
+				63489AC722DC9AF40055DA64 /* DBStorage.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -214,6 +232,7 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				63489AC222DC8AFA0055DA64 /* shop */,
 				A618D5C922DB0B6100A93D5E /* datesAndTimeManager */,
 				A61D2D1822CCA45F002DC7CB /* extensions */,
 				6302287622C76F5600B242C6 /* authentication */,
@@ -356,6 +375,7 @@
 				633ED44422D0C89400D64BAB /* Location.storyboard */,
 				A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */,
 				63EF769822CA0994006631E5 /* SignUp.storyboard */,
+				63489AC022DC8A260055DA64 /* Shop.storyboard */,
 			);
 			path = storyBoards;
 			sourceTree = "<group>";
@@ -563,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63489AC122DC8A260055DA64 /* Shop.storyboard in Resources */,
 				A61A31AF22B7AD0000FC20BE /* LaunchScreen.storyboard in Resources */,
 				A61A31AC22B7AD0000FC20BE /* Assets.xcassets in Resources */,
 				63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */,
@@ -630,6 +651,7 @@
 				633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */,
 				A61A31CB22B9599900FC20BE /* BarberDescriptionTableViewCell.swift in Sources */,
 				A61A31C122B7C32500FC20BE /* MainViewController.swift in Sources */,
+				63489AC822DC9AF40055DA64 /* DBStorage.swift in Sources */,
 				6302287822C76FD900B242C6 /* User.swift in Sources */,
 				A61A31D422B95DBD00FC20BE /* ContactUs.swift in Sources */,
 				A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */,
@@ -646,6 +668,7 @@
 				A61A31B822B7BBC200FC20BE /* PriceTableViewCell.swift in Sources */,
 				A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */,
 				A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */,
+				63489AC422DC8B190055DA64 /* ShopViewController.swift in Sources */,
 				A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */,
 				A618D59A22D499EC00A93D5E /* Day.swift in Sources */,
 				A659A09F22C0195700274F40 /* Appointment.swift in Sources */,
@@ -666,6 +689,7 @@
 				A6413D0922C220D300FA1768 /* BarbersSchedule.swift in Sources */,
 				A618D59822D3AFF700A93D5E /* ScheduleDataManager.swift in Sources */,
 				A61A31CD22B959AB00FC20BE /* ContactUsTableViewCell.swift in Sources */,
+				63489AC622DC8B2D0055DA64 /* ShopTableViewCell.swift in Sources */,
 				63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */,
 				A659A09C22BFDAB200274F40 /* CurrentDate.swift in Sources */,
 				A61A31BA22B7C04B00FC20BE /* PriceModel.swift in Sources */,
