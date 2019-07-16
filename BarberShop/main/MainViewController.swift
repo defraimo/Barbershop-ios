@@ -312,9 +312,6 @@ class MainViewController: UIViewController {
         //getting the verification id:
         DAO.shared.getVerificationId(userPhoneNum!)
         
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-        
         //setting up the menu:
         authCodeView.alpha = 1
         authCodeView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
@@ -347,6 +344,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func sendCodeBtn(_ sender: UIButton) {
+        activityIndicator.alpha = 1
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         if codeField.text == ""{
             codeField.setError(hasError: true)
             return
@@ -357,20 +357,19 @@ class MainViewController: UIViewController {
                     guard let uid = Auth.auth().currentUser?.uid else {return}
                     DAO.shared.saveNewUser(user, uid: uid)
                 }
+                //init the storyboard because it is in another file now
+                let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+                
+                //init the viewController:
+            guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+            
                 self?.activityIndicator.stopAnimating()
                 self?.activityIndicator.isHidden = true
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                    //init the storyboard because it is in another file now
-                    let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
-                    
-                    //init the viewController:
-                    guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
-                    
-                    self?.releaseCodeAuthMenu()
-                    
-                    self?.navigationController?.pushViewController(scheduleVc, animated: true)
-                })
+                self?.releaseCodeAuthMenu()
+                
+                self?.navigationController?.pushViewController(scheduleVc, animated: true)
+            
             })
         }
     }
@@ -397,8 +396,6 @@ class MainViewController: UIViewController {
         
         //change the navigation item color
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        //sets the codefield as a listener to autofill:
-        codeField.textContentType = .oneTimeCode
         
         //setting the "getting an appoinment" image to rounded
 //        imageRounded.layer.cornerRadius = 42
