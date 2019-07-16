@@ -104,8 +104,12 @@ class ScheduleData{
                         
                         isAvailible = false
                     }
-                    //if the unit is availible so make iAvailible false
+                    //if the unit is availible so make isAvailible false
                     else if allUnits[num].isAvailible == false{
+                        isAvailible = false
+                    }
+                    //if the units needed are out of time range make isAvailible false
+                    else if num == allUnits.count-1{
                         isAvailible = false
                     }
                     num += 1
