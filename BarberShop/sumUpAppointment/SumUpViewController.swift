@@ -11,6 +11,8 @@ import UIKit
 class SumUpViewController: UIViewController {
     @IBOutlet weak var scheduleButton: UIButton!
     
+    var appointment:Appointment?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,8 @@ class SumUpViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
         scheduleButton.setRoundedSquareToWhite()
+        
+        print(appointment)
     }
 
 }

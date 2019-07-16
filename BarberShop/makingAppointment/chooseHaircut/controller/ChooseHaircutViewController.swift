@@ -12,6 +12,8 @@ class ChooseHaircutViewController: UIViewController {
     @IBOutlet weak var chooseServiesTable: UITableView!
     @IBOutlet weak var chooseServiesLabel: UILabel!
     
+    var appointment:Appointment?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,12 +101,18 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
     @objc func haircutChosen(_ sender:UIButton){
         let chosenIndex = sender.tag
         let specializedBarbers = prices[chosenIndex].barbers
+        
+        appointment = Appointment()
+        appointment?.client = "User Name"
+        appointment?.servies = prices[chosenIndex]
+        
         //if there is more than one barber that specifies to this work so pass to the choose barber screen
         if specializedBarbers.count > 1{
             performSegue(withIdentifier: "toChooseBarber", sender: specializedBarbers)
         }
         //else go to the date and time selection screen
         else{
+            appointment?.barber = specializedBarbers[0]
             performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: specializedBarbers)
         }
     }
@@ -140,12 +148,14 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
         if id == "toChooseBarber"{
             guard let dest = segue.destination as? ChooseBarberViewController else {return}
             dest.barbers = specializedBarbers
+            dest.appointment = appointment
         }
         //if there is only one barber
         else if id == "toSelectWhenWithOneBarber"{
             guard let dest = segue.destination as? ChooseWhenViewController else {return}
             dest.barbers = specializedBarbers
             dest.chosenBarberIndex = IndexPath(row: 0, section: 0)
+            dest.appointment = appointment
         }
     }
     

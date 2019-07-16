@@ -12,6 +12,7 @@ class ChooseBarberViewController: UIViewController {
     @IBOutlet weak var chooseBarberLabel: UILabel!
     
     var barbers:[Barber]?
+    var appointment:Appointment?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,6 +125,9 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
             
             //pass the specialized barbers
             dest.barbers = specializedBarbers
+            
+            appointment?.barber = barbers?[barberIndex!.row]
+            dest.appointment = appointment
         }
     }
 

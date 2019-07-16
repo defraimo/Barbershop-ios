@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TimeUnit:CustomStringConvertible {
+struct TimeUnit:CustomStringConvertible,Equatable {
     var user:String?
     var index:Int
     var startTime:Time
@@ -17,5 +17,11 @@ struct TimeUnit:CustomStringConvertible {
     
     var description: String{
         return startTime.description
+    }
+    
+    //comparing func -> find if equals only in the same array
+    public static func ==(lhs: TimeUnit, rhs: TimeUnit) -> Bool{
+        return
+            lhs.index == rhs.index
     }
 }
