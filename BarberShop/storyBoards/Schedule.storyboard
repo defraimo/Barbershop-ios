@@ -645,7 +645,12 @@
                         <viewLayoutGuide key="safeArea" id="lzJ-6d-Sol"/>
                     </view>
                     <connections>
+                        <outlet property="barbersName" destination="04L-WD-OLb" id="vkG-qD-8ez"/>
+                        <outlet property="dateLabel" destination="xtr-oe-PiS" id="uQL-gh-1f9"/>
+                        <outlet property="priceLabel" destination="Wgv-bj-Uez" id="K4G-pw-NzE"/>
                         <outlet property="scheduleButton" destination="F99-9O-gZK" id="KXa-0r-ZVa"/>
+                        <outlet property="serviesLabel" destination="XD7-S2-mOB" id="1O3-RG-tIt"/>
+                        <outlet property="timeLabel" destination="ReQ-Xd-XZm" id="jnb-7K-96Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhq-dH-pQR" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,12 @@ import UIKit
 class SumUpViewController: UIViewController {
     @IBOutlet weak var scheduleButton: UIButton!
     
+    @IBOutlet weak var barbersName: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var serviesLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     var appointment:Appointment?
     
     override func viewDidLoad() {
@@ -20,8 +26,14 @@ class SumUpViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
         scheduleButton.setRoundedSquareToWhite()
+                
+        guard let date = appointment?.date?.date else {return}
         
-        print(appointment)
+        barbersName.text = appointment?.barber?.name
+        dateLabel.text = "\(date.day) / \(date.month)"
+        timeLabel.text = appointment?.units?.first?.startTime.description
+        serviesLabel.text = appointment?.servies?.servies
+        priceLabel.text = appointment?.servies?.priceRange.description
     }
 
 }
