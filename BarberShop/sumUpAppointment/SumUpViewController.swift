@@ -34,6 +34,21 @@ class SumUpViewController: UIViewController {
         timeLabel.text = appointment?.units?.first?.startTime.description
         serviesLabel.text = appointment?.servies?.servies
         priceLabel.text = appointment?.servies?.priceRange.description
+        
+        //adjust the labels size to the smallest size
+        var smallestFont:CGFloat = 1000 //a big font number
+        var labelsToCheck:[UILabel] = [barbersName, serviesLabel, priceLabel]
+        for label in labelsToCheck{
+            let font = label.font.pointSize
+            if font < smallestFont{
+                smallestFont = font
+            }
+        }
+        
+        labelsToCheck += [dateLabel, timeLabel]
+        for label in labelsToCheck{
+            label.font.withSize(smallestFont)
+        }
     }
 
 }
