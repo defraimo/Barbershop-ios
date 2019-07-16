@@ -224,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-UZ-FDg">
-                                <rect key="frame" x="24" y="181.66666666666669" width="366" height="664.33333333333326"/>
+                                <rect key="frame" x="24" y="220" width="366" height="626"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aJP-aR-huF">
@@ -279,8 +279,8 @@
                                     <outlet property="delegate" destination="i9E-FT-GHO" id="3fU-b4-UdI"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחירת ספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10A-v3-jKt">
-                                <rect key="frame" x="8" y="76" width="398" height="73.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="בחירת ספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="10A-v3-jKt">
+                                <rect key="frame" x="74.666666666666657" y="116.33333333333331" width="264.66666666666674" height="71.666666666666686"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="54"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -290,13 +290,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="10A-v3-jKt" firstAttribute="leading" secondItem="v9q-TR-gbF" secondAttribute="leading" constant="8" id="Qcg-I7-k31"/>
+                            <constraint firstItem="10A-v3-jKt" firstAttribute="height" secondItem="XVz-rQ-dSy" secondAttribute="height" multiplier="0.08" id="2Qp-O4-3nm"/>
+                            <constraint firstItem="10A-v3-jKt" firstAttribute="centerY" secondItem="XVz-rQ-dSy" secondAttribute="centerY" multiplier="0.34" id="FZa-Dk-bxH"/>
+                            <constraint firstItem="10A-v3-jKt" firstAttribute="centerX" secondItem="XVz-rQ-dSy" secondAttribute="centerX" id="JUL-Zs-9cb"/>
                             <constraint firstItem="9qJ-UZ-FDg" firstAttribute="leading" secondItem="v9q-TR-gbF" secondAttribute="leading" constant="24" id="UjX-lS-lhO"/>
                             <constraint firstItem="9qJ-UZ-FDg" firstAttribute="top" secondItem="10A-v3-jKt" secondAttribute="bottom" constant="32" id="UqG-Rx-ji3"/>
                             <constraint firstItem="v9q-TR-gbF" firstAttribute="bottom" secondItem="9qJ-UZ-FDg" secondAttribute="bottom" constant="16" id="Wpx-At-UcM"/>
-                            <constraint firstItem="10A-v3-jKt" firstAttribute="top" secondItem="v9q-TR-gbF" secondAttribute="top" constant="32" id="YMT-ol-qhF"/>
+                            <constraint firstItem="10A-v3-jKt" firstAttribute="width" secondItem="XVz-rQ-dSy" secondAttribute="width" multiplier="0.64" id="X04-Ve-wrt"/>
                             <constraint firstItem="v9q-TR-gbF" firstAttribute="trailing" secondItem="9qJ-UZ-FDg" secondAttribute="trailing" constant="24" id="YfH-pT-tlq"/>
-                            <constraint firstItem="v9q-TR-gbF" firstAttribute="trailing" secondItem="10A-v3-jKt" secondAttribute="trailing" constant="8" id="zHy-vk-0mF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v9q-TR-gbF"/>
                     </view>
