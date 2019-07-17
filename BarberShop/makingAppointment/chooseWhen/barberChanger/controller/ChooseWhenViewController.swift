@@ -16,6 +16,12 @@ class ChooseWhenViewController: UIViewController {
     var datesForBarber:[AppointmentDate]?
     var timeForChosenDay:[TimeUnit]?
     
+    var appointment:Appointment?
+    
+    var chosenDateIndex:Int = 0
+    var chosenTimeIndex:Int = 0
+    var unitsNeeded:Int = 1
+    
     //check if the first barber is already loaded from the code so it won't be loaded in the first swipe while passing between two barbers
     var firstAlreadyLoaded = false
     
@@ -40,6 +46,7 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var sendNotificationButton: UIButton!
     
     @IBOutlet weak var barbersCollection: UICollectionView!
+    
     @IBOutlet weak var arrowRight: UIImageView!
     @IBOutlet weak var arrowLeft: UIImageView!
     @IBAction func arrowRightTapped(_ sender: UITapGestureRecognizer) {
@@ -80,7 +87,9 @@ class ChooseWhenViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dest = segue.destination as? SumUpViewController, let id = segue.identifier else {return}
+        guard let dest = segue.destination as? SumUpViewController,
+            let id = segue.identifier
+            else {return}
         
         //set the navigation back item title of the next screen
         let backItem = UIBarButtonItem()
@@ -88,7 +97,17 @@ class ChooseWhenViewController: UIViewController {
         navigationItem.backBarButtonItem = backItem
         
         if id == "toSumUp"{
+            appointment?.barber = barbers?[chosenBarberIndex!.row]
+            appointment?.date = datesForBarber?[chosenDateIndex]
             
+            let chosenUnit = timeForChosenDay![chosenTimeIndex]
+            let unitsNeeded = scheduleData?.getUnitsNeededForServies(date: chosenDateIndex, chosenUnit: chosenUnit, unitsNeededNum: scheduleData?.numberOfUnitsNeeded ?? 1)
+            //---------------------------------
+            //may take time -> CHECK WHAT DO TO
+            //---------------------------------
+            
+            appointment?.units = unitsNeeded
+            dest.appointment = appointment
         }
     }
     
@@ -140,7 +159,6 @@ class ChooseWhenViewController: UIViewController {
                                 //set the arrows alpha to 0.3 for a design reasons
                                 view.alpha = 0.3
                             }
-                            
                         }
                         else{
                             view.alpha = 1
@@ -233,8 +251,10 @@ class ChooseWhenViewController: UIViewController {
     }
     
     func fetchTimeForChosenDay(index:Int){
-        timeForChosenDay = scheduleData?.getDisplayTimeFor(dateIndex: index)
-//        timeForChosenDay = scheduleData?.getDisplayTimeUnitsWith(intervals: 40, forDateIndex: index)
+//        timeForChosenDay = scheduleData?.getDisplayTimeFor(dateIndex: index)
+        let serviesDuration = appointment?.servies?.duration
+        timeForChosenDay = scheduleData?.getDisplayTimeUnitsWith(intervals: serviesDuration!, forDateIndex: index)
+        unitsNeeded = scheduleData?.numberOfUnitsNeeded ?? 1
     }
    
 }
@@ -500,6 +520,8 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
             //fetch the new time data for the chosen day
             fetchTimeForChosenDay(index: row)
             
+            chosenDateIndex = row
+            
             if timeForChosenDay?.count != 0{
                 UIView.animate(withDuration: 0.3, animations: {
                     self.sendMeNotificationHeight.constant = 0
@@ -525,11 +547,10 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
                 }
             }
         }
+        else{
+            chosenTimeIndex = row
+        }
 
     }
-    
-    //flow layout
-    //uicollection snap to center delegate
-    //circlar view
     
 }

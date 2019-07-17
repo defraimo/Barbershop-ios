@@ -12,6 +12,7 @@ class ChooseBarberViewController: UIViewController {
     @IBOutlet weak var chooseBarberLabel: UILabel!
     
     var barbers:[Barber]?
+    var appointment:Appointment?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,7 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
         let collectionViewSize = collectionView.frame.size.width - padding
         
         //if there are more than two barbers present 2 in each row
-        if barbers!.count > 2{
+        if barbers!.count > 3{
             return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.5)
         }
         //else present them one above another
@@ -124,6 +125,9 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
             
             //pass the specialized barbers
             dest.barbers = specializedBarbers
+            
+            appointment?.barber = barbers?[barberIndex!.row]
+            dest.appointment = appointment
         }
     }
 

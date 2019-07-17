@@ -8,9 +8,17 @@
 
 import Foundation
 
-struct Appointment {
-    var barber:Barber
-    var client:String //TO CHANGE!!!!!!
-    var units:[AppointmentUnit]
-    var servies:PriceModel
+struct Appointment:CustomStringConvertible {
+    var barber:Barber?
+    var client:String? //TO CHANGE!!!!!!
+    var date:AppointmentDate?
+    var units:[TimeUnit]?
+    var servies:PriceModel?
+    
+    //empty init so we could set all the params by steps
+    init() {}
+    
+    var description: String{
+        return "\(barber?.name), \(client), \(date?.description), \(units?.description), \(servies?.servies) \(servies?.priceRange)"
+    }
 }

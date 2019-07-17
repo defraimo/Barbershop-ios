@@ -15,6 +15,8 @@ class ScheduleData{
     var avialibleDaysCount:Int = 0
     var notificationDaysCount:Int = 0
     
+    var numberOfUnitsNeeded = 1
+    
     init(barber:Barber) {
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
@@ -68,6 +70,11 @@ class ScheduleData{
         return customDisplayedUnits
     }
     
+    func getUnitByIndex(timeUnits:[TimeUnit], index:Int) -> TimeUnit?{
+        let dict = Dictionary(uniqueKeysWithValues: timeUnits.map{ ($0.index, $0) })
+        return dict[index]
+    }
+    
     func getDisplayTimeUnitsWith(intervals:Int, forDateIndex index:Int) -> [TimeUnit]{
         //get all the units
         guard let allUnits = displayedDates?[index].time?.getDailyUnits(),
@@ -77,7 +84,7 @@ class ScheduleData{
         var customDisplayedUnits:[TimeUnit] = []
         
         //calc the number of units the new interval takes
-        var numberOfUnitsNeeded = Int(intervals / unitDuration)
+        numberOfUnitsNeeded = Int(intervals / unitDuration)
         if numberOfUnitsNeeded == 0{
             numberOfUnitsNeeded = 1
         }
@@ -97,8 +104,12 @@ class ScheduleData{
                         
                         isAvailible = false
                     }
-                    //if the unit is availible so make iAvailible false
+                    //if the unit is availible so make isAvailible false
                     else if allUnits[num].isAvailible == false{
+                        isAvailible = false
+                    }
+                    //if the units needed are out of time range make isAvailible false
+                    else if num == allUnits.count-1{
                         isAvailible = false
                     }
                     num += 1
@@ -111,6 +122,40 @@ class ScheduleData{
         }
         
         return customDisplayedUnits
+    }
+    
+    func getUnitsNeededForServies(date:Int ,chosenUnit:TimeUnit, unitsNeededNum:Int) -> [TimeUnit]{
+        //get all the units before removing the ones that don't have enought intervals
+        let allUnits = getDisplayTimeFor(dateIndex: date)
+        var neededUnits:[TimeUnit] = []
+        //bool to know if it needs to append the next units after the chosen one
+        var include = false
+        //to count until unitsNeededNum so the currect num of units will be added
+        var counter = 0
+        for unit in allUnits{
+            //check to which unit the chosen unit equals
+            if unit == chosenUnit{
+                //if equals append to neededUnits array
+                neededUnits.append(unit)
+                //know to include the next units by the needed number
+                include = true
+            }
+            //if the unit before was equal so included bool is true
+            else if include{
+                //if the unitsNeededNum so it doesn't need to append more
+                if unitsNeededNum != 1{
+                    neededUnits.append(unit)
+                }
+                //promote the counter
+                counter += 1
+                //if the counter go to the unitsNeededNum break the for loop
+                if counter == unitsNeededNum{
+                    break
+                }
+            }
+        }
+        //return the needed units
+        return neededUnits
     }
     
     //when pressing the last "הזמן"

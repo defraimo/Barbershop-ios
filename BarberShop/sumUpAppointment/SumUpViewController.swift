@@ -11,6 +11,14 @@ import UIKit
 class SumUpViewController: UIViewController {
     @IBOutlet weak var scheduleButton: UIButton!
     
+    @IBOutlet weak var barbersName: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var serviesLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    var appointment:Appointment?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +26,29 @@ class SumUpViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
         scheduleButton.setRoundedSquareToWhite()
+                
+        guard let date = appointment?.date?.date else {return}
+        
+        barbersName.text = appointment?.barber?.name
+        dateLabel.text = "\(date.day) / \(date.month)"
+        timeLabel.text = appointment?.units?.first?.startTime.description
+        serviesLabel.text = appointment?.servies?.servies
+        priceLabel.text = appointment?.servies?.priceRange.description
+        
+        //adjust the labels size to the smallest size
+        var smallestFont:CGFloat = 1000 //a big font number
+        var labelsToCheck:[UILabel] = [barbersName, serviesLabel, priceLabel]
+        for label in labelsToCheck{
+            let font = label.font.pointSize
+            if font < smallestFont{
+                smallestFont = font
+            }
+        }
+        
+        labelsToCheck += [dateLabel, timeLabel]
+        for label in labelsToCheck{
+            label.font.withSize(smallestFont)
+        }
     }
 
 }
