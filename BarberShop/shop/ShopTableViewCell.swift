@@ -9,7 +9,14 @@
 import UIKit
 
 class ShopTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var details: UILabel!
+    
+    @IBAction func toDetails(_ sender: UIButton) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

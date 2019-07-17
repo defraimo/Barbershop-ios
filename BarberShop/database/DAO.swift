@@ -11,13 +11,14 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
+import SDWebImage
 
 class DAO{
     static var shared = DAO()
     //database ref:
     var ref:DatabaseReference!
     //storage ref:
-    let storage = Storage.storage()
+    let storageRef = Storage.storage().reference()
     var verId:String?
     
     
@@ -86,5 +87,9 @@ class DAO{
             completion()
         }
         
+    }
+    
+    func getPicsForShop(){
+        let photosRef = storageRef.child("shopPhotos").fullPath
     }
 }

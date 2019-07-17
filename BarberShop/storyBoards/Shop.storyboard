@@ -22,18 +22,17 @@
                                 <rect key="frame" x="16" y="221" width="382" height="609"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="242" id="oLk-CF-c0S" customClass="ShopTableViewCell" customModule="BarberShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="382" height="242"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="302" id="oLk-CF-c0S" customClass="ShopTableViewCell" customModule="BarberShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="382" height="302"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oLk-CF-c0S" id="kLt-5B-lga">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="241.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="301.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="broken image" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-ua-Ld8">
                                                     <rect key="frame" x="141" y="85" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="1xU-2r-z4F"/>
-                                                        <constraint firstAttribute="width" constant="100" id="2sB-c8-l2l"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="d40-6T-HAB">
@@ -46,6 +45,9 @@
                                                                 <constraint firstAttribute="width" constant="25" id="s9Q-0P-87c"/>
                                                             </constraints>
                                                             <state key="normal" image="info_icon"/>
+                                                            <connections>
+                                                                <action selector="toDetails:" destination="oLk-CF-c0S" eventType="touchUpInside" id="wx9-RE-AGO"/>
+                                                            </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xNJ-QV-WZf">
                                                             <rect key="frame" x="41" y="0.0" width="269" height="50"/>
@@ -66,10 +68,26 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פרטים:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26C-uC-UB2">
+                                                    <rect key="frame" x="279" y="201" width="51" height="24.5"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פרטים לדוגמא" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgA-Sb-odV">
+                                                    <rect key="frame" x="236" y="225.5" width="94" height="23"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DgA-Sb-odV" secondAttribute="trailing" constant="32" id="CBt-Cs-whN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="26C-uC-UB2" secondAttribute="trailing" constant="32" id="DV9-D5-bOT"/>
                                                 <constraint firstItem="qNX-ua-Ld8" firstAttribute="top" secondItem="d40-6T-HAB" secondAttribute="bottom" constant="16" id="HmR-dr-4us"/>
                                                 <constraint firstItem="d40-6T-HAB" firstAttribute="leading" secondItem="kLt-5B-lga" secondAttribute="leadingMargin" constant="16" id="SfQ-am-Mq0"/>
+                                                <constraint firstItem="26C-uC-UB2" firstAttribute="top" secondItem="qNX-ua-Ld8" secondAttribute="bottom" constant="16" id="T99-LT-SRv"/>
+                                                <constraint firstItem="DgA-Sb-odV" firstAttribute="top" secondItem="26C-uC-UB2" secondAttribute="bottom" id="UzG-D8-abT"/>
                                                 <constraint firstItem="qNX-ua-Ld8" firstAttribute="centerX" secondItem="kLt-5B-lga" secondAttribute="centerX" id="gMW-mR-JZb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="d40-6T-HAB" secondAttribute="trailing" constant="16" id="lbc-lf-vCV"/>
                                                 <constraint firstItem="d40-6T-HAB" firstAttribute="top" secondItem="kLt-5B-lga" secondAttribute="topMargin" constant="8" id="of0-hr-msn"/>
@@ -78,6 +96,10 @@
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XwS-fe-381" id="d4l-cb-o5F"/>
+                                    <outlet property="delegate" destination="XwS-fe-381" id="qV4-5z-Dfw"/>
+                                </connections>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="mf3-kP-yAI">
                                 <rect key="frame" x="99" y="174" width="248" height="15"/>

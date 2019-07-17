@@ -11,5 +11,6 @@ import FirebaseAuth
 import FirebaseStorage
 
 extension DAO{ 
- 
+    //MARK:
+    //Not sure how to use properties in extensions yet, so all methoids will be written on the same DAO
 }
