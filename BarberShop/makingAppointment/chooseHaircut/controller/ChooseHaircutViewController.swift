@@ -14,6 +14,9 @@ class ChooseHaircutViewController: UIViewController {
     
     var appointment:Appointment?
     
+    var chosenBarberIndex:IndexPath?
+    var passedServies:PriceModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,9 +30,19 @@ class ChooseHaircutViewController: UIViewController {
         chooseServiesLabel.adjustsFontSizeToFitWidth = true
         chooseServiesLabel.minimumScaleFactor = 0.2
         
+        appointment = Appointment()
+        appointment?.client = "User Name"
+        
         NotificationCenter.default.addObserver(forName: .barberChosenFromInfo, object: nil, queue: .main) { [weak self] (notification) in
-            guard let barber = notification.userInfo?["barber"] as? Barber else {return}
-            self?.performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: [barber])
+            
+            guard let barberIndex = notification.userInfo?["barberIndex"] as? IndexPath else {return}
+            guard let specializedBarbers = notification.userInfo?["specializedBarbers"] as? [Barber] else {return}
+            guard let cellIndex = notification.userInfo?["cellIndex"] as? Int else {return}
+            
+            self!.passedServies = prices[cellIndex]
+            
+            self!.chosenBarberIndex = barberIndex
+            self?.performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: specializedBarbers)
         }
         
     }
@@ -57,6 +70,8 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "haircutCell") as! HaircutTableViewCell
         
         let haircut = prices[indexPath.row]
+        
+        cell.cellIndex = indexPath.row
         
         //defining the cell
         cell.haircutType.setTitle(haircut.servies, for: .normal)
@@ -102,8 +117,6 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
         let chosenIndex = sender.tag
         let specializedBarbers = prices[chosenIndex].barbers
         
-        appointment = Appointment()
-        appointment?.client = "User Name"
         appointment?.servies = prices[chosenIndex]
         
         //if there is more than one barber that specifies to this work so pass to the choose barber screen
@@ -154,7 +167,8 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
         else if id == "toSelectWhenWithOneBarber"{
             guard let dest = segue.destination as? ChooseWhenViewController else {return}
             dest.barbers = specializedBarbers
-            dest.chosenBarberIndex = IndexPath(row: 0, section: 0)
+            dest.chosenBarberIndex = chosenBarberIndex ?? IndexPath(row: 0, section: 0)
+            appointment?.servies = passedServies!
             dest.appointment = appointment
         }
     }

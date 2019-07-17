@@ -15,6 +15,8 @@ class HaircutTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var barbersCollection: UICollectionView!
     
+    var cellIndex:Int?
+    
     @IBAction func arrowRight(_ sender: UIButton) {
         barbersCollection.scrollToItem(at: IndexPath(row: currentBarberIndex, section: 0), at: .right, animated: true)
         if barbers!.count > currentBarberIndex + 1{
@@ -70,7 +72,7 @@ extension HaircutTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        NotificationCenter.default.post(name: .barberChosenFromInfo, object: nil, userInfo: ["barber": barbers![indexPath.item]])
+        NotificationCenter.default.post(name: .barberChosenFromInfo, object: nil, userInfo: ["barberIndex": indexPath, "specializedBarbers": barbers!, "cellIndex":cellIndex!])
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

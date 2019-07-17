@@ -119,9 +119,6 @@ class ChooseWhenViewController: UIViewController {
             view.alpha = 0
         }
         
-        //scroll the collaction view to the chosen barber posiotion from the lase screen
-        barbersCollection.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
-        
         //----------------------------------------------
         //TODO FIX THE MOVING INTO THE SELECTED BARBER
         //----------------------------------------------
@@ -201,6 +198,9 @@ class ChooseWhenViewController: UIViewController {
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
+        //scroll the collaction view to the chosen barber posiotion from the last screen
+        barbersCollection.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
+        
        imageEntryAnimation()
         
         //set the picker date array to the chosen barber from the last screen
@@ -269,7 +269,7 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BarberChangeCollectionViewCell
         
-        let barber = barbers![indexPath.row]
+        let barber = barbers![indexPath.item]
         
         cell.populate(barber:barber)
         
@@ -295,9 +295,7 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
     }
     
     
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         let visible = barbersCollection.indexPathsForVisibleItems
         
         guard visible.count == 1 else {
