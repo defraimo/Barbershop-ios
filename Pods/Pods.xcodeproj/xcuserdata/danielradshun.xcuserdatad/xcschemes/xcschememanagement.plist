@@ -84,6 +84,11 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>SDWebImage.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>leveldb-library.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
