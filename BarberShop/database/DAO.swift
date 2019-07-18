@@ -28,21 +28,8 @@ class DAO{
     }
     
     func saveNewUser(_ user: User, uid:String){
-        let name = user.fullName
-        let number = user.number
-        let email = user.email
-        let gender = user.gender
-        
-        if email != ""{
-        ref.child("Users").child(uid).setValue(["fullName": name ,
-                                                       "gender": gender,
-                                                       "number":number,
-                                                       "email": email!])
-        }else{
-        ref.child("Users").child(uid).setValue(["fullName": name ,
-                                                       "gender": gender,
-                                                       "number":number])
-        }
+        ref.child("Users").child(uid).setValue(user.dict)
+    
     }
 
     func getUser(_ uid:String) -> User?{
@@ -52,12 +39,8 @@ class DAO{
             // Get user value
             guard let value = snapshot.value as? NSDictionary else {return}
             
-            guard let name = value["fullName"] as? String,
-                  let gender = value["gender"] as? Int,
-                let number = value["number"] as? String else {print("shit");return}
-            
-            user = User(number: number, fullName: name, gender: gender, email: nil)
-            // ...
+            user = User(dict: value)
+        
         }) { (error) in
            print(error.localizedDescription)
         }
@@ -92,4 +75,14 @@ class DAO{
     func getPicsForShop(){
         let photosRef = storageRef.child("shopPhotos").fullPath
     }
+    
+    func testing(){
+       
+    }
+}
+
+//protocol for help writing data to firebase:
+protocol DictionaryConvertible {
+    init?(dict:NSDictionary)
+    var dict:NSDictionary { get }
 }

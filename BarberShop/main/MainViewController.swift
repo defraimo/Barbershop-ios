@@ -280,7 +280,7 @@ class MainViewController: UIViewController {
             phoneNumberField.setError(hasError: true )
             }else {
                 //phone number was already checked, it's ok to explicitly unwrap it:
-                userPhoneNum = phoneNumberField.text!
+                userPhoneNum = phoneNumberField.text! as String
                 //releasing the previous view:
                 releaseLoginOrSignupMenu()
                 presentAuthCodeView()
@@ -384,6 +384,8 @@ class MainViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DAO.shared.getUser("4eXYAV9Bh7NJGevXGknwD7iKpEX2")
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)
