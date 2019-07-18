@@ -119,10 +119,6 @@ class ChooseWhenViewController: UIViewController {
             view.alpha = 0
         }
         
-        //----------------------------------------------
-        //TODO FIX THE MOVING INTO THE SELECTED BARBER
-        //----------------------------------------------
-        
         //getting the position of the current item
         let collectionPosition = barbersCollection.layoutAttributesForItem(at: chosenBarberIndex!)?.center ?? barbersCollection.center
         
@@ -185,7 +181,6 @@ class ChooseWhenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //load the data for the chosen barber
         scheduleData = ScheduleData(barber: barbers![chosenBarberIndex?.row ?? 0])
         
@@ -200,6 +195,10 @@ class ChooseWhenViewController: UIViewController {
         
         //scroll the collaction view to the chosen barber posiotion from the last screen
         barbersCollection.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
+        
+        //----------------------------------------------
+        //TODO FIX THE MOVING INTO THE SELECTED BARBER
+        //----------------------------------------------
         
        imageEntryAnimation()
         

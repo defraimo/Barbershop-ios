@@ -19,6 +19,6 @@ struct Appointment:CustomStringConvertible {
     init() {}
     
     var description: String{
-        return "\(barber?.name), \(client), \(date?.description), \(units?.description), \(servies?.servies) \(servies?.priceRange)"
+        return "\(String(describing: barber?.name)), \(String(describing: client)), \(String(describing: date?.description)), \(String(describing: units?.description)), \(String(describing: servies?.servies)) \(String(describing: servies?.priceRange))"
     }
 }

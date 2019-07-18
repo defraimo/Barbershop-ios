@@ -39,7 +39,7 @@ class ChooseHaircutViewController: UIViewController {
             guard let specializedBarbers = notification.userInfo?["specializedBarbers"] as? [Barber] else {return}
             guard let cellIndex = notification.userInfo?["cellIndex"] as? Int else {return}
             
-            self!.passedServies = prices[cellIndex]
+            self?.passedServies = prices[cellIndex]
             
             self!.chosenBarberIndex = barberIndex
             self?.performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: specializedBarbers)

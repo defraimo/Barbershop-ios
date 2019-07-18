@@ -16,7 +16,6 @@ class ChooseBarberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
     }
