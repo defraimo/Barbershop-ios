@@ -57,7 +57,7 @@ class SingUPViewController: UIViewController {
             return
         }
         //new user is made:
-        let newUser = User(number: phoneField.text!, fullName: nameField.text!, gender: genderPick.selectedSegmentIndex, email: emailField.text)
+        let newUser = User(number: phoneField.text! , fullName: nameField.text!, gender: genderPick.selectedSegmentIndex, email: emailField?.text)
         
         dismiss(animated: true) {
             //getting the reference to mainViewController:
