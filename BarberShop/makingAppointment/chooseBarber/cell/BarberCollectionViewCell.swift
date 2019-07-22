@@ -13,7 +13,7 @@ class BarberCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var barberName: UILabel!
     
     func populate(barber:Barber){
-        barberImage.image = barber.image.circleMasked
+        barberImage.image = barber.image?.circleMasked
         let width = barberImage.frame.width
         barberImage.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: width, height: width))
         barberName.text = barber.name

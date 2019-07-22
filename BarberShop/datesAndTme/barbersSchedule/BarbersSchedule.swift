@@ -6,6 +6,7 @@
 //  Copyright © 2019 Neighbors. All rights reserved.
 //
 
+/*
 import UIKit
 
 class BarbersSchedule{
@@ -55,3 +56,4 @@ public class M: UIButton {
     }
    
 }
+*/

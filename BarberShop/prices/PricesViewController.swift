@@ -28,13 +28,13 @@ let pricesList = PricesDataSource.shared.pricesList
 
 extension PricesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pricesList.count
+        return pricesList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell") as! PriceTableViewCell
         
-        let priceItem = pricesList[indexPath.row]
+        guard let priceItem = pricesList?[indexPath.row] else {return cell}
         
         cell.serviesLabel.text = priceItem.servies
         cell.priceLabel.text  = priceItem.priceRange.description

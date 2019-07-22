@@ -39,7 +39,7 @@ class ChooseHaircutViewController: UIViewController {
             guard let specializedBarbers = notification.userInfo?["specializedBarbers"] as? [Barber] else {return}
             guard let cellIndex = notification.userInfo?["cellIndex"] as? Int else {return}
             
-            self?.passedServies = prices[cellIndex]
+            self?.passedServies = prices?[cellIndex]
             
             self!.chosenBarberIndex = barberIndex
             self?.performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: specializedBarbers)
@@ -62,14 +62,14 @@ var infoOrClose:UIImage?
 
 extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return prices.count
+        return prices?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "haircutCell") as! HaircutTableViewCell
         
-        let haircut = prices[indexPath.row]
+        guard let haircut = prices?[indexPath.row] else {return cell}
         
         cell.cellIndex = indexPath.row
         
@@ -114,6 +114,9 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     @objc func haircutChosen(_ sender:UIButton){
+        
+        guard let prices = prices else {return}
+        
         let chosenIndex = sender.tag
         let specializedBarbers = prices[chosenIndex].barbers
         

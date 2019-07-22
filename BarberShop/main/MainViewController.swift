@@ -385,7 +385,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DAO.shared.getUser("4eXYAV9Bh7NJGevXGknwD7iKpEX2")
+        AllBarbers.shared
+        
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)
@@ -405,12 +406,12 @@ class MainViewController: UIViewController {
 
         addBlurView()
         
-        let barber1Dates = DatesManager(daysAvailable: 10, additionalDays: 7)
-        barber1Dates.setDaysOff(days: [6,7])
-        
-        let barber1Time = TimeManage(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
-        
-        ScheduleDataManager().initBarberSchedule(barberIndex: 0, dates: barber1Dates, availableTime: barber1Time)
+//        let barber1Dates = DatesManager(daysAvailable: 10, additionalDays: 7)
+//        barber1Dates.setDaysOff(days: [6,7])
+//
+//        let barber1Time = TimeManage(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
+//
+//        ScheduleDataManager().initBarberSchedule(barberIndex: 0, dates: barber1Dates, availableTime: barber1Time)
         
         roundedView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         roundedView.layer.cornerRadius = 14

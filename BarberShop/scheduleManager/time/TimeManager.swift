@@ -141,6 +141,7 @@ class TimeManager{
     }
     
     private func checkIfAvailible(unitIndex:Int) -> Bool{
+        
         //------------------------
         //get it by id
         //------------------------
