@@ -45,7 +45,7 @@ class ScheduleData{
         notificationDaysCount = notificationDays.count
         
         
-        let units = displayedDates?[0].time?.getDailyUnits()
+        let units = displayedDates?[0].time?.getDailyUnitsFor(date: (displayedDates?[0].date)!)
         
     }
     
@@ -57,7 +57,9 @@ class ScheduleData{
         //-------------------
         //change index to id
         //-------------------
-        guard let allUnits = displayedDates?[index].time?.getDailyUnits() else {return []}
+        guard let date = displayedDates?[index].date else {return []}
+        
+        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date) else {return []}
         
         var customDisplayedUnits:[TimeUnit] = []
         
@@ -76,8 +78,9 @@ class ScheduleData{
     }
     
     func getDisplayTimeUnitsWith(intervals:Int, forDateIndex index:Int) -> [TimeUnit]{
+        guard let date = displayedDates?[index].date else {return []}
         //get all the units
-        guard let allUnits = displayedDates?[index].time?.getDailyUnits(),
+        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date),
                 let unitDuration = allUnits.first?.duration
             else {return []}
         

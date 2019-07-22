@@ -24,6 +24,13 @@ class CurrentDate{
     var currentDay:Int{
         return calendar.component(.weekday, from: date)
     }
+    var currentHours:Int{
+        return calendar.component(.hour, from: date)
+    }
+    var currentMinutes:Int{
+        return calendar.component(.minute, from: date)
+    }
+    
     func addToCurrentDate(numberOfDays:Int) -> AppDate{
         let newDate = calendar.date(byAdding: .day, value: numberOfDays, to: date)
         return AppDate(day: calendar.component(.day, from:newDate!), month: calendar.component(.month, from:newDate!), year: calendar.component(.year, from:newDate!))

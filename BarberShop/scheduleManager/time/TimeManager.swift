@@ -87,12 +87,19 @@ class TimeManager{
         return workingTime
     }
     
-    func getDailyUnits() -> [TimeUnit]{
+    func getDailyUnitsFor(date:MyDate) -> [TimeUnit]{
         var workingTime:[TimeUnit] = []
         var minutes = minTime.minutes
         var hours = minTime.hours
         let maxMinutes = maxTime.minutes
         let maxHour = maxTime.hours
+        
+        let current = CurrentDate()
+        
+        if date.day == current.currentMonthDay && date.month == current.currentMonth && date.year == current.currentYear{
+            minutes = current.currentMinutes
+            hours = current.currentHours
+        }
         
         var unitIndex = 0
         var isInRange = true
