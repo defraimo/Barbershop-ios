@@ -90,6 +90,20 @@ class DAO{
         }
     }
     
+    func getShopProducts(completion: @escaping (_ products:[Product])-> Void){
+        var products:[Product] = []
+        ref.child("Products").observeSingleEvent(of: .value) { (data) in
+            guard let allProducts = data.value as? NSArray else{return}
+            
+            for product in allProducts{
+                guard let dictProduct = product as? NSDictionary,
+                    let readyProduct = Product(dict: dictProduct) else {return}
+                products.append(readyProduct)
+            }
+            completion(products)
+        }
+    }
+    
     
     fileprivate func writingBarbersToData() {
         var barber = Barber(name: "דניאל", id: 0, description: "ספר גברים, 3 שנים ניסיון בתחום. מתמקצע בדירוגים ובשלל התספורות השונות המודרניות והחדשניות ביותר.", image: nil, imagePath:"0")
@@ -221,7 +235,6 @@ class DAO{
             loadImageIntoBarber()
         }
     }
-    
     
     //allBarbers:[Barber], complition: @escaping (_ barbers:[Barber]) -> Void
     func loadImageIntoBarber(){
