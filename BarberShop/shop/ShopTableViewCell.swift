@@ -14,18 +14,15 @@ class ShopTableViewCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var details: UILabel!
+    @IBOutlet weak var infoBtn: UIButton!
     
-    @IBAction func toDetails(_ sender: UIButton) {
-    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
 }
