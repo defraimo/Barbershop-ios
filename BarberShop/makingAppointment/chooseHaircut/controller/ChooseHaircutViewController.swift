@@ -33,7 +33,15 @@ class ChooseHaircutViewController: UIViewController {
         appointment = Appointment()
         //------------------------------------------------
         //------------------------------------------------
-        appointment?.clientId = 0 //SET TO THE CURRENT USER
+        
+//        if let uid = Auth.auth().currentUser?.uid{
+//            appointment?.clientId = uid
+//        }
+//        else{
+//            appointment?.clientId = 0
+//        }
+        appointment?.clientId = 0
+         //SET TO THE CURRENT USER
         //------------------------------------------------
         //------------------------------------------------
         

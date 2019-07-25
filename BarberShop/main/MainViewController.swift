@@ -193,12 +193,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var loginLabelForCheck: UILabel!
     @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     fileprivate func loginOrSignUpFunc() {
-        //        UIView.animate(withDuration: 0.3, animations: {
-        //            self.roundedViewHeight.constant = self.view.frame.height
-        //        }) { (_) in
-        //            self.roundedViewHeight.constant = self.view.frame.height * 0.72
-        //        }
-        
         //placed above screen
         loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
         //setting up the size:

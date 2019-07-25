@@ -305,9 +305,6 @@ class DAO{
     
     func writeSchedule(){
         var allDates:AllDates?
-        var displayedDates:[AppointmentDate]?
-        var avialibleDaysCount:Int = 0
-        var notificationDaysCount:Int = 0
         
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
@@ -332,14 +329,8 @@ class DAO{
         //get the barber from the data base
         allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
-        displayedDates = allDates?.getDisplayedDates()
-        
-        
-        avialibleDaysCount = avialibleDays.count
-        notificationDaysCount = notificationDays.count
         
         ref.child("Dates").child("3").setValue(allDates!.dict)
-        
     }
     
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){

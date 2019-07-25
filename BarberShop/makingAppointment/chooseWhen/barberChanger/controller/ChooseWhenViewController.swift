@@ -341,29 +341,30 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
                 self?.fetchDatesForCurrentBarber()
                 self?.fetchTimeForChosenDay(index: 0)
                 self?.datePicker.selectRow(0, inComponent: 0, animated: true)
+                
+                self?.chosenDateIndex = 0
+                self?.chosenTimeIndex = 0
             
-            
-            
-            self?.chosenBarberIndex = visible.first!
-            
-            UIView.animate(withDuration: 0.3, animations: {
-                self?.datePicker.alpha = 0
-            }) { (_) in
+                self?.chosenBarberIndex = visible.first!
+                
                 UIView.animate(withDuration: 0.3, animations: {
-                    self?.datePicker.alpha = 1
-                })
-                self?.datePicker.reloadAllComponents()
-                self?.timePicker.reloadAllComponents()
-            }
-            
-            for i in 0..<self!.barbers!.count{
-                if i == visibleRow{
-                    self?.cellWasReloaded[i] = true
+                    self?.datePicker.alpha = 0
+                }) { (_) in
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self?.datePicker.alpha = 1
+                    })
+                    self?.datePicker.reloadAllComponents()
+                    self?.timePicker.reloadAllComponents()
                 }
-                else{
-                    self?.cellWasReloaded[i] = false
+                
+                for i in 0..<self!.barbers!.count{
+                    if i == visibleRow{
+                        self?.cellWasReloaded[i] = true
+                    }
+                    else{
+                        self?.cellWasReloaded[i] = false
+                    }
                 }
-            }
             }
         }
         else{

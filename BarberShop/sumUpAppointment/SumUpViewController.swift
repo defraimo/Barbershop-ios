@@ -21,7 +21,12 @@ class SumUpViewController: UIViewController {
         if appointment != nil{
             DAO.shared.checkIfUnitsStillAvailible(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!) { (isAvailible) in
                 
-                DAO.shared.writeAppoinment(self.appointment!)
+                if isAvailible{
+                    DAO.shared.writeAppoinment(self.appointment!)
+                }
+                else{
+                    //show dialog and take the user back to ChooseWhenViewController
+                }
             }
         }
     }

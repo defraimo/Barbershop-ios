@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r6d-RU-ubj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r6d-RU-ubj">
                                 <rect key="frame" x="16" y="177" width="382" height="653"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.37647058823529411" green="0.51764705882352935" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -67,13 +67,13 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פרטים:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26C-uC-UB2">
-                                                    <rect key="frame" x="279" y="201" width="51" height="24.5"/>
-                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
+                                                    <rect key="frame" x="290.5" y="201" width="53.5" height="25.5"/>
+                                                    <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="פרטים לדוגמא" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgA-Sb-odV">
-                                                    <rect key="frame" x="38" y="225.5" width="306" height="23"/>
+                                                    <rect key="frame" x="38" y="226.5" width="306" height="23"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                             <constraints>
                                                 <constraint firstItem="DgA-Sb-odV" firstAttribute="top" secondItem="26C-uC-UB2" secondAttribute="bottom" id="6Z2-ia-mmH"/>
                                                 <constraint firstItem="DgA-Sb-odV" firstAttribute="centerX" secondItem="kLt-5B-lga" secondAttribute="centerX" id="CKY-T4-PrL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="26C-uC-UB2" secondAttribute="trailing" constant="32" id="DV9-D5-bOT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="26C-uC-UB2" secondAttribute="trailing" constant="18" id="DV9-D5-bOT"/>
                                                 <constraint firstItem="qNX-ua-Ld8" firstAttribute="top" secondItem="d40-6T-HAB" secondAttribute="bottom" constant="16" id="HmR-dr-4us"/>
                                                 <constraint firstItem="d40-6T-HAB" firstAttribute="leading" secondItem="kLt-5B-lga" secondAttribute="leadingMargin" constant="16" id="SfQ-am-Mq0"/>
                                                 <constraint firstItem="26C-uC-UB2" firstAttribute="top" secondItem="qNX-ua-Ld8" secondAttribute="bottom" constant="16" id="T99-LT-SRv"/>
