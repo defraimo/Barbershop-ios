@@ -130,5 +130,18 @@ extension UIImage {
         UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
-    
+}
+
+extension UILabel{
+    func calculateLinesSize() -> CGFloat {
+        //maximum size posible to calculate the size of the text:
+        let maxSize = CGSize(width: frame.size.width, height: CGFloat(Float.infinity))
+        //the size of each character defined by the font:
+        let charSize = font.lineHeight
+        //the text itself:
+        let text = (self.text ?? "") as NSString
+        //the height of the given text frame:
+        let textSize = text.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return textSize.height
+    }
 }

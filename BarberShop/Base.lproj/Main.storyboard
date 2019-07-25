@@ -169,7 +169,7 @@
                         <barButtonItem key="backBarButtonItem" title="חזור" id="5N3-1g-0yZ"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="cart_icon" id="M2n-Kv-WfE">
                             <connections>
-                                <segue destination="KUX-a4-sr0" kind="show" id="LSL-eZ-08B"/>
+                                <segue destination="s44-LD-JO0" kind="show" id="8V4-Tu-g0s"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="menu_icon" id="hqI-JY-Rje">
@@ -186,6 +186,8 @@
                         <outlet property="codeField" destination="Ktl-ml-yg9" id="yP1-df-fwU"/>
                         <outlet property="howWeGetThereButton" destination="bjM-uA-QQg" id="DDf-eW-HID"/>
                         <outlet property="instagramButton" destination="YLZ-Te-0dB" id="DZH-kb-vVc"/>
+                        <outlet property="loginActivityIndicator" destination="6wp-Be-U0B" id="VEZ-V4-FIV"/>
+                        <outlet property="loginLabelForCheck" destination="xXG-Qv-P4E" id="mBi-Mz-5NR"/>
                         <outlet property="loginOrSignupView" destination="kc7-ea-sxB" id="zYv-1q-65t"/>
                         <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
                         <outlet property="newCustomer" destination="0Zs-cg-tEh" id="kxR-BB-1lK"/>
@@ -337,6 +339,9 @@
                                 <constraint firstItem="bW1-H3-3OD" firstAttribute="width" secondItem="3O7-oj-pOJ" secondAttribute="width" multiplier="0.48" id="Ul7-0a-H29"/>
                             </constraints>
                         </stackView>
+                        <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6wp-Be-U0B">
+                            <rect key="frame" x="51.5" y="95.5" width="20" height="20"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -348,10 +353,12 @@
                         <constraint firstItem="eZl-DQ-qDh" firstAttribute="centerX" secondItem="kc7-ea-sxB" secondAttribute="centerX" id="NlP-k3-LyT"/>
                         <constraint firstItem="eZl-DQ-qDh" firstAttribute="top" secondItem="gml-PG-b9B" secondAttribute="bottom" constant="8" id="OCI-km-sQ1"/>
                         <constraint firstItem="Brg-ec-TZm" firstAttribute="top" secondItem="eZl-DQ-qDh" secondAttribute="bottom" constant="8" id="SBM-0L-mQm"/>
+                        <constraint firstItem="6wp-Be-U0B" firstAttribute="top" secondItem="gml-PG-b9B" secondAttribute="bottom" constant="16" id="YQL-lQ-sWC"/>
                         <constraint firstItem="gml-PG-b9B" firstAttribute="leading" secondItem="5l3-MF-pxX" secondAttribute="leading" constant="32" id="ZG9-7I-XFD"/>
                         <constraint firstItem="Brg-ec-TZm" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="32" id="Zva-WY-KVD"/>
                         <constraint firstItem="xXG-Qv-P4E" firstAttribute="leading" secondItem="kc7-ea-sxB" secondAttribute="leading" constant="32" id="ebn-YP-3Ei"/>
                         <constraint firstItem="3O7-oj-pOJ" firstAttribute="width" secondItem="kc7-ea-sxB" secondAttribute="width" multiplier="0.5" id="er3-PX-cBw"/>
+                        <constraint firstItem="eZl-DQ-qDh" firstAttribute="leading" secondItem="6wp-Be-U0B" secondAttribute="trailing" constant="8" id="fLE-H3-XVV"/>
                         <constraint firstItem="eZl-DQ-qDh" firstAttribute="height" secondItem="kc7-ea-sxB" secondAttribute="height" multiplier="0.2" id="l27-DV-hRw"/>
                         <constraint firstItem="gml-PG-b9B" firstAttribute="top" secondItem="xXG-Qv-P4E" secondAttribute="bottom" constant="8" id="qbR-Ed-vQK"/>
                         <constraint firstItem="xXG-Qv-P4E" firstAttribute="top" secondItem="kc7-ea-sxB" secondAttribute="top" constant="16" id="ruF-Vc-McC"/>
@@ -574,6 +581,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="rAE-Gr-tgt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Shop" id="s44-LD-JO0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXt-57-hAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="39"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="nfX-rc-gr0">
@@ -812,14 +827,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Es6-1S-7XU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-472" y="19"/>
-        </scene>
-        <!--Schedule-->
-        <scene sceneID="BZi-ed-SfY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Schedule" id="KUX-a4-sr0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PcN-LH-v6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1687" y="21"/>
         </scene>
         <!--Location-->
         <scene sceneID="hcX-a8-uaY">

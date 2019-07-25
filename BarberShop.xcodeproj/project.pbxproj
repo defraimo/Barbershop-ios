@@ -16,9 +16,7 @@
 		63489AC122DC8A260055DA64 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63489AC022DC8A260055DA64 /* Shop.storyboard */; };
 		63489AC422DC8B190055DA64 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC322DC8B190055DA64 /* ShopViewController.swift */; };
 		63489AC622DC8B2D0055DA64 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */; };
-		63489AC822DC9AF40055DA64 /* DBStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC722DC9AF40055DA64 /* DBStorage.swift */; };
 		63489ACA22DDD3A70055DA64 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC922DDD3A70055DA64 /* Product.swift */; };
-		63489ACC22DDD6050055DA64 /* ProductsDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489ACB22DDD6050055DA64 /* ProductsDS.swift */; };
 		63EF105622D4BA2300D0B993 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF105522D4BA2300D0B993 /* DAO.swift */; };
 		63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF769822CA0994006631E5 /* SignUp.storyboard */; };
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
@@ -89,9 +87,7 @@
 		63489AC022DC8A260055DA64 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
 		63489AC322DC8B190055DA64 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
-		63489AC722DC9AF40055DA64 /* DBStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBStorage.swift; sourceTree = "<group>"; };
 		63489AC922DDD3A70055DA64 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		63489ACB22DDD6050055DA64 /* ProductsDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDS.swift; sourceTree = "<group>"; };
 		63EF105522D4BA2300D0B993 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		63EF769822CA0994006631E5 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		63EF769A22CA09FA006631E5 /* SingUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +178,6 @@
 				63489AC322DC8B190055DA64 /* ShopViewController.swift */,
 				63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */,
 				63489AC922DDD3A70055DA64 /* Product.swift */,
-				63489ACB22DDD6050055DA64 /* ProductsDS.swift */,
 			);
 			path = shop;
 			sourceTree = "<group>";
@@ -191,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				63EF105522D4BA2300D0B993 /* DAO.swift */,
-				63489AC722DC9AF40055DA64 /* DBStorage.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -699,7 +693,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63489ACC22DDD6050055DA64 /* ProductsDS.swift in Sources */,
 				A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */,
 				A618D5CD22DB756300A93D5E /* AppointmentDate.swift in Sources */,
 				A61A31C422B9587E00FC20BE /* AboutUsViewController.swift in Sources */,
@@ -711,7 +704,6 @@
 				633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */,
 				A61A31CB22B9599900FC20BE /* BarberDescriptionTableViewCell.swift in Sources */,
 				A61A31C122B7C32500FC20BE /* MainViewController.swift in Sources */,
-				63489AC822DC9AF40055DA64 /* DBStorage.swift in Sources */,
 				6302287822C76FD900B242C6 /* User.swift in Sources */,
 				A61A31D422B95DBD00FC20BE /* ContactUs.swift in Sources */,
 				A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */,

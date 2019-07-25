@@ -190,6 +190,8 @@ class MainViewController: UIViewController {
         //---------------------------
     }
     
+    @IBOutlet weak var loginLabelForCheck: UILabel!
+    @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     fileprivate func loginOrSignUpFunc() {
         //        UIView.animate(withDuration: 0.3, animations: {
         //            self.roundedViewHeight.constant = self.view.frame.height
@@ -279,11 +281,25 @@ class MainViewController: UIViewController {
             phoneNumberField.placeholder = "שדה זה הוא חובה"
             phoneNumberField.setError(hasError: true )
             }else {
+                loginActivityIndicator.alpha = 1
+                loginActivityIndicator.startAnimating()
                 //phone number was already checked, it's ok to explicitly unwrap it:
                 userPhoneNum = phoneNumberField.text! as String
-                //releasing the previous view:
-                releaseLoginOrSignupMenu()
-                presentAuthCodeView()
+                //checking if the user already exists:
+                DAO.shared.checkUserExists(number: userPhoneNum!, completion: {[weak self] (exists)  in
+                    if exists{
+                        //releasing the previous view:
+                        self?.releaseLoginOrSignupMenu()
+                        self?.presentAuthCodeView()
+                    }else{
+                        //TODO: add animation to text!
+                        self?.loginLabelForCheck.text = "משתמש לא קיים, נא הירשם"
+                        
+                        self?.loginActivityIndicator.stopAnimating()
+                        self?.loginActivityIndicator.alpha = 0
+                    }
+                })
+            
             }
         }
        
@@ -382,6 +398,7 @@ class MainViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -425,6 +442,7 @@ class MainViewController: UIViewController {
         adjustsButtonFont(howWeGetThereButton)
         
     }
+    
     func adjustsButtonFont(_ button:UIButton){
         //setting the label size to be responsive
         button.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -476,6 +494,10 @@ class MainViewController: UIViewController {
     }
     
     func releaseLoginOrSignupMenu(){
+        self.loginLabelForCheck.text = "הזינו מספר פלאפון להזדהות"
+
+        loginActivityIndicator.stopAnimating()
+        loginActivityIndicator.alpha = 0
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         UIView.animate(withDuration: 0.2, animations: { [weak self] in
             guard let midX = self?.view.frame.midX , let midY = self?.view.frame.midY else {return}

@@ -72,8 +72,36 @@ class DAO{
         
     }
     
-    func getPicsForShop(){
-        let photosRef = storageRef.child("shopPhotos").fullPath
+    func checkUserExists(number:String, completion: @escaping (_ exists:Bool)-> Void){
+        ref.child("Users").observeSingleEvent(of: .value) { (snapshot) in
+           guard let allUsers =  snapshot.value as? NSDictionary else{return}
+            
+            for user in allUsers.allValues{
+                guard let user = user as? NSDictionary,
+                let userNumber = user.value(forKey: "number") as? String
+                else {return}
+                
+                if userNumber == number{
+                   completion(true)
+                    return
+                }
+            }
+            completion(false)
+        }
+    }
+    
+    func getShopProducts(completion: @escaping (_ products:[Product])-> Void){
+        var products:[Product] = []
+        ref.child("Products").observeSingleEvent(of: .value) { (data) in
+            guard let allProducts = data.value as? NSArray else{return}
+            
+            for product in allProducts{
+                guard let dictProduct = product as? NSDictionary,
+                    let readyProduct = Product(dict: dictProduct) else {return}
+                products.append(readyProduct)
+            }
+            completion(products)
+        }
     }
     
     
@@ -207,7 +235,6 @@ class DAO{
             loadImageIntoBarber()
         }
     }
-    
     
     //allBarbers:[Barber], complition: @escaping (_ barbers:[Barber]) -> Void
     func loadImageIntoBarber(){
