@@ -31,6 +31,13 @@ class MyDate:CustomStringConvertible, Equatable, DictionaryConvertible {
                 lhs.year == rhs.year
     }
     
+    public static func <(lhs: MyDate, rhs: MyDate) -> Bool{
+        return
+            lhs.month == rhs.month &&
+                lhs.day < rhs.day ||
+            lhs.month < rhs.month
+    }
+    
     //-----------------------
     //remove after site is on
     func generateId() -> Int{

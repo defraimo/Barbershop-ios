@@ -36,26 +36,28 @@ class AllDates:DictionaryConvertible {
     // DictionaryConvertible protocol methods
     required convenience init?(dict: NSDictionary) {
         guard let barberId = dict["barberId"] as? Int,
-            let availableDaysDictArr = dict["availableDays"] as? [NSDictionary]
+            let availableDaysDictArr = dict["availableDays"] as? [String:NSDictionary]
             else {
                 return nil
         }
         
         var availableDaysArr:[AppointmentDate] = []
-        for availableDaysDict in availableDaysDictArr{
+        for availableDaysDict in availableDaysDictArr.values{
             if let availableDays = AppointmentDate(dict: availableDaysDict){
                 availableDaysArr.append(availableDays)
             }
+            availableDaysArr = AllDates.sortDates(availableDaysArr)
         }
         
         var notificationDaysArr:[AppointmentDate]?
-        if let notificationDaysDictArr = dict["notificationDays"] as? [NSDictionary]{
+        if let notificationDaysDictArr = dict["notificationDays"] as? [String:NSDictionary]{
             notificationDaysArr = []
-            for notificationDaysDict in notificationDaysDictArr{
+            for notificationDaysDict in notificationDaysDictArr.values{
                 if let notificationDays = AppointmentDate(dict: notificationDaysDict){
                     notificationDaysArr!.append(notificationDays)
                 }
             }
+            notificationDaysArr = AllDates.sortDates(notificationDaysArr!)
         }
         
         self.init(barberId: barberId, availableDays: availableDaysArr, notificationDays: notificationDaysArr)
@@ -64,18 +66,18 @@ class AllDates:DictionaryConvertible {
     var dict:NSDictionary {
         var dictionary:[String:Any] = ["barberId":barberId]
         
-        var availableDaysDict:[NSDictionary] = []
+        var availableDaysDict:[String:Any] = [:]
         for day in availableDays{
-            availableDaysDict.append(day.dict)
+            availableDaysDict["\(day.id)"] = day.dict
         }
-        dictionary["availableDays"] = availableDaysDict
+        dictionary["availableDays"] = NSDictionary(dictionary: availableDaysDict)
         
         if self.notificationDays != nil{
-            var notificationDaysDict:[NSDictionary] = []
+            var notificationDaysDict:[String:Any] = [:]
             for day in notificationDays!{
-                notificationDaysDict.append(day.dict)
+                notificationDaysDict["\(day.id)"] = day.dict
             }
-            dictionary["notificationDays"] = notificationDaysDict
+            dictionary["notificationDays"] = NSDictionary(dictionary: notificationDaysDict)
         }
         
         return NSDictionary(dictionary: dictionary)
@@ -89,6 +91,9 @@ class AllDates:DictionaryConvertible {
         notificationDays!.remove(at: dateIndex)
     }
     
+    public static func sortDates(_ dates:[AppointmentDate]) -> [AppointmentDate]{
+        return dates.sorted(by: { $0.date < $1.date })
+    }
     
     func getDisplayedDates() -> [AppointmentDate]{
         return dates

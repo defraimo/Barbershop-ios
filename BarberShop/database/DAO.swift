@@ -285,7 +285,7 @@ class DAO{
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
         
-        for i in 0..<10{
+        for i in 0..<8{
             
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             
@@ -296,14 +296,14 @@ class DAO{
             avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
         }
         
-        for i in 10..<16{
+        for i in 8..<15{
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             //after getting from data base
             notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 1, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
         displayedDates = allDates?.getDisplayedDates()
         
@@ -311,7 +311,7 @@ class DAO{
         avialibleDaysCount = avialibleDays.count
         notificationDaysCount = notificationDays.count
         
-        ref.child("Dates").child("1").setValue(allDates!.dict)
+        ref.child("Dates").child("3").setValue(allDates!.dict)
         
     }
     
