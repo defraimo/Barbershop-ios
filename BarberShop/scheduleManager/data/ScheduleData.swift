@@ -101,14 +101,22 @@ class ScheduleData{
         //change index to id
         //-------------------
         guard let date = displayedDates?[index].date else {return []}
-        
-        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date) else {return []}
+//        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date) else {return []}
+        guard let allUnits = displayedDates?[index].units else {return []}
         
         var customDisplayedUnits:[TimeUnit] = []
         
+        let current = CurrentDate()
+        let currentTime = current.currentTime
+        let isDateEquals = current.isCurrentDateEqauls(date: date)
+        
         for i in 0..<allUnits.count{
-            if allUnits[i].isAvailible{
-                customDisplayedUnits.append(allUnits[i])
+            let unit = allUnits[i]
+            if !isDateEquals && unit.isAvailible{
+                customDisplayedUnits.append(unit)
+            }
+            else if unit.startTime > currentTime && isDateEquals && unit.isAvailible{
+                customDisplayedUnits.append(unit)
             }
         }
         
@@ -123,25 +131,29 @@ class ScheduleData{
     func getDisplayTimeUnitsWith(intervals:Int, forDateIndex index:Int) -> [TimeUnit]{
         guard let date = displayedDates?[index].date else {return []}
         //get all the units
-        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date),
-                let unitDuration = allUnits.first?.duration
+//        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date),
+//                let unitDuration = allUnits.first?.duration
+//            else {return []}
+        
+        guard let allUnits = displayedDates?[index].units,
+            let unitDuration = allUnits.first?.duration
             else {return []}
         
-        //--------------------------------------
-        //--------------------------------------
-        //--------------------------------------
         var availableUnits:[TimeUnit] = []
         
+        let current = CurrentDate()
+        let currentTime = current.currentTime
+        let isDateEquals = current.isCurrentDateEqauls(date: date)
+        
         for i in 0..<allUnits.count{
-            if allUnits[i].isAvailible{
-                availableUnits.append(allUnits[i])
+            let unit = allUnits[i]
+            if !isDateEquals && unit.isAvailible{
+                availableUnits.append(unit)
+            }
+            else if unit.startTime > currentTime && isDateEquals && unit.isAvailible{
+                availableUnits.append(unit)
             }
         }
-        print(allUnits[0].isAvailible)
-        //--------------------------------------
-        //--------------------------------------
-        //--------------------------------------
-
         
         var customDisplayedUnits:[TimeUnit] = []
         

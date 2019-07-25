@@ -15,7 +15,7 @@ class ChooseHaircutViewController: UIViewController {
     var appointment:Appointment?
     
     var chosenBarberIndex:IndexPath?
-    var passedServies:PriceModel?
+//    var passedServies:PriceModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,8 @@ class ChooseHaircutViewController: UIViewController {
             guard let specializedBarbers = notification.userInfo?["specializedBarbers"] as? [Barber] else {return}
             guard let cellIndex = notification.userInfo?["cellIndex"] as? Int else {return}
             
-            self?.passedServies = prices?[cellIndex]
+//            self?.passedServies = prices?[cellIndex]
+            self?.appointment?.servies = prices?[cellIndex]
             
             self!.chosenBarberIndex = barberIndex
             self?.performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: specializedBarbers)
@@ -171,7 +172,7 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
             guard let dest = segue.destination as? ChooseWhenViewController else {return}
             dest.barbers = specializedBarbers
             dest.chosenBarberIndex = chosenBarberIndex ?? IndexPath(row: 0, section: 0)
-            appointment?.servies = passedServies!
+//            appointment?.servies = passedServies!
             dest.appointment = appointment
         }
     }
