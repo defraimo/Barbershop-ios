@@ -31,7 +31,11 @@ class ChooseHaircutViewController: UIViewController {
         chooseServiesLabel.minimumScaleFactor = 0.2
         
         appointment = Appointment()
-        appointment?.client = "User Name"
+        //------------------------------------------------
+        //------------------------------------------------
+        appointment?.clientId = 0 //SET TO THE CURRENT USER
+        //------------------------------------------------
+        //------------------------------------------------
         
         NotificationCenter.default.addObserver(forName: .barberChosenFromInfo, object: nil, queue: .main) { [weak self] (notification) in
             

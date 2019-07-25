@@ -19,12 +19,9 @@ class SumUpViewController: UIViewController {
     
     @IBAction func makeAppointment(_ sender: UIButton) {
         if appointment != nil{
-            var unitsIndex:[Int] = []
-            for unit in appointment!.units!{
-                unitsIndex.append(unit.index)
-            }
-            DAO.shared.checkIfUnitsStillAvailible(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), unitsIndex: unitsIndex) { (isAvailible) in
-                print(isAvailible)
+            DAO.shared.checkIfUnitsStillAvailible(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!) { (isAvailible) in
+                
+                DAO.shared.writeAppoinment(self.appointment!)
             }
         }
     }

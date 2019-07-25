@@ -330,7 +330,7 @@ class DAO{
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 1, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
         displayedDates = allDates?.getDisplayedDates()
         
@@ -338,7 +338,7 @@ class DAO{
         avialibleDaysCount = avialibleDays.count
         notificationDaysCount = notificationDays.count
         
-        ref.child("Dates").child("1").setValue(allDates!.dict)
+        ref.child("Dates").child("3").setValue(allDates!.dict)
         
     }
     
@@ -353,8 +353,13 @@ class DAO{
     }
     
     //when pressing the last "הזמן"
-    func checkIfUnitsStillAvailible(barber:Barber, dateId:Int, unitsIndex:[Int], complition: @escaping (_ isAvaillible:Bool) -> Void){
+    func checkIfUnitsStillAvailible(barber:Barber, dateId:Int, units:[TimeUnit], complition: @escaping (_ isAvaillible:Bool) -> Void){
         let barberId = barber.id
+        
+        var unitsIndex:[Int] = []
+        for unit in units{
+            unitsIndex.append(unit.index)
+        }
         //check from the data base
         ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").observeSingleEvent(of: .value, with: { (data) in
             guard let unitDictArray = data.value as? [NSDictionary] else {return}
@@ -363,8 +368,8 @@ class DAO{
             for i in 0..<unitsIndex.count{
                 let unitDict = unitDictArray[unitsIndex[i]]
                 if let unit = TimeUnit(dict: unitDict){
-                    if !unit.isAvailible{
-                        areUnitsAvailable = unit.isAvailible
+                    if !unit.isAvailable{
+                        areUnitsAvailable = unit.isAvailable
                     }
                 }
             }
@@ -376,7 +381,30 @@ class DAO{
     }
     
     func writeAppoinment(_ appointment:Appointment){
-        //write it to the data base
+        var unitsIndex:[Int] = []
+        let updatedAppointment = appointment
+        
+        for i in 0..<updatedAppointment.units!.count{
+            let unit = updatedAppointment.units![i]
+            //add the unit index
+            unitsIndex.append(unit.index)
+            //set the unit availability to false
+            updatedAppointment.units![i].isAvailable = false
+        }
+        //change the units availability to false
+        setAvailabilityToTrue(barber: updatedAppointment.barber!, dateId: updatedAppointment.date!.generateId(), unitsIndex: unitsIndex) {
+            //write the appointment to the data base
+            self.ref.child("Appointment").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
+        }
+    }
+    
+    func setAvailabilityToTrue(barber:Barber, dateId:Int, unitsIndex:[Int], complition: @escaping () -> Void){
+        let barberId = barber.id
+       
+        for i in 0..<unitsIndex.count{ ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").child(String(unitsIndex[i])).child("isAvailable").setValue(false)
+        }
+        
+        complition()
     }
         
 }

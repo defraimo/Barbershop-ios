@@ -10,7 +10,7 @@ import Foundation
 
 class Appointment:CustomStringConvertible {
     var barber:Barber?
-    var client:String? //TO CHANGE!!!!!!
+    var clientId:Int? //TO CHANGE!!!!!!
     var date:MyDate?
     var units:[TimeUnit]?
     var servies:PriceModel?
@@ -18,16 +18,16 @@ class Appointment:CustomStringConvertible {
     //empty init so we could set all the params by steps
     init() {}
     
-    private init(barber:Barber?, client:String?, date:MyDate?, units:[TimeUnit]?, servies:PriceModel?) {
+    private init(barber:Barber?, clientId:Int?, date:MyDate?, units:[TimeUnit]?, servies:PriceModel?) {
         self.barber = barber
-        self.client = client
+        self.clientId = clientId
         self.date = date
         self.units = units
         self.servies = servies
     }
     
     var description: String{
-        return "\(String(describing: barber?.name)), \(String(describing: client)), \(String(describing: date?.description)), \(String(describing: units?.description)), \(String(describing: servies?.servies)) \(String(describing: servies?.priceRange))"
+        return "\(String(describing: barber?.name)), \(String(describing: clientId)), \(String(describing: date?.description)), \(String(describing: units?.description)), \(String(describing: servies?.servies)) \(String(describing: servies?.priceRange))"
     }
     
     
@@ -39,9 +39,9 @@ class Appointment:CustomStringConvertible {
             barber = Barber(dict: barberDict)
         }
         
-        var client:String? // TO CHANGE!!!!!!!!!!!!
-        if let clientDict = dict["client"] as? String{
-            client = clientDict
+        var clientId:Int? // TO CHANGE!!!!!!!!!!!!
+        if let clientDict = dict["clientId"] as? Int{
+            clientId = clientDict
         }
         
         var date:MyDate?
@@ -62,7 +62,7 @@ class Appointment:CustomStringConvertible {
             servies = PriceModel(dict: serviesDict)
         }
         
-        self.init(barber: barber, client: client, date: date, units: units, servies: servies)
+        self.init(barber: barber, clientId: clientId, date: date, units: units, servies: servies)
     }
     
     var dict:NSDictionary {
@@ -72,8 +72,8 @@ class Appointment:CustomStringConvertible {
             dictionary["barber"] = barber?.dict
         }
         
-        if self.client != nil{
-            dictionary["client"] = client // TO CHANGE!!!!!!!!!!!!
+        if self.clientId != nil{
+            dictionary["clientId"] = clientId // TO CHANGE!!!!!!!!!!!!
         }
         
         if self.date != nil{

@@ -112,10 +112,10 @@ class ScheduleData{
         
         for i in 0..<allUnits.count{
             let unit = allUnits[i]
-            if !isDateEquals && unit.isAvailible{
+            if !isDateEquals && unit.isAvailable{
                 customDisplayedUnits.append(unit)
             }
-            else if unit.startTime > currentTime && isDateEquals && unit.isAvailible{
+            else if unit.startTime > currentTime && isDateEquals && unit.isAvailable{
                 customDisplayedUnits.append(unit)
             }
         }
@@ -147,10 +147,10 @@ class ScheduleData{
         
         for i in 0..<allUnits.count{
             let unit = allUnits[i]
-            if !isDateEquals && unit.isAvailible{
+            if !isDateEquals && unit.isAvailable{
                 availableUnits.append(unit)
             }
-            else if unit.startTime > currentTime && isDateEquals && unit.isAvailible{
+            else if unit.startTime > currentTime && isDateEquals && unit.isAvailable{
                 availableUnits.append(unit)
             }
         }
@@ -170,18 +170,20 @@ class ScheduleData{
                 var num = i
                 //if isAvailible become false so the unit is accupaid
                 var isAvailible = true
+                
                 //iterate to check forward all the units
                 for _ in 0..<numberOfUnitsNeeded{
                     //check if the units are in the array limit and if the difference indexes between two following units is 1
-                    if num+1 < availableUnits.count &&
+                    if numberOfUnitsNeeded > 1 && num+1 < availableUnits.count &&
                         availableUnits[num+1].index - availableUnits[num].index != 1{
                         
                         isAvailible = false
                     }
                     //if the unit is availible so make isAvailible false
-                    else if availableUnits[num].isAvailible == false{
-                        isAvailible = false
-                    }
+//                    else if availableUnits[num].isAvailable == false{
+//                        isAvailible = false
+//                    }
+                        
                     //if the units needed are out of time range make isAvailible false
                     else if num == availableUnits.count-1{
                         isAvailible = false

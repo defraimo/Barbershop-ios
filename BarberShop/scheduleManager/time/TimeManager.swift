@@ -159,7 +159,7 @@ class TimeManager:DictionaryConvertible{
         
         var unitIndex = 0
         var isInRange = true
-        workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailible: checkIfAvailible(unitIndex: unitIndex)))
+        workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailable: checkIfAvailible(unitIndex: unitIndex)))
         while true {
             unitIndex += 1
             minutes += intervals
@@ -196,7 +196,7 @@ class TimeManager:DictionaryConvertible{
                 }
             }
             if isInRange{
-                workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailible: checkIfAvailible(unitIndex: unitIndex)))
+                workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailable: checkIfAvailible(unitIndex: unitIndex)))
             }
         }
         
