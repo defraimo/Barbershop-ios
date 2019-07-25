@@ -101,7 +101,7 @@ class ChooseWhenViewController: UIViewController {
         
         if id == "toSumUp"{
             appointment?.barber = barbers?[chosenBarberIndex!.row]
-            appointment?.date = datesForBarber?[chosenDateIndex]
+            appointment?.date = datesForBarber?[chosenDateIndex].date
             
             let chosenUnit = timeForChosenDay![chosenTimeIndex]
             let unitsNeeded = scheduleData?.getUnitsNeededForServies(date: chosenDateIndex, chosenUnit: chosenUnit, unitsNeededNum: scheduleData?.numberOfUnitsNeeded ?? 1)

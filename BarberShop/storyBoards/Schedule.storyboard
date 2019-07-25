@@ -595,6 +595,9 @@
                                 <state key="normal" title="הזמן">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="makeAppointment:" destination="fBi-Id-OJe" eventType="touchUpInside" id="a9n-Yh-IJm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם ספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="04L-WD-OLb">
                                 <rect key="frame" x="115" y="282.33333333333331" width="184" height="35.666666666666686"/>

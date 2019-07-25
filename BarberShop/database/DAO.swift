@@ -351,6 +351,33 @@ class DAO{
             complition(allDates)
         })
     }
+    
+    //when pressing the last "הזמן"
+    func checkIfUnitsStillAvailible(barber:Barber, dateId:Int, unitsIndex:[Int], complition: @escaping (_ isAvaillible:Bool) -> Void){
+        let barberId = barber.id
+        //check from the data base
+        ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").observeSingleEvent(of: .value, with: { (data) in
+            guard let unitDictArray = data.value as? [NSDictionary] else {return}
+            
+            var areUnitsAvailable:Bool = true
+            for i in 0..<unitsIndex.count{
+                let unitDict = unitDictArray[unitsIndex[i]]
+                if let unit = TimeUnit(dict: unitDict){
+                    if !unit.isAvailible{
+                        areUnitsAvailable = unit.isAvailible
+                    }
+                }
+            }
+            
+            complition(areUnitsAvailable)
+        })
+        
+        
+    }
+    
+    func writeAppoinment(_ appointment:Appointment){
+        //write it to the data base
+    }
         
 }
 

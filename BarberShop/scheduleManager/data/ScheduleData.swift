@@ -231,15 +231,5 @@ class ScheduleData{
         return neededUnits
     }
     
-    //when pressing the last "הזמן"
-    func checkIfUnitsStillAvailible(barber:Barber, dateId:Int, unitsIndex:[Int]) -> Bool{
-        //check from the data base
-        return true
-    }
-    
-    func makeAnAppoinment(_ appointment:Appointment){
-        //write it to the data base
-    }
-    
 }
 
