@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TimeManager{
+class TimeManager:DictionaryConvertible{
     var id:Int
     var minTime:Time
     var maxTime:Time
@@ -22,6 +22,48 @@ class TimeManager{
         self.intervals = intervals
         self.freeTime = freeTime
     }
+    
+    
+    // DictionaryConvertible protocol methods
+    required convenience init?(dict: NSDictionary) {
+        guard let id = dict["id"] as? Int,
+            let minTimeDict = dict["minTime"] as? NSDictionary,
+            let maxTimeDict = dict["maxTime"] as? NSDictionary,
+            let intervals = dict["intervals"] as? Int else {return nil}
+        
+        guard let minTime = Time(dict: minTimeDict),
+            let maxTime = Time(dict: maxTimeDict) else {return nil}
+        
+        var freeTime:[TimeRange]?
+        if let freeTimeDictArray = dict["freeTime"] as? [NSDictionary] {
+            freeTime = []
+            for freeTimeDict in freeTimeDictArray{
+                if let timeRange = TimeRange(dict: freeTimeDict){
+                    freeTime?.append(timeRange)
+                }
+            }
+        }
+        
+        self.init(id: id, minTime: minTime, maxTime: maxTime, intervals: intervals, freeTime: freeTime)
+    }
+    
+    var dict:NSDictionary {
+        var dictionary:[String:Any] = ["id": id,
+                                       "minTime":minTime.dict,
+                                       "maxTime":maxTime.dict,
+                                       "intervals":intervals]
+        
+        if self.freeTime != nil{
+            var freeTimeDict:[NSDictionary] = []
+            for timeRange in freeTime!{
+                freeTimeDict.append(timeRange.dict)
+            }
+            dictionary["freeTime"] = freeTimeDict
+        }
+        
+        return NSDictionary(dictionary: dictionary)
+    }
+ 
     
     func defineGlobalProperties(minTime:Time, maxTime:Time){
         self.minTime = minTime
@@ -96,9 +138,13 @@ class TimeManager{
         
         let current = CurrentDate()
         
-        if date.day == current.currentMonthDay && date.month == current.currentMonth && date.year == current.currentYear{
-            minutes = current.currentMinutes
-            hours = current.currentHours
+        //check if the checked day if the current day
+        if current.isCurrentDateEqauls(date: date){
+            if current.currentHours > hours || current.currentHours == hours && current.currentMinutes > minutes{
+                //set the min minutes and hours to the current time
+                minutes = current.currentMinutes
+                hours = current.currentHours
+            }
         }
         
         var unitIndex = 0

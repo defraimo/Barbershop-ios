@@ -250,6 +250,7 @@
 			children = (
 				A618D5CA22DB74A000A93D5E /* AllDates.swift */,
 				A618D5CC22DB756300A93D5E /* AppointmentDate.swift */,
+				A6413D0122C0FC4900FA1768 /* DayData.swift */,
 			);
 			path = date;
 			sourceTree = "<group>";
@@ -444,7 +445,6 @@
 			children = (
 				A659A0A022C0197400274F40 /* AppDate.swift */,
 				A659A09922BFD76C00274F40 /* DatesManager.swift */,
-				A6413D0122C0FC4900FA1768 /* DayData.swift */,
 			);
 			path = date;
 			sourceTree = "<group>";

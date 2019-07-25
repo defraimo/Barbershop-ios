@@ -387,6 +387,8 @@ class MainViewController: UIViewController {
         
         AllBarbers.shared
         
+//        DAO.shared.writeSchedule()
+        
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)

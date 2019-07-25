@@ -514,6 +514,7 @@
                         <outlet property="sendMeNotificationHeight" destination="xhW-w4-Xxc" id="xIz-ld-Ih5"/>
                         <outlet property="sendMeNotificationView" destination="bke-5K-Cme" id="pqf-F7-LSK"/>
                         <outlet property="sendNotificationButton" destination="8dm-aC-rnq" id="lMy-0M-NjQ"/>
+                        <outlet property="sendNotificationLabel" destination="bwL-0C-lUd" id="seo-mf-OWU"/>
                         <outlet property="timePicker" destination="7Zb-FC-EPc" id="HUV-vJ-ZD6"/>
                         <outlet property="timeView" destination="EWO-tg-heq" id="eOF-vb-7jI"/>
                         <outlet property="timeViewHeight" destination="zGx-jO-aJj" id="rW6-Ez-QHr"/>

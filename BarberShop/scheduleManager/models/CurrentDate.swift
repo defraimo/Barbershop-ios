@@ -31,9 +31,9 @@ class CurrentDate{
         return calendar.component(.minute, from: date)
     }
     
-    func addToCurrentDate(numberOfDays:Int) -> AppDate{
+    func addToCurrentDate(numberOfDays:Int) -> MyDate{
         let newDate = calendar.date(byAdding: .day, value: numberOfDays, to: date)
-        return AppDate(day: calendar.component(.day, from:newDate!), month: calendar.component(.month, from:newDate!), year: calendar.component(.year, from:newDate!))
+        return MyDate(day: calendar.component(.day, from:newDate!), month: calendar.component(.month, from:newDate!), year: calendar.component(.year, from:newDate!))
     }
     
     static let namedDays = [
@@ -48,6 +48,10 @@ class CurrentDate{
     
     func getNameOfDay(_ dayIndex:Int) -> String{
         return CurrentDate.namedDays[dayIndex % 7]
+    }
+    
+    func isCurrentDateEqauls(date:MyDate) -> Bool{
+        return date.day == currentMonthDay && date.month == currentMonth && date.year == currentYear
     }
     
     init() {

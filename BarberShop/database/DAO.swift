@@ -194,7 +194,7 @@ class DAO{
 
             }
             
-            Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:#selector(self.checkIfAllImagesWereLoaded), userInfo: nil, repeats: true)
+            Timer.scheduledTimer(timeInterval: 0.25, target: self, selector:#selector(self.checkIfAllImagesWereLoaded), userInfo: nil, repeats: true)
 
         })
         
@@ -273,6 +273,55 @@ class DAO{
                 allPrices.append(priceFromData)
             }
             complition(allPrices)
+        })
+    }
+    
+    func writeSchedule(){
+        var allDates:AllDates?
+        var displayedDates:[AppointmentDate]?
+        var avialibleDaysCount:Int = 0
+        var notificationDaysCount:Int = 0
+        
+        var avialibleDays:[AppointmentDate] = []
+        var notificationDays:[AppointmentDate] = []
+        
+        for i in 0..<10{
+            
+            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
+            
+            //after getting from data base
+            let timeAvailible = TimeManager(id: current.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
+            
+            
+            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
+        }
+        
+        for i in 10..<16{
+            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
+            //after getting from data base
+            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
+        }
+        
+        //get the barber from the data base
+        allDates = AllDates(barberId: 1, availableDays: avialibleDays, notificationDays: notificationDays)
+        
+        displayedDates = allDates?.getDisplayedDates()
+        
+        
+        avialibleDaysCount = avialibleDays.count
+        notificationDaysCount = notificationDays.count
+        
+        ref.child("Dates").child("1").setValue(allDates!.dict)
+        
+    }
+    
+    func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){
+        
+        ref.child("Dates").observeSingleEvent(of: .value, with: { (data) in
+            guard let allBarbersDatesDict = data.value as? [NSDictionary],
+                let allDates = AllDates(dict: allBarbersDatesDict[barberId]) else {return}
+            
+            complition(allDates)
         })
     }
         

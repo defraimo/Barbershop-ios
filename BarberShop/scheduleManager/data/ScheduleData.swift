@@ -17,36 +17,79 @@ class ScheduleData{
     
     var numberOfUnitsNeeded = 1
     
-    init(barber:Barber) {
+//    static let shared = ScheduleData()
+    
+    init() {
+        
+        /*
+        
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
-        let currentDay = CurrentDate().currentMonthDay
+        
+        DAO.shared.loadScheduleFor(barberId: barber.id) { (allDates) in
+            self.allDates = allDates
+            avialibleDays = allDates.availableDays
+            if let notifications = allDates.notificationDays{
+                notificationDays = notifications
+            }
+            print("Schedule is loaded for barber number: ",barber.id)
+        }
+        
+        
         
         for i in 0..<7{
+            
+            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
+            
             //after getting from data base
-            let timeAvailible = TimeManager(id: 14072019, minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
+            let timeAvailible = TimeManager(id: current.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
             
             
-            avialibleDays.append(AppointmentDate(id: 14072019, date: MyDate(day: currentDay+i, month: 7, year: 2019), dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
+            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
         }
         
         for i in 7..<12{
+            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             //after getting from data base
-            notificationDays.append(AppointmentDate(id: 14072019, date: MyDate(day: currentDay+i, month: 7, year: 2019), dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
+            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
         }
         
         //get the barber from the data base
-        allDates = AllDates(barber: barber.id, availebleDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: barber.id, availableDays: avialibleDays, notificationDays: notificationDays)
+ 
         
         displayedDates = allDates?.getDisplayedDates()
-        
         
         avialibleDaysCount = avialibleDays.count
         notificationDaysCount = notificationDays.count
         
         
-        let units = displayedDates?[0].time?.getDailyUnitsFor(date: (displayedDates?[0].date)!)
+         let units = displayedDates?[0].time?.getDailyUnitsFor(date: (displayedDates?[0].date)!)
+ 
+        */
         
+    }
+    
+    func fetchScheduleFor(barber:Barber, complition: @escaping (_ schedule:ScheduleData) -> Void){
+        var avialibleDays:[AppointmentDate] = []
+        var notificationDays:[AppointmentDate] = []
+        
+        DAO.shared.loadScheduleFor(barberId: barber.id) { (allDates) in
+            self.allDates = allDates
+            avialibleDays = allDates.availableDays
+            if let notifications = allDates.notificationDays{
+                notificationDays = notifications
+            }
+            print("Schedule is loaded for barber number: ",barber.id)
+            
+            self.displayedDates = allDates.getDisplayedDates()
+            
+            self.avialibleDaysCount = avialibleDays.count
+            self.notificationDaysCount = notificationDays.count
+            
+            complition(self)
+        }
+
     }
     
     func getDisplayedDates() -> [AppointmentDate]{
@@ -84,6 +127,23 @@ class ScheduleData{
                 let unitDuration = allUnits.first?.duration
             else {return []}
         
+        //--------------------------------------
+        //--------------------------------------
+        //--------------------------------------
+        var availableUnits:[TimeUnit] = []
+        
+        for i in 0..<allUnits.count{
+            if allUnits[i].isAvailible{
+                availableUnits.append(allUnits[i])
+            }
+        }
+        print(allUnits[0].isAvailible)
+        print(availableUnits)
+        //--------------------------------------
+        //--------------------------------------
+        //--------------------------------------
+
+        
         var customDisplayedUnits:[TimeUnit] = []
         
         //calc the number of units the new interval takes
@@ -92,9 +152,9 @@ class ScheduleData{
             numberOfUnitsNeeded = 1
         }
         
-        for i in 0..<allUnits.count{
+        for i in 0..<availableUnits.count{
             //check if there are enough units left
-            if i + numberOfUnitsNeeded-1 < allUnits.count{
+            if i + numberOfUnitsNeeded-1 < availableUnits.count{
                 //make a var to check the next units
                 var num = i
                 //if isAvailible become false so the unit is accupaid
@@ -102,24 +162,24 @@ class ScheduleData{
                 //iterate to check forward all the units
                 for _ in 0..<numberOfUnitsNeeded{
                     //check if the units are in the array limit and if the difference indexes between two following units is 1
-                    if num+1 < allUnits.count &&
-                        allUnits[num+1].index - allUnits[num].index != 1{
+                    if num+1 < availableUnits.count &&
+                        availableUnits[num+1].index - availableUnits[num].index != 1{
                         
                         isAvailible = false
                     }
                     //if the unit is availible so make isAvailible false
-                    else if allUnits[num].isAvailible == false{
+                    else if availableUnits[num].isAvailible == false{
                         isAvailible = false
                     }
                     //if the units needed are out of time range make isAvailible false
-                    else if num == allUnits.count-1{
+                    else if num == availableUnits.count-1{
                         isAvailible = false
                     }
                     num += 1
                 }
                 //if the isAvailible stayed true so add it to the array of the units
                 if isAvailible{
-                    customDisplayedUnits.append(allUnits[i])
+                    customDisplayedUnits.append(availableUnits[i])
                 }
             }
         }
@@ -151,12 +211,11 @@ class ScheduleData{
                 }
                 //promote the counter
                 counter += 1
-                //if the counter go to the unitsNeededNum break the for loop
-                if counter == unitsNeededNum{
+                //if the counter go to the unitsNeededNum break the for lScheduleData        if counter == unitsNeededNum{
                     break
                 }
             }
-        }
+        
         //return the needed units
         return neededUnits
     }
@@ -172,3 +231,4 @@ class ScheduleData{
     }
     
 }
+

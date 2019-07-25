@@ -11,7 +11,7 @@ import Foundation
 struct DayData:CustomStringConvertible {
     var dayOfWeek:Int
     var namedDayOfWeek:String
-    var date:AppDate
+    var date:MyDate
     var timeAvialible:TimeManage?
     
     var description:String{

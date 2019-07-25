@@ -18,6 +18,8 @@ class ChooseWhenViewController: UIViewController {
     
     var appointment:Appointment?
     
+    var displayedDate:MyDate?
+    
     var chosenDateIndex:Int = 0
     var chosenTimeIndex:Int = 0
     var unitsNeeded:Int = 1
@@ -39,6 +41,7 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var timeViewHeight: NSLayoutConstraint!
     @IBOutlet weak var timeViewLabel: UILabel!
     
+    @IBOutlet weak var sendNotificationLabel: UILabel!
     @IBOutlet weak var sendMeNotificationView: UIView!
     @IBOutlet weak var sendMeNotificationHeight: NSLayoutConstraint!
     
@@ -182,7 +185,22 @@ class ChooseWhenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //load the data for the chosen barber
-        scheduleData = ScheduleData(barber: barbers![chosenBarberIndex?.row ?? 0])
+//        scheduleData = ScheduleData(barber: barbers![chosenBarberIndex?.row ?? 0])
+        ScheduleData().fetchScheduleFor(barber: barbers![chosenBarberIndex?.row ?? 0]) { [weak self] (schedule) in
+            self?.scheduleData = schedule
+            
+            self?.fetchDatesForCurrentBarber()
+            self?.fetchTimeForChosenDay(index: 0)
+            
+            self?.datePicker.reloadAllComponents()
+            self?.timePicker.reloadAllComponents()
+            
+//            if self?.displayedDate != nil && CurrentDate().isCurrentDateEqauls(date: self!.displayedDate!){
+//                self?.sendNotificationLabel.text = "אין יותר תורים ליום זה"
+//                self?.sendNotificationButton.alpha = 0
+//                
+//            }
+        }
         
         //load all the days of the cirrent barber
         fetchDatesForCurrentBarber()
@@ -254,6 +272,8 @@ class ChooseWhenViewController: UIViewController {
         let serviesDuration = appointment?.servies?.duration
         timeForChosenDay = scheduleData?.getDisplayTimeUnitsWith(intervals: serviesDuration!, forDateIndex: index)
         unitsNeeded = scheduleData?.numberOfUnitsNeeded ?? 1
+        
+        displayedDate = scheduleData?.displayedDates?[index].date
     }
    
 }
@@ -311,29 +331,39 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
             //set the picker date array to the chosen barber from the collectionView
 //            currentlyShownSchedule = barbersSchedule[visibleRow]
 //            currentlyDaysNamed = currentlyShownSchedule?.namedDays
-            scheduleData = ScheduleData(barber: barbers![visibleRow])
-            fetchDatesForCurrentBarber()
-            fetchTimeForChosenDay(index: 0)
             
-            chosenBarberIndex = visible.first!
+            
+            //---------------------------------
+//            scheduleData = ScheduleData(barber: barbers![visibleRow])
+            ScheduleData().fetchScheduleFor(barber: barbers![visibleRow]) { [weak self] (schedule) in
+                self?.scheduleData = schedule
+                
+                self?.fetchDatesForCurrentBarber()
+                self?.fetchTimeForChosenDay(index: 0)
+                self?.datePicker.selectRow(0, inComponent: 0, animated: true)
+            
+            
+            
+            self?.chosenBarberIndex = visible.first!
             
             UIView.animate(withDuration: 0.3, animations: {
-                self.datePicker.alpha = 0
+                self?.datePicker.alpha = 0
             }) { (_) in
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.datePicker.alpha = 1
+                    self?.datePicker.alpha = 1
                 })
-                self.datePicker.reloadAllComponents()
-                self.timePicker.reloadAllComponents()
+                self?.datePicker.reloadAllComponents()
+                self?.timePicker.reloadAllComponents()
             }
             
-            for i in 0..<barbers!.count{
+            for i in 0..<self!.barbers!.count{
                 if i == visibleRow{
-                    cellWasReloaded[i] = true
+                    self?.cellWasReloaded[i] = true
                 }
                 else{
-                    cellWasReloaded[i] = false
+                    self?.cellWasReloaded[i] = false
                 }
+            }
             }
         }
         else{

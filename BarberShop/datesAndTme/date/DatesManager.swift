@@ -13,7 +13,7 @@ class DatesManager {
     var daysAvailable:Int = 0
     var notificationDays:Int = 0
     var daysOff:[Int]?
-    var datesOff:[AppDate]?
+    var datesOff:[MyDate]?
     
     init(/*barberName:String, */daysAvailable:Int, additionalDays:Int) {
         self.daysAvailable = daysAvailable
@@ -37,7 +37,7 @@ class DatesManager {
         daysOff = days
     }
     
-    func addDatesOff(dates:[AppDate]){
+    func addDatesOff(dates:[MyDate]){
         if datesOff == nil{
             datesOff = []
         }
