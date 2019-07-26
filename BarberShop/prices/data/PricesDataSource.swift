@@ -17,7 +17,6 @@ class PricesDataSource{
     func fetchPrices(complition: @escaping () -> Void){
         DAO.shared.loadPrices { (prices) in
             self.pricesList = prices.sorted(by: { $0.id < $1.id })
-            print("Prices were loaded")
             complition()
         }
     }

@@ -395,10 +395,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        AllBarbers.shared
-        
-//        DAO.shared.writeSchedule()
+                
+        DAO.shared.writeSchedule()
         
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)

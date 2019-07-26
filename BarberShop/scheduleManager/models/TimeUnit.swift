@@ -33,6 +33,10 @@ class TimeUnit:CustomStringConvertible,Equatable,DictionaryConvertible {
             lhs.index == rhs.index
     }
     
+    var generateId:String{
+        return startTime.description
+    }
+    
     // DictionaryConvertible protocol methods
     required convenience init?(dict: NSDictionary) {
         guard let index = dict["index"] as? Int,

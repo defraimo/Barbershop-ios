@@ -74,6 +74,14 @@ class AppointmentDate:CustomStringConvertible,DictionaryConvertible {
             time = TimeManager(dict: timeDict)
         }
         
+//        var units:[TimeUnit]?
+//        if let unitsDictArray = dict["units"] as? [String:NSDictionary]{
+//            units = []
+//            for unitDict in unitsDictArray.values{
+//                units?.append(TimeUnit(dict: unitDict)!)
+//            }
+//        }
+        
         var units:[TimeUnit]?
         if let unitsDictArray = dict["units"] as? [NSDictionary]{
             units = []
@@ -94,6 +102,17 @@ class AppointmentDate:CustomStringConvertible,DictionaryConvertible {
         if self.time != nil{
             dictionary["time"] = time?.dict
         }
+        
+        
+//        if self.units != nil{
+//            var unitsDict:[String:Any] = [:]
+//            for unit in units!{
+//                unitsDict["\(unit.index)"] = unit.dict
+//            }
+//            dictionary["units"] = NSDictionary(dictionary: unitsDict)
+//        }
+        
+        
         if self.units != nil{
             var unitsDict:[NSDictionary] = []
             for unit in units!{

@@ -31,7 +31,6 @@ class AllBarbers {
     
     func loadBarbers(_ barbers:[Barber], complition: @escaping () -> Void){
         allBarbers = barbers
-        print("Barbers were loaded")
         //load the prices
         PricesDataSource.shared.fetchPrices(complition: {
             complition()

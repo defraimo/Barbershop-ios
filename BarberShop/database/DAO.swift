@@ -311,7 +311,7 @@ class DAO{
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
         
-        for i in 0..<7{
+        for i in 0..<10{
             
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             
@@ -319,58 +319,31 @@ class DAO{
             let timeAvailible = TimeManager(id: current.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
             
             
-            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
+            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:timeAvailible))
         }
         
-        for i in 7..<12{
+        for i in 10..<16{
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             //after getting from data base
-            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
+            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:nil))
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 0, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
         
-        ref.child("Dates").child("0").setValue(allDates!.dict)
+        ref.child("Dates").child("3").setValue(allDates!.dict)
     }
+
     
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){
         
-        ref.child("Dates").observeSingleEvent(of: .value, with: { (data) in
-            guard let allBarbersDatesDict = data.value as? [NSDictionary],
-                let allDates = AllDates(dict: allBarbersDatesDict[barberId]) else {return}
+        ref.child("Dates").child("\(barberId)").observeSingleEvent(of: .value, with: { (data) in
+            guard let barbersDatesDict = data.value as? NSDictionary,
+                let allDates = AllDates(dict: barbersDatesDict) else {return}
             
             complition(allDates)
         })
-    }
-    
-    //when pressing the last "הזמן"
-    func checkIfUnitsStillAvailible(barber:Barber, dateId:Int, units:[TimeUnit], complition: @escaping (_ isAvaillible:Bool) -> Void){
-        let barberId = barber.id
-        
-        var unitsIndex:[Int] = []
-        for unit in units{
-            unitsIndex.append(unit.index)
-        }
-        //check from the data base
-        ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").observeSingleEvent(of: .value, with: { (data) in
-            guard let unitDictArray = data.value as? [NSDictionary] else {return}
-            
-            var areUnitsAvailable:Bool = true
-            for i in 0..<unitsIndex.count{
-                let unitDict = unitDictArray[unitsIndex[i]]
-                if let unit = TimeUnit(dict: unitDict){
-                    if !unit.isAvailable{
-                        areUnitsAvailable = unit.isAvailable
-                    }
-                }
-            }
-            
-            complition(areUnitsAvailable)
-        })
-        
-        
     }
     
     func writeAppoinment(_ appointment:Appointment){
@@ -384,26 +357,49 @@ class DAO{
             //set the unit availability to false
             updatedAppointment.units![i].isAvailable = false
         }
-        //change the units availability to false
-        setAvailabilityToTrue(barber: updatedAppointment.barber!, dateId: updatedAppointment.date!.generateId(), unitsIndex: unitsIndex, userId: updatedAppointment.clientId!) {
-            //write the appointment to the data base
-            self.ref.child("Appointment").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
-        }
+    self.ref.child("Appointments").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
     }
     
-    func setAvailabilityToTrue(barber:Barber, dateId:Int, unitsIndex:[Int], userId:String, complition: @escaping () -> Void){
+    func setAvailabilityToTrue(barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
         let barberId = barber.id
-       
-        for i in 0..<unitsIndex.count{
-            
-            let path = ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").child(String(unitsIndex[i]))
-           
-            path.child("user").setValue(userId)
-            
-            path.child("isAvailable").setValue(false)
-        }
         
-        complition()
+        var unitsIndex:[Int] = []
+        for unit in units{
+            unitsIndex.append(unit.index)
+        }
+         ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").observeSingleEvent(of: .value, with: { (data) in
+                guard let unitDictArray = data.value as? [NSDictionary] else {return}
+                
+                var areUnitsAvailable:Bool = true
+                var dataUnitsIndex:[Int] = []
+                
+                for u in 0..<unitDictArray.count{
+                    if let unit = TimeUnit(dict: unitDictArray[u]){
+                        for index in unitsIndex{
+                            if unit.index == index{
+                                dataUnitsIndex.append(u)
+                                if !unit.isAvailable{
+                                    areUnitsAvailable = unit.isAvailable
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                if areUnitsAvailable{
+                
+                for index in dataUnitsIndex{
+                    let path = self.ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").child("\(index)")
+                    
+                    path.child("user").setValue(userId)
+                    
+                    path.child("isAvailable").setValue(false)
+                }
+                
+                    complition(areUnitsAvailable)
+                }
+        })
+        
     }
         
 }

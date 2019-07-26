@@ -159,6 +159,7 @@ class TimeManager:DictionaryConvertible{
         
         var unitIndex = 0
         var isInRange = true
+
         workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailable: checkIfAvailible(unitIndex: unitIndex)))
         while true {
             unitIndex += 1
