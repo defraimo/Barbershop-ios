@@ -396,7 +396,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        AllBarbers.shared
+//        AllBarbers.shared
         
 //        DAO.shared.writeSchedule()
         

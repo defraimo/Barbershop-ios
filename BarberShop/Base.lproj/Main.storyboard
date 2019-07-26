@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V8S-dx-NU3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PIz-D1-EAb">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -167,7 +167,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="NEIGHBORS" id="KDl-ew-4JD">
                         <barButtonItem key="backBarButtonItem" title="חזור" id="5N3-1g-0yZ"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="cart_icon" id="M2n-Kv-WfE">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="shop" id="M2n-Kv-WfE">
                             <connections>
                                 <segue destination="s44-LD-JO0" kind="show" id="8V4-Tu-g0s"/>
                             </connections>
@@ -810,11 +810,41 @@
             </objects>
             <point key="canvasLocation" x="243" y="800"/>
         </scene>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="hl9-U2-V2v">
+            <objects>
+                <viewController id="PIz-D1-EAb" customClass="LaunchScreenViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EPs-Cd-umc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wHi-hs-Thv">
+                                <rect key="frame" x="199" y="385.5" width="16" height="125"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wHi-hs-Thv" firstAttribute="height" secondItem="EPs-Cd-umc" secondAttribute="height" multiplier="0.14" id="FFC-bP-rLV"/>
+                            <constraint firstItem="wHi-hs-Thv" firstAttribute="centerY" secondItem="EPs-Cd-umc" secondAttribute="centerY" id="Hzm-sY-Y40"/>
+                            <constraint firstItem="wHi-hs-Thv" firstAttribute="centerX" secondItem="EPs-Cd-umc" secondAttribute="centerX" id="nCg-PA-7oD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7cz-wA-ejd"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingImage" destination="wHi-hs-Thv" id="qy0-bk-v4W"/>
+                        <segue destination="V8S-dx-NU3" kind="show" identifier="goToApp" animates="NO" id="CDX-IU-hY1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0io-v1-m9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1322" y="19"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pkp-h2-6lH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V8S-dx-NU3" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZXp-ce-2aK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VJf-JI-AdA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -839,15 +869,16 @@
     </scenes>
     <resources>
         <image name="Instagram" width="599" height="600"/>
-        <image name="cart_icon" width="38" height="38"/>
         <image name="email" width="24" height="17"/>
         <image name="horizontal thin line" width="443" height="11"/>
         <image name="horizontal_price_line" width="381" height="15"/>
+        <image name="loading_logo" width="206" height="350"/>
         <image name="main_down_green" width="357" height="196"/>
         <image name="main_seperator" width="369" height="12"/>
         <image name="menu_icon" width="33" height="32"/>
         <image name="menu_under_line" width="153" height="12"/>
         <image name="phone" width="48" height="48"/>
+        <image name="shop" width="25" height="25"/>
         <image name="switching_pic1" width="358" height="346"/>
         <image name="vertical_price_line" width="17" height="1045"/>
         <image name="whatsapp" width="512" height="512"/>

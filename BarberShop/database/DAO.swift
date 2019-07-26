@@ -249,7 +249,9 @@ class DAO{
             
         }
         
-        AllBarbers.shared.loadBarbers(allBarbers)
+        AllBarbers.shared.loadBarbers(allBarbers, complition: {
+            NotificationCenter.default.post(name: .dataWereLoaded, object: nil, userInfo: ["isLoaded": true])
+        })
     }
     
     func saveImage(image: UIImage, fileName:String){
@@ -327,10 +329,10 @@ class DAO{
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 2, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 0, availableDays: avialibleDays, notificationDays: notificationDays)
         
         
-        ref.child("Dates").child("2").setValue(allDates!.dict)
+        ref.child("Dates").child("0").setValue(allDates!.dict)
     }
     
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){
@@ -404,6 +406,10 @@ class DAO{
         complition()
     }
         
+}
+
+extension Notification.Name{
+    static let dataWereLoaded = Notification.Name(rawValue: "dataWereLoaded")
 }
 
 //protocol for help writing data to firebase:
