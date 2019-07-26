@@ -40,7 +40,7 @@ class ChooseHaircutViewController: UIViewController {
 //        else{
 //            appointment?.clientId = 0
 //        }
-        appointment?.clientId = 0
+        appointment?.clientId = "0"
          //SET TO THE CURRENT USER
         //------------------------------------------------
         //------------------------------------------------

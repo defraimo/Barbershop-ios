@@ -10,7 +10,7 @@ import Foundation
 
 class Appointment:CustomStringConvertible {
     var barber:Barber?
-    var clientId:Int? //TO CHANGE!!!!!!
+    var clientId:String? //TO CHANGE!!!!!!
     var date:MyDate?
     var units:[TimeUnit]?
     var servies:PriceModel?
@@ -18,7 +18,7 @@ class Appointment:CustomStringConvertible {
     //empty init so we could set all the params by steps
     init() {}
     
-    private init(barber:Barber?, clientId:Int?, date:MyDate?, units:[TimeUnit]?, servies:PriceModel?) {
+    private init(barber:Barber?, clientId:String?, date:MyDate?, units:[TimeUnit]?, servies:PriceModel?) {
         self.barber = barber
         self.clientId = clientId
         self.date = date
@@ -39,8 +39,8 @@ class Appointment:CustomStringConvertible {
             barber = Barber(dict: barberDict)
         }
         
-        var clientId:Int? // TO CHANGE!!!!!!!!!!!!
-        if let clientDict = dict["clientId"] as? Int{
+        var clientId:String? // TO CHANGE!!!!!!!!!!!!
+        if let clientDict = dict["clientId"] as? String{
             clientId = clientDict
         }
         

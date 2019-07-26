@@ -237,10 +237,7 @@ class ChooseWhenViewController: UIViewController {
                 }
             }
         }
-        
-        //scroll to see the collection item in the middle
-        self.barbersCollection.scrollToNearestVisibleCollectionViewCell()
-        
+    
         //set the timeView background and corner radius
         timeView.backgroundColor = UIColor(patternImage: UIImage(named: "green_background.png")!)
         timeView.layer.cornerRadius = 22
@@ -262,6 +259,11 @@ class ChooseWhenViewController: UIViewController {
         layout?.itemSize = CGSize(width: self.view.frame.width, height: self.view.frame.height*0.13)
         
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //scroll to see the collection item in the middle
+        self.barbersCollection.scrollToNearestVisibleCollectionViewCell()
+    }
     
     func fetchDatesForCurrentBarber(){
         datesForBarber = scheduleData?.getDisplayedDates()

@@ -20,13 +20,15 @@ class SumUpViewController: UIViewController {
     @IBAction func makeAppointment(_ sender: UIButton) {
         if appointment != nil{
             DAO.shared.checkIfUnitsStillAvailible(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!) { (isAvailible) in
-                
+                                
                 if isAvailible{
                     DAO.shared.writeAppoinment(self.appointment!)
                 }
                 else{
                     //show dialog and take the user back to ChooseWhenViewController
+                    self.navigationController?.popViewController(animated: true)
                 }
+                
             }
         }
     }
