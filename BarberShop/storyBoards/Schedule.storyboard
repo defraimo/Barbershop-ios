@@ -474,6 +474,9 @@
                                     <constraint firstAttribute="height" id="xhW-w4-Xxc"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="H2M-1U-uJf">
+                                <rect key="frame" x="197" y="357.33333333333331" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -498,6 +501,8 @@
                             <constraint firstAttribute="bottom" secondItem="EWO-tg-heq" secondAttribute="bottom" id="YaU-Bl-Bqg"/>
                             <constraint firstItem="uIv-UB-KWS" firstAttribute="top" secondItem="hYC-Of-zAv" secondAttribute="bottom" id="bSh-jx-47l"/>
                             <constraint firstItem="e7V-Ae-HVz" firstAttribute="top" secondItem="SPR-N7-ddP" secondAttribute="top" constant="24" id="hdL-h3-RJB"/>
+                            <constraint firstItem="H2M-1U-uJf" firstAttribute="centerX" secondItem="cYT-Xt-9Bm" secondAttribute="centerX" id="jnt-FV-e1A"/>
+                            <constraint firstItem="H2M-1U-uJf" firstAttribute="centerY" secondItem="cYT-Xt-9Bm" secondAttribute="centerY" multiplier="0.82" id="k9I-4u-sF2"/>
                             <constraint firstAttribute="bottom" secondItem="bke-5K-Cme" secondAttribute="bottom" id="lTB-nT-NDw"/>
                             <constraint firstItem="EWO-tg-heq" firstAttribute="leading" secondItem="SPR-N7-ddP" secondAttribute="leading" id="oE7-WN-65j"/>
                             <constraint firstItem="SPR-N7-ddP" firstAttribute="trailing" secondItem="KSd-6N-Q97" secondAttribute="trailing" constant="18" id="wYZ-Ul-bmW"/>
@@ -510,6 +515,7 @@
                         <outlet property="arrowRight" destination="KSd-6N-Q97" id="0N4-LP-2mR"/>
                         <outlet property="barbersCollection" destination="qkD-8F-iIp" id="AET-Id-EfB"/>
                         <outlet property="datePicker" destination="uIv-UB-KWS" id="8FR-Sl-lHb"/>
+                        <outlet property="datePickerIndicator" destination="H2M-1U-uJf" id="a2U-uN-O3K"/>
                         <outlet property="scheduleButton" destination="39R-H5-LoN" id="xvP-43-Mu2"/>
                         <outlet property="sendMeNotificationHeight" destination="xhW-w4-Xxc" id="xIz-ld-Ih5"/>
                         <outlet property="sendMeNotificationView" destination="bke-5K-Cme" id="pqf-F7-LSK"/>

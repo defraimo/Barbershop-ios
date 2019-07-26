@@ -37,6 +37,8 @@ class ChooseWhenViewController: UIViewController {
     @IBOutlet weak var datePicker: UIPickerView!
     @IBOutlet weak var timePicker: UIPickerView!
     
+    @IBOutlet weak var datePickerIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var timeViewHeight: NSLayoutConstraint!
     @IBOutlet weak var timeViewLabel: UILabel!
@@ -160,20 +162,20 @@ class ChooseWhenViewController: UIViewController {
                             view.alpha = 1
                         }
                         //check if the working time is set atleast on the first day
-                        if self.timeForChosenDay?.count != 0{
-                            //animate the timeView
-                            self.timeViewHeight.constant = self.view.frame.height / 2.5
-                            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: {
-                                self.view.layoutIfNeeded()
-                            })
-                        }
-                        else{
-                            //animate the sendMeNotificationView
-                            self.sendMeNotificationHeight.constant = self.view.frame.height / 3.2
-                            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 14, options: [], animations: {
-                                self.view.layoutIfNeeded()
-                            })
-                        }
+//                        if self.timeForChosenDay?.count != 0{
+//                            //animate the timeView
+//                            self.timeViewHeight.constant = self.view.frame.height / 2.5
+//                            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: {
+//                                self.view.layoutIfNeeded()
+//                            })
+//                        }
+//                        else{
+//                            //animate the sendMeNotificationView
+//                            self.sendMeNotificationHeight.constant = self.view.frame.height / 3.2
+//                            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 14, options: [], animations: {
+//                                self.view.layoutIfNeeded()
+//                            })
+//                        }
                     }
                 })
             })
@@ -195,8 +197,13 @@ class ChooseWhenViewController: UIViewController {
             //load the time for the first shown day
             self?.fetchTimeForChosenDay(index: 0)
             
+            self?.datePickerIndicator.stopAnimating()
+            self?.datePickerIndicator.isHidden = true
+            
             self?.datePicker.reloadAllComponents()
             self?.timePicker.reloadAllComponents()
+            
+            self?.checkWhichDialogToShow(timeViewDuration: 0.3, notificationViewDuration: 0.5)
             
 //            if self?.displayedDate != nil && CurrentDate().isCurrentDateEqauls(date: self!.displayedDate!){
 //                self?.sendNotificationLabel.text = "אין יותר תורים ליום זה"
@@ -271,6 +278,33 @@ class ChooseWhenViewController: UIViewController {
         
         displayedDate = scheduleData?.displayedDates?[index].date
     }
+    
+    fileprivate func checkWhichDialogToShow(timeViewDuration:Float, notificationViewDuration:Float){
+        //check if the working time is set atleast on the first day
+        if self.timeForChosenDay?.count != 0{
+            //animate the timeView
+            self.timeViewHeight.constant = self.view.frame.height / 2.5
+            UIView.animate(withDuration: TimeInterval(timeViewDuration), delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+        else{
+            //animate the sendMeNotificationView
+            self.sendMeNotificationHeight.constant = self.view.frame.height / 3.2
+            UIView.animate(withDuration: TimeInterval(notificationViewDuration), delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 14, options: [], animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    fileprivate func hideAllDialogs(){
+        //set both dialog height to 0
+        self.timeViewHeight.constant = 0
+        self.sendMeNotificationHeight.constant = 0
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6,initialSpringVelocity: 20, options: [], animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
    
 }
 
@@ -323,6 +357,14 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         setArrowsAlpha(visibleRow)
         
         if !cellWasReloaded[visibleRow] && firstAlreadyLoaded{
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.datePicker.alpha = 0
+                self.hideAllDialogs()
+            })
+            
+            self.datePickerIndicator.startAnimating()
+            self.datePickerIndicator.isHidden = false
             //---------------------------------
 //            scheduleData = ScheduleData(barber: barbers![visibleRow])
             ScheduleData().fetchScheduleFor(barber: barbers![visibleRow]) { [weak self] (schedule) in
@@ -337,17 +379,18 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
                 self?.chosenBarberIndex = visible.first!
                 
                 UIView.animate(withDuration: 0.3, animations: {
-                    self?.datePicker.alpha = 0
-                }) { (_) in
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self?.datePicker.alpha = 1
-                    })
-                    self?.datePicker.reloadAllComponents()
-                    self?.timePicker.reloadAllComponents()
-                    
-                    self?.datePicker.selectRow(0, inComponent: 0, animated: true)
-                    self?.timePicker.selectRow(0, inComponent: 0, animated: true)
-                }
+                    self?.datePicker.alpha = 1
+                })
+                self?.datePickerIndicator.stopAnimating()
+                self?.datePickerIndicator.isHidden = true
+                
+                self?.datePicker.reloadAllComponents()
+                self?.timePicker.reloadAllComponents()
+                
+                self?.checkWhichDialogToShow(timeViewDuration: 0.24, notificationViewDuration: 0.32)
+                
+                self?.datePicker.selectRow(0, inComponent: 0, animated: true)
+                self?.timePicker.selectRow(0, inComponent: 0, animated: true)
                 
             }
             
