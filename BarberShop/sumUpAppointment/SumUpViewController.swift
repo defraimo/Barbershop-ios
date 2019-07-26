@@ -24,6 +24,7 @@ class SumUpViewController: UIViewController {
                 
                 if isAvailible{
                     DAO.shared.writeAppoinment(self.appointment!)
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
                 else{
                     //show dialog and take the user back to ChooseWhenViewController
