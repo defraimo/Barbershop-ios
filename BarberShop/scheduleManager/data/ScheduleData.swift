@@ -101,14 +101,22 @@ class ScheduleData{
         //change index to id
         //-------------------
         guard let date = displayedDates?[index].date else {return []}
-        
-        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date) else {return []}
+//        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date) else {return []}
+        guard let allUnits = displayedDates?[index].units else {return []}
         
         var customDisplayedUnits:[TimeUnit] = []
         
+        let current = CurrentDate()
+        let currentTime = current.currentTime
+        let isDateEquals = current.isCurrentDateEqauls(date: date)
+        
         for i in 0..<allUnits.count{
-            if allUnits[i].isAvailible{
-                customDisplayedUnits.append(allUnits[i])
+            let unit = allUnits[i]
+            if !isDateEquals && unit.isAvailable{
+                customDisplayedUnits.append(unit)
+            }
+            else if unit.startTime > currentTime && isDateEquals && unit.isAvailable{
+                customDisplayedUnits.append(unit)
             }
         }
         
@@ -123,25 +131,29 @@ class ScheduleData{
     func getDisplayTimeUnitsWith(intervals:Int, forDateIndex index:Int) -> [TimeUnit]{
         guard let date = displayedDates?[index].date else {return []}
         //get all the units
-        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date),
-                let unitDuration = allUnits.first?.duration
+//        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date),
+//                let unitDuration = allUnits.first?.duration
+//            else {return []}
+        
+        guard let allUnits = displayedDates?[index].units,
+            let unitDuration = allUnits.first?.duration
             else {return []}
         
-        //--------------------------------------
-        //--------------------------------------
-        //--------------------------------------
         var availableUnits:[TimeUnit] = []
         
+        let current = CurrentDate()
+        let currentTime = current.currentTime
+        let isDateEquals = current.isCurrentDateEqauls(date: date)
+        
         for i in 0..<allUnits.count{
-            if allUnits[i].isAvailible{
-                availableUnits.append(allUnits[i])
+            let unit = allUnits[i]
+            if !isDateEquals && unit.isAvailable{
+                availableUnits.append(unit)
+            }
+            else if unit.startTime > currentTime && isDateEquals && unit.isAvailable{
+                availableUnits.append(unit)
             }
         }
-        print(allUnits[0].isAvailible)
-        //--------------------------------------
-        //--------------------------------------
-        //--------------------------------------
-
         
         var customDisplayedUnits:[TimeUnit] = []
         
@@ -158,18 +170,20 @@ class ScheduleData{
                 var num = i
                 //if isAvailible become false so the unit is accupaid
                 var isAvailible = true
+                
                 //iterate to check forward all the units
                 for _ in 0..<numberOfUnitsNeeded{
                     //check if the units are in the array limit and if the difference indexes between two following units is 1
-                    if num+1 < availableUnits.count &&
+                    if numberOfUnitsNeeded > 1 && num+1 < availableUnits.count &&
                         availableUnits[num+1].index - availableUnits[num].index != 1{
                         
                         isAvailible = false
                     }
                     //if the unit is availible so make isAvailible false
-                    else if availableUnits[num].isAvailible == false{
-                        isAvailible = false
-                    }
+//                    else if availableUnits[num].isAvailable == false{
+//                        isAvailible = false
+//                    }
+                        
                     //if the units needed are out of time range make isAvailible false
                     else if num == availableUnits.count-1{
                         isAvailible = false
@@ -217,16 +231,6 @@ class ScheduleData{
         
         //return the needed units
         return neededUnits
-    }
-    
-    //when pressing the last "הזמן"
-    func checkIfUnitsStillAvailible(barber:Barber, dateId:Int, unitsIndex:[Int]) -> Bool{
-        //check from the data base
-        return true
-    }
-    
-    func makeAnAppoinment(_ appointment:Appointment){
-        //write it to the data base
     }
     
 }

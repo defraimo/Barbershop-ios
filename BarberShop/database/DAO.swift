@@ -249,7 +249,9 @@ class DAO{
             
         }
         
-        AllBarbers.shared.loadBarbers(allBarbers)
+        AllBarbers.shared.loadBarbers(allBarbers, complition: {
+            NotificationCenter.default.post(name: .dataWereLoaded, object: nil, userInfo: ["isLoaded": true])
+        })
     }
     
     func saveImage(image: UIImage, fileName:String){
@@ -305,14 +307,11 @@ class DAO{
     
     func writeSchedule(){
         var allDates:AllDates?
-        var displayedDates:[AppointmentDate]?
-        var avialibleDaysCount:Int = 0
-        var notificationDaysCount:Int = 0
         
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
         
-        for i in 0..<8{
+        for i in 0..<10{
             
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             
@@ -320,38 +319,93 @@ class DAO{
             let timeAvailible = TimeManager(id: current.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
             
             
-            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
+            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:timeAvailible))
         }
         
-        for i in 8..<15{
+        for i in 10..<16{
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             //after getting from data base
-            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
+            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:nil))
         }
         
         //get the barber from the data base
         allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
-        displayedDates = allDates?.getDisplayedDates()
-        
-        
-        avialibleDaysCount = avialibleDays.count
-        notificationDaysCount = notificationDays.count
         
         ref.child("Dates").child("3").setValue(allDates!.dict)
-        
     }
+
     
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){
         
-        ref.child("Dates").observeSingleEvent(of: .value, with: { (data) in
-            guard let allBarbersDatesDict = data.value as? [NSDictionary],
-                let allDates = AllDates(dict: allBarbersDatesDict[barberId]) else {return}
+        ref.child("Dates").child("\(barberId)").observeSingleEvent(of: .value, with: { (data) in
+            guard let barbersDatesDict = data.value as? NSDictionary,
+                let allDates = AllDates(dict: barbersDatesDict) else {return}
             
             complition(allDates)
         })
     }
+    
+    func writeAppoinment(_ appointment:Appointment){
+        var unitsIndex:[Int] = []
+        let updatedAppointment = appointment
         
+        for i in 0..<updatedAppointment.units!.count{
+            let unit = updatedAppointment.units![i]
+            //add the unit index
+            unitsIndex.append(unit.index)
+            //set the unit availability to false
+            updatedAppointment.units![i].isAvailable = false
+        }
+    self.ref.child("Appointments").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
+    }
+    
+    func setAvailabilityToTrue(barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
+        let barberId = barber.id
+        
+        var unitsIndex:[Int] = []
+        for unit in units{
+            unitsIndex.append(unit.index)
+        }
+         ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").observeSingleEvent(of: .value, with: { (data) in
+                guard let unitDictArray = data.value as? [NSDictionary] else {return}
+                
+                var areUnitsAvailable:Bool = true
+                var dataUnitsIndex:[Int] = []
+                
+                for u in 0..<unitDictArray.count{
+                    if let unit = TimeUnit(dict: unitDictArray[u]){
+                        for index in unitsIndex{
+                            if unit.index == index{
+                                dataUnitsIndex.append(u)
+                                if !unit.isAvailable{
+                                    areUnitsAvailable = unit.isAvailable
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                if areUnitsAvailable{
+                
+                for index in dataUnitsIndex{
+                    let path = self.ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").child("\(index)")
+                    
+                    path.child("user").setValue(userId)
+                    
+                    path.child("isAvailable").setValue(false)
+                }
+                
+                    complition(areUnitsAvailable)
+                }
+        })
+        
+    }
+        
+}
+
+extension Notification.Name{
+    static let dataWereLoaded = Notification.Name(rawValue: "dataWereLoaded")
 }
 
 //protocol for help writing data to firebase:

@@ -64,6 +64,7 @@
 		A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2322CD08C7002DC7CB /* ChooseHaircutViewController.swift */; };
 		A61D2D2622CD08F5002DC7CB /* HaircutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2522CD08F5002DC7CB /* HaircutTableViewCell.swift */; };
 		A61D2D2A22CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */; };
+		A63F478922EB2584002D5D57 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63F478822EB2584002D5D57 /* LaunchScreenViewController.swift */; };
 		A6413D0022C0DC9700FA1768 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */; };
 		A6413D0222C0FC4900FA1768 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6413D0122C0FC4900FA1768 /* DayData.swift */; };
 		A6413D0922C220D300FA1768 /* BarbersSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6413D0822C220D300FA1768 /* BarbersSchedule.swift */; };
@@ -141,6 +142,7 @@
 		A61D2D2322CD08C7002DC7CB /* ChooseHaircutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHaircutViewController.swift; sourceTree = "<group>"; };
 		A61D2D2522CD08F5002DC7CB /* HaircutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutTableViewCell.swift; sourceTree = "<group>"; };
 		A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A63F478822EB2584002D5D57 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		A6413D0122C0FC4900FA1768 /* DayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayData.swift; sourceTree = "<group>"; };
 		A6413D0822C220D300FA1768 /* BarbersSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbersSchedule.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				A61A31CF22B95C5500FC20BE /* barbers */,
 				A61A31C222B9586A00FC20BE /* aboutUs */,
 				A61A31B622B7BB9A00FC20BE /* prices */,
+				A63F478722EB2544002D5D57 /* launchScreen */,
 				A61A31BF22B7C30400FC20BE /* main */,
 				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
 				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
@@ -438,6 +441,14 @@
 				A61D2D2922CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		A63F478722EB2544002D5D57 /* launchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A63F478822EB2584002D5D57 /* LaunchScreenViewController.swift */,
+			);
+			path = launchScreen;
 			sourceTree = "<group>";
 		};
 		A6413CFE22C0DBEB00FA1768 /* storyBoards */ = {
@@ -725,6 +736,7 @@
 				6302287822C76FD900B242C6 /* User.swift in Sources */,
 				A61A31D422B95DBD00FC20BE /* ContactUs.swift in Sources */,
 				A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */,
+				A63F478922EB2584002D5D57 /* LaunchScreenViewController.swift in Sources */,
 				63489ACA22DDD3A70055DA64 /* Product.swift in Sources */,
 				A659A01322BD46CC00274F40 /* BarberChangeCollectionViewCell.swift in Sources */,
 				A659A00D22BD0FC300274F40 /* BarberCollectionViewCell.swift in Sources */,

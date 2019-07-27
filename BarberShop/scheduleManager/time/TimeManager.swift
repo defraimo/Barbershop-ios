@@ -136,20 +136,31 @@ class TimeManager:DictionaryConvertible{
         let maxMinutes = maxTime.minutes
         let maxHour = maxTime.hours
         
+        /*
         let current = CurrentDate()
         
         //check if the checked day if the current day
         if current.isCurrentDateEqauls(date: date){
             if current.currentHours > hours || current.currentHours == hours && current.currentMinutes > minutes{
                 //set the min minutes and hours to the current time
-                minutes = current.currentMinutes
+                /*
+                if (current.currentMinutes % intervals) * current.currentMinutes != current.currentMinutes{
+                    minutes = ((current.currentMinutes % intervals) + 1) * intervals
+                }
+                else{
+                    minutes = current.currentMinutes
+                }
+                */
+                 minutes = current.currentMinutes
                 hours = current.currentHours
             }
         }
+        */
         
         var unitIndex = 0
         var isInRange = true
-        workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailible: checkIfAvailible(unitIndex: unitIndex)))
+
+        workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailable: checkIfAvailible(unitIndex: unitIndex)))
         while true {
             unitIndex += 1
             minutes += intervals
@@ -186,7 +197,7 @@ class TimeManager:DictionaryConvertible{
                 }
             }
             if isInRange{
-                workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailible: checkIfAvailible(unitIndex: unitIndex)))
+                workingTime.append(TimeUnit(user: nil, index: unitIndex, startTime: Time(hours: hours, minutes: minutes), duration: intervals, isAvailable: checkIfAvailible(unitIndex: unitIndex)))
             }
         }
         

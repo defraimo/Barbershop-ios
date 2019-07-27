@@ -17,6 +17,23 @@ class SumUpViewController: UIViewController {
     @IBOutlet weak var serviesLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBAction func makeAppointment(_ sender: UIButton) {
+        if appointment != nil{
+            
+            DAO.shared.setAvailabilityToTrue(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: "0") { (isAvailible) in
+                
+                if isAvailible{
+                    DAO.shared.writeAppoinment(self.appointment!)
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+                else{
+                    //show dialog and take the user back to ChooseWhenViewController
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
+    }
+    
     var appointment:Appointment?
     
     override func viewDidLoad() {
@@ -27,7 +44,7 @@ class SumUpViewController: UIViewController {
         
         scheduleButton.setRoundedSquareToWhite()
                 
-        guard let date = appointment?.date?.date else {return}
+        guard let date = appointment?.date else {return}
         
         barbersName.text = appointment?.barber?.name
         dateLabel.text = "\(date.day) / \(date.month)"

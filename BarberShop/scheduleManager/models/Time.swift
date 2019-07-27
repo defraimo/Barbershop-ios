@@ -28,6 +28,12 @@ class Time:NSObject,DictionaryConvertible {
         return lhs.hours == rhs.hours && lhs.minutes == rhs.minutes
     }
     
+    static func > (lhs: Time, rhs: Time) -> Bool {
+        return lhs.hours == rhs.hours &&
+            lhs.minutes > rhs.minutes ||
+            lhs.hours > rhs.hours
+    }
+    
     // DictionaryConvertible protocol methods
     required convenience init?(dict: NSDictionary) {
         guard let hours = dict["hours"] as? Int,

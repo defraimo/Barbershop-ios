@@ -193,12 +193,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var loginLabelForCheck: UILabel!
     @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     fileprivate func loginOrSignUpFunc() {
-        //        UIView.animate(withDuration: 0.3, animations: {
-        //            self.roundedViewHeight.constant = self.view.frame.height
-        //        }) { (_) in
-        //            self.roundedViewHeight.constant = self.view.frame.height * 0.72
-        //        }
-        
         //placed above screen
         loginOrSignupView.center = CGPoint(x: view.frame.midX, y: -view.frame.midY)
         //setting up the size:
@@ -401,10 +395,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        AllBarbers.shared
-        
-//        DAO.shared.writeSchedule()
+                
+        DAO.shared.writeSchedule()
         
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
