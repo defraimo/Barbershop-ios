@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fY7-CA-pOz">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="5t2-ko-ElG">
+            <objects>
+                <viewController storyboardIdentifier="AlertVc" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="fY7-CA-pOz" customClass="AlertViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hw0-kA-65y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-uf-OKF">
+                                <rect key="frame" x="77" y="372.5" width="260" height="151"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLI-hx-lJT">
+                                        <rect key="frame" x="16" y="16" width="228" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDX-O2-xcu">
+                                        <rect key="frame" x="16" y="68.5" width="228" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6bq-EO-gji">
+                                        <rect key="frame" x="16" y="105" width="228" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sek-Or-Pri">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                                <state key="normal" title="Cancel"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT2-Hr-w2X">
+                                                <rect key="frame" x="118" y="0.0" width="110" height="30"/>
+                                                <state key="normal" title="Confirm"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="KDX-O2-xcu" firstAttribute="top" secondItem="jLI-hx-lJT" secondAttribute="bottom" constant="32" id="0Bg-A6-FKo"/>
+                                    <constraint firstAttribute="trailing" secondItem="6bq-EO-gji" secondAttribute="trailing" constant="16" id="5Rr-j1-40d"/>
+                                    <constraint firstItem="6bq-EO-gji" firstAttribute="leading" secondItem="s7V-uf-OKF" secondAttribute="leading" constant="16" id="5Yl-7b-eD7"/>
+                                    <constraint firstItem="KDX-O2-xcu" firstAttribute="leading" secondItem="s7V-uf-OKF" secondAttribute="leading" constant="16" id="5cY-8V-JxO"/>
+                                    <constraint firstItem="jLI-hx-lJT" firstAttribute="leading" secondItem="s7V-uf-OKF" secondAttribute="leading" constant="16" id="K17-di-Dye"/>
+                                    <constraint firstItem="jLI-hx-lJT" firstAttribute="top" secondItem="s7V-uf-OKF" secondAttribute="top" constant="16" id="MjL-GY-18e"/>
+                                    <constraint firstAttribute="bottom" secondItem="6bq-EO-gji" secondAttribute="bottom" constant="16" id="XLz-cp-edT"/>
+                                    <constraint firstAttribute="trailing" secondItem="KDX-O2-xcu" secondAttribute="trailing" constant="16" id="ZCA-AQ-jcI"/>
+                                    <constraint firstItem="6bq-EO-gji" firstAttribute="top" secondItem="KDX-O2-xcu" secondAttribute="bottom" constant="16" id="hfd-xd-VCX"/>
+                                    <constraint firstAttribute="trailing" secondItem="jLI-hx-lJT" secondAttribute="trailing" constant="16" id="j3v-ju-QFN"/>
+                                    <constraint firstAttribute="width" constant="260" id="mSq-li-boa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s7V-uf-OKF" firstAttribute="centerX" secondItem="Hw0-kA-65y" secondAttribute="centerX" id="AJM-KJ-8VK"/>
+                            <constraint firstItem="s7V-uf-OKF" firstAttribute="centerY" secondItem="Hw0-kA-65y" secondAttribute="centerY" id="Q4V-8N-fTo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lCq-Sk-cQX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZP3-uu-yVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81.159420289855078" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>
