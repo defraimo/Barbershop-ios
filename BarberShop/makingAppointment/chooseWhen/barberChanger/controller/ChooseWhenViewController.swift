@@ -113,6 +113,8 @@ class ChooseWhenViewController: UIViewController {
             
             appointment?.units = unitsNeeded
             dest.appointment = appointment
+            
+            dest.dayOfWeek = datesForBarber?[chosenDateIndex].namedDayOfWeek
         }
     }
     

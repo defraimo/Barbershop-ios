@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChooseHaircutViewController: UIViewController {
     @IBOutlet weak var chooseServiesTable: UITableView!
@@ -34,13 +35,13 @@ class ChooseHaircutViewController: UIViewController {
         //------------------------------------------------
         //------------------------------------------------
         
-//        if let uid = Auth.auth().currentUser?.uid{
-//            appointment?.clientId = uid
-//        }
-//        else{
-//            appointment?.clientId = 0
-//        }
-        appointment?.clientId = "0"
+        if let uid = Auth.auth().currentUser?.uid{
+            appointment?.clientId = uid
+        }
+        else{
+            appointment?.clientId = "none"
+        }
+//        appointment?.clientId = "0"
          //SET TO THE CURRENT USER
         //------------------------------------------------
         //------------------------------------------------

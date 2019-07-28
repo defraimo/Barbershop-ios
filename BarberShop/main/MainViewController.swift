@@ -101,20 +101,25 @@ class MainViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.whatsupButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
                 
-                let urlWhats = "whatsapp://send?phone=(\(self.barberPhone))"
-                if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
-                    if let whatsappURL = URL(string: urlString) {
-                        if UIApplication.shared.canOpenURL(whatsappURL){
-                            if #available(iOS 10.0, *) {
-                                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
-                            } else {
-                                UIApplication.shared.openURL(whatsappURL)
-                            }
-                        }
-                        else {
-                            print("Install Whatsapp")
-                        }
-                    }
+//                let urlWhats = "whatsapp://send?phone=(\(self.barberPhone))"
+//                if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+//                    if let whatsappURL = URL(string: urlString) {
+//                        if UIApplication.shared.canOpenURL(whatsappURL){
+//                            if #available(iOS 10.0, *) {
+//                                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+//                            } else {
+//                                UIApplication.shared.openURL(whatsappURL)
+//                            }
+//                        }
+//                        else {
+//                            print("Install Whatsapp")
+//                        }
+//                    }
+//                }
+                
+                let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=\(self.barberPhone)")
+                if UIApplication.shared.canOpenURL(whatsappURL!) {
+                    UIApplication.shared.open(whatsappURL!, options: [:])
                 }
                 
             })
@@ -396,7 +401,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        DAO.shared.writeSchedule()
+//        DAO.shared.writeSchedule()
         
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
@@ -410,19 +415,8 @@ class MainViewController: UIViewController {
         
         //change the navigation item color
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
-        //setting the "getting an appoinment" image to rounded
-//        imageRounded.layer.cornerRadius = 42
-//        imageRounded.layer.masksToBounds = true
 
         addBlurView()
-        
-//        let barber1Dates = DatesManager(daysAvailable: 10, additionalDays: 7)
-//        barber1Dates.setDaysOff(days: [6,7])
-//
-//        let barber1Time = TimeManage(minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 20), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 00), toTime: Time(hours: 14, minutes: 00))])
-//
-//        ScheduleDataManager().initBarberSchedule(barberIndex: 0, dates: barber1Dates, availableTime: barber1Time)
         
         roundedView.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         roundedView.layer.cornerRadius = 14

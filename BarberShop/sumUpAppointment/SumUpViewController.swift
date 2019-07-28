@@ -17,10 +17,12 @@ class SumUpViewController: UIViewController {
     @IBOutlet weak var serviesLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    var dayOfWeek:String?
+    
     @IBAction func makeAppointment(_ sender: UIButton) {
         if appointment != nil{
             
-            DAO.shared.setAvailabilityToTrue(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: "0") { (isAvailible) in
+            DAO.shared.setAvailabilityToTrue(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: appointment!.clientId!) { (isAvailible) in
                 
                 if isAvailible{
                     DAO.shared.writeAppoinment(self.appointment!)
@@ -46,8 +48,16 @@ class SumUpViewController: UIViewController {
                 
         guard let date = appointment?.date else {return}
         
+        if var namedDay = dayOfWeek{
+            namedDay = namedDay.replacingOccurrences(of: "יום ", with: "", options: NSString.CompareOptions.literal, range: nil)
+            
+            dateLabel.text = "\(date.month) / \(date.day) (\(namedDay))"
+        }
+        else{
+            dateLabel.text = "\(date.day) / \(date.month)"
+        }
+        
         barbersName.text = appointment?.barber?.name
-        dateLabel.text = "\(date.day) / \(date.month)"
         timeLabel.text = appointment?.units?.first?.startTime.description
         serviesLabel.text = appointment?.servies?.servies
         priceLabel.text = appointment?.servies?.priceRange.description

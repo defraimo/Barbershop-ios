@@ -75,6 +75,8 @@
 		A659A09F22C0195700274F40 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A09E22C0195700274F40 /* Appointment.swift */; };
 		A659A0A122C0197400274F40 /* AppDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A0A022C0197400274F40 /* AppDate.swift */; };
 		A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A0A222C0198700274F40 /* AppointmentTime.swift */; };
+		A68C8BCA22EE268B00E1E603 /* ManageAppointment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */; };
+		A68C8BCD22EE26D800E1E603 /* ManageAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +152,8 @@
 		A659A09E22C0195700274F40 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		A659A0A022C0197400274F40 /* AppDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDate.swift; sourceTree = "<group>"; };
 		A659A0A222C0198700274F40 /* AppointmentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTime.swift; sourceTree = "<group>"; };
+		A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageAppointment.storyboard; sourceTree = "<group>"; };
+		A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAppointmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +292,7 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				A68C8BCB22EE26AC00E1E603 /* manageAppointment */,
 				63489AC222DC8AFA0055DA64 /* shop */,
 				A618D5C922DB0B6100A93D5E /* scheduleManager */,
 				A61D2D1822CCA45F002DC7CB /* extensions */,
@@ -441,6 +446,7 @@
 				A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */,
 				63EF769822CA0994006631E5 /* SignUp.storyboard */,
 				63489AC022DC8A260055DA64 /* Shop.storyboard */,
+				A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */,
 			);
 			path = storyBoards;
 			sourceTree = "<group>";
@@ -579,6 +585,14 @@
 			path = appointment;
 			sourceTree = "<group>";
 		};
+		A68C8BCB22EE26AC00E1E603 /* manageAppointment */ = {
+			isa = PBXGroup;
+			children = (
+				A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */,
+			);
+			path = manageAppointment;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -648,6 +662,7 @@
 				63F1875B22E07628006C29FB /* GoogleService-Info.plist in Resources */,
 				A61A31AF22B7AD0000FC20BE /* LaunchScreen.storyboard in Resources */,
 				A61A31AC22B7AD0000FC20BE /* Assets.xcassets in Resources */,
+				A68C8BCA22EE268B00E1E603 /* ManageAppointment.storyboard in Resources */,
 				63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */,
 				633ED44522D0C89400D64BAB /* Location.storyboard in Resources */,
 				A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */,
@@ -736,6 +751,7 @@
 				63489AC422DC8B190055DA64 /* ShopViewController.swift in Sources */,
 				A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */,
 				A618D59A22D499EC00A93D5E /* Day.swift in Sources */,
+				A68C8BCD22EE26D800E1E603 /* ManageAppointmentViewController.swift in Sources */,
 				A659A09F22C0195700274F40 /* Appointment.swift in Sources */,
 				A659A00522BD029300274F40 /* HowToGetThereViewController.swift in Sources */,
 				A61A31BE22B7C08600FC20BE /* PricesDataSource.swift in Sources */,
@@ -908,6 +924,7 @@
 			baseConfigurationReference = 3A240B181F026D50B292C1D9 /* Pods-BarberShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7397Q73DZ;
 				INFOPLIST_FILE = BarberShop/Info.plist;
@@ -918,6 +935,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = neighbors.apps.BarberShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -928,6 +946,7 @@
 			baseConfigurationReference = 7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7397Q73DZ;
 				INFOPLIST_FILE = BarberShop/Info.plist;
@@ -938,6 +957,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = neighbors.apps.BarberShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
