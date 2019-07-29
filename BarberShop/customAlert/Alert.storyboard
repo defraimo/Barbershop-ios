@@ -61,6 +61,11 @@
                                     <constraint firstAttribute="trailing" secondItem="jLI-hx-lJT" secondAttribute="trailing" constant="16" id="j3v-ju-QFN"/>
                                     <constraint firstAttribute="width" constant="260" id="mSq-li-boa"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rounded">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
