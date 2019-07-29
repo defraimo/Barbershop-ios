@@ -47,6 +47,7 @@ class ShopViewController: UIViewController {
             progressBar.removeFromSuperview()
             //showing the tableView with the info:
             self?.tableView.isHidden = false
+            
         }
     }
 }
@@ -66,14 +67,19 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource{
         cell.productName.text = product.name
         cell.productPrice.text = product.realPrice
         cell.details.text = product.details
-        cell.productImage.sd_setImage(with: URL(string: product.imagePath), placeholderImage: #imageLiteral(resourceName: "broken image"), options: [], context: [:])
+       
+        cell.productImage.sd_setImage(with: URL(string: product.imagePath), placeholderImage: #imageLiteral(resourceName: "broken image"), options: [], progress: nil) { (image, err, cache, url) in
+            cell.productImage.alpha = 1
+        }
         cell.infoBtn.setImage(infoOrCloseShop, for: .normal)
         cell.infoBtn.tag = indexPath.row
         
-        //TODO: Add Interaction to image
-        //-------------------------------------------------
-//        cell.productImage.addInteraction()
-        //-------------------------------------------------
+        //added tapgesture to product image to open details when image pressed:
+        
+        cell.productImage.tag = indexPath.row
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showDetailsImage(_:)))
+        cell.productImage.addGestureRecognizer(tap)
+        
         cell.infoBtn.addTarget(self, action: #selector(showDetails(_:)), for: .touchUpInside)
         
         return cell
@@ -102,6 +108,23 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource{
         
         tableView.reloadRows(at: [IndexPath(row: chosenCellRowShop!, section: 0)], with: .automatic)
     }
+    @objc func showDetailsImage(_ sender:UITapGestureRecognizer){
+        //every press switch the buttons position
+        isDetailsShownShop = !isDetailsShownShop
+        //change the buttons images
+        if isDetailsShownShop{
+            infoOrCloseShop = #imageLiteral(resourceName: "close_icon")
+            //set the current item that is pressed
+            let imageView = sender.view as! UIImageView
+
+            chosenCellRowShop = imageView.tag
+        }else{
+            infoOrCloseShop = #imageLiteral(resourceName: "info_icon")
+        }
+        
+        tableView.reloadRows(at: [IndexPath(row: chosenCellRowShop!, section: 0)], with: .automatic)
+    }
 
     
 }
+

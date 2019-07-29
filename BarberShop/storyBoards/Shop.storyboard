@@ -30,8 +30,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="301.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="broken image" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-ua-Ld8">
+                                                <imageView clipsSubviews="YES" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="broken image" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-ua-Ld8">
                                                     <rect key="frame" x="169.5" y="85" width="100" height="100"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="1xU-2r-z4F"/>
                                                     </constraints>
@@ -79,6 +80,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstItem="DgA-Sb-odV" firstAttribute="top" secondItem="26C-uC-UB2" secondAttribute="bottom" id="6Z2-ia-mmH"/>
                                                 <constraint firstItem="DgA-Sb-odV" firstAttribute="centerX" secondItem="kLt-5B-lga" secondAttribute="centerX" id="CKY-T4-PrL"/>

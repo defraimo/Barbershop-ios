@@ -9,11 +9,12 @@
 import UIKit
 
 class AlertViewController: UIViewController {
-
+    @IBOutlet weak var alertView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        alertView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
 
 }

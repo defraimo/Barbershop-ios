@@ -95,18 +95,30 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-Zb-fTg">
+                                <rect key="frame" x="8" y="740" width="359" height="30"/>
+                                <state key="normal" title="Alert Testing">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="alert:" destination="ZRW-cM-CYk" eventType="touchUpInside" id="Xdr-rK-fzi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Yrf-9t-wgx" firstAttribute="centerX" secondItem="4J0-oS-V9d" secondAttribute="centerX" id="19x-8R-GR2"/>
+                            <constraint firstItem="P09-9P-xwO" firstAttribute="bottom" secondItem="FKa-Zb-fTg" secondAttribute="bottom" constant="8" id="2Jy-Vm-0oB"/>
                             <constraint firstItem="Yrf-9t-wgx" firstAttribute="top" secondItem="qVw-B5-uJh" secondAttribute="bottom" constant="48" id="7tF-1C-1vB"/>
                             <constraint firstItem="P09-9P-xwO" firstAttribute="trailing" secondItem="1io-9a-rx0" secondAttribute="trailing" constant="32" id="PkR-fw-vGK"/>
                             <constraint firstItem="P09-9P-xwO" firstAttribute="trailing" secondItem="qVw-B5-uJh" secondAttribute="trailing" constant="32" id="T6M-WL-qIT"/>
                             <constraint firstItem="xlf-sM-HSo" firstAttribute="top" secondItem="P09-9P-xwO" secondAttribute="top" constant="16" id="bpv-57-9Iy"/>
                             <constraint firstItem="qVw-B5-uJh" firstAttribute="leading" secondItem="P09-9P-xwO" secondAttribute="leading" constant="32" id="ccO-Al-aXj"/>
+                            <constraint firstItem="FKa-Zb-fTg" firstAttribute="leading" secondItem="P09-9P-xwO" secondAttribute="leading" constant="8" id="iSK-An-4EB"/>
                             <constraint firstItem="1io-9a-rx0" firstAttribute="top" secondItem="xlf-sM-HSo" secondAttribute="bottom" constant="24" id="m4s-OZ-vna"/>
                             <constraint firstItem="P09-9P-xwO" firstAttribute="trailing" secondItem="xlf-sM-HSo" secondAttribute="trailing" constant="24" id="nNt-k0-4pL"/>
                             <constraint firstItem="xlf-sM-HSo" firstAttribute="leading" secondItem="P09-9P-xwO" secondAttribute="leading" constant="24" id="qGG-hU-sT8"/>
+                            <constraint firstItem="P09-9P-xwO" firstAttribute="trailing" secondItem="FKa-Zb-fTg" secondAttribute="trailing" constant="8" id="rZF-0Z-6SJ"/>
                             <constraint firstItem="1io-9a-rx0" firstAttribute="leading" secondItem="P09-9P-xwO" secondAttribute="leading" constant="32" id="uKb-Df-IFG"/>
                             <constraint firstItem="qVw-B5-uJh" firstAttribute="top" secondItem="1io-9a-rx0" secondAttribute="bottom" constant="24" id="xCg-p5-jdp"/>
                         </constraints>
