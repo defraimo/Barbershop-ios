@@ -133,7 +133,7 @@ class ChooseWhenViewController: UIViewController {
         }
         
         //getting the position of the current item
-        let collectionPosition = barbersCollection.layoutAttributesForItem(at: chosenBarberIndex!)?.center ?? barbersCollection.center
+        let collectionPosition = /*barbersCollection.layoutAttributesForItem(at: chosenBarberIndex!)?.center ??*/ barbersCollection.center
         
         //find the collactionView position in the global view
         let pointInGlobalView = barbersCollection.convert(collectionPosition, to: view)
@@ -213,22 +213,22 @@ class ChooseWhenViewController: UIViewController {
             
             self?.checkWhichDialogToShow(timeViewDuration: 0.3, notificationViewDuration: 0.5)
             
-//            if self?.displayedDate != nil && CurrentDate().isCurrentDateEqauls(date: self!.displayedDate!){
-//                self?.sendNotificationLabel.text = "אין יותר תורים ליום זה"
-//                self?.sendNotificationButton.alpha = 0
-//                
-//            }
+            //scroll the collaction view to the chosen barber posiotion from the last screen
+            self?.barbersCollection.scrollToItem(at: (self?.chosenBarberIndex!)!, at: .centeredHorizontally, animated: false)
+            
+            self?.setArrowsAlpha((self?.chosenBarberIndex!.row)!)
+            
+            
+            //            if self?.displayedDate != nil && CurrentDate().isCurrentDateEqauls(date: self!.displayedDate!){
+            //                self?.sendNotificationLabel.text = "אין יותר תורים ליום זה"
+            //                self?.sendNotificationButton.alpha = 0
+            //
+            //            }
         }
         
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
-        //scroll the collaction view to the chosen barber posiotion from the last screen
-        barbersCollection.scrollToItem(at: chosenBarberIndex!, at: .centeredHorizontally, animated: false)
-        
-        //----------------------------------------------
-        //TODO FIX THE MOVING INTO THE SELECTED BARBER
-        //----------------------------------------------
         
        imageEntryAnimation()
         
@@ -330,7 +330,7 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         
         cell.populate(barber:barber)
         
-        var delay = 0.4
+        var delay = 0.1
         var duration = 0.2
         
         //if there is only one barber so the image is not passed

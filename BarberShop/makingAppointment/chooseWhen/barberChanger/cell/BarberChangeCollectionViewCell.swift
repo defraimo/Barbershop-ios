@@ -22,15 +22,6 @@ class BarberChangeCollectionViewCell: UICollectionViewCell {
          print("didTransition")
     }
     
-//    override func prepareForReuse() {
-//        print("Reuse")
-//    }
-//
-//    override func didMoveToSuperview() {
-//        print("Hello")
-//    }
-    
-    
 }
 
 

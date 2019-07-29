@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="A1N-rU-l4w">
-                                <rect key="frame" x="0.0" y="609.5" width="414" height="286.50000000000006"/>
+                                <rect key="frame" x="0.0" y="609.5" width="414" height="286.5"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="huU-gd-viO">
                                 <rect key="frame" x="0.0" y="528" width="414" height="1"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_seperator" translatesAutoresizingMaskIntoConstraints="NO" id="f7V-5e-eFl">
-                                <rect key="frame" x="26" y="751" width="362" height="12"/>
+                                <rect key="frame" x="26" y="749" width="362" height="16"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icW-Jn-xC8">
                                 <rect key="frame" x="142.5" y="787.5" width="46.5" height="46.5"/>
@@ -248,7 +248,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="slf-8S-542">
-                            <rect key="frame" x="32" y="43" width="176.00000000000011" height="5"/>
+                            <rect key="frame" x="32" y="43" width="176" height="5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="5" id="B4e-Gy-Kow"/>
                             </constraints>
@@ -625,13 +625,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="קצת עלינו" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piE-2c-T17">
-                                <rect key="frame" x="124.5" y="112" width="165" height="60"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="44"/>
+                                <rect key="frame" x="119" y="112" width="176.5" height="61.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="44"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-Aw-0T8">
-                                <rect key="frame" x="8" y="196" width="398" height="658"/>
+                                <rect key="frame" x="8" y="197.5" width="398" height="656.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -704,7 +706,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_down_green" translatesAutoresizingMaskIntoConstraints="NO" id="pxU-CF-cHG">
-                                                    <rect key="frame" x="20" y="11" width="358" height="186.00000000000006"/>
+                                                    <rect key="frame" x="20" y="11" width="358" height="186"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1X9-UH-OFI">
                                                     <rect key="frame" x="250" y="19" width="120" height="120"/>
@@ -845,7 +847,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wHi-hs-Thv">
-                                <rect key="frame" x="104" y="385.5" width="206.00000000000006" height="125"/>
+                                <rect key="frame" x="199" y="385.5" width="16" height="125"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

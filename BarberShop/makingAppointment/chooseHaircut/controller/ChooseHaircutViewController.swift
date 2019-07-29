@@ -32,6 +32,7 @@ class ChooseHaircutViewController: UIViewController {
         chooseServiesLabel.adjustsFontSizeToFitWidth = true
         chooseServiesLabel.minimumScaleFactor = 0.2
         
+        //init the appointment
         appointment = Appointment()
         //------------------------------------------------
         //------------------------------------------------
