@@ -304,8 +304,8 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
-				6335C4BB22E9EC030096D8C7 /* customAlert */,
 				63489AC222DC8AFA0055DA64 /* shop */,
+				6335C4BB22E9EC030096D8C7 /* customAlert */,
 				A618D5C922DB0B6100A93D5E /* scheduleManager */,
 				A61D2D1822CCA45F002DC7CB /* extensions */,
 				6302287622C76F5600B242C6 /* authentication */,
