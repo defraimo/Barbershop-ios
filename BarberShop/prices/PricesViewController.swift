@@ -38,12 +38,6 @@ extension PricesViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.serviesLabel.text = priceItem.servies
         cell.priceLabel.text  = priceItem.priceRange.description
-        if priceItem.priceRange.heighestPrice != nil{
-            cell.priceLabel.font = cell.priceLabel.font.withSize(14)
-        }
-        else{
-            cell.priceLabel.font = cell.priceLabel.font.withSize(22)
-        }
         cell.backgroundColor = UIColor.clear
         cell.backgroundView = nil
         
