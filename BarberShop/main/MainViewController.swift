@@ -507,7 +507,41 @@ class MainViewController: UIViewController {
             self.authCodeView.removeFromSuperview()
         }
     }
+    
+    //MENU
+    
+    //manage appointment
+    @IBOutlet weak var manageAppointmentIndicator: UIActivityIndicatorView!
+    
+    @IBAction func manageAppointmentButton(_ sender: UIButton) {
+        
+        manageAppointmentIndicator.startAnimating()
+        
+        if let uid = Auth.auth().currentUser?.uid{
+            
+            DAO.shared.getAppointment(userId: uid) { [weak self] (appointment, isExist) in
+                if isExist{
+                    self?.manageAppointmentIndicator.stopAnimating()
+                    self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
+                }
+                else{
+                    self?.manageAppointmentIndicator.stopAnimating()
+                    //SHOW DIALOG
+                }
+            }
+            
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = segue.identifier else {return}
+        if let dest = segue.destination as? ManageAppointmentViewController,
+            id == "toManageAppointment", let appointment = sender as? Appointment{
+            dest.appointment = appointment
+        }
+    }
 }
+
 
 extension MainViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

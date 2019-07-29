@@ -401,6 +401,32 @@ class DAO{
         })
         
     }
+    
+    func getAppointment(userId:String, complition: @escaping (_ appointment:Appointment, _ isExist:Bool) -> Void){
+        ref.child("Appointments").child(userId).observeSingleEvent(of: .value) { (data) in
+            guard let dict = data.value as? NSDictionary else {
+                complition(Appointment(), false)
+                return
+            }
+
+            let appointment = Appointment(dict: dict)
+            
+            complition(appointment!, true)
+        }
+    }
+    
+    func eraseAppointment(userId:String, appointment:Appointment){
+        ref.child("Appointments").child(userId).removeValue()
+        
+        let path = ref.child("Dates").child("\(appointment.barber!.id)").child("availableDays").child("\(appointment.date!.generateId())").child("units")
+        
+        let units = appointment.units!
+        
+        //set the units that was taken to available again
+        for unit in units{
+            path.child("\(unit.index)").child("isAvailable").setValue("true")
+        }
+    }
         
 }
 

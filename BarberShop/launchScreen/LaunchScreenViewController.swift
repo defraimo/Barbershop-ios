@@ -37,7 +37,7 @@ class LaunchScreenViewController: UIViewController {
     fileprivate func startAnimating(){
         UIView.animate(withDuration: 0.6, delay: 0, options: [.repeat, .autoreverse], animations: {
             
-            self.loadingImage.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.loadingImage.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
         })
     }
     

@@ -189,6 +189,7 @@
                         <outlet property="loginActivityIndicator" destination="6wp-Be-U0B" id="VEZ-V4-FIV"/>
                         <outlet property="loginLabelForCheck" destination="xXG-Qv-P4E" id="mBi-Mz-5NR"/>
                         <outlet property="loginOrSignupView" destination="kc7-ea-sxB" id="zYv-1q-65t"/>
+                        <outlet property="manageAppointmentIndicator" destination="Zug-rY-XNR" id="eeK-Tn-CZy"/>
                         <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
                         <outlet property="newCustomer" destination="0Zs-cg-tEh" id="kxR-BB-1lK"/>
                         <outlet property="phoneNumberField" destination="gml-PG-b9B" id="RJY-KR-r7Z"/>
@@ -202,6 +203,7 @@
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toPrices" id="Y70-gu-cad"/>
                         <segue destination="fgm-7W-7C1" kind="show" identifier="toAboutUs" id="cq2-XH-Wee"/>
                         <segue destination="naP-3X-nno" kind="show" identifier="toHowWeGetThere" id="qLb-7b-S3t"/>
+                        <segue destination="qcR-xZ-0Z4" kind="show" identifier="toManageAppointment" id="t9b-3u-rdD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEc-mb-nAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -408,7 +410,7 @@
                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <segue destination="qcR-xZ-0Z4" kind="show" id="5W5-hW-kf6"/>
+                                <action selector="manageAppointmentButton:" destination="T02-lw-fcr" eventType="touchUpInside" id="ZgF-Sx-m9v"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvf-rn-LRy">
@@ -442,6 +444,9 @@
                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Zug-rY-XNR">
+                            <rect key="frame" x="40" y="81" width="20" height="20"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -457,11 +462,13 @@
                         <constraint firstItem="xI0-K7-7jM" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="RpF-9Q-xt2"/>
                         <constraint firstItem="5WO-u2-qjc" firstAttribute="top" secondItem="HyJ-wc-6Q5" secondAttribute="bottom" id="Vcr-uN-Szs"/>
                         <constraint firstItem="OO4-EE-6tP" firstAttribute="top" secondItem="wHX-Cx-q8l" secondAttribute="bottom" constant="8" id="Xyu-hc-Xip"/>
+                        <constraint firstItem="x26-qc-OnO" firstAttribute="leading" secondItem="Zug-rY-XNR" secondAttribute="trailing" constant="16" id="bag-jE-GeE"/>
                         <constraint firstItem="HyJ-wc-6Q5" firstAttribute="top" secondItem="Spb-SA-1Th" secondAttribute="bottom" constant="8" id="cIF-Ea-yC6"/>
                         <constraint firstItem="8mJ-5F-lg1" firstAttribute="top" secondItem="xI0-K7-7jM" secondAttribute="bottom" constant="8" id="cmg-gs-eBS"/>
                         <constraint firstItem="HyJ-wc-6Q5" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="eBF-zI-w3P"/>
                         <constraint firstItem="yvf-rn-LRy" firstAttribute="top" secondItem="K1I-cP-0kr" secondAttribute="bottom" constant="8" id="flp-ZE-Arn"/>
                         <constraint firstItem="wHX-Cx-q8l" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="ize-PQ-P6d"/>
+                        <constraint firstItem="xI0-K7-7jM" firstAttribute="top" secondItem="Zug-rY-XNR" secondAttribute="bottom" constant="6" id="jY2-VF-DLJ"/>
                         <constraint firstItem="5WO-u2-qjc" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="kC3-nt-9uo"/>
                         <constraint firstItem="x26-qc-OnO" firstAttribute="top" secondItem="YWS-ol-9Ss" secondAttribute="top" constant="24" id="tnI-WA-grg"/>
                         <constraint firstItem="yvf-rn-LRy" firstAttribute="centerX" secondItem="sDz-JR-TSq" secondAttribute="centerX" id="xwi-yc-kuP"/>
