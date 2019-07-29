@@ -20,7 +20,7 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+           
         let progressBar = UIActivityIndicatorView()
         progressBar.center = view.center
         self.view.addSubview(progressBar)
@@ -70,6 +70,10 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource{
         cell.infoBtn.setImage(infoOrCloseShop, for: .normal)
         cell.infoBtn.tag = indexPath.row
         
+        //TODO: Add Interaction to image
+        //-------------------------------------------------
+//        cell.productImage.addInteraction()
+        //-------------------------------------------------
         cell.infoBtn.addTarget(self, action: #selector(showDetails(_:)), for: .touchUpInside)
         
         return cell

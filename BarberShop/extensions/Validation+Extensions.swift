@@ -130,6 +130,7 @@ extension UIImage {
         UIImage(cgImage: cgImage, scale: 1, orientation: imageOrientation).draw(in: breadthRect)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
+    
 }
 
 extension UILabel{
