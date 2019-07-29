@@ -186,6 +186,7 @@ class MainViewController: UIViewController {
                 }
                 else{
                     self?.makeAppointmentIndicator.stopAnimating()
+                    
                     //init the storyboard because it is in another file now
                     let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
                     
@@ -527,8 +528,20 @@ class MainViewController: UIViewController {
             
             DAO.shared.getAppointment(userId: uid) { [weak self] (appointment, isExist) in
                 if isExist{
+                    
+//                    //init the storyboard because it is in another file now
+//                    let storyBoard =  UIStoryboard(name: "ManageAppointment", bundle: nil)
+//
+//                    //init the viewController:
+//                    guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toManageAppointment") as? ManageAppointmentViewController else {return}
+//
+//                    self?.navigationController?.pushViewController(scheduleVc, animated: true)
+                    
                     self?.manageAppointmentIndicator.stopAnimating()
+                    
                     self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
+                    
+//                    self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
                 }
                 else{
                     self?.manageAppointmentIndicator.stopAnimating()
