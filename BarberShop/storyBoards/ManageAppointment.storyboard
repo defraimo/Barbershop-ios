@@ -249,11 +249,20 @@
                         <outlet property="priceLabel" destination="ZCD-rR-2AQ" id="wyG-h8-N9u"/>
                         <outlet property="serviesLabel" destination="tnh-gW-s38" id="Mmn-Py-3jG"/>
                         <outlet property="timeLabel" destination="2vv-Tf-zUW" id="JLY-Cp-cGL"/>
+                        <segue destination="W0q-lQ-1ba" kind="show" identifier="toChangeAppointment" id="6Vi-eT-y2u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwq-j4-Jna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="123.88392857142857"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="XsO-Kv-0Se">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Schedule" id="W0q-lQ-1ba" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYs-mR-zR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="117"/>
         </scene>
     </scenes>
     <resources>

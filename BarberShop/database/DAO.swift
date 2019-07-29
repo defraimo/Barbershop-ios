@@ -311,7 +311,7 @@ class DAO{
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
         
-        for i in 0..<10{
+        for i in 0..<9{
             
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             
@@ -322,17 +322,17 @@ class DAO{
             avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:timeAvailible))
         }
         
-        for i in 10..<16{
+        for i in 9..<15{
             let current = CurrentDate().addToCurrentDate(numberOfDays: i)
             //after getting from data base
             notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:nil))
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 1, availableDays: avialibleDays, notificationDays: notificationDays)
         
         
-        ref.child("Dates").child("3").setValue(allDates!.dict)
+        ref.child("Dates").child("1").setValue(allDates!.dict)
     }
 
     
@@ -360,7 +360,7 @@ class DAO{
     self.ref.child("Appointments").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
     }
     
-    func setAvailabilityToTrue(barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
+    func setAvailabilityToFalse(barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
         let barberId = barber.id
         
         var unitsIndex:[Int] = []
@@ -415,16 +415,20 @@ class DAO{
         }
     }
     
-    func eraseAppointment(userId:String, appointment:Appointment){
-        ref.child("Appointments").child(userId).removeValue()
+    func eraseAppointment(userId:String, appointment:Appointment, removeFromAppointments:Bool){
+        if removeFromAppointments{
+            ref.child("Appointments").child(userId).removeValue()
+        }
         
         let path = ref.child("Dates").child("\(appointment.barber!.id)").child("availableDays").child("\(appointment.date!.generateId())").child("units")
         
         let units = appointment.units!
         
-        //set the units that was taken to available again
         for unit in units{
-            path.child("\(unit.index)").child("isAvailable").setValue("true")
+            //set the units that was taken to available again
+            path.child("\(unit.index)").child("isAvailable").setValue(true)
+            //erase the user name that written in the unit
+            path.child("\(unit.index)").child("user").removeValue()
         }
     }
         

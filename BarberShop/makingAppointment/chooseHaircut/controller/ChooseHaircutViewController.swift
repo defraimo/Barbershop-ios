@@ -14,6 +14,7 @@ class ChooseHaircutViewController: UIViewController {
     @IBOutlet weak var chooseServiesLabel: UILabel!
     
     var appointment:Appointment?
+    var previousAppointment:Appointment?
     
     var chosenBarberIndex:IndexPath?
 //    var passedServies:PriceModel?
@@ -179,6 +180,11 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
             guard let dest = segue.destination as? ChooseBarberViewController else {return}
             dest.barbers = specializedBarbers
             dest.appointment = appointment
+            
+            //if user chose to change his appointment pass the previous one
+            if previousAppointment != nil{
+                dest.previousAppointment = previousAppointment
+            }
         }
         //if there is only one barber
         else if id == "toSelectWhenWithOneBarber"{
@@ -187,6 +193,11 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
             dest.chosenBarberIndex = chosenBarberIndex ?? IndexPath(row: 0, section: 0)
 //            appointment?.servies = passedServies!
             dest.appointment = appointment
+            
+            //if user chose to change his appointment pass the previous one
+            if previousAppointment != nil{
+                dest.previousAppointment = previousAppointment
+            }
         }
     }
     

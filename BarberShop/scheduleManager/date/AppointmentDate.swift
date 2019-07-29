@@ -86,7 +86,9 @@ class AppointmentDate:CustomStringConvertible,DictionaryConvertible {
         if let unitsDictArray = dict["units"] as? [NSDictionary]{
             units = []
             for unitDict in unitsDictArray{
-                units?.append(TimeUnit(dict: unitDict)!)
+                if let unit = TimeUnit(dict: unitDict){
+                    units?.append(unit)
+                }
             }
         }
         

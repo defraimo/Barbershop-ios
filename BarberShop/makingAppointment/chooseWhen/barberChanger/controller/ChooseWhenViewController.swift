@@ -17,6 +17,7 @@ class ChooseWhenViewController: UIViewController {
     var timeForChosenDay:[TimeUnit]?
     
     var appointment:Appointment?
+    var previousAppointment:Appointment?
     
     var displayedDate:MyDate?
     
@@ -115,6 +116,11 @@ class ChooseWhenViewController: UIViewController {
             dest.appointment = appointment
             
             dest.dayOfWeek = datesForBarber?[chosenDateIndex].namedDayOfWeek
+            
+            //if user chose to change his appointment pass the previous one
+            if previousAppointment != nil{
+                dest.previousAppointment = previousAppointment
+            }
         }
     }
     

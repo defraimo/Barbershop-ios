@@ -22,7 +22,11 @@ class SumUpViewController: UIViewController {
     @IBAction func makeAppointment(_ sender: UIButton) {
         if appointment != nil{
             
-            DAO.shared.setAvailabilityToTrue(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: appointment!.clientId!) { (isAvailible) in
+            if previousAppointment != nil{
+                DAO.shared.eraseAppointment(userId: previousAppointment!.clientId!, appointment: previousAppointment!, removeFromAppointments: false)
+            }
+            
+            DAO.shared.setAvailabilityToFalse(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: appointment!.clientId!) { (isAvailible) in
                 
                 if isAvailible{
                     DAO.shared.writeAppoinment(self.appointment!)
@@ -37,6 +41,7 @@ class SumUpViewController: UIViewController {
     }
     
     var appointment:Appointment?
+    var previousAppointment:Appointment?
     
     override func viewDidLoad() {
         super.viewDidLoad()

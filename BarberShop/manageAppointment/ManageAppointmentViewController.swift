@@ -22,9 +22,10 @@ class ManageAppointmentViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     
     @IBAction func change(_ sender: UIButton) {
+        performSegue(withIdentifier: "toChangeAppointment", sender: appointment!)
     }
     @IBAction func cancel(_ sender: UIButton) {
-        DAO.shared.eraseAppointment(userId: appointment!.clientId!, appointment: appointment!)
+        DAO.shared.eraseAppointment(userId: appointment!.clientId!, appointment: appointment!, removeFromAppointments: true)
     }
     
     
@@ -50,15 +51,12 @@ class ManageAppointmentViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let dest = segue.destination as? ChooseHaircutViewController,
+            let id = segue.identifier, id == "toChangeAppointment",
+            let appointment = sender as? Appointment else {return}
+        
+        dest.previousAppointment = appointment
     }
-    */
 
 }
