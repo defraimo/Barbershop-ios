@@ -169,30 +169,36 @@ class MainViewController: UIViewController {
     @IBOutlet weak var newCustomer: UILabel!
     @IBOutlet weak var signUpHereBtn: UIButton!
     
+    @IBOutlet weak var makeAppointmentIndicator: UIActivityIndicatorView!
     //when ״הזמן תור״ is pressed:
     @IBAction func makeAppointment(_ sender: UIButton) {
         
-        animateView()
+        makeAppointmentIndicator.startAnimating()
         
         //if there is a signed in user, it will go straight to haircuts:
-        if Auth.auth().currentUser != nil {
-            //init the storyboard because it is in another file now
-            let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+        let user = Auth.auth().currentUser
+        if user != nil {
             
-            //init the viewController:
-            guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+            DAO.shared.getAppointment(userId: user!.uid) { [weak self] (appointment, isExist) in
+                if isExist{
+                    self?.makeAppointmentIndicator.stopAnimating()
+                    self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
+                }
+                else{
+                    self?.makeAppointmentIndicator.stopAnimating()
+                    //init the storyboard because it is in another file now
+                    let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+                    
+                    //init the viewController:
+                    guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+                    
+                    self?.navigationController?.pushViewController(scheduleVc, animated: true)
+                }
+            }
             
-            self.navigationController?.pushViewController(scheduleVc, animated: true)
         }else{
             loginOrSignUpFunc()
         }
-    }
-    
-    
-    func animateView(){
-        //---------------------------
-        //add animation to the button
-        //---------------------------
     }
     
     @IBOutlet weak var loginLabelForCheck: UILabel!
