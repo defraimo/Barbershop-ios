@@ -13,6 +13,7 @@ class ChooseBarberViewController: UIViewController {
     
     var barbers:[Barber]?
     var appointment:Appointment?
+    var previousAppointment:Appointment?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,6 +128,11 @@ extension ChooseBarberViewController: UICollectionViewDelegate, UICollectionView
             
             appointment?.barber = barbers?[barberIndex!.row]
             dest.appointment = appointment
+            
+            //if user chose to change his appointment pass the previous one
+            if previousAppointment != nil{
+                dest.previousAppointment = previousAppointment
+            }
         }
     }
 

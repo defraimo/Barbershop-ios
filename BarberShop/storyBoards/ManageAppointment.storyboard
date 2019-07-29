@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="awQ-71-sVv">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Manage Appointment View Controller-->
+        <scene sceneID="4B9-OT-4WQ">
+            <objects>
+                <viewController id="awQ-71-sVv" customClass="ManageAppointmentViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lha-MB-6k2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ניהול תורים" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-DN-KFa">
+                                <rect key="frame" x="120" y="71.5" width="215.5" height="90"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="45"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <size key="shadowOffset" width="2" height="1"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="Oc2-oN-w6K">
+                                <rect key="frame" x="70.5" y="150" width="215" height="13.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="9Fc-JZ-BCF">
+                                <rect key="frame" x="35" y="556" width="207" height="8"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="VSP-Yh-5R5">
+                                <rect key="frame" x="196.5" y="242" width="186.5" height="9"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="OFm-nk-c9Q">
+                                <rect key="frame" x="56" y="407.5" width="12.5" height="179.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="IrH-7w-qYx">
+                                <rect key="frame" x="358" y="224" width="8.5" height="224"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="OKt-z5-Lhs">
+                                <rect key="frame" x="223" y="282" width="119" height="45"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="החלפת תור" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="N9G-bP-GL4">
+                                <rect key="frame" x="248" y="734" width="75.5" height="45"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="16"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שם הספר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="LNr-4V-wsP">
+                                <rect key="frame" x="231" y="327" width="103" height="22.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
+                                <color key="textColor" red="0.6150991858" green="0.71466784260000005" blue="0.72142687179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="UHh-SQ-tM7">
+                                <rect key="frame" x="92.5" y="416.5" width="90.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
+                                <color key="textColor" red="0.6150991858" green="0.71466784260000005" blue="0.72142687179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="MqS-0t-RGP">
+                                <rect key="frame" x="231" y="416.5" width="103" height="22.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
+                                <color key="textColor" red="0.6150991858" green="0.71466784260000005" blue="0.72142687179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחיר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="deo-Fq-jXf">
+                                <rect key="frame" x="192.5" y="506" width="29" height="22.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
+                                <color key="textColor" red="0.6150991858" green="0.71466784260000005" blue="0.72142687179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שירות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="p3u-sn-tGZ">
+                                <rect key="frame" x="86.5" y="327" width="94.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="14"/>
+                                <color key="textColor" red="0.6150991858" green="0.71466784260000005" blue="0.72142687179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שירות" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="tnh-gW-s38">
+                                <rect key="frame" x="72" y="282" width="119" height="45"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="שעה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="2vv-Tf-zUW">
+                                <rect key="frame" x="223" y="372" width="119" height="44.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תאריך" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="OFH-t5-Gh9">
+                                <rect key="frame" x="84.5" y="372" width="106.5" height="44.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מחיר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCD-rR-2AQ">
+                                <rect key="frame" x="184.5" y="461.5" width="45" height="44.5"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDx-hC-rq0">
+                                <rect key="frame" x="207" y="0.0" width="0.0" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="PU3-gA-Fd6"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVm-aq-CRL">
+                                <rect key="frame" x="93" y="663.5" width="70.5" height="70.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WVm-aq-CRL" secondAttribute="height" multiplier="1:1" id="l5j-bL-qyh"/>
+                                </constraints>
+                                <state key="normal" image="main_down_green"/>
+                                <connections>
+                                    <action selector="cancel:" destination="awQ-71-sVv" eventType="touchUpInside" id="r3R-z7-9LW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btv-LG-via">
+                                <rect key="frame" x="250.5" y="663.5" width="70.5" height="70.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="btv-LG-via" secondAttribute="height" multiplier="1:1" id="axb-hj-9SG"/>
+                                </constraints>
+                                <state key="normal" image="main_down_green"/>
+                                <connections>
+                                    <action selector="change:" destination="awQ-71-sVv" eventType="touchUpInside" id="Vf1-op-vUF"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="change-icon" translatesAutoresizingMaskIntoConstraints="NO" id="tpc-rv-39k">
+                                <rect key="frame" x="256.5" y="670" width="58" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tpc-rv-39k" secondAttribute="height" multiplier="1:1" id="G3s-cr-H9F"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel_icon" translatesAutoresizingMaskIntoConstraints="NO" id="QxF-RV-5Be">
+                                <rect key="frame" x="99.5" y="670" width="58" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QxF-RV-5Be" secondAttribute="height" multiplier="1:1" id="Gu3-3i-q9h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ביטול תור" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="kPN-RS-h50">
+                                <rect key="frame" x="96.5" y="734" width="63.5" height="45"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="16"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="btv-LG-via" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.17" id="0NW-qa-2p6"/>
+                            <constraint firstItem="OKt-z5-Lhs" firstAttribute="leading" secondItem="kDx-hC-rq0" secondAttribute="trailing" constant="16" id="1F6-vQ-9aq"/>
+                            <constraint firstItem="tpc-rv-39k" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="1.56" id="2Al-Dt-8Ax"/>
+                            <constraint firstItem="MqS-0t-RGP" firstAttribute="leading" secondItem="kDx-hC-rq0" secondAttribute="trailing" constant="24" id="3H3-FZ-MfG"/>
+                            <constraint firstItem="OFH-t5-Gh9" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.05" id="6K4-K2-fDt"/>
+                            <constraint firstItem="jjg-DN-KFa" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.26" id="6gD-3C-wrQ"/>
+                            <constraint firstItem="VSP-Yh-5R5" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.45" id="9Qv-qM-BSE"/>
+                            <constraint firstItem="deo-Fq-jXf" firstAttribute="top" secondItem="ZCD-rR-2AQ" secondAttribute="bottom" id="AUW-dk-lho"/>
+                            <constraint firstItem="OKt-z5-Lhs" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.68" id="B9A-PW-QXG"/>
+                            <constraint firstItem="btv-LG-via" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="1.56" id="Bp3-Ro-Kt0"/>
+                            <constraint firstItem="kPN-RS-h50" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.05" id="CN9-cn-xlX"/>
+                            <constraint firstItem="N9G-bP-GL4" firstAttribute="top" secondItem="WVm-aq-CRL" secondAttribute="bottom" id="ED6-Wl-MGg"/>
+                            <constraint firstItem="Oc2-oN-w6K" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="0.86" id="EXS-F2-YUE"/>
+                            <constraint firstItem="jjg-DN-KFa" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.1" id="F7B-d2-scG"/>
+                            <constraint firstItem="kDx-hC-rq0" firstAttribute="leading" secondItem="p3u-sn-tGZ" secondAttribute="trailing" constant="26" id="IoG-SE-9tg"/>
+                            <constraint firstItem="QxF-RV-5Be" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="1.56" id="IqR-2F-cP5"/>
+                            <constraint firstItem="VSP-Yh-5R5" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.55" id="M8L-XX-cTj"/>
+                            <constraint firstItem="ZCD-rR-2AQ" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.05" id="MYw-ah-ZaZ"/>
+                            <constraint firstItem="jjg-DN-KFa" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.52" id="MZp-vu-qDc"/>
+                            <constraint firstItem="OFm-nk-c9Q" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="1.11" id="NGK-jb-gVI"/>
+                            <constraint firstItem="deo-Fq-jXf" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" id="NaB-Zc-Ovr"/>
+                            <constraint firstItem="kDx-hC-rq0" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" id="NkY-A6-DWP"/>
+                            <constraint firstItem="N9G-bP-GL4" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="1.38" id="OBO-L3-a77"/>
+                            <constraint firstItem="p3u-sn-tGZ" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.025" id="P6x-S3-Neh"/>
+                            <constraint firstItem="OFm-nk-c9Q" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="0.3" id="Q6g-yt-wZa"/>
+                            <constraint firstItem="9Fc-JZ-BCF" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="0.67" id="RNK-b6-VRs"/>
+                            <constraint firstItem="OKt-z5-Lhs" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.05" id="SpX-yd-Kgi"/>
+                            <constraint firstItem="LNr-4V-wsP" firstAttribute="leading" secondItem="kDx-hC-rq0" secondAttribute="trailing" constant="24" id="Tav-kk-rF4"/>
+                            <constraint firstItem="QxF-RV-5Be" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="0.62" id="To3-dK-RTC"/>
+                            <constraint firstItem="UHh-SQ-tM7" firstAttribute="top" secondItem="OFH-t5-Gh9" secondAttribute="bottom" id="Tts-Vw-jDi"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="leading" secondItem="2vv-Tf-zUW" secondAttribute="trailing" constant="16" id="Uff-Th-722"/>
+                            <constraint firstItem="kPN-RS-h50" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="0.62" id="VBJ-HR-D4e"/>
+                            <constraint firstItem="OFm-nk-c9Q" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.2" id="VvH-MR-xWD"/>
+                            <constraint firstItem="kDx-hC-rq0" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" id="X3N-jI-Dsf"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.75" id="Xmv-fE-csf"/>
+                            <constraint firstItem="9Fc-JZ-BCF" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.5" id="YYn-Uc-q3i"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.25" id="Yd1-J2-kdC"/>
+                            <constraint firstItem="VSP-Yh-5R5" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.01" id="YeP-nO-6el"/>
+                            <constraint firstItem="tpc-rv-39k" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="1.38" id="a0a-oF-UsV"/>
+                            <constraint firstItem="OFH-t5-Gh9" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.88" id="bYV-dY-t6I"/>
+                            <constraint firstItem="9Fc-JZ-BCF" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="1.25" id="bsJ-0L-5kO"/>
+                            <constraint firstItem="MqS-0t-RGP" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.025" id="c4p-fd-vL6"/>
+                            <constraint firstItem="ZCD-rR-2AQ" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" id="cn9-C9-54c"/>
+                            <constraint firstItem="ZCD-rR-2AQ" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="1.08" id="deU-Oi-0Ak"/>
+                            <constraint firstItem="9Fc-JZ-BCF" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.009" id="eH3-12-M5P"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="leading" secondItem="MqS-0t-RGP" secondAttribute="trailing" constant="24" id="eSl-mN-eMJ"/>
+                            <constraint firstItem="deo-Fq-jXf" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.025" id="emo-II-bol"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="leading" secondItem="LNr-4V-wsP" secondAttribute="trailing" constant="24" id="feS-fd-eUf"/>
+                            <constraint firstItem="VSP-Yh-5R5" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="1.4" id="fj5-J8-rSA"/>
+                            <constraint firstItem="OFm-nk-c9Q" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.03" id="fjR-DO-Qv9"/>
+                            <constraint firstItem="WVm-aq-CRL" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="1.56" id="fmL-rz-UQT"/>
+                            <constraint firstItem="tnh-gW-s38" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.05" id="gDU-kh-KzA"/>
+                            <constraint firstItem="2vv-Tf-zUW" firstAttribute="leading" secondItem="kDx-hC-rq0" secondAttribute="trailing" constant="16" id="gWv-PB-IZU"/>
+                            <constraint firstItem="OFH-t5-Gh9" firstAttribute="leading" secondItem="OFm-nk-c9Q" secondAttribute="trailing" constant="16" id="gba-ej-LUS"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="1.75" id="goV-vM-ygj"/>
+                            <constraint firstItem="p3u-sn-tGZ" firstAttribute="leading" secondItem="OFm-nk-c9Q" secondAttribute="trailing" constant="18" id="hBW-mW-Gv0"/>
+                            <constraint firstItem="tnh-gW-s38" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.68" id="hWL-vP-jEG"/>
+                            <constraint firstItem="LNr-4V-wsP" firstAttribute="top" secondItem="OKt-z5-Lhs" secondAttribute="bottom" id="iOW-Mw-BJb"/>
+                            <constraint firstItem="MqS-0t-RGP" firstAttribute="top" secondItem="2vv-Tf-zUW" secondAttribute="bottom" id="imL-tZ-Rtg"/>
+                            <constraint firstItem="btv-LG-via" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="1.38" id="in1-L0-2ys"/>
+                            <constraint firstItem="WVm-aq-CRL" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="0.62" id="jaN-fo-GXT"/>
+                            <constraint firstItem="N9G-bP-GL4" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.05" id="jbN-gl-qkL"/>
+                            <constraint firstItem="jjg-DN-KFa" firstAttribute="centerX" secondItem="Lha-MB-6k2" secondAttribute="centerX" multiplier="1.1" id="kKS-wR-p2t"/>
+                            <constraint firstItem="kDx-hC-rq0" firstAttribute="leading" secondItem="OFH-t5-Gh9" secondAttribute="trailing" constant="16" id="kaG-mZ-DMi"/>
+                            <constraint firstItem="kDx-hC-rq0" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" id="kfG-of-DZp"/>
+                            <constraint firstItem="p3u-sn-tGZ" firstAttribute="top" secondItem="tnh-gW-s38" secondAttribute="bottom" id="kvd-G5-HOx"/>
+                            <constraint firstItem="2vv-Tf-zUW" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.05" id="mMw-Z6-aTQ"/>
+                            <constraint firstItem="kPN-RS-h50" firstAttribute="top" secondItem="WVm-aq-CRL" secondAttribute="bottom" id="my4-eu-8UO"/>
+                            <constraint firstItem="tnh-gW-s38" firstAttribute="leading" secondItem="OFm-nk-c9Q" secondAttribute="leading" constant="16" id="nga-UI-tUo"/>
+                            <constraint firstItem="WVm-aq-CRL" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.17" id="odO-U5-bKo"/>
+                            <constraint firstItem="UHh-SQ-tM7" firstAttribute="leading" secondItem="OFm-nk-c9Q" secondAttribute="trailing" constant="24" id="pdS-Sp-pl7"/>
+                            <constraint firstItem="2vv-Tf-zUW" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.88" id="pm0-4M-LTS"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="leading" secondItem="OKt-z5-Lhs" secondAttribute="trailing" constant="16" id="s4s-AY-d4n"/>
+                            <constraint firstItem="tpc-rv-39k" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.14" id="tLH-hq-wKg"/>
+                            <constraint firstItem="kDx-hC-rq0" firstAttribute="leading" secondItem="UHh-SQ-tM7" secondAttribute="trailing" constant="24" id="tzT-0S-0Rf"/>
+                            <constraint firstItem="kDx-hC-rq0" firstAttribute="leading" secondItem="tnh-gW-s38" secondAttribute="trailing" constant="16" id="u0Z-5i-zvE"/>
+                            <constraint firstItem="Oc2-oN-w6K" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.52" id="uFj-RE-6Os"/>
+                            <constraint firstItem="UHh-SQ-tM7" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.025" id="ucF-g7-7pd"/>
+                            <constraint firstItem="QxF-RV-5Be" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.14" id="w3P-15-gUV"/>
+                            <constraint firstItem="Oc2-oN-w6K" firstAttribute="centerY" secondItem="Lha-MB-6k2" secondAttribute="centerY" multiplier="0.35" id="w9p-Fl-5bb"/>
+                            <constraint firstItem="LNr-4V-wsP" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.025" id="xvc-be-bhT"/>
+                            <constraint firstItem="Oc2-oN-w6K" firstAttribute="height" secondItem="Lha-MB-6k2" secondAttribute="height" multiplier="0.015" id="yol-iT-034"/>
+                            <constraint firstItem="IrH-7w-qYx" firstAttribute="width" secondItem="Lha-MB-6k2" secondAttribute="width" multiplier="0.02" id="z1U-TY-yT7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="biq-3A-OaE"/>
+                    </view>
+                    <connections>
+                        <outlet property="barberNameLabel" destination="OKt-z5-Lhs" id="L2p-Cl-K0p"/>
+                        <outlet property="cancelButton" destination="WVm-aq-CRL" id="kdC-VT-D3d"/>
+                        <outlet property="changeButton" destination="btv-LG-via" id="GsH-Sb-4yy"/>
+                        <outlet property="dateLabel" destination="OFH-t5-Gh9" id="n6w-xD-reW"/>
+                        <outlet property="priceLabel" destination="ZCD-rR-2AQ" id="wyG-h8-N9u"/>
+                        <outlet property="serviesLabel" destination="tnh-gW-s38" id="Mmn-Py-3jG"/>
+                        <outlet property="timeLabel" destination="2vv-Tf-zUW" id="JLY-Cp-cGL"/>
+                        <segue destination="W0q-lQ-1ba" kind="show" identifier="toChangeAppointment" id="6Vi-eT-y2u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwq-j4-Jna" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="123.88392857142857"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="XsO-Kv-0Se">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Schedule" id="W0q-lQ-1ba" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IYs-mR-zR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cancel_icon" width="300" height="300"/>
+        <image name="change-icon" width="512" height="512"/>
+        <image name="horizontal_price_line" width="381" height="15"/>
+        <image name="main_down_green" width="357" height="196"/>
+        <image name="vertical_price_line" width="17" height="1045"/>
+    </resources>
+</document>
