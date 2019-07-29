@@ -56,6 +56,11 @@ class ManageAppointmentViewController: UIViewController {
             let id = segue.identifier, id == "toChangeAppointment",
             let appointment = sender as? Appointment else {return}
         
+        //set the navigation back item title of the next screen
+        let backItem = UIBarButtonItem()
+        backItem.title = "ניהול תורים"
+        navigationItem.backBarButtonItem = backItem
+        
         dest.previousAppointment = appointment
     }
 
