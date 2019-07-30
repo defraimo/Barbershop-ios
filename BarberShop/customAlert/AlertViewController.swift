@@ -9,6 +9,7 @@
 import UIKit
 
 class AlertViewController: UIViewController {
+    @IBOutlet weak var blur: UIVisualEffectView!
     
     @IBOutlet weak var titleLine: UIImageView!
     @IBOutlet weak var alertView: UIView!
@@ -32,7 +33,12 @@ class AlertViewController: UIViewController {
         super.viewDidLoad()
 
         alertView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-        
+        alertView.layer.shadowColor = UIColor.black.cgColor
+        alertView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        alertView.layer.shadowRadius = 15
+        alertView.layer.shadowOpacity = 0.5
+        alertView.layer.masksToBounds = false
+
         //inserts all the info needed from the AlertService
         setupView()
         
@@ -44,7 +50,12 @@ class AlertViewController: UIViewController {
             btnSeperator.alpha = 0
             btnSeperator.isHidden = true
         }
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            UIView.animate(withDuration: 0.1) {
+                self.blur.alpha = 1
+            }
+        }
+       
     }
     
     func setupView(){
@@ -55,10 +66,16 @@ class AlertViewController: UIViewController {
     }
     
     @IBAction func positive(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2) {
+            self.blur.alpha = 0
+        }
         dismiss(animated: true, completion: positiveCompletion)
     }
     
     @IBAction func negative(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2) {
+            self.blur.alpha = 0
+        }
         dismiss(animated: true, completion: negativeCompletion)
     }
     
