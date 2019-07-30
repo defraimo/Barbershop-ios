@@ -10,12 +10,9 @@ import UIKit
 import FirebaseAuth
 
 class MainViewController: UIViewController {
-    let barberPhone = "+972544533616"
-    let userName =  "daniel_radshun"
     
     var user:User?
     var userPhoneNum:String?
-    
     
     lazy var blurEffect = {
         return UIVisualEffectView(effect: UIBlurEffect(style: .dark))
@@ -116,10 +113,11 @@ class MainViewController: UIViewController {
 //                        }
 //                    }
 //                }
-                
-                let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=\(self.barberPhone)")
-                if UIApplication.shared.canOpenURL(whatsappURL!) {
-                    UIApplication.shared.open(whatsappURL!, options: [:])
+                if let barberPhone = ContactUs.shared?.whatsupp{
+                    let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=\(barberPhone)")
+                    if UIApplication.shared.canOpenURL(whatsappURL!) {
+                        UIApplication.shared.open(whatsappURL!, options: [:])
+                    }
                 }
                 
             })
@@ -135,21 +133,23 @@ class MainViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.instagramButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
                 
-                let appURL = NSURL(string: "instagram://user?screen_name=\(self.userName)")!
-                let webURL = NSURL(string: "https://instagram.com/\(self.userName)")!
-                
-                if UIApplication.shared.canOpenURL(appURL as URL) {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
+                if let userName = ContactUs.shared?.instagramName{
+                    let appURL = NSURL(string: "instagram://user?screen_name=\(userName)")!
+                    let webURL = NSURL(string: "https://instagram.com/\(userName)")!
+                    
+                    if UIApplication.shared.canOpenURL(appURL as URL) {
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(appURL as URL, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(appURL as URL)
+                        }
                     } else {
-                        UIApplication.shared.openURL(appURL as URL)
-                    }
-                } else {
-                    //redirect to safari because the user doesn't have Instagram
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(webURL as URL)
+                        //redirect to safari because the user doesn't have Instagram
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(webURL as URL, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(webURL as URL)
+                        }
                     }
                 }
                 

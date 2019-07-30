@@ -58,7 +58,6 @@
 		A61A31D422B95DBD00FC20BE /* ContactUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D322B95DBD00FC20BE /* ContactUs.swift */; };
 		A61A31D622B95DE700FC20BE /* Barber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D522B95DE700FC20BE /* Barber.swift */; };
 		A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31D722B95E3C00FC20BE /* AllBarbers.swift */; };
-		A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31DC22B984E500FC20BE /* AboutUsData.swift */; };
 		A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */; };
 		A61D2D1A22CCA481002DC7CB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D1922CCA481002DC7CB /* UIView+Extension.swift */; };
 		A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61D2D2322CD08C7002DC7CB /* ChooseHaircutViewController.swift */; };
@@ -138,7 +137,6 @@
 		A61A31D322B95DBD00FC20BE /* ContactUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUs.swift; sourceTree = "<group>"; };
 		A61A31D522B95DE700FC20BE /* Barber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barber.swift; sourceTree = "<group>"; };
 		A61A31D722B95E3C00FC20BE /* AllBarbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBarbers.swift; sourceTree = "<group>"; };
-		A61A31DC22B984E500FC20BE /* AboutUsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsData.swift; sourceTree = "<group>"; };
 		A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionAboveBarbers.swift; sourceTree = "<group>"; };
 		A61D2D1922CCA481002DC7CB /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A61D2D2322CD08C7002DC7CB /* ChooseHaircutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseHaircutViewController.swift; sourceTree = "<group>"; };
@@ -397,7 +395,6 @@
 			isa = PBXGroup;
 			children = (
 				A61A31D122B95C8B00FC20BE /* AboutUs.swift */,
-				A61A31DC22B984E500FC20BE /* AboutUsData.swift */,
 				A61A31D322B95DBD00FC20BE /* ContactUs.swift */,
 				A61A31DE22B9874700FC20BE /* DescriptionAboveBarbers.swift */,
 			);
@@ -759,7 +756,6 @@
 				A61D2D2622CD08F5002DC7CB /* HaircutTableViewCell.swift in Sources */,
 				633ED44922D0D11400D64BAB /* Address.swift in Sources */,
 				A659A0A122C0197400274F40 /* AppDate.swift in Sources */,
-				A61A31DD22B984E500FC20BE /* AboutUsData.swift in Sources */,
 				A61D2D2A22CD2991002DC7CB /* HaircutDetailsCollectionViewCell.swift in Sources */,
 				A61A31A422B7ACFE00FC20BE /* PricesViewController.swift in Sources */,
 				63EF105622D4BA2300D0B993 /* DAO.swift in Sources */,

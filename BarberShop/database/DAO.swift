@@ -431,7 +431,50 @@ class DAO{
             path.child("\(unit.index)").child("user").removeValue()
         }
     }
+    
+    func writeAboutUs(){
+        let aboutUs = AboutUs(title: "על המספרה", text: "המספרה הוקמה ב2018 מנוהלת על ידי חברת \"Neighbors\". המספרה מספרת נשים וגברים במצועיות ונאמנות ומגיעה לתוצאות הטובות ביותר. שלל שירותי הסמפרה כוללים: תספורת, עיצוב זקן, צביעה, פן, החלקה, סלסול ועוד..")
         
+        ref.child("Info").child("AboutUs").setValue(aboutUs.dict)
+    }
+    
+    func readAboutUs(complition: @escaping (_ aboutUs:AboutUs) -> Void){
+        ref.child("Info").child("AboutUs").observeSingleEvent(of: .value) { (data) in
+            guard let aboutUsDict = data.value as? NSDictionary,
+                let aboutUs = AboutUs(dict: aboutUsDict) else {return}
+            
+            complition(aboutUs)
+        }
+    }
+    
+    func writeDescriptionAboveBarbers(){
+        let descriptionText = DescriptionAboveBarbers(descriptionText: "הספרים שלנו")
+        ref.child("Info").child("DescriptionAboveBarbers").setValue(descriptionText.dict)
+    }
+    
+    func readDescriptionAboveBarbers(complition: @escaping (_ descriptionText:DescriptionAboveBarbers) -> Void){
+        ref.child("Info").child("DescriptionAboveBarbers").observeSingleEvent(of: .value) { (data) in
+            guard let dict = data.value as? NSDictionary,
+                let descriptionText = DescriptionAboveBarbers(dict: dict) else {return}
+            
+            complition(descriptionText)
+        }
+    }
+    
+    func writeContactUs(){
+        let contactUs = ContactUs(phone: "0544533616", email: "neighbors.apps@gmail.com", instagramName: "daniel_radshun")
+        ref.child("Info").child("ContactUs").setValue(contactUs.dict)
+    }
+
+    func readContactUs(complition: @escaping (_ contactUs:ContactUs) -> Void){
+        ref.child("Info").child("ContactUs").observeSingleEvent(of: .value) { (data) in
+            guard let dict = data.value as? NSDictionary,
+                let contactUs = ContactUs(dict: dict) else {return}
+
+            complition(contactUs)
+        }
+    }
+    
 }
 
 extension Notification.Name{

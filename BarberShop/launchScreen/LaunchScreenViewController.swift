@@ -15,7 +15,18 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //load all data
+        //load the aboutUs data
+        AboutUs.fetchData()
+        
+        //load descriptionAboveBarbers line
+        DescriptionAboveBarbers.fetchData()
+        
+        //load the barbershop contact details
+        ContactUs.fetchData()
+        
+        //load
+        
+        //load the barbers and the prices
         let _ = AllBarbers.shared
 
         //setting the background color

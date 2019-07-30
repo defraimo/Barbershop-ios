@@ -19,13 +19,13 @@ class AboutUsViewController: UIViewController {
 
 }
 
-var aboutUs = AboutUsData().aboutUsArr
-var descriptionLine = DescriptionAboveBarbers().descriptionText
+var aboutUs = AboutUs.shared
+var descriptionLine = DescriptionAboveBarbers.shared?.descriptionText
 var barbers = AllBarbers.shared.allBarbers
-var contactUs = ContactUs().contactDetails
+var contactUs = ContactUs.shared
 
-let firstCount = aboutUs.count
-let secondCount = descriptionLine.count
+let firstCount = 1
+let secondCount = 1
 let thirdCount = barbers.count
 
 extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
@@ -40,19 +40,15 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
         if row < firstCount{
             let cell = tableView.dequeueReusableCell(withIdentifier: "aboutUsCell") as! AboutUsTableViewCell
             
-            let aboutUsModel = aboutUs[indexPath.row]
-            
-            cell.titleLabel.text = aboutUsModel.title
-            cell.descriptionLabel.text = aboutUsModel.text
+            cell.titleLabel.text = aboutUs?.title
+            cell.descriptionLabel.text = aboutUs?.text
             
             return cell
         }
         else if row < firstCount + secondCount{
             let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell") as! DescriptionTableViewCell
-            
-            let stringText = descriptionLine[indexPath.row - firstCount]
-            
-            cell.descriptionLabel.text = stringText
+                        
+            cell.descriptionLabel.text = descriptionLine
             
             return cell
         }
@@ -73,8 +69,8 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "contactUsCell") as! ContactUsTableViewCell
             
-            cell.phoneButton.setTitle(contactUs[0], for: .normal)
-            cell.emailButton.setTitle(contactUs[1], for: .normal)
+            cell.phoneButton.setTitle(contactUs?.displayedPhone, for: .normal)
+            cell.emailButton.setTitle(contactUs?.email, for: .normal)
             
             cell.phoneButton.addTarget(self, action: #selector(phoneButtonTapped(_:)), for: .touchDown)
             
@@ -86,17 +82,17 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     @objc func phoneButtonTapped(_ sender:UIButton){
-        let number = "0544533616"
-        if let url = URL(string: "tel://\(number)") {
+        if let number = contactUs?.phone, let url = URL(string: "tel://\(number)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     @objc func emailButtonTapped(_ sender:UIButton){
-        let email = "neighbors.apps@gmail.com"
-        let mailURL = URL(string: "mailto:\(email)")!
-        if UIApplication.shared.canOpenURL(mailURL) {
-            UIApplication.shared.open(mailURL, options: [:], completionHandler: nil)
+        if let email = contactUs?.email{
+            let mailURL = URL(string: "mailto:\(email)")!
+            if UIApplication.shared.canOpenURL(mailURL) {
+                UIApplication.shared.open(mailURL, options: [:], completionHandler: nil)
+            }
         }
     }
     
@@ -117,4 +113,5 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
             return 160
         }
     }
+    
 }
