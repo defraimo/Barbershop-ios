@@ -10,12 +10,6 @@ import UIKit
 import MapKit
 
 class HowToGetThereViewController: UIViewController {
-    //==================
-    //Alert Dialog Testing:
-    @IBAction func alert(_ sender: UIButton) {
-        
-    }
-    //==================
     var address:Address?
 
     @IBOutlet weak var locationLabel: UILabel!
