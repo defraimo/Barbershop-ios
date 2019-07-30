@@ -46,7 +46,7 @@
                                             <action selector="makeAppointment:" destination="T02-lw-fcr" eventType="touchUpInside" id="pBi-kq-9KD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-pU-trr">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-pU-trr">
                                         <rect key="frame" x="0.0" y="526" width="414" height="119"/>
                                         <connections>
                                             <action selector="makeAppointment:" destination="T02-lw-fcr" eventType="touchUpInside" id="R9f-ye-lYj"/>
@@ -846,15 +846,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.059999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_layer" translatesAutoresizingMaskIntoConstraints="NO" id="mv5-oq-SZP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wHi-hs-Thv">
                                 <rect key="frame" x="199" y="385.5" width="16" height="125"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mv5-oq-SZP" firstAttribute="leading" secondItem="7cz-wA-ejd" secondAttribute="leading" id="939-Pb-xBU"/>
                             <constraint firstItem="wHi-hs-Thv" firstAttribute="height" secondItem="EPs-Cd-umc" secondAttribute="height" multiplier="0.14" id="FFC-bP-rLV"/>
                             <constraint firstItem="wHi-hs-Thv" firstAttribute="centerY" secondItem="EPs-Cd-umc" secondAttribute="centerY" id="Hzm-sY-Y40"/>
+                            <constraint firstItem="mv5-oq-SZP" firstAttribute="top" secondItem="EPs-Cd-umc" secondAttribute="top" id="P8h-gP-Wzz"/>
+                            <constraint firstItem="mv5-oq-SZP" firstAttribute="trailing" secondItem="7cz-wA-ejd" secondAttribute="trailing" id="lzV-2o-nhr"/>
                             <constraint firstItem="wHi-hs-Thv" firstAttribute="centerX" secondItem="EPs-Cd-umc" secondAttribute="centerX" id="nCg-PA-7oD"/>
+                            <constraint firstAttribute="bottom" secondItem="mv5-oq-SZP" secondAttribute="bottom" id="vgR-G6-gsj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7cz-wA-ejd"/>
                     </view>
@@ -865,7 +872,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0io-v1-m9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1190" y="21"/>
+            <point key="canvasLocation" x="-1191.304347826087" y="20.758928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pkp-h2-6lH">
@@ -897,6 +904,7 @@
     </scenes>
     <resources>
         <image name="Instagram" width="599" height="600"/>
+        <image name="background_layer" width="501" height="599"/>
         <image name="email" width="24" height="17"/>
         <image name="horizontal thin line" width="443" height="11"/>
         <image name="horizontal_price_line" width="381" height="15"/>

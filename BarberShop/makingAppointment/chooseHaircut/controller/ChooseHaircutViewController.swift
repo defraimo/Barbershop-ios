@@ -17,7 +17,6 @@ class ChooseHaircutViewController: UIViewController {
     var previousAppointment:Appointment?
     
     var chosenBarberIndex:IndexPath?
-//    var passedServies:PriceModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +42,7 @@ class ChooseHaircutViewController: UIViewController {
         else{
             appointment?.clientId = "none"
         }
-//        appointment?.clientId = "0"
+        
          //SET TO THE CURRENT USER
         //------------------------------------------------
         //------------------------------------------------
@@ -54,7 +53,6 @@ class ChooseHaircutViewController: UIViewController {
             guard let specializedBarbers = notification.userInfo?["specializedBarbers"] as? [Barber] else {return}
             guard let cellIndex = notification.userInfo?["cellIndex"] as? Int else {return}
             
-//            self?.passedServies = prices?[cellIndex]
             self?.appointment?.servies = prices?[cellIndex]
             
             self!.chosenBarberIndex = barberIndex
@@ -192,7 +190,6 @@ extension ChooseHaircutViewController: UITableViewDelegate, UITableViewDataSourc
             guard let dest = segue.destination as? ChooseWhenViewController else {return}
             dest.barbers = specializedBarbers
             dest.chosenBarberIndex = chosenBarberIndex ?? IndexPath(row: 0, section: 0)
-//            appointment?.servies = passedServies!
             dest.appointment = appointment
             
             //if user chose to change his appointment pass the previous one

@@ -541,7 +541,6 @@ class MainViewController: UIViewController {
                     
                     self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
                     
-//                    self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
                 }
                 else{
                     self?.manageAppointmentIndicator.stopAnimating()
