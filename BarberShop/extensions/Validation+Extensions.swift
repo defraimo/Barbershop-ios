@@ -138,11 +138,20 @@ extension UILabel{
         //maximum size posible to calculate the size of the text:
         let maxSize = CGSize(width: frame.size.width, height: CGFloat(Float.infinity))
         //the size of each character defined by the font:
-        let charSize = font.lineHeight
+        //let charSize = font.lineHeight
         //the text itself:
         let text = (self.text ?? "") as NSString
         //the height of the given text frame:
-        let textSize = text.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        let textSize = text.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font as Any], context: nil)
         return textSize.height
+    }
+    func lineWidth() -> CGFloat {
+        //maximum size posible to calculate the size of the text:
+        let maxSize = CGSize(width: frame.size.width, height: CGFloat(Float.infinity))
+        //the text itself:
+        let text = (self.text ?? "") as NSString
+        //the height of the given text frame:
+        let textSize = text.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font as Any], context: nil)
+        return textSize.width
     }
 }
