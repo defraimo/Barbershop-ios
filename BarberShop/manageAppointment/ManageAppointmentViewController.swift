@@ -25,7 +25,16 @@ class ManageAppointmentViewController: UIViewController {
         performSegue(withIdentifier: "toChangeAppointment", sender: appointment!)
     }
     @IBAction func cancel(_ sender: UIButton) {
-        DAO.shared.eraseAppointment(userId: appointment!.clientId!, appointment: appointment!, removeFromAppointments: true)
+        let alert = AlertService().alert(title: "מחיקת תור", body: "האם את/ה בטוח/ה שברצונך למחוק את התור הקיים?", btnAmount: 2, positive: "אישור", negative: "ביטול", positiveCompletion: {
+            
+            DAO.shared.eraseAppointment(userId: self.appointment!.clientId!, appointment: self.appointment!, removeFromAppointments: true)
+            
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        }, negativeCompletion: nil)
+        
+        present(alert, animated: true)
+        
     }
     
     

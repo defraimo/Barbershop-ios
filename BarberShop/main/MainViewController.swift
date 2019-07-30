@@ -544,7 +544,22 @@ class MainViewController: UIViewController {
                 }
                 else{
                     self?.manageAppointmentIndicator.stopAnimating()
-                    //SHOW DIALOG
+                    self?.releaseMenu()
+                    let alert = AlertService().alert(title: "לא נקבעו תורים", body: "יש להזמין תחילה תור על מנת להיכנס לאפשרות זו", btnAmount: 2, positive: "הזמנת תור", negative: "ביטול", positiveCompletion: {
+                        
+                        //init the storyboard because it is in another file now
+                        let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+                        
+                        //init the viewController:
+                        guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+                        
+                        self?.navigationController?.pushViewController(scheduleVc, animated: true)
+                        
+                    }, negativeCompletion: nil)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+                        self?.present(alert, animated: true)
+                    })
                 }
             }
             
