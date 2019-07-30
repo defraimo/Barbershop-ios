@@ -13,11 +13,19 @@
         <!--Alert View Controller-->
         <scene sceneID="5t2-ko-ElG">
             <objects>
-                <viewController storyboardIdentifier="AlertVc" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="fY7-CA-pOz" customClass="AlertViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertVc" modalPresentationStyle="overFullScreen" id="fY7-CA-pOz" customClass="AlertViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hw0-kA-65y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIK-nw-bBk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FNE-hu-yvC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-uf-OKF">
                                 <rect key="frame" x="77" y="333.5" width="260" height="229"/>
                                 <subviews>
@@ -102,10 +110,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="AIK-nw-bBk" secondAttribute="bottom" id="0Hw-dF-9qK"/>
+                            <constraint firstItem="AIK-nw-bBk" firstAttribute="leading" secondItem="lCq-Sk-cQX" secondAttribute="leading" id="6ez-zi-PAq"/>
                             <constraint firstItem="s7V-uf-OKF" firstAttribute="centerX" secondItem="Hw0-kA-65y" secondAttribute="centerX" id="AJM-KJ-8VK"/>
+                            <constraint firstItem="AIK-nw-bBk" firstAttribute="trailing" secondItem="lCq-Sk-cQX" secondAttribute="trailing" id="Loq-Db-pkC"/>
                             <constraint firstItem="s7V-uf-OKF" firstAttribute="centerY" secondItem="Hw0-kA-65y" secondAttribute="centerY" id="Q4V-8N-fTo"/>
+                            <constraint firstItem="AIK-nw-bBk" firstAttribute="top" secondItem="Hw0-kA-65y" secondAttribute="top" id="vu3-SU-xCs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lCq-Sk-cQX"/>
                     </view>
@@ -113,6 +125,7 @@
                         <outlet property="alertBody" destination="KDX-O2-xcu" id="fsO-4U-XRY"/>
                         <outlet property="alertTitle" destination="jLI-hx-lJT" id="ra9-An-zLz"/>
                         <outlet property="alertView" destination="s7V-uf-OKF" id="WxZ-Wt-f16"/>
+                        <outlet property="blur" destination="AIK-nw-bBk" id="TVL-VU-VdR"/>
                         <outlet property="btnSeperator" destination="OS3-Tn-z6f" id="2ft-nX-ljx"/>
                         <outlet property="negativeBtn" destination="Sek-Or-Pri" id="d79-fk-lNl"/>
                         <outlet property="positiveBtn" destination="UT2-Hr-w2X" id="Ki2-eX-k8k"/>

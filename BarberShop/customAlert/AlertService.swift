@@ -25,6 +25,7 @@ class AlertService{
         
         alertVc.positiveCompletion = positiveCompletion
         alertVc.negativeCompletion = negativeCompletion
+        
         return alertVc
     }
     
