@@ -538,6 +538,7 @@ class MainViewController: UIViewController {
 //                    self?.navigationController?.pushViewController(scheduleVc, animated: true)
                     
                     self?.manageAppointmentIndicator.stopAnimating()
+                    self?.releaseMenu()
                     
                     self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
                     

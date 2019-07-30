@@ -27,7 +27,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-uf-OKF">
-                                <rect key="frame" x="77" y="333.5" width="260" height="229"/>
+                                <rect key="frame" x="77" y="370" width="260" height="156.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כותרת" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jLI-hx-lJT">
                                         <rect key="frame" x="20" y="12" width="220" height="27"/>
@@ -35,14 +35,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="רדשון הומו רדשון הומו רדשון הומו רדשון הומו רדשון הומו רדשון הומו רדשון הומו רדשון הומו רדשון הומו" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDX-O2-xcu">
-                                        <rect key="frame" x="24" y="67" width="212" height="97"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDX-O2-xcu">
+                                        <rect key="frame" x="24" y="67" width="212" height="24.5"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6bq-EO-gji">
-                                        <rect key="frame" x="24" y="196" width="212" height="25"/>
+                                        <rect key="frame" x="24" y="123.5" width="212" height="25"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sek-Or-Pri">
                                                 <rect key="frame" x="0.0" y="0.0" width="70.5" height="25"/>
@@ -50,7 +50,7 @@
                                                     <constraint firstAttribute="height" constant="25" id="mSC-P3-PZW"/>
                                                 </constraints>
                                                 <state key="normal" title="בטל">
-                                                    <color key="titleColor" red="0.73188895652741948" green="0.082476927979309736" blue="0.11265362911355158" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleColor" red="1" green="0.43137254901960786" blue="0.39215686274509803" alpha="0.97921125856164382" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="negative:" destination="fY7-CA-pOz" eventType="touchUpInside" id="Uqu-Fi-Dek"/>
@@ -80,7 +80,7 @@
                                         <rect key="frame" x="31" y="39" width="198" height="16"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="9pQ-Lj-MrP">
-                                        <rect key="frame" x="0.0" y="180" width="260" height="16"/>
+                                        <rect key="frame" x="0.0" y="107.5" width="260" height="16"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

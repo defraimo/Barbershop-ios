@@ -30,11 +30,21 @@ class SumUpViewController: UIViewController {
                 
                 if isAvailible{
                     DAO.shared.writeAppoinment(self.appointment!)
-                    self.navigationController?.popToRootViewController(animated: true)
+                    let alert = AlertService().alert(title: "התור נקבע בהצלחה", body: "נתראה בקרוב!", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
+                        self.navigationController?.popToRootViewController(animated: true)
+                        
+                    }, negativeCompletion: nil)
+                    
+                    self.present(alert, animated: true)
                 }
                 else{
                     //show dialog and take the user back to ChooseWhenViewController
-                    self.navigationController?.popViewController(animated: true)
+                    let alert = AlertService().alert(title: "אופסי!", body: "תור זה בידיוק נתפס, אנא בחר/י תור אחר", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
+                        self.navigationController?.popViewController(animated: true)
+                        
+                    }, negativeCompletion: nil)
+                    
+                    self.present(alert, animated: true)
                 }
             }
         }
