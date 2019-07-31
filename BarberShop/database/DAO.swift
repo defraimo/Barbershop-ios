@@ -395,9 +395,9 @@ class DAO{
                     
                     path.child("isAvailable").setValue(false)
                 }
-                
-                    complition(areUnitsAvailable)
                 }
+            
+                complition(areUnitsAvailable)
         })
         
     }
