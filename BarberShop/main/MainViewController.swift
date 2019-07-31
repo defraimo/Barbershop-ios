@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import ImageSlideshow
 
 class MainViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class MainViewController: UIViewController {
     lazy var blurEffect = {
         return UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     }()
+    
+    @IBOutlet weak var imageSlideShow: ImageSlideshow!
     
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var roundedViewHeight: NSLayoutConstraint!
@@ -423,6 +426,8 @@ class MainViewController: UIViewController {
                 
 //        DAO.shared.writeSchedule()
         
+        setUpImageSlider()
+        
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)
@@ -447,6 +452,22 @@ class MainViewController: UIViewController {
         adjustsButtonFont(aboutUsButton)
         adjustsButtonFont(howWeGetThereButton)
         
+    }
+    
+    func setUpImageSlider(){
+        let image = UIImage(named: "switching_pic1")!
+        
+        imageSlideShow.setImageInputs([
+            ImageSource(image: image),
+            ImageSource(image: image),
+            ImageSource(image: image)
+            ])
+        
+        imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFill
+        
+        imageSlideShow.slideshowInterval = 5
+        
+        imageSlideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: UIColor(red: 97/255, green: 133/255, blue: 139/255, alpha: 1))
     }
     
     func adjustsButtonFont(_ button:UIButton){

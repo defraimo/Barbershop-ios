@@ -12,6 +12,6 @@ target 'BarberShop' do
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
     pod 'SDWebImage'
-
+    pod 'ImageSlideshow', '~> 1.8'
 
 end

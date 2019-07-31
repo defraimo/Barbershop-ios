@@ -122,8 +122,6 @@ class DAO{
     var areImagesSaved:[Bool]?
     var numOfChanges = 0
     var allBarbers:[Barber] = []
-
-    //completion: @escaping (_ barber:[Barber]) -> Void
     
     func loadBarbersfromFirebase() {
         
