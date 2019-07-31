@@ -217,13 +217,6 @@ class ChooseWhenViewController: UIViewController {
             self?.barbersCollection.scrollToItem(at: (self?.chosenBarberIndex!)!, at: .centeredHorizontally, animated: false)
             
             self?.setArrowsAlpha((self?.chosenBarberIndex!.row)!)
-            
-            
-            //            if self?.displayedDate != nil && CurrentDate().isCurrentDateEqauls(date: self!.displayedDate!){
-            //                self?.sendNotificationLabel.text = "אין יותר תורים ליום זה"
-            //                self?.sendNotificationButton.alpha = 0
-            //
-            //            }
         }
         
         //setting the background
@@ -296,6 +289,8 @@ class ChooseWhenViewController: UIViewController {
             })
         }
         else{
+            //check if all the time availible for the chosen day is full
+            changeSendNotificationView()
             //animate the sendMeNotificationView
             self.sendMeNotificationHeight.constant = self.view.frame.height / 3.2
             UIView.animate(withDuration: TimeInterval(notificationViewDuration), delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 14, options: [], animations: {
@@ -311,6 +306,17 @@ class ChooseWhenViewController: UIViewController {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6,initialSpringVelocity: 20, options: [], animations: {
             self.view.layoutIfNeeded()
         })
+    }
+    
+    fileprivate func changeSendNotificationView(){
+        if let avialibleDaysCount = scheduleData?.avialibleDaysCount, self.displayedDate != nil && timeForChosenDay?.count == 0 && self.chosenDateIndex < avialibleDaysCount{
+            self.sendNotificationLabel.text = "אין יותר תורים ליום זה"
+            self.sendNotificationButton.alpha = 0
+        }
+        else{
+            self.sendNotificationLabel.text = "שלח לי התראה כשיפתחו תורים"
+            self.sendNotificationButton.alpha = 1
+        }
     }
    
 }
@@ -558,6 +564,9 @@ extension ChooseWhenViewController: UIPickerViewDelegate, UIPickerViewDataSource
                 }
             }
             else{
+                //check if all units are not availible so write there are no appointments left
+                self.changeSendNotificationView()
+                
                 UIView.animate(withDuration: 0.3, animations: {
                     self.sendMeNotificationHeight.constant = 0
                     self.timeViewHeight.constant = 0
