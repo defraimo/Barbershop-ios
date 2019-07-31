@@ -380,31 +380,31 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-K7-7jM">
-                            <rect key="frame" x="112" y="107" width="16" height="10"/>
+                            <rect key="frame" x="43.5" y="107" width="153" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="u8l-T7-LSy"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="wHX-Cx-q8l">
-                            <rect key="frame" x="112" y="221" width="16" height="10"/>
+                            <rect key="frame" x="43.5" y="221" width="153" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="jhK-VP-CdU"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-SA-1Th">
-                            <rect key="frame" x="112" y="278" width="16" height="10"/>
+                            <rect key="frame" x="43.5" y="278" width="153" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="MHf-fT-a9y"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="5WO-u2-qjc">
-                            <rect key="frame" x="112" y="335" width="16" height="10"/>
+                            <rect key="frame" x="43.5" y="335" width="153" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="xO7-4t-xFz"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="K1I-cP-0kr">
-                            <rect key="frame" x="112" y="164" width="16" height="10"/>
+                            <rect key="frame" x="43.5" y="164" width="153" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="DmE-Oc-CQr"/>
                             </constraints>
@@ -533,19 +533,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IV8-ep-0a4">
-                                                    <rect key="frame" x="4.5" y="52" width="104.5" height="30"/>
+                                                    <rect key="frame" x="4" y="52" width="104.5" height="30"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תספורת" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puj-oJ-NBB">
-                                                    <rect key="frame" x="155" y="52" width="74" height="30"/>
+                                                    <rect key="frame" x="155.5" y="52" width="74" height="30"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="lOD-Nq-ao2">
-                                                    <rect key="frame" x="115" y="11" width="16" height="112"/>
+                                                    <rect key="frame" x="114.5" y="11" width="17" height="112"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
@@ -914,7 +914,7 @@
         <image name="menu_icon" width="33" height="32"/>
         <image name="menu_under_line" width="153" height="12"/>
         <image name="phone" width="48" height="48"/>
-        <image name="shop" width="32" height="32"/>
+        <image name="shop" width="25" height="25"/>
         <image name="switching_pic1" width="358" height="346"/>
         <image name="vertical_price_line" width="17" height="1045"/>
         <image name="whatsapp" width="512" height="512"/>

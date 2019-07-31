@@ -11,6 +11,7 @@ import UIKit
 class AlertViewController: UIViewController {
     @IBOutlet weak var blur: UIVisualEffectView!
     
+    @IBOutlet weak var bottomLine: UIImageView!
     @IBOutlet weak var titleLine: UIImageView!
     @IBOutlet weak var alertView: UIView!
     
@@ -45,9 +46,7 @@ class AlertViewController: UIViewController {
         //depends on the choice from AlertService, the amount of buttons will be: 1 or 2
         guard let btnAmount = btnAmount else {return}
         if btnAmount == 1 {
-            negativeBtn.alpha = 0
             negativeBtn.isHidden = true
-            btnSeperator.alpha = 0
             btnSeperator.isHidden = true
         }
         
@@ -62,8 +61,8 @@ class AlertViewController: UIViewController {
     func setupView(){
         alertTitle.text = titleText
         alertBody.text = bodtText
-        positiveBtn.titleLabel?.text = positiveBtnText
-        negativeBtn.titleLabel?.text = negativeBtnText
+        positiveBtn.setTitle(positiveBtnText, for: .normal) 
+        negativeBtn.setTitle(negativeBtnText, for: .normal)
     }
     
     @IBAction func positive(_ sender: UIButton) {
