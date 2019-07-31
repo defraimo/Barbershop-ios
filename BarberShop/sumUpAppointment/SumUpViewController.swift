@@ -22,15 +22,12 @@ class SumUpViewController: UIViewController {
     @IBAction func makeAppointment(_ sender: UIButton) {
         if appointment != nil{
             
-            if previousAppointment != nil{
-                DAO.shared.eraseAppointment(userId: previousAppointment!.clientId!, appointment: previousAppointment!, removeFromAppointments: false)
-            }
-            
             DAO.shared.setAvailabilityToFalse(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: appointment!.clientId!) { (isAvailible) in
                 
                 if isAvailible{
+                    
                     DAO.shared.writeAppoinment(self.appointment!)
-                    let alert = AlertService().alert(title: "התור נקבע בהצלחה", body: "נתראה בקרוב!", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
+                    let alert = AlertService().alert(title: "התור נקבע בהצלחה", body: "נתראה בקרוב !", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
                         self.navigationController?.popToRootViewController(animated: true)
                         
                     }, negativeCompletion: nil)
