@@ -198,6 +198,7 @@ class MainViewController: UIViewController {
             }
             
         }else{
+            self.makeAppointmentIndicator.stopAnimating()
             loginOrSignUpFunc()
         }
     }
@@ -556,6 +557,11 @@ class MainViewController: UIViewController {
                 }
             }
             
+        }
+        else{
+            self.manageAppointmentIndicator.stopAnimating()
+            self.releaseMenu()
+            self.loginOrSignUpFunc()
         }
     }
     
