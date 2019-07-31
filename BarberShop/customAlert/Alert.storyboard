@@ -27,7 +27,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-uf-OKF">
-                                <rect key="frame" x="77" y="370" width="260" height="156.5"/>
+                                <rect key="frame" x="77" y="375" width="260" height="146.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כותרת" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="jLI-hx-lJT">
                                         <rect key="frame" x="20" y="12" width="220" height="27"/>
@@ -36,72 +36,72 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טקסט" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDX-O2-xcu">
-                                        <rect key="frame" x="24" y="67" width="212" height="24.5"/>
+                                        <rect key="frame" x="24" y="62" width="212" height="24.5"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6bq-EO-gji">
-                                        <rect key="frame" x="24" y="123.5" width="212" height="25"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sek-Or-Pri">
-                                                <rect key="frame" x="0.0" y="0.0" width="70.5" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="mSC-P3-PZW"/>
-                                                </constraints>
-                                                <state key="normal" title="בטל">
-                                                    <color key="titleColor" red="1" green="0.43137254901960786" blue="0.39215686274509803" alpha="0.97921125856164382" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="negative:" destination="fY7-CA-pOz" eventType="touchUpInside" id="Uqu-Fi-Dek"/>
-                                                </connections>
-                                            </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical thin line" translatesAutoresizingMaskIntoConstraints="NO" id="OS3-Tn-z6f">
-                                                <rect key="frame" x="70.5" y="0.0" width="71" height="25"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT2-Hr-w2X">
-                                                <rect key="frame" x="141.5" y="0.0" width="70.5" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="8e1-Y4-CJb"/>
-                                                </constraints>
-                                                <state key="normal" title="אשר">
-                                                    <color key="titleColor" red="0.58822089089999996" green="0.80380405850000003" blue="0.85195303170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="positive:" destination="fY7-CA-pOz" eventType="touchUpInside" id="8ws-bh-fJt"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sek-Or-Pri">
+                                        <rect key="frame" x="8" y="113.5" width="104" height="25"/>
                                         <constraints>
-                                            <constraint firstItem="OS3-Tn-z6f" firstAttribute="height" secondItem="6bq-EO-gji" secondAttribute="height" id="AiJ-yj-AP5"/>
+                                            <constraint firstAttribute="height" constant="25" id="mSC-P3-PZW"/>
                                         </constraints>
-                                    </stackView>
+                                        <state key="normal" title="בטל">
+                                            <color key="titleColor" red="1" green="0.43137254901960786" blue="0.39215686274509803" alpha="0.97921125856164382" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="negative:" destination="fY7-CA-pOz" eventType="touchUpInside" id="Uqu-Fi-Dek"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical thin line" translatesAutoresizingMaskIntoConstraints="NO" id="OS3-Tn-z6f">
+                                        <rect key="frame" x="128" y="113.5" width="4" height="25"/>
+                                    </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-v5-BAG">
-                                        <rect key="frame" x="31" y="39" width="198" height="16"/>
+                                        <rect key="frame" x="31" y="39" width="198.00000000000011" height="11"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal thin line" translatesAutoresizingMaskIntoConstraints="NO" id="9pQ-Lj-MrP">
-                                        <rect key="frame" x="0.0" y="107.5" width="260" height="16"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="260.00000000000011" height="11"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UT2-Hr-w2X">
+                                        <rect key="frame" x="148" y="113.5" width="104" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="8e1-Y4-CJb"/>
+                                        </constraints>
+                                        <state key="normal" title="אשר">
+                                            <color key="titleColor" red="0.58822089089999996" green="0.80380405850000003" blue="0.85195303170000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="positive:" destination="fY7-CA-pOz" eventType="touchUpInside" id="8ws-bh-fJt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Za8-v5-BAG" firstAttribute="centerX" secondItem="s7V-uf-OKF" secondAttribute="centerX" id="4QM-RH-EFR"/>
                                     <constraint firstItem="Za8-v5-BAG" firstAttribute="top" secondItem="jLI-hx-lJT" secondAttribute="bottom" id="4R3-sI-Vk8"/>
-                                    <constraint firstAttribute="trailing" secondItem="6bq-EO-gji" secondAttribute="trailing" constant="24" id="5Rr-j1-40d"/>
-                                    <constraint firstItem="6bq-EO-gji" firstAttribute="leading" secondItem="s7V-uf-OKF" secondAttribute="leading" constant="24" id="5Yl-7b-eD7"/>
+                                    <constraint firstItem="OS3-Tn-z6f" firstAttribute="top" secondItem="9pQ-Lj-MrP" secondAttribute="bottom" id="5Mq-I0-AIJ"/>
                                     <constraint firstItem="KDX-O2-xcu" firstAttribute="leading" secondItem="s7V-uf-OKF" secondAttribute="leading" constant="24" id="5cY-8V-JxO"/>
+                                    <constraint firstAttribute="bottom" secondItem="OS3-Tn-z6f" secondAttribute="bottom" constant="8" id="DgT-5B-mcI"/>
                                     <constraint firstItem="9pQ-Lj-MrP" firstAttribute="top" secondItem="KDX-O2-xcu" secondAttribute="bottom" constant="16" id="EJR-ff-lcs"/>
+                                    <constraint firstAttribute="bottom" secondItem="UT2-Hr-w2X" secondAttribute="bottom" constant="8" id="Gen-z8-EjJ"/>
                                     <constraint firstItem="jLI-hx-lJT" firstAttribute="leading" secondItem="s7V-uf-OKF" secondAttribute="leading" constant="20" id="K17-di-Dye"/>
                                     <constraint firstItem="jLI-hx-lJT" firstAttribute="top" secondItem="s7V-uf-OKF" secondAttribute="top" constant="12" id="MjL-GY-18e"/>
                                     <constraint firstItem="KDX-O2-xcu" firstAttribute="top" secondItem="Za8-v5-BAG" secondAttribute="bottom" constant="12" id="NG5-h6-YpH"/>
-                                    <constraint firstItem="6bq-EO-gji" firstAttribute="top" secondItem="9pQ-Lj-MrP" secondAttribute="bottom" id="UHr-Rm-8gi"/>
-                                    <constraint firstAttribute="bottom" secondItem="6bq-EO-gji" secondAttribute="bottom" constant="8" id="XLz-cp-edT"/>
+                                    <constraint firstAttribute="trailing" secondItem="UT2-Hr-w2X" secondAttribute="trailing" constant="8" id="RY6-ql-N36"/>
                                     <constraint firstAttribute="trailing" secondItem="KDX-O2-xcu" secondAttribute="trailing" constant="24" id="ZCA-AQ-jcI"/>
+                                    <constraint firstItem="Sek-Or-Pri" firstAttribute="leading" secondItem="s7V-uf-OKF" secondAttribute="leading" constant="8" id="bLw-BC-j3C"/>
+                                    <constraint firstItem="OS3-Tn-z6f" firstAttribute="leading" secondItem="Sek-Or-Pri" secondAttribute="trailing" constant="16" id="g48-XA-RQM"/>
+                                    <constraint firstItem="Sek-Or-Pri" firstAttribute="width" secondItem="s7V-uf-OKF" secondAttribute="width" multiplier="0.4" id="gms-mU-pJZ"/>
+                                    <constraint firstItem="UT2-Hr-w2X" firstAttribute="top" secondItem="9pQ-Lj-MrP" secondAttribute="bottom" id="gx7-0d-1Db"/>
+                                    <constraint firstItem="Sek-Or-Pri" firstAttribute="top" secondItem="9pQ-Lj-MrP" secondAttribute="bottom" id="iYz-vn-Vdf"/>
                                     <constraint firstAttribute="trailing" secondItem="jLI-hx-lJT" secondAttribute="trailing" constant="20" id="j3v-ju-QFN"/>
                                     <constraint firstItem="9pQ-Lj-MrP" firstAttribute="width" secondItem="s7V-uf-OKF" secondAttribute="width" id="l0h-Yb-G1e"/>
                                     <constraint firstAttribute="width" constant="260" id="mSq-li-boa"/>
+                                    <constraint firstItem="UT2-Hr-w2X" firstAttribute="width" secondItem="s7V-uf-OKF" secondAttribute="width" multiplier="0.4" id="nhC-e9-wbR"/>
+                                    <constraint firstItem="UT2-Hr-w2X" firstAttribute="leading" secondItem="OS3-Tn-z6f" secondAttribute="trailing" constant="16" id="tPU-vk-Cu6"/>
                                     <constraint firstItem="Za8-v5-BAG" firstAttribute="width" secondItem="jLI-hx-lJT" secondAttribute="width" multiplier="0.9" id="wKz-oe-6Df"/>
                                     <constraint firstItem="9pQ-Lj-MrP" firstAttribute="centerX" secondItem="s7V-uf-OKF" secondAttribute="centerX" id="wVQ-kS-hwN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sek-Or-Pri" secondAttribute="bottom" constant="8" id="zDi-L7-Zeo"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rounded">
