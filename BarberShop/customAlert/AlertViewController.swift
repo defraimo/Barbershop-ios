@@ -50,7 +50,8 @@ class AlertViewController: UIViewController {
             btnSeperator.alpha = 0
             btnSeperator.isHidden = true
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             UIView.animate(withDuration: 0.1) {
                 self.blur.alpha = 1
             }
