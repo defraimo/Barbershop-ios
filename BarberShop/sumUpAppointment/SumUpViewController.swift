@@ -22,7 +22,15 @@ class SumUpViewController: UIViewController {
     var dayOfWeek:String?
     
     @IBAction func makeAppointment(_ sender: UIButton) {
-        if appointment != nil{
+        //checks internet connection:
+        if !Reachability.isConnectedToNetwork(){
+            let alert = AlertService().alert(title: "אין חיבור אינטרנט", body: "אנא בדוק אם הינך מחובר לרשת האינטרנט", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {
+                self.openWifiSettings()
+            }, negativeCompletion: nil)
+            
+            present(alert, animated: true)
+        }else{
+            if appointment != nil{
             orderIndicator.startAnimating()
             
             DAO.shared.setAvailability(to:false, barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: appointment!.clientId!) { (isAvailible) in
@@ -55,6 +63,7 @@ class SumUpViewController: UIViewController {
             }
         }
         orderIndicator.stopAnimating()
+        }
     }
     
     var appointment:Appointment?

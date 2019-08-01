@@ -155,3 +155,17 @@ extension UILabel{
         return textSize.width
     }
 }
+
+extension UIViewController{
+    // a func that open the setting of the ios:
+    func openWifiSettings() {
+        let shared = UIApplication.shared
+        let url = URL(string: UIApplication.openSettingsURLString)!
+        
+        if #available(iOS 10.0, *) {
+            shared.open(url)
+        } else {
+            shared.openURL(url)
+        }
+    }
+}

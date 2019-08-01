@@ -17,13 +17,14 @@ class ShopViewController: UIViewController {
     var isDetailsShownShop = false
     var chosenCellRowShop:Int?
     var infoOrCloseShop:UIImage?
+    var progressBar:UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
            
-        let progressBar = UIActivityIndicatorView()
-        progressBar.center = view.center
-        self.view.addSubview(progressBar)
+        progressBar = UIActivityIndicatorView()
+        progressBar!.center = view.center
+        self.view.addSubview(progressBar!)
         
         //setting the background of the view
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
@@ -35,19 +36,31 @@ class ShopViewController: UIViewController {
         //hides the tableView while loading:
         tableView.isHidden = true
         
-        progressBar.startAnimating()
+        progressBar!.startAnimating()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //checks internet connection:
+        if !Reachability.isConnectedToNetwork(){
+            let alert = AlertService().alert(title: "אין חיבור אינטרנט", body: "אנא בדוק אם הינך מחובר לרשת האינטרנט", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {
+                self.openWifiSettings()
+            }, negativeCompletion: nil)
+            
+            present(alert, animated: true)
+        }else{
+            
         DAO.shared.getShopProducts {[weak self] (products) in
             //inserting the data
             self?.products = products
             //reloading the table:
             self?.tableView.reloadData()
             //stop the animation:
-            progressBar.stopAnimating()
+            self?.progressBar!.stopAnimating()
             //releasing the indicator:
-            progressBar.removeFromSuperview()
+            self?.progressBar!.removeFromSuperview()
             //showing the tableView with the info:
             self?.tableView.isHidden = false
-            
+        }
         }
     }
 }
