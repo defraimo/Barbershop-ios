@@ -11,7 +11,9 @@ import UIKit
 class AboutUsViewController: UIViewController {
     
     var scrollToContactUs = false
-
+    
+    @IBOutlet weak var aboutUsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,8 @@ class AboutUsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if scrollToContactUs{
-            
+            let indexPath = IndexPath(row: firstCount + secondCount + thirdCount, section: 0)
+            aboutUsTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
 

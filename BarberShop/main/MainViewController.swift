@@ -625,11 +625,21 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func menuContactUs(_ sender: UIButton) {
+        self.releaseMenu()
+        self.performSegue(withIdentifier: "toAboutUs", sender: true)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = segue.identifier else {return}
         if let dest = segue.destination as? ManageAppointmentViewController,
             id == "toManageAppointment", let appointment = sender as? Appointment{
             dest.appointment = appointment
+        }
+        else if let dest = segue.destination as? AboutUsViewController,
+            id == "toAboutUs", let showContactUs = sender as? Bool{
+            dest.scrollToContactUs = showContactUs
         }
     }
 }
