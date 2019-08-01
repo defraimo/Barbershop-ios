@@ -455,12 +455,14 @@ class MainViewController: UIViewController {
     }
     
     func setUpImageSlider(){
-        let image = UIImage(named: "switching_pic1")!
+        let image1 = UIImage(named: "switching_pic1")!
+        let image2 = UIImage(named: "switching_pic2")!
+        let image3 = UIImage(named: "switching_pic3")!
         
         imageSlideShow.setImageInputs([
-            ImageSource(image: image),
-            ImageSource(image: image),
-            ImageSource(image: image)
+            ImageSource(image: image1),
+            ImageSource(image: image2),
+            ImageSource(image: image3)
             ])
         
         imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFill
