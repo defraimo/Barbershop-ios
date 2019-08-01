@@ -47,7 +47,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-pU-trr">
-                                        <rect key="frame" x="0.0" y="611" width="414" height="34"/>
+                                        <rect key="frame" x="0.0" y="526" width="414" height="119"/>
                                         <connections>
                                             <action selector="makeAppointment:" destination="T02-lw-fcr" eventType="touchUpInside" id="R9f-ye-lYj"/>
                                         </connections>
@@ -58,17 +58,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="7tC-pU-trr" firstAttribute="leading" secondItem="lzM-Or-Tlp" secondAttribute="leading" id="6Ce-0B-Tr5"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="width" secondItem="lzM-Or-Tlp" secondAttribute="width" multiplier="0.38" id="A46-zQ-Qxe"/>
+                                    <constraint firstItem="7tC-pU-trr" firstAttribute="leading" secondItem="lzM-Or-Tlp" secondAttribute="leading" id="BWe-3H-agu"/>
+                                    <constraint firstAttribute="bottom" secondItem="7tC-pU-trr" secondAttribute="bottom" id="DU1-5F-p8P"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="centerY" secondItem="lzM-Or-Tlp" secondAttribute="centerY" multiplier="1.8" id="Kdi-d9-y6d"/>
-                                    <constraint firstAttribute="bottom" secondItem="7tC-pU-trr" secondAttribute="bottom" id="Kgq-cY-9d6"/>
-                                    <constraint firstAttribute="trailing" secondItem="7tC-pU-trr" secondAttribute="trailing" id="Plt-Yh-5Je"/>
                                     <constraint firstItem="yJ5-gA-bYH" firstAttribute="leading" secondItem="lzM-Or-Tlp" secondAttribute="leading" constant="1" id="Pqh-yU-lNa"/>
                                     <constraint firstItem="WAS-B5-kpP" firstAttribute="centerY" secondItem="lzM-Or-Tlp" secondAttribute="centerY" multiplier="1.81" id="Wbl-jx-GtF"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="height" secondItem="lzM-Or-Tlp" secondAttribute="height" multiplier="0.04" id="YfH-mj-RQV"/>
                                     <constraint firstItem="yJ5-gA-bYH" firstAttribute="height" secondItem="lzM-Or-Tlp" secondAttribute="height" multiplier="0.68" id="Z6m-KF-WFj"/>
                                     <constraint firstItem="yJ5-gA-bYH" firstAttribute="centerY" secondItem="lzM-Or-Tlp" secondAttribute="centerY" multiplier="0.95" id="dgR-BQ-12E"/>
+                                    <constraint firstAttribute="trailing" secondItem="7tC-pU-trr" secondAttribute="trailing" id="fEX-mh-qSh"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="leading" secondItem="WAS-B5-kpP" secondAttribute="trailing" constant="24" id="fSb-7N-nqp"/>
+                                    <constraint firstItem="7tC-pU-trr" firstAttribute="top" secondItem="yJ5-gA-bYH" secondAttribute="bottom" id="qRl-ud-qmP"/>
                                     <constraint firstAttribute="trailing" secondItem="yJ5-gA-bYH" secondAttribute="trailing" id="sLn-5q-kIg"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="centerX" secondItem="lzM-Or-Tlp" secondAttribute="centerX" id="zkq-CZ-j7I"/>
                                 </constraints>
