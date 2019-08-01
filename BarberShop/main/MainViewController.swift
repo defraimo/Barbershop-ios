@@ -409,6 +409,14 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func signOut(_ sender: UIButton) {
+        //checks internet connection:
+        if !Reachability.isConnectedToNetwork(){
+            let alert = AlertService().alert(title: "אין חיבור אינטרנט", body: "אנא בדוק אם הינך מחובר לרשת האינטרנט", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {
+                self.openWifiSettings()
+            }, negativeCompletion: nil)
+            
+            present(alert, animated: true)
+        }else{
         releaseMenu()
         let alert:AlertViewController?
         if(Auth.auth().currentUser == nil){
@@ -423,10 +431,8 @@ class MainViewController: UIViewController {
                 }
             }, negativeCompletion: nil)
         }
-
-        
-        
         present(alert!, animated: true)
+        }
     }
     
     override func viewDidLoad() {
@@ -568,9 +574,16 @@ class MainViewController: UIViewController {
     @IBOutlet weak var manageAppointmentIndicator: UIActivityIndicatorView!
     
     @IBAction func manageAppointmentButton(_ sender: UIButton) {
-        
         manageAppointmentIndicator.startAnimating()
-        
+
+        //check internet connection:
+        if !Reachability.isConnectedToNetwork(){
+            let alert = AlertService().alert(title: "אין חיבור אינטרנט", body: "אנא בדוק אם הינך מחובר לרשת האינטרנט", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {
+                self.openWifiSettings()
+            }, negativeCompletion: nil)
+            
+            present(alert, animated: true)
+        }else{
         if let uid = Auth.auth().currentUser?.uid{
             
             DAO.shared.getAppointment(userId: uid) { [weak self] (appointment, isExist) in
@@ -608,6 +621,7 @@ class MainViewController: UIViewController {
             self.manageAppointmentIndicator.stopAnimating()
             self.releaseMenu()
             self.loginOrSignUpFunc()
+            }
         }
     }
     
