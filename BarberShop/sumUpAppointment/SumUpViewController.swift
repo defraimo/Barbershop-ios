@@ -17,14 +17,21 @@ class SumUpViewController: UIViewController {
     @IBOutlet weak var serviesLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var orderIndicator: UIActivityIndicatorView!
+    
     var dayOfWeek:String?
     
     @IBAction func makeAppointment(_ sender: UIButton) {
         if appointment != nil{
+            orderIndicator.startAnimating()
             
-            DAO.shared.setAvailabilityToFalse(barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: appointment!.clientId!) { (isAvailible) in
+            DAO.shared.setAvailability(to:false, barber: appointment!.barber!, dateId: appointment!.date!.generateId(), units: appointment!.units!, userId: appointment!.clientId!) { (isAvailible) in
                 
                 if isAvailible{
+                    
+                    if self.previousAppointment != nil{
+                        DAO.shared.eraseAppointment(userId: self.previousAppointment!.clientId!, appointment: self.previousAppointment!, removeFromAppointments: false)
+                    }
                     
                     DAO.shared.writeAppoinment(self.appointment!)
                     let alert = AlertService().alert(title: "התור נקבע בהצלחה", body: "נתראה בקרוב !", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
@@ -32,6 +39,7 @@ class SumUpViewController: UIViewController {
                         
                     }, negativeCompletion: nil)
                     
+                    self.orderIndicator.stopAnimating()
                     self.present(alert, animated: true)
                 }
                 else{
@@ -45,6 +53,7 @@ class SumUpViewController: UIViewController {
                 }
             }
         }
+        orderIndicator.stopAnimating()
     }
     
     var appointment:Appointment?

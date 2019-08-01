@@ -568,6 +568,7 @@
 		A659A00E22BD465D00274F40 /* chooseWhen */ = {
 			isa = PBXGroup;
 			children = (
+				A659A01122BD46AA00274F40 /* controller */,
 				A659A00F22BD466900274F40 /* barberChanger */,
 			);
 			path = chooseWhen;
@@ -576,7 +577,6 @@
 		A659A00F22BD466900274F40 /* barberChanger */ = {
 			isa = PBXGroup;
 			children = (
-				A659A01122BD46AA00274F40 /* controller */,
 				A659A01022BD469900274F40 /* cell */,
 			);
 			path = barberChanger;
