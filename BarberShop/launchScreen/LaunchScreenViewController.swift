@@ -14,34 +14,57 @@ class LaunchScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //load the aboutUs data
-        AboutUs.fetchData()
         
-        //load descriptionAboveBarbers line
-        DescriptionAboveBarbers.fetchData()
-        
-        //load the barbershop contact details
-        ContactUs.fetchData()
-        
-        //load
-        
-        //load the barbers and the prices
-        let _ = AllBarbers.shared
-
         //setting the background color
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         self.navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "background"), for: .default)
         
-        startAnimating()
+        self.startAnimating()
         
-        NotificationCenter.default.addObserver(forName: .dataWereLoaded, object: nil, queue: .main) { [weak self] (notification) in
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //checks internet connection:
+        if !Reachability.isConnectedToNetwork(){
+            let alert = AlertService().alert(title: "אין חיבור אינטרנט", body: "אנא בדוק אם הינך מחובר לרשת האינטרנט", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {
+                self.openWifiSettings()
+            }, negativeCompletion: nil)
             
-            guard let isLoaded = notification.userInfo?["isLoaded"] as? Bool else {return}
+            present(alert, animated: true) { [weak self] in
+                self?.loadingImage.layer.removeAllAnimations()
+            }
+        }else{
+            //load the aboutUs data
+            AboutUs.fetchData()
             
-            if isLoaded{
-                self?.performSegue(withIdentifier: "goToApp", sender: nil)
+            //load descriptionAboveBarbers line
+            DescriptionAboveBarbers.fetchData()
+            
+            //load the barbershop contact details
+            ContactUs.fetchData()
+            
+            //load
+            
+            //load the barbers and the prices
+            let _ = AllBarbers.shared
+            
+            
+            
+            NotificationCenter.default.addObserver(forName: .dataWereLoaded, object: nil, queue: .main) { [weak self] (notification) in
+                
+                guard let isLoaded = notification.userInfo?["isLoaded"] as? Bool else {return}
+                
+                if isLoaded{
+                    self?.performSegue(withIdentifier: "goToApp", sender: nil)
+                }
             }
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .dataWereLoaded, object: nil)
+        
+        loadingImage.layer.removeAllAnimations()
     }
     
     fileprivate func startAnimating(){
@@ -49,11 +72,5 @@ class LaunchScreenViewController: UIViewController {
             
             self.loadingImage.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
         })
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: .dataWereLoaded, object: nil)
-        
-        loadingImage.layer.removeAllAnimations()
     }
 }

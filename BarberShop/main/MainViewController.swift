@@ -178,6 +178,13 @@ class MainViewController: UIViewController {
         
         makeAppointmentIndicator.startAnimating()
         
+        if !Reachability.isConnectedToNetwork(){
+            let alert = AlertService().alert(title: "אין חיבור אינטרנט", body: "אנא בדוק אם הינך מחובר לרשת האינטרנט", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {
+                self.openWifiSettings()
+            }, negativeCompletion: nil)
+            
+            present(alert, animated: true)
+        }else{
         //if there is a signed in user, it will go straight to haircuts:
         let user = Auth.auth().currentUser
         if user != nil {
@@ -203,6 +210,7 @@ class MainViewController: UIViewController {
         }else{
             self.makeAppointmentIndicator.stopAnimating()
             loginOrSignUpFunc()
+            }
         }
     }
     
