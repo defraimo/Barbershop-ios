@@ -9,12 +9,20 @@
 import UIKit
 
 class AboutUsViewController: UIViewController {
+    
+    var scrollToContactUs = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if scrollToContactUs{
+            
+        }
     }
 
 }

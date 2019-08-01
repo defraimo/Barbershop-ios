@@ -29,6 +29,7 @@ class SumUpViewController: UIViewController {
                 
                 if isAvailible{
                     
+                    //setting the previous units to true
                     if self.previousAppointment != nil{
                         DAO.shared.eraseAppointment(userId: self.previousAppointment!.clientId!, appointment: self.previousAppointment!, removeFromAppointments: false)
                     }
