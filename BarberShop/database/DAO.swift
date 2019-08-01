@@ -358,7 +358,7 @@ class DAO{
     self.ref.child("Appointments").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
     }
     
-    func setAvailabilityToFalse(barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
+    func setAvailability(to bool:Bool, barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
         let barberId = barber.id
         
         var unitsIndex:[Int] = []
@@ -368,7 +368,7 @@ class DAO{
          ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").observeSingleEvent(of: .value, with: { (data) in
                 guard let unitDictArray = data.value as? [NSDictionary] else {return}
                 
-                var areUnitsAvailable:Bool = true
+                var areUnitsAvailable:Bool = !bool
                 var dataUnitsIndex:[Int] = []
                 
                 for u in 0..<unitDictArray.count{
@@ -376,7 +376,7 @@ class DAO{
                         for index in unitsIndex{
                             if unit.index == index{
                                 dataUnitsIndex.append(u)
-                                if !unit.isAvailable{
+                                if unit.isAvailable == bool{
                                     areUnitsAvailable = unit.isAvailable
                                 }
                             }
@@ -384,14 +384,19 @@ class DAO{
                     }
                 }
             
-                if areUnitsAvailable{
+                if areUnitsAvailable != bool{
                 
                 for index in dataUnitsIndex{
                     let path = self.ref.child("Dates").child("\(barberId)").child("availableDays").child("\(dateId)").child("units").child("\(index)")
                     
-                    path.child("user").setValue(userId)
+                    path.child("isAvailable").setValue(bool)
                     
-                    path.child("isAvailable").setValue(false)
+                    if bool{
+                        path.child("user").removeValue()
+                    }
+                    else{
+                        path.child("user").setValue(userId)
+                    }
                 }
                 }
             
@@ -418,16 +423,20 @@ class DAO{
             ref.child("Appointments").child(userId).removeValue()
         }
         
-        let path = ref.child("Dates").child("\(appointment.barber!.id)").child("availableDays").child("\(appointment.date!.generateId())").child("units")
+//        let path = ref.child("Dates").child("\(appointment.barber!.id)").child("availableDays").child("\(appointment.date!.generateId())").child("units")
+//
+//        let units = appointment.units!
         
-        let units = appointment.units!
-        
-        for unit in units{
-            //set the units that was taken to available again
-            path.child("\(unit.index)").child("isAvailable").setValue(true)
-            //erase the user name that written in the unit
-            path.child("\(unit.index)").child("user").removeValue()
+        setAvailability(to:true, barber: appointment.barber!, dateId: appointment.date!.generateId(), units: appointment.units!, userId: appointment.clientId!) { (_) in
+            
         }
+        
+//        for unit in units{
+//            //set the units that was taken to available again
+//            path.child("\(unit.index)").child("isAvailable").setValue(true)
+//            //erase the user name that written in the unit
+//            path.child("\(unit.index)").child("user").removeValue()
+//        }
     }
     
     func writeAboutUs(){
@@ -470,6 +479,42 @@ class DAO{
                 let contactUs = ContactUs(dict: dict) else {return}
 
             complition(contactUs)
+        }
+    }
+    
+    func writeSliderImages(){
+        storageRef.child("sliderShowImages").child("switching_pic1.jpg").downloadURL { (url, error) in
+            let image1 = SliderImage(index: 0, imagePath: url!.absoluteString)
+            
+            self.storageRef.child("sliderShowImages").child("switching_pic2.jpg").downloadURL { (url, error) in
+                let image2 = SliderImage(index: 1, imagePath: url!.absoluteString)
+                
+                self.storageRef.child("sliderShowImages").child("switching_pic3.jpeg").downloadURL { (url, error) in
+                    let image3 = SliderImage(index: 2, imagePath: url!.absoluteString)
+                    
+                    let images = [image1,image2,image3]
+                    
+                    for i in images{
+                        self.ref.child("SliderImages").child(String(i.index)).setValue(i.dict)
+                    }
+                }
+            }
+        }
+    }
+    
+    func loadSliderImages(complition: @escaping (_ sliderImages:[SliderImage]) -> Void){
+        var sliderImages:[SliderImage] = []
+        ref.child("SliderImages").observeSingleEvent(of: .value) { (data) in
+            guard let sliderImagesDictArr = data.value as? NSArray else {return}
+            
+            for sliderImageDict in sliderImagesDictArr{
+                if let sliderImageDict = sliderImageDict as? NSDictionary,
+                    let sliderImage = SliderImage(dict: sliderImageDict){
+                    sliderImages.append(sliderImage)
+                }
+            }
+            
+            complition(sliderImages)
         }
     }
     

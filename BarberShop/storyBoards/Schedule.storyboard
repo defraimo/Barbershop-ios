@@ -641,6 +641,9 @@
                                 <color key="textColor" red="0.6150991858" green="0.71466784260000005" blue="0.72142687179999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lSr-PR-49q">
+                                <rect key="frame" x="129" y="760.66666666666663" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -651,11 +654,13 @@
                             <constraint firstItem="2dV-uU-uKl" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.02" id="3d3-7S-Bc0"/>
                             <constraint firstItem="ReQ-Xd-XZm" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.04" id="4Io-nC-nDX"/>
                             <constraint firstItem="Ehz-gy-rzU" firstAttribute="width" secondItem="C23-YH-yXz" secondAttribute="width" multiplier="0.04" id="4yL-qf-q7V"/>
+                            <constraint firstItem="F99-9O-gZK" firstAttribute="leading" secondItem="lSr-PR-49q" secondAttribute="trailing" constant="32" id="5eR-K3-5t4"/>
                             <constraint firstItem="d2v-ev-jOa" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" multiplier="0.8" id="6YN-49-fsV"/>
                             <constraint firstItem="04L-WD-OLb" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.04" id="9z6-5h-rSc"/>
                             <constraint firstItem="2dV-uU-uKl" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="BLF-oy-IhZ"/>
                             <constraint firstItem="QK0-8y-uqX" firstAttribute="top" secondItem="ReQ-Xd-XZm" secondAttribute="bottom" id="CRG-Qc-Za9"/>
                             <constraint firstItem="ReQ-Xd-XZm" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="Dws-Gf-lgt"/>
+                            <constraint firstItem="lSr-PR-49q" firstAttribute="centerY" secondItem="C23-YH-yXz" secondAttribute="centerY" multiplier="1.72" id="FAi-zn-ykX"/>
                             <constraint firstItem="xtr-oe-PiS" firstAttribute="centerX" secondItem="C23-YH-yXz" secondAttribute="centerX" id="HQY-Az-4Nx"/>
                             <constraint firstItem="QK0-8y-uqX" firstAttribute="height" secondItem="C23-YH-yXz" secondAttribute="height" multiplier="0.02" id="ISD-gn-haU"/>
                             <constraint firstItem="hLs-Tz-3N5" firstAttribute="top" secondItem="Wgv-bj-Uez" secondAttribute="bottom" id="KCf-Uv-jjb"/>
@@ -706,6 +711,7 @@
                     <connections>
                         <outlet property="barbersName" destination="04L-WD-OLb" id="vkG-qD-8ez"/>
                         <outlet property="dateLabel" destination="xtr-oe-PiS" id="uQL-gh-1f9"/>
+                        <outlet property="orderIndicator" destination="lSr-PR-49q" id="CS9-9T-Zew"/>
                         <outlet property="priceLabel" destination="Wgv-bj-Uez" id="K4G-pw-NzE"/>
                         <outlet property="scheduleButton" destination="F99-9O-gZK" id="KXa-0r-ZVa"/>
                         <outlet property="serviesLabel" destination="XD7-S2-mOB" id="1O3-RG-tIt"/>
