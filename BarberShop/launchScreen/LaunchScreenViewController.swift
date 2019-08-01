@@ -9,12 +9,11 @@
 import UIKit
 
 class LaunchScreenViewController: UIViewController {
-    
+        
     @IBOutlet weak var loadingImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //load the aboutUs data
         AboutUs.fetchData()
         
@@ -57,5 +56,4 @@ class LaunchScreenViewController: UIViewController {
         
         loadingImage.layer.removeAllAnimations()
     }
-
 }

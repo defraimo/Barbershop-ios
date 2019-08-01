@@ -20,6 +20,7 @@
 		63489AC422DC8B190055DA64 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC322DC8B190055DA64 /* ShopViewController.swift */; };
 		63489AC622DC8B2D0055DA64 /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */; };
 		63489ACA22DDD3A70055DA64 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63489AC922DDD3A70055DA64 /* Product.swift */; };
+		6382B65322F2CFD700A6AB51 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6382B65222F2CFD700A6AB51 /* Reachability.swift */; };
 		63EF105622D4BA2300D0B993 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF105522D4BA2300D0B993 /* DAO.swift */; };
 		63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EF769822CA0994006631E5 /* SignUp.storyboard */; };
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
@@ -96,6 +97,7 @@
 		63489AC322DC8B190055DA64 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
 		63489AC922DDD3A70055DA64 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		6382B65222F2CFD700A6AB51 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		63EF105522D4BA2300D0B993 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		63EF769822CA0994006631E5 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		63EF769A22CA09FA006631E5 /* SingUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUPViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			path = shop;
 			sourceTree = "<group>";
 		};
+		6382B65122F2CFBC00A6AB51 /* internetCheck */ = {
+			isa = PBXGroup;
+			children = (
+				6382B65222F2CFD700A6AB51 /* Reachability.swift */,
+			);
+			path = internetCheck;
+			sourceTree = "<group>";
+		};
 		63EF105422D4B48700D0B993 /* database */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +316,7 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				6382B65122F2CFBC00A6AB51 /* internetCheck */,
 				A68C8BCB22EE26AC00E1E603 /* manageAppointment */,
 				63489AC222DC8AFA0055DA64 /* shop */,
 				6335C4BB22E9EC030096D8C7 /* customAlert */,
@@ -325,8 +336,8 @@
 				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
 				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
 				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
-				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
 				A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */,
+				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
 				A61A31B022B7AD0000FC20BE /* Info.plist */,
 				A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */,
 				A614D73722C4D77400AC9FF4 /* ANCustomView.swift */,
@@ -737,6 +748,7 @@
 				A61D2D2422CD08C7002DC7CB /* ChooseHaircutViewController.swift in Sources */,
 				A618D5CD22DB756300A93D5E /* AppointmentDate.swift in Sources */,
 				A61A31C422B9587E00FC20BE /* AboutUsViewController.swift in Sources */,
+				6382B65322F2CFD700A6AB51 /* Reachability.swift in Sources */,
 				A618D5D522DB7EAF00A93D5E /* TimeManager.swift in Sources */,
 				A618D59622D3AC9E00A93D5E /* AppointmentUnit.swift in Sources */,
 				A618D5D122DB779000A93D5E /* TimeUnit.swift in Sources */,
