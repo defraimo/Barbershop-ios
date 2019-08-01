@@ -45,7 +45,6 @@
 		A61A31A722B7ACFE00FC20BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31A522B7ACFE00FC20BE /* Main.storyboard */; };
 		A61A31AA22B7ACFE00FC20BE /* BarberShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */; };
 		A61A31AC22B7AD0000FC20BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61A31AB22B7AD0000FC20BE /* Assets.xcassets */; };
-		A61A31AF22B7AD0000FC20BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */; };
 		A61A31B822B7BBC200FC20BE /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31B722B7BBC200FC20BE /* PriceTableViewCell.swift */; };
 		A61A31BA22B7C04B00FC20BE /* PriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31B922B7C04B00FC20BE /* PriceModel.swift */; };
 		A61A31BE22B7C08600FC20BE /* PricesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61A31BD22B7C08600FC20BE /* PricesDataSource.swift */; };
@@ -124,7 +123,6 @@
 		A61A31A622B7ACFE00FC20BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A61A31A922B7ACFE00FC20BE /* BarberShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BarberShop.xcdatamodel; sourceTree = "<group>"; };
 		A61A31AB22B7AD0000FC20BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A61A31AE22B7AD0000FC20BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A61A31B022B7AD0000FC20BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A61A31B722B7BBC200FC20BE /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
 		A61A31B922B7C04B00FC20BE /* PriceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceModel.swift; sourceTree = "<group>"; };
@@ -334,14 +332,12 @@
 				A63F478722EB2544002D5D57 /* launchScreen */,
 				A61A31BF22B7C30400FC20BE /* main */,
 				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
-				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
-				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
-				A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */,
 				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
+				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
 				A61A31B022B7AD0000FC20BE /* Info.plist */,
 				A61A31A822B7ACFE00FC20BE /* BarberShop.xcdatamodeld */,
-				A614D73722C4D77400AC9FF4 /* ANCustomView.swift */,
 				63F1875A22E07628006C29FB /* GoogleService-Info.plist */,
+				A614D73722C4D77400AC9FF4 /* ANCustomView.swift */,
 			);
 			path = BarberShop;
 			sourceTree = "<group>";
@@ -467,6 +463,7 @@
 		A6413CFE22C0DBEB00FA1768 /* storyBoards */ = {
 			isa = PBXGroup;
 			children = (
+				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
 				633ED44422D0C89400D64BAB /* Location.storyboard */,
 				A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */,
 				63EF769822CA0994006631E5 /* SignUp.storyboard */,
@@ -686,7 +683,6 @@
 				63489AC122DC8A260055DA64 /* Shop.storyboard in Resources */,
 				63F1875B22E07628006C29FB /* GoogleService-Info.plist in Resources */,
 				6335C4BD22E9EC350096D8C7 /* Alert.storyboard in Resources */,
-				A61A31AF22B7AD0000FC20BE /* LaunchScreen.storyboard in Resources */,
 				A61A31AC22B7AD0000FC20BE /* Assets.xcassets in Resources */,
 				A68C8BCA22EE268B00E1E603 /* ManageAppointment.storyboard in Resources */,
 				63EF769922CA0994006631E5 /* SignUp.storyboard in Resources */,
@@ -818,14 +814,6 @@
 				A61A31A622B7ACFE00FC20BE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A61A31AD22B7AD0000FC20BE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A61A31AE22B7AD0000FC20BE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
