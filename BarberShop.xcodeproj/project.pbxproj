@@ -26,6 +26,7 @@
 		63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769A22CA09FA006631E5 /* SingUPViewController.swift */; };
 		63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */; };
 		63F1875B22E07628006C29FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63F1875A22E07628006C29FB /* GoogleService-Info.plist */; };
+		A6020EB122F2E6FC008EFCFE /* SliderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6020EB022F2E6FC008EFCFE /* SliderImage.swift */; };
 		A614D73822C4D77400AC9FF4 /* ANCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73722C4D77400AC9FF4 /* ANCustomView.swift */; };
 		A614D73A22C5462400AC9FF4 /* TimeManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73922C5462400AC9FF4 /* TimeManage.swift */; };
 		A614D73C22C6595C00AC9FF4 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A614D73B22C6595C00AC9FF4 /* Time.swift */; };
@@ -103,6 +104,7 @@
 		63EF769C22CB8E70006631E5 /* Validation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extensions.swift"; sourceTree = "<group>"; };
 		63F1875A22E07628006C29FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.release.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.release.xcconfig"; sourceTree = "<group>"; };
+		A6020EB022F2E6FC008EFCFE /* SliderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderImage.swift; sourceTree = "<group>"; };
 		A614D73722C4D77400AC9FF4 /* ANCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANCustomView.swift; sourceTree = "<group>"; };
 		A614D73922C5462400AC9FF4 /* TimeManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManage.swift; sourceTree = "<group>"; };
 		A614D73B22C6595C00AC9FF4 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
@@ -234,6 +236,14 @@
 				126DB524BC07E375A4372EA1 /* Pods_BarberShop.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6020EAF22F2E6D6008EFCFE /* sliderShow */ = {
+			isa = PBXGroup;
+			children = (
+				A6020EB022F2E6FC008EFCFE /* SliderImage.swift */,
+			);
+			path = sliderShow;
 			sourceTree = "<group>";
 		};
 		A618D59D22D50DB800A93D5E /* sumUpAppointment */ = {
@@ -372,6 +382,7 @@
 		A61A31BF22B7C30400FC20BE /* main */ = {
 			isa = PBXGroup;
 			children = (
+				A6020EAF22F2E6D6008EFCFE /* sliderShow */,
 				A61A31C022B7C32500FC20BE /* MainViewController.swift */,
 			);
 			path = main;
@@ -757,6 +768,7 @@
 				A61A31D422B95DBD00FC20BE /* ContactUs.swift in Sources */,
 				A61A31D822B95E3C00FC20BE /* AllBarbers.swift in Sources */,
 				A63F478922EB2584002D5D57 /* LaunchScreenViewController.swift in Sources */,
+				A6020EB122F2E6FC008EFCFE /* SliderImage.swift in Sources */,
 				63489ACA22DDD3A70055DA64 /* Product.swift in Sources */,
 				A659A01322BD46CC00274F40 /* BarberChangeCollectionViewCell.swift in Sources */,
 				A659A00D22BD0FC300274F40 /* BarberCollectionViewCell.swift in Sources */,

@@ -473,6 +473,42 @@ class DAO{
         }
     }
     
+    func writeSliderImages(){
+        storageRef.child("sliderShowImages").child("switching_pic1.jpg").downloadURL { (url, error) in
+            let image1 = SliderImage(index: 0, imagePath: url!.absoluteString)
+            
+            self.storageRef.child("sliderShowImages").child("switching_pic2.jpg").downloadURL { (url, error) in
+                let image2 = SliderImage(index: 1, imagePath: url!.absoluteString)
+                
+                self.storageRef.child("sliderShowImages").child("switching_pic3.jpeg").downloadURL { (url, error) in
+                    let image3 = SliderImage(index: 2, imagePath: url!.absoluteString)
+                    
+                    let images = [image1,image2,image3]
+                    
+                    for i in images{
+                        self.ref.child("SliderImages").child(String(i.index)).setValue(i.dict)
+                    }
+                }
+            }
+        }
+    }
+    
+    func loadSliderImages(complition: @escaping (_ sliderImages:[SliderImage]) -> Void){
+        var sliderImages:[SliderImage] = []
+        ref.child("SliderImages").observeSingleEvent(of: .value) { (data) in
+            guard let sliderImagesDictArr = data.value as? NSArray else {return}
+            
+            for sliderImageDict in sliderImagesDictArr{
+                if let sliderImageDict = sliderImageDict as? NSDictionary,
+                    let sliderImage = SliderImage(dict: sliderImageDict){
+                    sliderImages.append(sliderImage)
+                }
+            }
+            
+            complition(sliderImages)
+        }
+    }
+    
 }
 
 extension Notification.Name{

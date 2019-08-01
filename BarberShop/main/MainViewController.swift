@@ -455,21 +455,24 @@ class MainViewController: UIViewController {
     }
     
     func setUpImageSlider(){
-        let image1 = UIImage(named: "switching_pic1")!
-        let image2 = UIImage(named: "switching_pic2")!
-        let image3 = UIImage(named: "switching_pic3")!
+        //get images from firebase
+        DAO.shared.loadSliderImages { (sliderImages) in
+            var imagesSource:[SDWebImageSource] = []
+            for sliderImage in sliderImages{
+                if let image = SDWebImageSource(urlString: sliderImage.imagePath){
+                    imagesSource.append(image)
+                }
+            }
+            //set the images to the slider
+            self.imageSlideShow.setImageInputs(imagesSource)
+            //set the sontent mode to fill the hole screen
+            self.imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFill
+            //set the intervals between each pic
+            self.imageSlideShow.slideshowInterval = 5
+            //set the  indicator
+            self.imageSlideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+        }
         
-        imageSlideShow.setImageInputs([
-            ImageSource(image: image1),
-            ImageSource(image: image2),
-            ImageSource(image: image3)
-            ])
-        
-        imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFill
-        
-        imageSlideShow.slideshowInterval = 5
-        
-        imageSlideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: UIColor(red: 97/255, green: 133/255, blue: 139/255, alpha: 1))
     }
     
     func adjustsButtonFont(_ button:UIButton){
