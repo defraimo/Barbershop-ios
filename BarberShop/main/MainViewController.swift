@@ -466,6 +466,23 @@ class MainViewController: UIViewController {
         adjustsButtonFont(aboutUsButton)
         adjustsButtonFont(howWeGetThereButton)
         
+   
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        navigationTitle()
+    }
+    
+    func navigationTitle(){
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            self.navigationItem.title = "שלום, אורח"
+            return
+        }
+        DAO.shared.getUser(currentUserID) { [weak self](user) in
+            if let user = user {
+                self?.navigationItem.title = " שלום, \(user.fullName)"
+            }
+        }
     }
     
     func setUpImageSlider(){

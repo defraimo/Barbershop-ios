@@ -47,6 +47,11 @@ class User:DictionaryConvertible, CustomStringConvertible{
     }
     
     var description: String{
+        if gender == 0{
+            return "\(fullName), \(number), Female"
+        }else if gender == 1{
+            return "\(fullName), \(number), Male"
+        }
         return "\(fullName), \(number)"
     }
 }
