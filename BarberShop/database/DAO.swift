@@ -32,19 +32,19 @@ class DAO{
     
     }
 
-    func getUser(_ uid:String) -> User?{
+    func getUser(_ uid:String, completion: @escaping (_ user: User?)-> Void){
         var user:User?
         
         ref.child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             guard let value = snapshot.value as? NSDictionary else {return}
-            
             user = User(dict: value)
         
+            completion(user)
+
         }) { (error) in
            print(error.localizedDescription)
         }
-        return user
     }
     
     func getVerificationId(_ userNumber:String){
@@ -333,7 +333,6 @@ class DAO{
         ref.child("Dates").child("1").setValue(allDates!.dict)
     }
 
-    
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){
         
         ref.child("Dates").child("\(barberId)").observeSingleEvent(of: .value, with: { (data) in
@@ -502,7 +501,7 @@ class DAO{
         }
     }
     
-    func loadSliderImages(complition: @escaping (_ sliderImages:[SliderImage]) -> Void){
+    func loadSliderImages(completion: @escaping (_ sliderImages:[SliderImage]) -> Void){
         var sliderImages:[SliderImage] = []
         ref.child("SliderImages").observeSingleEvent(of: .value) { (data) in
             guard let sliderImagesDictArr = data.value as? NSArray else {return}
@@ -514,10 +513,21 @@ class DAO{
                 }
             }
             
-            complition(sliderImages)
+            completion(sliderImages)
         }
     }
     
+    func writeLocation(address: NSDictionary){
+        ref.child("Location").setValue(address)
+    }
+    func getLocation(completion: @escaping (_ location:Address?)-> Void){
+        ref.child("Location").observeSingleEvent(of: .value) { (data) in
+            guard let value = data.value as? NSDictionary else {return}
+            let address = Address(dict: value)
+            
+            completion(address)
+        }
+    }
 }
 
 extension Notification.Name{
