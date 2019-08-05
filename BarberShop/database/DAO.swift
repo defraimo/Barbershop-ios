@@ -309,28 +309,32 @@ class DAO{
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
         
-        for i in 0..<9{
-            
-            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
+        for i in 0..<11{
+            let current = CurrentDate()
+            let currentDate = current.addToCurrentDate(numberOfDays: i)
+            let currentWeekDay = current.currentDay + i
             
             //after getting from data base
-            let timeAvailible = TimeManager(id: current.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
+            let timeAvailible = TimeManager(id: currentDate.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
             
             
-            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:timeAvailible))
+            avialibleDays.append(AppointmentDate(id: currentDate.generateId(), date: currentDate, dayOfWeek: currentWeekDay, namedDayOfWeek: CurrentDate.namedDays[currentWeekDay%7], time:timeAvailible))
         }
         
-        for i in 9..<15{
-            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
+        for i in 11..<16{
+            let current = CurrentDate()
+            let currentDate = current.addToCurrentDate(numberOfDays: i)
+            let currentWeekDay = current.currentDay + i
+            
             //after getting from data base
-            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: current.day, namedDayOfWeek: CurrentDate.namedDays[current.day%7], time:nil))
+            notificationDays.append(AppointmentDate(id: currentDate.generateId(), date: currentDate, dayOfWeek: currentWeekDay, namedDayOfWeek: CurrentDate.namedDays[currentWeekDay%7], time:nil))
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 1, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
         
-        ref.child("Dates").child("1").setValue(allDates!.dict)
+        ref.child("Dates").child("3").setValue(allDates!.dict)
     }
 
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){

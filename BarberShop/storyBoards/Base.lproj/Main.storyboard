@@ -381,31 +381,31 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-K7-7jM">
-                            <rect key="frame" x="43.5" y="107" width="153" height="10"/>
+                            <rect key="frame" x="112" y="107" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="u8l-T7-LSy"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="wHX-Cx-q8l">
-                            <rect key="frame" x="43.5" y="221" width="153" height="10"/>
+                            <rect key="frame" x="112" y="221" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="jhK-VP-CdU"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-SA-1Th">
-                            <rect key="frame" x="43.5" y="278" width="153" height="10"/>
+                            <rect key="frame" x="112" y="278" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="MHf-fT-a9y"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="5WO-u2-qjc">
-                            <rect key="frame" x="43.5" y="335" width="153" height="10"/>
+                            <rect key="frame" x="112" y="335" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="xO7-4t-xFz"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="K1I-cP-0kr">
-                            <rect key="frame" x="43.5" y="164" width="153" height="10"/>
+                            <rect key="frame" x="112" y="164" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="DmE-Oc-CQr"/>
                             </constraints>

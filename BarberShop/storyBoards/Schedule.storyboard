@@ -96,7 +96,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic1" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-KX-4yv">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wsB-KX-4yv">
                                                                                 <rect key="frame" x="5" y="5" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="40" id="ChO-59-PLF"/>
@@ -730,7 +730,6 @@
         <image name="keyboard-left-arrow-button" width="306" height="306"/>
         <image name="keyboard-right-arrow-button" width="306" height="306"/>
         <image name="main_down_green" width="357" height="196"/>
-        <image name="profile_pic1" width="2001" height="2015"/>
         <image name="vertical_price_line" width="17" height="1045"/>
     </resources>
     <inferredMetricsTieBreakers>

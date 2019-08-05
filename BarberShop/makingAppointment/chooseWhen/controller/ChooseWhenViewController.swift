@@ -108,9 +108,6 @@ class ChooseWhenViewController: UIViewController {
             
             let chosenUnit = timeForChosenDay![chosenTimeIndex]
             let unitsNeeded = scheduleData?.getUnitsNeededForServies(date: chosenDateIndex, chosenUnit: chosenUnit, unitsNeededNum: scheduleData?.numberOfUnitsNeeded ?? 1)
-            //---------------------------------
-            //may take time -> CHECK WHAT DO TO
-            //---------------------------------
             
             appointment?.units = unitsNeeded
             dest.appointment = appointment
@@ -195,7 +192,6 @@ class ChooseWhenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //load the data for the chosen barber
-//        scheduleData = ScheduleData(barber: barbers![chosenBarberIndex?.row ?? 0])
         ScheduleData().fetchScheduleFor(barber: barbers![chosenBarberIndex?.row ?? 0]) { [weak self] (schedule) in
             self?.scheduleData = schedule
             
@@ -378,8 +374,7 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
             
             self.datePickerIndicator.startAnimating()
             self.datePickerIndicator.isHidden = false
-            //---------------------------------
-//            scheduleData = ScheduleData(barber: barbers![visibleRow])
+
             ScheduleData().fetchScheduleFor(barber: barbers![visibleRow]) { [weak self] (schedule) in
                 self?.scheduleData = schedule
                 
