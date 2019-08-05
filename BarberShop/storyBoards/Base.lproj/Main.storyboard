@@ -469,6 +469,9 @@
                             <state key="normal" title="תנאי שימוש">
                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="menuPrivacyPolicy:" destination="T02-lw-fcr" eventType="touchUpInside" id="LTG-HO-acE"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO4-EE-6tP">
                             <rect key="frame" x="87.5" y="239" width="65" height="39"/>

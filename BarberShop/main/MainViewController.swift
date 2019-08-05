@@ -701,11 +701,22 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func menuContactUs(_ sender: UIButton) {
         self.releaseMenu()
         self.performSegue(withIdentifier: "toAboutUs", sender: true)
     }
     
+    @IBAction func menuPrivacyPolicy(_ sender: UIButton) {
+        releaseMenu()
+        guard let url = URL(string: "https://www.freeprivacypolicy.com/privacy/view/abc9d091521fca9bbaa40d2b6d075995") else {return}
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = segue.identifier else {return}
