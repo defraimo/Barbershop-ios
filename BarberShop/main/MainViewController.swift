@@ -495,11 +495,12 @@ class MainViewController: UIViewController {
     func setMessageView(){
         let barberMessage = BarberMessage.shared
         guard let message = barberMessage?.message, let messageLabel =  messageLabel else {return}
+        
             messageLabel.text = message
+            messageView.isHidden = false
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 UIView.animate(withDuration: 0.5){[weak self] in
-                    self?.messageView.isHidden = false
                     self?.messageView.alpha = 1
                 }
         }
@@ -672,6 +673,10 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func menuLogin(_ sender: UIButton) {
+        releaseMenu()
+        loginOrSignUpFunc()
+    }
     @IBAction func menuContactUs(_ sender: UIButton) {
         self.releaseMenu()
         self.performSegue(withIdentifier: "toAboutUs", sender: true)
