@@ -20,6 +20,10 @@ class MainViewController: UIViewController {
     }()
     
     @IBOutlet weak var imageSlideShow: ImageSlideshow!
+    //view that pops when a message from the barber exists
+    @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageImg: UIImageView!
     
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var roundedViewHeight: NSLayoutConstraint!
@@ -466,11 +470,14 @@ class MainViewController: UIViewController {
         adjustsButtonFont(aboutUsButton)
         adjustsButtonFont(howWeGetThereButton)
         
-   
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
+        //sets the title above according to a user, or writes hello, guest
         navigationTitle()
+        
+        //sets the message if there is one:
+        setMessageView()
     }
     
     func navigationTitle(){
@@ -483,6 +490,29 @@ class MainViewController: UIViewController {
                 self?.navigationItem.title = " שלום, \(user.fullName)"
             }
         }
+    }
+    
+    func setMessageView(){
+        let barberMessage = BarberMessage.shared
+        guard let message = barberMessage?.message, let messageLabel =  messageLabel else {return}
+            messageLabel.text = message
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                UIView.animate(withDuration: 0.5){[weak self] in
+                    self?.messageView.isHidden = false
+                    self?.messageView.alpha = 1
+                }
+        }
+    }
+    
+    @IBAction func releaseMessageView(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.messageView.alpha = 0.5
+        }) { (isSucceed) in
+            self.messageView.isHidden = true
+            self.messageView.removeFromSuperview()
+        }
+
     }
     
     func setUpImageSlider(){

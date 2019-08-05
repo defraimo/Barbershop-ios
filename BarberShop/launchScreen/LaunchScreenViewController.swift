@@ -11,7 +11,7 @@ import UIKit
 class LaunchScreenViewController: UIViewController {
         
     @IBOutlet weak var loadingImage: UIImageView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +43,8 @@ class LaunchScreenViewController: UIViewController {
             //load the barbershop contact details
             ContactUs.fetchData()
             
-            //load
+            //load a message from the barrber if there is one:
+            BarberMessage.fetchData()
             
             //load the barbers and the prices
             let _ = AllBarbers.shared
@@ -74,3 +75,4 @@ class LaunchScreenViewController: UIViewController {
         })
     }
 }
+
