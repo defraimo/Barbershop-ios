@@ -442,7 +442,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        DAO.shared.writeSchedule()
+//        DAO.shared.writeSchedule()
         
         setUpImageSlider()
         
@@ -630,8 +630,10 @@ class MainViewController: UIViewController {
                 self.openWifiSettings()
             }, negativeCompletion: nil)
             
+            self.manageAppointmentIndicator.stopAnimating()
             present(alert, animated: true)
-        }else{
+        }
+        else{
         if let uid = Auth.auth().currentUser?.uid{
             
             DAO.shared.getAppointment(userId: uid) { [weak self] (appointment, isExist) in
@@ -668,14 +670,36 @@ class MainViewController: UIViewController {
         else{
             self.manageAppointmentIndicator.stopAnimating()
             self.releaseMenu()
-            self.loginOrSignUpFunc()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.loginOrSignUpFunc()
+            }
             }
         }
     }
     
     @IBAction func menuLogin(_ sender: UIButton) {
-        releaseMenu()
-        loginOrSignUpFunc()
+        //check internet connection:
+        if !Reachability.isConnectedToNetwork(){
+            let alert = AlertService().alert(title: "אין חיבור אינטרנט", body: "אנא בדוק אם הינך מחובר לרשת האינטרנט", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {
+                self.openWifiSettings()
+            }, negativeCompletion: nil)
+            
+            present(alert, animated: true)
+        }
+        else{
+            releaseMenu()
+            if Auth.auth().currentUser != nil{
+                let alert = AlertService().alert(title: "הנך כבר מחובר", body: "אין צורך להתחבר שנית", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
+                    
+                }, negativeCompletion: nil)
+                self.present(alert, animated: true)
+            }
+            else{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.loginOrSignUpFunc()
+                }
+            }
+        }
     }
     @IBAction func menuContactUs(_ sender: UIButton) {
         self.releaseMenu()

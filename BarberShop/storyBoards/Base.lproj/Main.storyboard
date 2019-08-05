@@ -75,19 +75,19 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mea-nq-u9V">
-                                <rect key="frame" x="24" y="88" width="378" height="89.5"/>
+                                <rect key="frame" x="24" y="88" width="378" height="107.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message_dialog" translatesAutoresizingMaskIntoConstraints="NO" id="sXH-WK-E5v">
-                                        <rect key="frame" x="0.0" y="0.0" width="378" height="89.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="107.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מודעה חדשה" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="X8Y-2l-PwA">
-                                        <rect key="frame" x="38" y="27.5" width="302" height="54"/>
+                                        <rect key="frame" x="38" y="34.5" width="302" height="65"/>
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RST-Sr-pdT">
-                                        <rect key="frame" x="0.0" y="19.5" width="19" height="19.5"/>
+                                        <rect key="frame" x="5.5" y="26.5" width="19" height="23.5"/>
                                         <state key="normal" image="cancel_icon"/>
                                         <connections>
                                             <action selector="releaseMessageView:" destination="T02-lw-fcr" eventType="touchUpInside" id="h9F-fa-F2c"/>
@@ -98,7 +98,7 @@
                                 <constraints>
                                     <constraint firstItem="X8Y-2l-PwA" firstAttribute="centerX" secondItem="mea-nq-u9V" secondAttribute="centerX" id="BM8-Bs-vmB"/>
                                     <constraint firstItem="sXH-WK-E5v" firstAttribute="top" secondItem="mea-nq-u9V" secondAttribute="top" id="IeP-Fm-4ET"/>
-                                    <constraint firstItem="RST-Sr-pdT" firstAttribute="centerX" secondItem="mea-nq-u9V" secondAttribute="centerX" multiplier="0.05" id="KYI-kH-FfR"/>
+                                    <constraint firstItem="RST-Sr-pdT" firstAttribute="centerX" secondItem="mea-nq-u9V" secondAttribute="centerX" multiplier="0.08" id="KYI-kH-FfR"/>
                                     <constraint firstAttribute="trailing" secondItem="sXH-WK-E5v" secondAttribute="trailing" id="MIj-Wa-fre"/>
                                     <constraint firstItem="sXH-WK-E5v" firstAttribute="leading" secondItem="mea-nq-u9V" secondAttribute="leading" id="WR0-bi-O5m"/>
                                     <constraint firstAttribute="bottom" secondItem="sXH-WK-E5v" secondAttribute="bottom" id="dsv-MA-c07"/>
@@ -106,7 +106,7 @@
                                     <constraint firstItem="RST-Sr-pdT" firstAttribute="height" secondItem="mea-nq-u9V" secondAttribute="height" multiplier="0.22" id="ngJ-oe-K2w"/>
                                     <constraint firstItem="X8Y-2l-PwA" firstAttribute="width" secondItem="mea-nq-u9V" secondAttribute="width" multiplier="0.8" id="rDM-dz-lQC"/>
                                     <constraint firstItem="X8Y-2l-PwA" firstAttribute="top" secondItem="RST-Sr-pdT" secondAttribute="top" constant="8" id="seS-FN-sea"/>
-                                    <constraint firstItem="RST-Sr-pdT" firstAttribute="centerY" secondItem="mea-nq-u9V" secondAttribute="centerY" multiplier="0.65" id="shO-m0-zBa"/>
+                                    <constraint firstItem="RST-Sr-pdT" firstAttribute="centerY" secondItem="mea-nq-u9V" secondAttribute="centerY" multiplier="0.71" id="shO-m0-zBa"/>
                                     <constraint firstAttribute="bottom" secondItem="X8Y-2l-PwA" secondAttribute="bottom" constant="8" id="sxi-mc-uz5"/>
                                 </constraints>
                             </view>
@@ -183,7 +183,7 @@
                             <constraint firstItem="lzM-Or-Tlp" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="D9x-vj-Htx"/>
                             <constraint firstAttribute="trailing" secondItem="mea-nq-u9V" secondAttribute="trailing" constant="12" id="DDY-dO-5IS"/>
                             <constraint firstItem="YLZ-Te-0dB" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.4" id="EoU-ii-RiQ"/>
-                            <constraint firstItem="mea-nq-u9V" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.1" id="FsM-eD-a6Z"/>
+                            <constraint firstItem="mea-nq-u9V" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.12" id="FsM-eD-a6Z"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.57" id="HEf-nQ-oYf"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="huU-gd-viO" secondAttribute="trailing" id="K12-bL-tFg"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="trailing" secondItem="SjH-XB-Ar3" secondAttribute="trailing" id="KC4-Di-HNK"/>
