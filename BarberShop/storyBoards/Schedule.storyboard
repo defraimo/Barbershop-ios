@@ -452,6 +452,9 @@
                                         <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="17"/>
                                         <size key="titleShadowOffset" width="0.5" height="0.5"/>
                                         <state key="normal" title="שלח לי התראה כשיפתחו תורים"/>
+                                        <connections>
+                                            <action selector="sendMeNotification:" destination="Ino-8S-Ke8" eventType="touchUpInside" id="9Ps-SY-miq"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טרם נפתחו תורים ליום זה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-0C-lUd">
                                         <rect key="frame" x="24" y="32" width="366" height="0.0"/>

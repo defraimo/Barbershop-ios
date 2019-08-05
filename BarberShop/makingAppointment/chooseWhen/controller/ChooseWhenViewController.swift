@@ -314,6 +314,15 @@ class ChooseWhenViewController: UIViewController {
             self.sendNotificationButton.alpha = 1
         }
     }
+    
+    @IBAction func sendMeNotification(_ sender: UIButton) {
+        let alert = AlertService().alert(title: "התראה", body: "אנו נודיע לך ברגע שיפתחו תורים ליום זה", btnAmount: 2, positive: "אישור", negative: "חזור לתפריט הראשי", positiveCompletion: {
+            
+        }, negativeCompletion: {
+            self.navigationController?.popToRootViewController(animated: true)
+        })
+        self.present(alert, animated: true)
+    }
    
 }
 

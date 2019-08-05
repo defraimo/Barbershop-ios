@@ -346,7 +346,6 @@
 				A659A09822BFD71000274F40 /* datesAndTme */,
 				A659A00622BD0F3C00274F40 /* makingAppointment */,
 				A659A00322BD023800274F40 /* howToGetThere */,
-				A618D59D22D50DB800A93D5E /* sumUpAppointment */,
 				A61A31CF22B95C5500FC20BE /* barbers */,
 				A61A31C222B9586A00FC20BE /* aboutUs */,
 				A61A31B622B7BB9A00FC20BE /* prices */,
@@ -544,6 +543,7 @@
 		A659A00622BD0F3C00274F40 /* makingAppointment */ = {
 			isa = PBXGroup;
 			children = (
+				A618D59D22D50DB800A93D5E /* sumUpAppointment */,
 				A61D2D2222CD0899002DC7CB /* chooseHaircut */,
 				A659A00E22BD465D00274F40 /* chooseWhen */,
 				A659A00722BD0F8400274F40 /* chooseBarber */,
