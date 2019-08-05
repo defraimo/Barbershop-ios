@@ -13,7 +13,7 @@
         <!--NEIGHBORS-->
         <scene sceneID="CfY-QM-DIO">
             <objects>
-                <viewController id="T02-lw-fcr" customClass="MainViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="T02-lw-fcr" customClass="MainViewController" customModule="BarberShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7yZ-hN-txD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +72,43 @@
                                     <constraint firstItem="7tC-pU-trr" firstAttribute="top" secondItem="yJ5-gA-bYH" secondAttribute="bottom" id="qRl-ud-qmP"/>
                                     <constraint firstAttribute="trailing" secondItem="yJ5-gA-bYH" secondAttribute="trailing" id="sLn-5q-kIg"/>
                                     <constraint firstItem="KJi-FK-DRv" firstAttribute="centerX" secondItem="lzM-Or-Tlp" secondAttribute="centerX" id="zkq-CZ-j7I"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mea-nq-u9V">
+                                <rect key="frame" x="24" y="88" width="378" height="129"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message_dialog" translatesAutoresizingMaskIntoConstraints="NO" id="sXH-WK-E5v">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="109.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מודעה חדשה" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8Y-2l-PwA">
+                                        <rect key="frame" x="38" y="51" width="302" height="27"/>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RST-Sr-pdT">
+                                        <rect key="frame" x="8" y="30" width="10" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="O5k-fN-opK"/>
+                                            <constraint firstAttribute="height" constant="15" id="RKh-gJ-R6c"/>
+                                        </constraints>
+                                        <state key="normal" image="close_message"/>
+                                        <connections>
+                                            <action selector="releaseMessageView:" destination="T02-lw-fcr" eventType="touchUpInside" id="h9F-fa-F2c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sXH-WK-E5v" firstAttribute="height" secondItem="mea-nq-u9V" secondAttribute="height" multiplier="0.85" id="AgD-VR-k2O"/>
+                                    <constraint firstItem="X8Y-2l-PwA" firstAttribute="centerX" secondItem="mea-nq-u9V" secondAttribute="centerX" id="BM8-Bs-vmB"/>
+                                    <constraint firstItem="RST-Sr-pdT" firstAttribute="top" secondItem="mea-nq-u9V" secondAttribute="top" constant="30" id="Cco-uB-eGT"/>
+                                    <constraint firstItem="sXH-WK-E5v" firstAttribute="top" secondItem="mea-nq-u9V" secondAttribute="top" id="IeP-Fm-4ET"/>
+                                    <constraint firstItem="X8Y-2l-PwA" firstAttribute="centerY" secondItem="mea-nq-u9V" secondAttribute="centerY" id="Ld9-BI-4PU"/>
+                                    <constraint firstAttribute="trailing" secondItem="sXH-WK-E5v" secondAttribute="trailing" id="MIj-Wa-fre"/>
+                                    <constraint firstItem="sXH-WK-E5v" firstAttribute="leading" secondItem="mea-nq-u9V" secondAttribute="leading" id="WR0-bi-O5m"/>
+                                    <constraint firstItem="RST-Sr-pdT" firstAttribute="leading" secondItem="mea-nq-u9V" secondAttribute="leading" constant="8" id="bEb-5c-lwK"/>
+                                    <constraint firstItem="X8Y-2l-PwA" firstAttribute="width" secondItem="mea-nq-u9V" secondAttribute="width" multiplier="0.8" id="rDM-dz-lQC"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YI-LK-mbt">
@@ -139,12 +176,14 @@
                             <constraint firstItem="1YI-LK-mbt" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.027" id="0Tn-Ku-nVi"/>
                             <constraint firstItem="0FF-M9-PQC" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.81" id="1BP-aY-k0c"/>
                             <constraint firstItem="lzM-Or-Tlp" firstAttribute="top" secondItem="7yZ-hN-txD" secondAttribute="top" id="2Dk-h5-fEx"/>
+                            <constraint firstItem="mea-nq-u9V" firstAttribute="top" secondItem="SjH-XB-Ar3" secondAttribute="top" id="5mf-oh-Mhe"/>
                             <constraint firstItem="1YI-LK-mbt" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.57" id="6qd-A3-MZi"/>
                             <constraint firstItem="huU-gd-viO" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.18" id="7wQ-7w-yzS"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="80D-w4-6qj"/>
                             <constraint firstItem="1YI-LK-mbt" firstAttribute="width" secondItem="7yZ-hN-txD" secondAttribute="width" multiplier="0.15" id="9Rk-AZ-uJs"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.6" id="9zw-Ei-iHc"/>
                             <constraint firstItem="lzM-Or-Tlp" firstAttribute="leading" secondItem="SjH-XB-Ar3" secondAttribute="leading" id="D9x-vj-Htx"/>
+                            <constraint firstAttribute="trailing" secondItem="mea-nq-u9V" secondAttribute="trailing" constant="12" id="DDY-dO-5IS"/>
                             <constraint firstItem="YLZ-Te-0dB" firstAttribute="centerX" secondItem="7yZ-hN-txD" secondAttribute="centerX" multiplier="0.4" id="EoU-ii-RiQ"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.57" id="HEf-nQ-oYf"/>
                             <constraint firstItem="SjH-XB-Ar3" firstAttribute="trailing" secondItem="huU-gd-viO" secondAttribute="trailing" id="K12-bL-tFg"/>
@@ -156,6 +195,7 @@
                             <constraint firstItem="YLZ-Te-0dB" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.052" id="ZWa-lB-wFe"/>
                             <constraint firstAttribute="bottom" secondItem="A1N-rU-l4w" secondAttribute="bottom" id="ewc-U8-CHI"/>
                             <constraint firstItem="bjM-uA-QQg" firstAttribute="width" secondItem="7yZ-hN-txD" secondAttribute="width" multiplier="0.28" id="fIt-BF-cZY"/>
+                            <constraint firstItem="mea-nq-u9V" firstAttribute="height" secondItem="lzM-Or-Tlp" secondAttribute="height" multiplier="0.2" id="fqv-65-fu5"/>
                             <constraint firstItem="0FF-M9-PQC" firstAttribute="width" secondItem="7yZ-hN-txD" secondAttribute="width" multiplier="0.16" id="gko-Aq-J6H"/>
                             <constraint firstItem="0FF-M9-PQC" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.027" id="iXG-Ub-n9e"/>
                             <constraint firstItem="lzM-Or-Tlp" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.72" id="jcn-my-5c9"/>
@@ -166,6 +206,7 @@
                             <constraint firstItem="YLZ-Te-0dB" firstAttribute="centerY" secondItem="7yZ-hN-txD" secondAttribute="centerY" multiplier="1.81" id="oH5-Hd-NSd"/>
                             <constraint firstItem="icW-Jn-xC8" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.052" id="rIH-L3-fP3"/>
                             <constraint firstItem="A1N-rU-l4w" firstAttribute="height" secondItem="7yZ-hN-txD" secondAttribute="height" multiplier="0.32" id="sFo-Ka-6RQ"/>
+                            <constraint firstItem="mea-nq-u9V" firstAttribute="leading" secondItem="7yZ-hN-txD" secondAttribute="leading" constant="24" id="vBC-uf-WJ4"/>
                             <constraint firstItem="lzM-Or-Tlp" firstAttribute="trailing" secondItem="SjH-XB-Ar3" secondAttribute="trailing" id="zdL-Ze-qen"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SjH-XB-Ar3"/>
@@ -198,6 +239,9 @@
                         <outlet property="makeAppointmentIndicator" destination="WAS-B5-kpP" id="6gy-0k-NPB"/>
                         <outlet property="manageAppointmentIndicator" destination="Zug-rY-XNR" id="eeK-Tn-CZy"/>
                         <outlet property="menuView" destination="sDz-JR-TSq" id="gLv-V2-f9U"/>
+                        <outlet property="messageImg" destination="sXH-WK-E5v" id="hEM-2g-PJW"/>
+                        <outlet property="messageLabel" destination="X8Y-2l-PwA" id="qHj-xu-Usn"/>
+                        <outlet property="messageView" destination="mea-nq-u9V" id="iL9-T2-4ZC"/>
                         <outlet property="newCustomer" destination="0Zs-cg-tEh" id="kxR-BB-1lK"/>
                         <outlet property="phoneNumberField" destination="gml-PG-b9B" id="RJY-KR-r7Z"/>
                         <outlet property="pricesButton" destination="1YI-LK-mbt" id="ubp-eU-H9Y"/>
@@ -915,6 +959,7 @@
     <resources>
         <image name="Instagram" width="599" height="600"/>
         <image name="background_layer" width="501" height="599"/>
+        <image name="close_message" width="512" height="512"/>
         <image name="email" width="24" height="17"/>
         <image name="horizontal thin line" width="443" height="11"/>
         <image name="horizontal_price_line" width="381" height="15"/>
@@ -923,6 +968,7 @@
         <image name="main_seperator" width="369" height="12"/>
         <image name="menu_icon" width="33" height="32"/>
         <image name="menu_under_line" width="153" height="12"/>
+        <image name="message_dialog" width="994" height="185"/>
         <image name="phone" width="48" height="48"/>
         <image name="shop" width="25" height="25"/>
         <image name="vertical_price_line" width="17" height="1045"/>

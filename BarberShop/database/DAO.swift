@@ -104,6 +104,22 @@ class DAO{
         }
     }
     
+    func checkMessageDialogue(completion: @escaping (_ message:String?) -> Void){
+        ref.child("MessageDialog").observeSingleEvent(of: .value) { (data) in
+            guard let value = data.value as? NSDictionary else{
+                completion(nil)
+                return
+            }
+            if let message = value["message"] as? String{
+                completion(message)
+            }
+        }
+    }
+    
+    func writeMessageForDialog(){
+        ref.child("MessageDialog").setValue(["message": "היי, ברוכים הבאים למספרה שלנו! נשמח לראותכם אצלנו"])
+    }
+    
     
     fileprivate func writingBarbersToData() {
         var barber = Barber(name: "דניאל", id: 0, description: "ספר גברים, 3 שנים ניסיון בתחום. מתמקצע בדירוגים ובשלל התספורות השונות המודרניות והחדשניות ביותר.", image: nil, imagePath:"0")
