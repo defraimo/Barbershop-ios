@@ -19,6 +19,12 @@ class AboutUsViewController: UIViewController {
 
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        
+        //realod all the data so the cells will have the propotional size to the text
+        //the reloading gives time to calc their size
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.aboutUsTableView.reloadData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,6 +45,9 @@ let firstCount = 1
 let secondCount = 1
 let thirdCount = barbers.count
 
+var descriptionCellSize:CGFloat?
+var barberDescriptionCellSize:CGFloat = 0
+
 extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return firstCount + secondCount + thirdCount + 1
@@ -53,6 +62,7 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
             
             cell.titleLabel.text = aboutUs?.title
             cell.descriptionLabel.text = aboutUs?.text
+            descriptionCellSize = cell.descriptionLabel.calculateLinesSize()
             
             return cell
         }
@@ -71,6 +81,11 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
             cell.barberName.text = barberModel.name
             cell.barberDescription.text = barberModel.description
             cell.barberImage.image = barberModel.image
+            
+            let height = cell.barberDescription.calculateLinesSize()
+            if height > barberDescriptionCellSize{
+                barberDescriptionCellSize = height
+            }
             
             cell.barberImage.layer.cornerRadius = 60
             cell.imageBackground.layer.cornerRadius = 10
@@ -108,17 +123,17 @@ extension AboutUsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         let row = indexPath.row
         
         if row < firstCount{
-            return 200
+            return 80 + descriptionCellSize!
         }
         else if row < firstCount + secondCount{
             return 70
         }
         else if row < firstCount + secondCount + thirdCount{
-            return 180
+            return 70 + barberDescriptionCellSize
         }
         else{
             return 160
