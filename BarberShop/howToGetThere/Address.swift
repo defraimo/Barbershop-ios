@@ -50,7 +50,9 @@ class Address:CustomStringConvertible , DictionaryConvertible{
             guard let placemarks = placemarks,
                 let location = placemarks.first?.location
                 else {
-                    print(error)
+                    if let error = error{
+                        print(error)
+                    }
                     return
             }
             completion(location)

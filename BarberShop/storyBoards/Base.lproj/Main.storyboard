@@ -424,31 +424,31 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="xI0-K7-7jM">
-                            <rect key="frame" x="43.5" y="107" width="153" height="10"/>
+                            <rect key="frame" x="112" y="107" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="u8l-T7-LSy"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="wHX-Cx-q8l">
-                            <rect key="frame" x="43.5" y="221" width="153" height="10"/>
+                            <rect key="frame" x="112" y="221" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="jhK-VP-CdU"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-SA-1Th">
-                            <rect key="frame" x="43.5" y="278" width="153" height="10"/>
+                            <rect key="frame" x="112" y="278" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="MHf-fT-a9y"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="5WO-u2-qjc">
-                            <rect key="frame" x="43.5" y="335" width="153" height="10"/>
+                            <rect key="frame" x="112" y="335" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="xO7-4t-xFz"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_under_line" translatesAutoresizingMaskIntoConstraints="NO" id="K1I-cP-0kr">
-                            <rect key="frame" x="43.5" y="164" width="153" height="10"/>
+                            <rect key="frame" x="112" y="164" width="16" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="DmE-Oc-CQr"/>
                             </constraints>
@@ -565,7 +565,7 @@
                                     <constraint firstAttribute="width" constant="17" id="zhr-K1-hrV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="מחירון" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0m-4m-HvA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="מחירון" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="k0m-4m-HvA">
                                 <rect key="frame" x="192.5" y="85" width="145" height="107.5"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="60"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -586,19 +586,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IV8-ep-0a4">
-                                                    <rect key="frame" x="4" y="52" width="104.5" height="30"/>
+                                                    <rect key="frame" x="4.5" y="52" width="104.5" height="30"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="תספורת" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puj-oJ-NBB">
-                                                    <rect key="frame" x="155.5" y="52" width="74" height="30"/>
+                                                    <rect key="frame" x="155" y="52" width="74" height="30"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vertical_price_line" translatesAutoresizingMaskIntoConstraints="NO" id="lOD-Nq-ao2">
-                                                    <rect key="frame" x="114.5" y="11" width="17" height="112"/>
+                                                    <rect key="frame" x="115" y="11" width="16" height="112"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
@@ -699,7 +699,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="כותרת" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zpw-gD-tTd">
-                                                    <rect key="frame" x="301" y="19" width="69" height="35"/>
+                                                    <rect key="frame" x="28" y="19" width="342" height="35"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="26"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -714,6 +714,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cPF-Hp-eJk" secondAttribute="trailing" constant="8" id="LYI-LZ-mo2"/>
                                                 <constraint firstItem="cPF-Hp-eJk" firstAttribute="top" secondItem="Zpw-gD-tTd" secondAttribute="bottom" constant="16" id="RaO-Nt-glS"/>
+                                                <constraint firstItem="Zpw-gD-tTd" firstAttribute="leading" secondItem="N2m-Fc-Ec6" secondAttribute="leadingMargin" constant="8" id="Uq4-xW-IoS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zpw-gD-tTd" secondAttribute="trailing" constant="8" id="bUE-Kh-Q3v"/>
                                                 <constraint firstItem="cPF-Hp-eJk" firstAttribute="leading" secondItem="N2m-Fc-Ec6" secondAttribute="leadingMargin" constant="8" id="hDt-uV-irT"/>
                                                 <constraint firstItem="Zpw-gD-tTd" firstAttribute="top" secondItem="N2m-Fc-Ec6" secondAttribute="topMargin" constant="8" id="tvL-u8-idG"/>
@@ -733,7 +734,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הספרים שלנו" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH5-xG-x9M">
-                                                    <rect key="frame" x="242" y="15" width="128" height="27"/>
+                                                    <rect key="frame" x="8" y="15" width="362" height="27"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -744,6 +745,7 @@
                                                 <constraint firstItem="wH5-xG-x9M" firstAttribute="bottom" secondItem="4Td-bc-Zkz" secondAttribute="bottomMargin" constant="4" id="A90-j1-pgq"/>
                                                 <constraint firstItem="wH5-xG-x9M" firstAttribute="top" secondItem="4Td-bc-Zkz" secondAttribute="topMargin" constant="4" id="dLa-89-jzO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wH5-xG-x9M" secondAttribute="trailing" constant="8" id="qcC-n0-dYw"/>
+                                                <constraint firstItem="wH5-xG-x9M" firstAttribute="leading" secondItem="4Td-bc-Zkz" secondAttribute="leading" constant="8" id="wY6-ky-el5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -826,8 +828,8 @@
                                                         <constraint firstAttribute="width" constant="25" id="mUx-3A-yXd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="צור קשר" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwt-FP-Zmg">
-                                                    <rect key="frame" x="289" y="19" width="81" height="33"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="צור קשר" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwt-FP-Zmg">
+                                                    <rect key="frame" x="28" y="19" width="342" height="33"/>
                                                     <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="24"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -854,6 +856,7 @@
                                                 <constraint firstItem="Z3N-EF-h3p" firstAttribute="leading" secondItem="5wr-FV-Gey" secondAttribute="leadingMargin" constant="8" id="Jab-RV-Gas"/>
                                                 <constraint firstItem="onj-St-gvD" firstAttribute="top" secondItem="qwt-FP-Zmg" secondAttribute="bottom" constant="4" id="NVr-HG-4ZS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JKD-0F-DNu" secondAttribute="trailing" constant="8" id="UY9-v9-i3f"/>
+                                                <constraint firstItem="qwt-FP-Zmg" firstAttribute="leading" secondItem="5wr-FV-Gey" secondAttribute="leadingMargin" constant="8" id="YaQ-7g-bpk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qwt-FP-Zmg" secondAttribute="trailing" constant="8" id="cbx-C5-ogw"/>
                                                 <constraint firstItem="JKD-0F-DNu" firstAttribute="top" secondItem="Dg7-Yi-qtf" secondAttribute="bottom" constant="16" id="cfJ-ft-zcQ"/>
                                                 <constraint firstItem="qwt-FP-Zmg" firstAttribute="top" secondItem="5wr-FV-Gey" secondAttribute="topMargin" constant="8" id="gYJ-uW-13A"/>
