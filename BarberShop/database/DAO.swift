@@ -441,7 +441,6 @@ class DAO{
     func eraseAppointment(userId:String, appointment:Appointment, removeFromAppointments:Bool){
         if removeFromAppointments{
             ref.child("Appointments").child(userId).removeValue()
-        ref.child("AppointmentsDates").child(String(appointment.barber!.id)).child(String(appointment.date!.generateId())).child(userId).removeValue()
         }
         
 //        let path = ref.child("Dates").child("\(appointment.barber!.id)").child("availableDays").child("\(appointment.date!.generateId())").child("units")
@@ -451,6 +450,9 @@ class DAO{
         setAvailability(to:true, barber: appointment.barber!, dateId: appointment.date!.generateId(), units: appointment.units!, userId: appointment.clientId!) { (_) in
             
         }
+        
+        //removing the appointment from AppointmentsDates field in firebase
+    ref.child("AppointmentsDates").child(String(appointment.barber!.id)).child(String(appointment.date!.generateId())).child(userId).removeValue()
         
 //        for unit in units{
 //            //set the units that was taken to available again
