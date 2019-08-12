@@ -374,7 +374,8 @@ class DAO{
             //set the unit availability to false
             updatedAppointment.units![i].isAvailable = false
         }
-    self.ref.child("Appointments").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
+        self.ref.child("Appointments").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
+        self.ref.child("AppointmentsDates").child(String(updatedAppointment.barber!.id)).child(String(updatedAppointment.date!.generateId())).child(updatedAppointment.clientId!).setValue(true)
     }
     
     func setAvailability(to bool:Bool, barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
@@ -440,6 +441,7 @@ class DAO{
     func eraseAppointment(userId:String, appointment:Appointment, removeFromAppointments:Bool){
         if removeFromAppointments{
             ref.child("Appointments").child(userId).removeValue()
+        ref.child("AppointmentsDates").child(String(appointment.barber!.id)).child(String(appointment.date!.generateId())).child(userId).removeValue()
         }
         
 //        let path = ref.child("Dates").child("\(appointment.barber!.id)").child("availableDays").child("\(appointment.date!.generateId())").child("units")
