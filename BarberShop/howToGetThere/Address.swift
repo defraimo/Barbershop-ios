@@ -50,8 +50,8 @@ class Address:CustomStringConvertible , DictionaryConvertible{
             guard let placemarks = placemarks,
                 let location = placemarks.first?.location
                 else {
-                    if let error = error{
-                        print(error)
+                    if error != nil{
+                        print("\(String(describing: error))")
                     }
                     return
             }
