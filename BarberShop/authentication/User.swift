@@ -42,7 +42,7 @@ class User:DictionaryConvertible, CustomStringConvertible{
             "number": number,
             "fullName":fullName,
             "gender": gender,
-            "email": email!
+            "email": String(email!)
         ]
     }
     
