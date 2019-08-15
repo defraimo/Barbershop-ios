@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SumUpViewController: UIViewController {
     @IBOutlet weak var scheduleButton: UIButton!
@@ -48,8 +49,14 @@ class SumUpViewController: UIViewController {
                         
                     }, negativeCompletion: nil)
                     
-                    self.orderIndicator.stopAnimating()
-                    self.present(alert, animated: true)
+                    
+                    RegisterNotification.shared.registerForPushNotifications(viewController: self, completion: {_ in
+                        DispatchQueue.main.async {
+                            self.orderIndicator.stopAnimating()
+                            self.present(alert, animated: true)
+                        }
+                    })
+                    
                 }
                 else{
                     //show dialog and take the user back to ChooseWhenViewController
@@ -107,6 +114,10 @@ class SumUpViewController: UIViewController {
         for label in labelsToCheck{
             label.font.withSize(smallestFont)
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
     }
 
 }

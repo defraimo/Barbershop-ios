@@ -81,6 +81,7 @@
 		A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A659A0A222C0198700274F40 /* AppointmentTime.swift */; };
 		A68C8BCA22EE268B00E1E603 /* ManageAppointment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */; };
 		A68C8BCD22EE26D800E1E603 /* ManageAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */; };
+		A698CE0423059958000F4D33 /* RegisterNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698CE0323059958000F4D33 /* RegisterNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,7 @@
 		A659A0A222C0198700274F40 /* AppointmentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTime.swift; sourceTree = "<group>"; };
 		A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageAppointment.storyboard; sourceTree = "<group>"; };
 		A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAppointmentViewController.swift; sourceTree = "<group>"; };
+		A698CE0323059958000F4D33 /* RegisterNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,8 +336,8 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				A698CE012305990C000F4D33 /* checks */,
 				6324AF1B22F83DA8001140E3 /* barberMessage */,
-				6382B65122F2CFBC00A6AB51 /* internetCheck */,
 				A68C8BCB22EE26AC00E1E603 /* manageAppointment */,
 				63489AC222DC8AFA0055DA64 /* shop */,
 				6335C4BB22E9EC030096D8C7 /* customAlert */,
@@ -637,6 +639,23 @@
 			path = manageAppointment;
 			sourceTree = "<group>";
 		};
+		A698CE012305990C000F4D33 /* checks */ = {
+			isa = PBXGroup;
+			children = (
+				A698CE022305992A000F4D33 /* registerNotification */,
+				6382B65122F2CFBC00A6AB51 /* internetCheck */,
+			);
+			path = checks;
+			sourceTree = "<group>";
+		};
+		A698CE022305992A000F4D33 /* registerNotification */ = {
+			isa = PBXGroup;
+			children = (
+				A698CE0323059958000F4D33 /* RegisterNotification.swift */,
+			);
+			path = registerNotification;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -796,6 +815,7 @@
 				A61A31DF22B9874700FC20BE /* DescriptionAboveBarbers.swift in Sources */,
 				63489AC422DC8B190055DA64 /* ShopViewController.swift in Sources */,
 				A659A0A322C0198700274F40 /* AppointmentTime.swift in Sources */,
+				A698CE0423059958000F4D33 /* RegisterNotification.swift in Sources */,
 				A618D59A22D499EC00A93D5E /* Day.swift in Sources */,
 				A68C8BCD22EE26D800E1E603 /* ManageAppointmentViewController.swift in Sources */,
 				A659A09F22C0195700274F40 /* Appointment.swift in Sources */,

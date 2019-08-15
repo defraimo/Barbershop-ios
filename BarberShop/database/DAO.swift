@@ -325,7 +325,7 @@ class DAO{
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
         
-        for i in 0..<9{
+        for i in 0..<10{
             let current = CurrentDate()
             let currentDate = current.addToCurrentDate(numberOfDays: i)
             let currentWeekDay = current.currentDay + i
@@ -334,23 +334,23 @@ class DAO{
             let timeAvailible = TimeManager(id: currentDate.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
             
             
-            avialibleDays.append(AppointmentDate(id: currentDate.generateId(), date: currentDate, dayOfWeek: currentWeekDay, namedDayOfWeek: CurrentDate.namedDays[currentWeekDay%7], time:timeAvailible))
+            avialibleDays.append(AppointmentDate(id: currentDate.generateId(), date: currentDate, dayOfWeek: currentWeekDay, namedDayOfWeek: CurrentDate.namedDays[(currentWeekDay-1)%7], time:timeAvailible))
         }
         
-        for i in 9..<16{
+        for i in 10..<16{
             let current = CurrentDate()
             let currentDate = current.addToCurrentDate(numberOfDays: i)
             let currentWeekDay = current.currentDay + i
             
             //after getting from data base
-            notificationDays.append(AppointmentDate(id: currentDate.generateId(), date: currentDate, dayOfWeek: currentWeekDay, namedDayOfWeek: CurrentDate.namedDays[currentWeekDay%7], time:nil))
+            notificationDays.append(AppointmentDate(id: currentDate.generateId(), date: currentDate, dayOfWeek: currentWeekDay, namedDayOfWeek: CurrentDate.namedDays[(currentWeekDay-1)%7], time:nil))
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 1, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
         
-        ref.child("Dates").child("1").setValue(allDates!.dict)
+        ref.child("Dates").child("3").setValue(allDates!.dict)
     }
 
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){
@@ -375,7 +375,7 @@ class DAO{
             updatedAppointment.units![i].isAvailable = false
         }
         self.ref.child("Appointments").child(String(updatedAppointment.clientId!)).setValue(updatedAppointment.dict)
-        self.ref.child("AppointmentsDates").child(String(updatedAppointment.barber!.id)).child(String(updatedAppointment.date!.generateId())).child(updatedAppointment.clientId!).setValue(true)
+        self.ref.child("AppointmentsDates").child(String(updatedAppointment.date!.generateId())).child(updatedAppointment.clientId!).setValue(true)
     }
     
     func setAvailability(to bool:Bool, barber:Barber, dateId:Int, units:[TimeUnit], userId:String, complition: @escaping (_ availabilityChanged:Bool) -> Void){
@@ -452,7 +452,7 @@ class DAO{
         }
         
         //removing the appointment from AppointmentsDates field in firebase
-    ref.child("AppointmentsDates").child(String(appointment.barber!.id)).child(String(appointment.date!.generateId())).child(userId).removeValue()
+    ref.child("AppointmentsDates").child(String(appointment.date!.generateId())).child(userId).removeValue()
         
 //        for unit in units{
 //            //set the units that was taken to available again

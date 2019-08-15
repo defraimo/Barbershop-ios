@@ -12,6 +12,9 @@ PODS:
   - Firebase/Database (6.2.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (~> 6.0.0)
+  - Firebase/Messaging (6.2.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.0.2)
   - Firebase/Storage (6.2.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.2.1)
@@ -24,6 +27,7 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
+  - FirebaseAnalyticsInterop (1.2.0)
   - FirebaseAuth (6.1.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
@@ -42,6 +46,15 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - FirebaseMessaging (4.0.2):
+    - FirebaseAnalyticsInterop (~> 1.1)
+    - FirebaseCore (~> 6.0)
+    - FirebaseInstanceID (~> 4.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Reachability (~> 6.2)
+    - GoogleUtilities/UserDefaults (~> 6.2)
+    - Protobuf (~> 3.1)
   - FirebaseStorage (3.2.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
@@ -83,6 +96,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Protobuf (3.8.0)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
@@ -92,6 +106,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Messaging
   - Firebase/Storage
   - ImageSlideshow (~> 1.8)
   - ImageSlideshow/SDWebImage
@@ -101,11 +116,13 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleUtilities
@@ -113,16 +130,19 @@ SPEC REPOS:
     - ImageSlideshow
     - leveldb-library
     - nanopb
+    - Protobuf
     - SDWebImage
 
 SPEC CHECKSUMS:
   Firebase: 5965bac23e7fcb5fa6d926ed429c9ecef8a2014e
   FirebaseAnalytics: 629301c2b9925f3537d4093a17a72751ae5b7084
+  FirebaseAnalyticsInterop: efbe45c8385ec626e29f9525e5ebd38520dfb6c1
   FirebaseAuth: 80879f0e9f2c5f40686d5b42f6ccb3cd5dce78ea
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: b0f0262acebfa540e5f97b3832dbb13186980822
   FirebaseDatabase: f48e067716864be2b855cf716b927ef375d6cfa0
   FirebaseInstanceID: cdb3827746d53ece7ae87a5c51c25c3055443366
+  FirebaseMessaging: 20b6626c41be7840aed7a3dd9a14003efae3d588
   FirebaseStorage: 926d41552072b9fee67aa645760f05f87b7ce604
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
@@ -130,8 +150,9 @@ SPEC CHECKSUMS:
   ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
 
-PODFILE CHECKSUM: 055df63ba11bffd419bf2dfe3ea1d7c8af139084
+PODFILE CHECKSUM: cc32ade0a0642bd0ed5dc457db9559e5116818bc
 
 COCOAPODS: 1.7.1

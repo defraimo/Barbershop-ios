@@ -442,7 +442,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-//        DAO.shared.writeSchedule()
+        DAO.shared.writeSchedule()
         
         setUpImageSlider()
         

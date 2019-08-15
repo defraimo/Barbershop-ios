@@ -321,7 +321,18 @@ class ChooseWhenViewController: UIViewController {
         }, negativeCompletion: {
             self.navigationController?.popToRootViewController(animated: true)
         })
-        self.present(alert, animated: true)
+        
+        RegisterNotification.shared.registerForPushNotifications(viewController: self, completion: {isGranted in
+            if isGranted{
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true)
+                }
+            }
+        })
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
     }
    
 }
