@@ -48,25 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            print("Notification settings: \(settings)")
-            
-            if settings.authorizationStatus == .authorized{
-                //the registeration must be on the main task
-                DispatchQueue.main.async {
-                    //regestier to the notification center
-                    UIApplication.shared.registerForRemoteNotifications()
-                    print("GOT HERE NOTIFICATION SETTINGS")
-                    
-                    NotificationCenter.default.post(name: .barberChosenFromInfo, object: nil, userInfo: ["isGranted":true])
-                }
-            }
-            else{
-                print("NOOOOOO PREMISSIONNN")
-                NotificationCenter.default.post(name: .barberChosenFromInfo, object: nil, userInfo: ["isGranted":false])
-            }
-        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
