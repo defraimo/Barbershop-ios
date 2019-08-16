@@ -330,7 +330,7 @@ class MainViewController: UIViewController {
             
             self?.view.layoutIfNeeded()
         })
-        self.view.addSubview(authCodeView)
+        self.view.addSubview(self.authCodeView)
         
         //getting the verification id:
         DAO.shared.getVerificationId(userPhoneNum!)
