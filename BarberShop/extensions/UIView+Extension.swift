@@ -79,6 +79,9 @@ extension UIView
         layer.rasterizationScale = UIScreen.main.scale
     }
 }
+extension Notification.Name{
+    static let singUp = Notification.Name(rawValue: "singUp")
+}
 
 extension Notification.Name{
     static let singUp = Notification.Name(rawValue: "singUp")
