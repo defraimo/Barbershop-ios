@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    static var token:String?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -187,9 +188,10 @@ extension AppDelegate : MessagingDelegate {
         print("Firebase registration token: \(fcmToken)")
         
         let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        NotificationCenter.default.post(name: .FCMToken, object: nil, userInfo: dataDict)
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
+        AppDelegate.token = fcmToken
     }
     // [END refresh_token]
     // [START ios_10_data_message]
@@ -202,6 +204,6 @@ extension AppDelegate : MessagingDelegate {
 }
 
 extension Notification.Name{
-    static let notificationPermission = Notification.Name(rawValue: "notificationPermission")
+    static let FCMToken = Notification.Name(rawValue: "FCMToken")
 }
 

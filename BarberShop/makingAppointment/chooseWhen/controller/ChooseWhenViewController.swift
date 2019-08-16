@@ -320,10 +320,25 @@ class ChooseWhenViewController: UIViewController {
     
     @IBAction func sendMeNotification(_ sender: UIButton) {
         
-        RegisterNotification.shared.registerForPushNotifications(viewController: self, completion: {isGranted in
+        RegisterNotification.shared.registerForPushNotifications(viewController: self, completion: { [weak self] isGranted in
             if isGranted{
+                
+                let dateId = String(self!.datesForBarber![self!.chosenDateIndex].date.generateId())
+//                NotificationCenter.default.addObserver(forName: .FCMToken, object: nil, queue: .main) { [weak self] (notificate) in
+//
+//                    print("GOTTTT HEREEEE 111111")
+//                    if let token = notificate.userInfo?["token"] as? String{
+//                        print("GOTTTT HEREEEE 22222")
+//                        let notification = NotificationModel(barber: self!.appointment!.barber!, date: dateId, token: token)
+//                        DAO.shared.writeNotification(notification: notification)
+//                    }
+//
+//                }
+                let notification = NotificationModel(barber: self!.appointment!.barber!, date: dateId, token: AppDelegate.token!)
+                DAO.shared.writeNotification(notification: notification)
+                
                 DispatchQueue.main.async {
-                    self.showNotificationAlert()
+                    self!.showNotificationAlert()
                 }
             }
         })
@@ -339,7 +354,7 @@ class ChooseWhenViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        //        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: .FCMToken, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
@@ -354,7 +369,6 @@ class ChooseWhenViewController: UIViewController {
                 DispatchQueue.main.async {
                     //regestier to the notification center
                     UIApplication.shared.registerForRemoteNotifications()
-                    print("FRAIMOOOO HOMOOOOOOOOOOOO")
                     self.showNotificationAlert()
                 }
             }

@@ -105,21 +105,6 @@ class MainViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.whatsupButton.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
                 
-//                let urlWhats = "whatsapp://send?phone=(\(self.barberPhone))"
-//                if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
-//                    if let whatsappURL = URL(string: urlString) {
-//                        if UIApplication.shared.canOpenURL(whatsappURL){
-//                            if #available(iOS 10.0, *) {
-//                                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
-//                            } else {
-//                                UIApplication.shared.openURL(whatsappURL)
-//                            }
-//                        }
-//                        else {
-//                            print("Install Whatsapp")
-//                        }
-//                    }
-//                }
                 if let barberPhone = ContactUs.shared?.whatsupp{
                     let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=\(barberPhone)")
                     if UIApplication.shared.canOpenURL(whatsappURL!) {
@@ -394,12 +379,13 @@ class MainViewController: UIViewController {
                 if let user = self?.user{
                     guard let uid = Auth.auth().currentUser?.uid else {return}
                     DAO.shared.saveNewUser(user, uid: uid)
+                    DAO.shared.writeToken(userId: uid, token: AppDelegate.token!)
                 }
                 //init the storyboard because it is in another file now
                 let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
                 
                 //init the viewController:
-            guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+                guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
             
                 self?.activityIndicator.stopAnimating()
                 self?.activityIndicator.isHidden = true
@@ -442,7 +428,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        DAO.shared.writeSchedule()
+//        DAO.shared.writeSchedule()
         
         setUpImageSlider()
         

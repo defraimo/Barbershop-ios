@@ -552,6 +552,14 @@ class DAO{
             completion(address)
         }
     }
+    
+    func writeNotification(notification:NotificationModel){
+        ref.child("Notifications").child(notification.date).child(notification.token).setValue(["barberName":notification.barber.name])
+    }
+    
+    func writeToken(userId:String, token:String){
+        ref.child("NotificationsToken").child(userId).setValue(token)
+    }
 }
 
 extension Notification.Name{

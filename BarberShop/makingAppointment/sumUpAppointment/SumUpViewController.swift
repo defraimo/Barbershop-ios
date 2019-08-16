@@ -140,7 +140,6 @@ class SumUpViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-//        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 

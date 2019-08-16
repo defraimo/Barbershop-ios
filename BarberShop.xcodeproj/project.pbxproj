@@ -82,6 +82,7 @@
 		A68C8BCA22EE268B00E1E603 /* ManageAppointment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */; };
 		A68C8BCD22EE26D800E1E603 /* ManageAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */; };
 		A698CE0423059958000F4D33 /* RegisterNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698CE0323059958000F4D33 /* RegisterNotification.swift */; };
+		A698CE072306D7C8000F4D33 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A698CE062306D7C8000F4D33 /* NotificationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +165,7 @@
 		A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageAppointment.storyboard; sourceTree = "<group>"; };
 		A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAppointmentViewController.swift; sourceTree = "<group>"; };
 		A698CE0323059958000F4D33 /* RegisterNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNotification.swift; sourceTree = "<group>"; };
+		A698CE062306D7C8000F4D33 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				A698CE052306D771000F4D33 /* notification */,
 				A698CE012305990C000F4D33 /* checks */,
 				6324AF1B22F83DA8001140E3 /* barberMessage */,
 				A68C8BCB22EE26AC00E1E603 /* manageAppointment */,
@@ -656,6 +659,14 @@
 			path = registerNotification;
 			sourceTree = "<group>";
 		};
+		A698CE052306D771000F4D33 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				A698CE062306D7C8000F4D33 /* NotificationModel.swift */,
+			);
+			path = notification;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -844,6 +855,7 @@
 				63489AC622DC8B2D0055DA64 /* ShopTableViewCell.swift in Sources */,
 				63EF769D22CB8E70006631E5 /* Validation+Extensions.swift in Sources */,
 				A659A09C22BFDAB200274F40 /* CurrentDate.swift in Sources */,
+				A698CE072306D7C8000F4D33 /* NotificationModel.swift in Sources */,
 				A61A31BA22B7C04B00FC20BE /* PriceModel.swift in Sources */,
 				63EF769B22CA09FA006631E5 /* SingUPViewController.swift in Sources */,
 			);
