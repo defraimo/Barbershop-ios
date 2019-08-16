@@ -65,18 +65,22 @@ class SingUPViewController: UIViewController {
             return
         }
         //new user is made:
-        let newUser = User(number: phoneField.text! , fullName: nameField.text!, gender: genderPick.selectedSegmentIndex, email: emailField?.text)
+        let newUser = User(number: phoneField.text! , fullName: nameField.text!, gender: genderPick.selectedSegmentIndex, email: emailField?.text) 
         
-        dismiss(animated: true) {
-            //getting the reference to mainViewController:
-            guard let mainVC = UIApplication.shared.keyWindow?.rootViewController?.children[0] as? MainViewController else {return}
-            //init the user:
-            mainVC.user = newUser
-            //pass the number for varification:
-            mainVC.userPhoneNum = newUser.number
-            //presenting the send code view after done dismiossing:
-            mainVC.presentAuthCodeView()
-        }
+            dismiss(animated: true) {
+////            getting the reference to mainViewController:
+//            let storyBoard =  UIStoryboard(name: "Main", bundle: nil)
+//
+//            //init the viewController:
+//            let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainView") as! MainViewController
+//            init the user
+//            mainVC.user = newUser
+//            //pass the number for varification:
+//            mainVC.userPhoneNum = newUser.number
+////            //presenting the send code view after done dismissing:
+////            mainVC.presentAuthCodeView()
+                
+                NotificationCenter.default.post(name: .singUp, object: nil, userInfo: ["authCodeView":true,"user":newUser])        }
         }
     }
     
@@ -127,3 +131,4 @@ extension SingUPViewController{
     }
     
 }
+

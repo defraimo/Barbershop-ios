@@ -57,7 +57,7 @@ class DAO{
         }
     }
     
-    func verifyUser(_ code:String, completion: @escaping ()-> Void){
+    func verifyUser(_ code:String, completion: @escaping (_ result:AuthDataResult? ,_ success:Bool)-> Void){
         //verification id: (not verification code!)
         guard let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else{return}
         
@@ -67,7 +67,11 @@ class DAO{
             verificationCode: code)
         
         Auth.auth().signIn(with: credential) { (result, error) in
-            completion()
+            if error != nil{
+                completion(result, false)
+            }else{
+                completion(result, true)
+            }
         }
         
     }

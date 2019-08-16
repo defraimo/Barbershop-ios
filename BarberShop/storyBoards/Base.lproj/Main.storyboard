@@ -228,6 +228,7 @@
                         <outlet property="activityIndicator" destination="GPz-LS-pJu" id="EnK-5t-tqi"/>
                         <outlet property="appointmentBtn" destination="KJi-FK-DRv" id="MKh-Bb-Mfo"/>
                         <outlet property="authCodeView" destination="CXM-Zd-eUb" id="5m5-lc-tPv"/>
+                        <outlet property="authCodeViewLabel" destination="3j2-GK-Yt1" id="q3U-vn-2VY"/>
                         <outlet property="codeField" destination="Ktl-ml-yg9" id="yP1-df-fwU"/>
                         <outlet property="howWeGetThereButton" destination="bjM-uA-QQg" id="DDf-eW-HID"/>
                         <outlet property="imageSlideShow" destination="yJ5-gA-bYH" id="oLr-Nq-Wgn"/>
