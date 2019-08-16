@@ -427,6 +427,7 @@ class MainViewController: UIViewController {
              alert = AlertService().alert(title: "אינך מחובר", body: "לא זיהינו משתמש מחובר לכן לא ניתן לבצע התנתקות", btnAmount: 1, positive: "אשר", negative: nil, positiveCompletion: {}, negativeCompletion: {})
         }else{
             alert = AlertService().alert(title: "התנתקות", body: "האם אתה בטוח שברצונך להתנתק?", btnAmount: 2, positive: "כן", negative: "בטל", positiveCompletion: {
+                self.navigationItem.title = "שלום, אורח"
                 let firebaseAuth = Auth.auth()
                 do {
                     try firebaseAuth.signOut()
