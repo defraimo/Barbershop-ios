@@ -31,8 +31,8 @@ class RegisterNotification{
                 }
                 else{
                     let alert = AlertService().alert(title: "קבלת התראה", body: "אם ברצונך לקבל תזכורת אנא אשר קבלת התראות מהאפליקצייה", btnAmount: 2, positive: "הגדרות", negative: "אני אוותר", positiveCompletion: {
-                        self.getNotificationSettings(completion: {authorised in
-                            completion(authorised)
+                        self.getNotificationSettings(completion: {
+                            completion(false)
                         })
                     }, negativeCompletion: {
                         completion(false)
@@ -44,22 +44,8 @@ class RegisterNotification{
         }
     }
     
-    private func getNotificationSettings(completion: @escaping (_ isGranted:Bool) -> Void) {
+    private func getNotificationSettings(completion: @escaping () -> Void) {
         //open notification settings
-        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) { succes in
-            if succes{
-                NotificationCenter.default.addObserver(forName: .notificationPermission, object: nil, queue: .main) { (notification) in
-                    print("GOTTT HERREEEEEEEEE")
-                    if let isGranted = notification.userInfo?["isGranted"] as? Bool {
-                        completion(isGranted)
-                    }
-                    else{
-                        completion(false)
-                    }
-                    
-                }
-            }
-        }
-        
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
 }

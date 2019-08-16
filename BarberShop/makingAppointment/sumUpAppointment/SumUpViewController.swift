@@ -44,16 +44,11 @@ class SumUpViewController: UIViewController {
                     }
                     
                     DAO.shared.writeAppoinment(self.appointment!)
-                    let alert = AlertService().alert(title: "התור נקבע בהצלחה", body: "נתראה בקרוב !", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
-                        self.navigationController?.popToRootViewController(animated: true)
-                        
-                    }, negativeCompletion: nil)
-                    
                     
                     RegisterNotification.shared.registerForPushNotifications(viewController: self, completion: {_ in
                         DispatchQueue.main.async {
                             self.orderIndicator.stopAnimating()
-                            self.present(alert, animated: true)
+                            self.showAppointmentWasMadeAlert()
                         }
                     })
                     
@@ -71,6 +66,14 @@ class SumUpViewController: UIViewController {
         }
         orderIndicator.stopAnimating()
         }
+    }
+    
+    fileprivate func showAppointmentWasMadeAlert() {
+        let alert = AlertService().alert(title: "התור נקבע בהצלחה", body: "נתראה בקרוב !", btnAmount: 1, positive: "אישור", negative: nil, positiveCompletion: {
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        }, negativeCompletion: nil)
+        self.present(alert, animated: true)
     }
     
     var appointment:Appointment?
@@ -114,10 +117,31 @@ class SumUpViewController: UIViewController {
         for label in labelsToCheck{
             label.font.withSize(smallestFont)
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc func applicationDidBecomeActive(notification: NSNotification) {
+        // Application is back in the foreground
+        
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            print("Notification settings: \(settings)")
+            
+            if settings.authorizationStatus == .authorized{
+                //the registeration must be on the main task
+                DispatchQueue.main.async {
+                    //regestier to the notification center
+                    UIApplication.shared.registerForRemoteNotifications()
+                    
+                    self.showAppointmentWasMadeAlert()
+                }
+            }
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
 }

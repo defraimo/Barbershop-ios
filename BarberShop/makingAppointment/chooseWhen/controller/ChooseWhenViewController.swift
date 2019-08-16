@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ChooseWhenViewController: UIViewController {
     
@@ -215,6 +216,8 @@ class ChooseWhenViewController: UIViewController {
             self?.setArrowsAlpha((self?.chosenBarberIndex!.row)!)
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
         //setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
         
@@ -316,23 +319,46 @@ class ChooseWhenViewController: UIViewController {
     }
     
     @IBAction func sendMeNotification(_ sender: UIButton) {
-        let alert = AlertService().alert(title: "התראה", body: "אנו נודיע לך ברגע שיפתחו תורים ליום זה", btnAmount: 2, positive: "אישור", negative: "חזור לתפריט הראשי", positiveCompletion: {
-            
-        }, negativeCompletion: {
-            self.navigationController?.popToRootViewController(animated: true)
-        })
         
         RegisterNotification.shared.registerForPushNotifications(viewController: self, completion: {isGranted in
             if isGranted{
                 DispatchQueue.main.async {
-                    self.present(alert, animated: true)
+                    self.showNotificationAlert()
                 }
             }
         })
     }
     
+    fileprivate func showNotificationAlert() {
+        let alert = AlertService().alert(title: "התראה", body: "אנו נודיע לך ברגע שיפתחו תורים ליום זה", btnAmount: 2, positive: "אישור", negative: "חזור לתפריט הראשי", positiveCompletion: {
+            
+        }, negativeCompletion: {
+            self.navigationController?.popToRootViewController(animated: true)
+        })
+        self.present(alert, animated: true)
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
+        //        NotificationCenter.default.removeObserver(self, name: .notificationPermission, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc func applicationDidBecomeActive(notification: NSNotification) {
+        // Application is back in the foreground
+        
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            print("Notification settings: \(settings)")
+            
+            if settings.authorizationStatus == .authorized{
+                //the registeration must be on the main task
+                DispatchQueue.main.async {
+                    //regestier to the notification center
+                    UIApplication.shared.registerForRemoteNotifications()
+                    print("FRAIMOOOO HOMOOOOOOOOOOOO")
+                    self.showNotificationAlert()
+                }
+            }
+        }
     }
    
 }
