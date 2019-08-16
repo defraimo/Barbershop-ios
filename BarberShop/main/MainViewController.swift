@@ -487,7 +487,8 @@ class MainViewController: UIViewController {
         
         //sets the message if there is one:
         setMessageView()
-        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: .singUp, object: nil)
     }
