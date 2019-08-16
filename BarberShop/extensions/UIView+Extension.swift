@@ -79,6 +79,9 @@ extension UIView
         layer.rasterizationScale = UIScreen.main.scale
     }
 }
+extension Notification.Name{
+    static let singUp = Notification.Name(rawValue: "singUp")
+}
 
 extension UserDefaults {
     // check for is first launch - only true on first invocation after app install, false on all further invocations
