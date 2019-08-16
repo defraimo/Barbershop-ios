@@ -314,6 +314,7 @@ class MainViewController: UIViewController {
   
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var codeField: UITextField!
+    @IBOutlet weak var authCodeViewLabel: UILabel!
     //a func for presenting AuthCode view,
     //makes it easier to present it from other view controllers
     //the alert view that recieves the auth code from firebase:
@@ -324,7 +325,6 @@ class MainViewController: UIViewController {
         
         //animation displaying the loginOrSingup View:
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: { [weak self] in
-            
             guard let center = self?.view.center else {return}
             self?.authCodeView.center = center
             
@@ -352,8 +352,8 @@ class MainViewController: UIViewController {
         
         //textfield placeholder in white:
         for view in authCodeView.subviews{
-            guard let textField = view as? UITextField else {return}
-            
+            guard let textField = view as? UITextField else {continue}
+
             if textField.responds(to: #selector(setter: textField.attributedPlaceholder)) {
                 let color = UIColor.lightGray
                 textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [
@@ -363,7 +363,6 @@ class MainViewController: UIViewController {
                 print("Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0")
             }
         }
-        
     }
     
     @IBAction func sendCodeBtn(_ sender: UIButton) {
@@ -374,13 +373,18 @@ class MainViewController: UIViewController {
             codeField.setError(hasError: true)
             return
         }else{
+            codeField.setError(hasError: false)
            let code = codeField.text!
-            DAO.shared.verifyUser(code, completion: { [weak self] in
+            DAO.shared.verifyUser(code, completion: { [weak self] (result ,success) in
+                //checks of the auth code is correct and the process
+                //of verification succeeded, if not will notify user
+                if (success){
                 if let user = self?.user{
                     guard let uid = Auth.auth().currentUser?.uid else {return}
                     DAO.shared.saveNewUser(user, uid: uid)
                     DAO.shared.writeToken(userId: uid, token: AppDelegate.token!)
                 }
+                
                 //init the storyboard because it is in another file now
                 let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
                 
@@ -393,7 +397,11 @@ class MainViewController: UIViewController {
                 self?.releaseCodeAuthMenu()
                 
                 self?.navigationController?.pushViewController(scheduleVc, animated: true)
-            
+                }else{
+                    self?.activityIndicator.stopAnimating()
+                    self?.activityIndicator.isHidden = true
+                   self?.authCodeViewLabel.text = "הקוד שהוכנס היה שגוי, אנא נסו שנית"
+                }
             })
         }
     }
@@ -460,11 +468,28 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(forName: .singUp, object: nil, queue: .main) { [weak self] (notification) in
+            guard let openView = notification.userInfo?["authCodeView"] as? Bool else {return}
+            
+            if let user = notification.userInfo?["user"] as? User {
+                self?.user = user
+                self?.userPhoneNum = user.number
+                print(user.number,"NUMBERRRRRRR")
+            }
+            if openView{
+                //change it back to false
+                NotificationCenter.default.post(name: .singUp, object: nil, userInfo: ["authCodeView":false])
+                self?.presentAuthCodeView()
+            }
+        }
         //sets the title above according to a user, or writes hello, guest
         navigationTitle()
         
         //sets the message if there is one:
         setMessageView()
+        }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .singUp, object: nil)
     }
     
     func navigationTitle(){
@@ -598,6 +623,8 @@ class MainViewController: UIViewController {
             self?.authCodeView.center = CGPoint(x: midX, y: -midY)
         }) { (isCompleted) in
             self.codeField.text = ""
+            self.codeField.setError(hasError: false)
+            self.authCodeViewLabel.text = "קוד אימות ישלח בעוד מספר שניות"
             self.blurEffect.isHidden = true
             self.authCodeView.removeFromSuperview()
         }
