@@ -387,6 +387,11 @@ class MainViewController: UIViewController {
                 
                 DAO.shared.getAppointment(userId: uid) { [weak self] (appointment, isExist) in
                     if isExist{
+                        self?.activityIndicator.stopAnimating()
+                        self?.activityIndicator.isHidden = true
+                        
+                        self?.releaseCodeAuthMenu()
+                        
                         self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
                     }
                     else{
