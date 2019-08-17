@@ -379,11 +379,11 @@ class MainViewController: UIViewController {
                 //checks of the auth code is correct and the process
                 //of verification succeeded, if not will notify user
                 if (success){
+                guard let uid = Auth.auth().currentUser?.uid else {return}
                 if let user = self?.user{
-                    guard let uid = Auth.auth().currentUser?.uid else {return}
                     DAO.shared.saveNewUser(user, uid: uid)
-                    DAO.shared.writeToken(userId: uid, token: AppDelegate.token!)
                 }
+                DAO.shared.writeToken(userId: uid, token: AppDelegate.token!)
                 
                 //init the storyboard because it is in another file now
                 let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)

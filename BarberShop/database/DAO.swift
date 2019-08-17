@@ -558,7 +558,7 @@ class DAO{
     }
     
     func writeNotification(notification:NotificationModel){
-        ref.child("Notifications").child(notification.date).child(notification.token).setValue(["barberName":notification.barber.name])
+        ref.child("Notifications").child(notification.date).child(String(notification.barber.id)).setValue([notification.userId:notification.userId])
     }
     
     func writeToken(userId:String, token:String){

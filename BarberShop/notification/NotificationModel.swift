@@ -9,6 +9,7 @@
 import Foundation
 
 struct NotificationModel{
+    var userId:String
     var barber:Barber
     var date:String
     var token:String

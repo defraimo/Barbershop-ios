@@ -326,15 +326,13 @@ class ChooseWhenViewController: UIViewController {
                 let dateId = String(self!.datesForBarber![self!.chosenDateIndex].date.generateId())
 //                NotificationCenter.default.addObserver(forName: .FCMToken, object: nil, queue: .main) { [weak self] (notificate) in
 //
-//                    print("GOTTTT HEREEEE 111111")
 //                    if let token = notificate.userInfo?["token"] as? String{
-//                        print("GOTTTT HEREEEE 22222")
 //                        let notification = NotificationModel(barber: self!.appointment!.barber!, date: dateId, token: token)
 //                        DAO.shared.writeNotification(notification: notification)
 //                    }
 //
 //                }
-                let notification = NotificationModel(barber: self!.appointment!.barber!, date: dateId, token: AppDelegate.token!)
+                let notification = NotificationModel(userId: self!.appointment!.clientId!, barber: self!.appointment!.barber!, date: dateId, token: AppDelegate.token!)
                 DAO.shared.writeNotification(notification: notification)
                 
                 DispatchQueue.main.async {
