@@ -83,10 +83,6 @@ extension Notification.Name{
     static let singUp = Notification.Name(rawValue: "singUp")
 }
 
-extension Notification.Name{
-    static let singUp = Notification.Name(rawValue: "singUp")
-}
-
 extension UserDefaults {
     // check for is first launch - only true on first invocation after app install, false on all further invocations
     // Note: Store this value in AppDelegate if you have multiple places where you are checking for this flag
