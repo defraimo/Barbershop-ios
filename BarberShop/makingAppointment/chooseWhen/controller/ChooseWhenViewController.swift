@@ -324,6 +324,7 @@ class ChooseWhenViewController: UIViewController {
             if isGranted{
                 
                 let dateId = String(self!.datesForBarber![self!.chosenDateIndex].date.generateId())
+                let chosenBarber = self!.barbers![self!.chosenBarberIndex!.row]
 //                NotificationCenter.default.addObserver(forName: .FCMToken, object: nil, queue: .main) { [weak self] (notificate) in
 //
 //                    if let token = notificate.userInfo?["token"] as? String{
@@ -332,7 +333,7 @@ class ChooseWhenViewController: UIViewController {
 //                    }
 //
 //                }
-                let notification = NotificationModel(userId: self!.appointment!.clientId!, barberId: String(self!.chosenBarberIndex!.row), date: dateId, token: AppDelegate.token!)
+                let notification = NotificationModel(userId: self!.appointment!.clientId!, barber: chosenBarber, date: dateId, token: AppDelegate.token!)
                 DAO.shared.writeNotification(notification: notification)
                 
                 DispatchQueue.main.async {
