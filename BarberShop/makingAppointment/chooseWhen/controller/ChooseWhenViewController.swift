@@ -332,7 +332,7 @@ class ChooseWhenViewController: UIViewController {
 //                    }
 //
 //                }
-                let notification = NotificationModel(userId: self!.appointment!.clientId!, barber: self!.appointment!.barber!, date: dateId, token: AppDelegate.token!)
+                let notification = NotificationModel(userId: self!.appointment!.clientId!, barberId: String(self!.chosenBarberIndex!.row), date: dateId, token: AppDelegate.token!)
                 DAO.shared.writeNotification(notification: notification)
                 
                 DispatchQueue.main.async {
