@@ -385,19 +385,27 @@ class MainViewController: UIViewController {
                 }
                 DAO.shared.writeToken(userId: uid, token: AppDelegate.token!)
                 
-                //init the storyboard because it is in another file now
-                let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
-                
-                //init the viewController:
-                guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
-            
-                self?.activityIndicator.stopAnimating()
-                self?.activityIndicator.isHidden = true
-                
-                self?.releaseCodeAuthMenu()
-                
-                self?.navigationController?.pushViewController(scheduleVc, animated: true)
-                }else{
+                DAO.shared.getAppointment(userId: uid) { [weak self] (appointment, isExist) in
+                    if isExist{
+                        self?.performSegue(withIdentifier: "toManageAppointment", sender: appointment)
+                    }
+                    else{
+                        //init the storyboard because it is in another file now
+                        let storyBoard =  UIStoryboard(name: "Schedule", bundle: nil)
+                        
+                        //init the viewController:
+                        guard let scheduleVc = storyBoard.instantiateViewController(withIdentifier: "toHaircuts") as? ChooseHaircutViewController else {return}
+                        
+                        self?.activityIndicator.stopAnimating()
+                        self?.activityIndicator.isHidden = true
+                        
+                        self?.releaseCodeAuthMenu()
+                        
+                        self?.navigationController?.pushViewController(scheduleVc, animated: true)
+                    }
+                    }
+                }
+                else{
                     self?.activityIndicator.stopAnimating()
                     self?.activityIndicator.isHidden = true
                    self?.authCodeViewLabel.text = "הקוד שהוכנס היה שגוי, אנא נסו שנית"
