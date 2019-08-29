@@ -90,6 +90,7 @@
 		3A240B181F026D50B292C1D9 /* Pods-BarberShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberShop.debug.xcconfig"; path = "Target Support Files/Pods-BarberShop/Pods-BarberShop.debug.xcconfig"; sourceTree = "<group>"; };
 		6302287722C76FD800B242C6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6324AF1C22F83DD6001140E3 /* BarberMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberMessage.swift; sourceTree = "<group>"; };
+		63316F402317AE0100275F6F /* BarberShop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarberShop.entitlements; sourceTree = "<group>"; };
 		6335C4BC22E9EC350096D8C7 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		6335C4BE22E9EC570096D8C7 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		6335C4C022E9EC670096D8C7 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
@@ -338,6 +339,7 @@
 		A61A31A022B7ACFE00FC20BE /* BarberShop */ = {
 			isa = PBXGroup;
 			children = (
+				63316F402317AE0100275F6F /* BarberShop.entitlements */,
 				A698CE052306D771000F4D33 /* notification */,
 				A698CE012305990C000F4D33 /* checks */,
 				6324AF1B22F83DA8001140E3 /* barberMessage */,
@@ -705,6 +707,9 @@
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -996,6 +1001,7 @@
 			baseConfigurationReference = 3A240B181F026D50B292C1D9 /* Pods-BarberShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BarberShop/BarberShop.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7397Q73DZ;
@@ -1018,6 +1024,7 @@
 			baseConfigurationReference = 7E79FE0E5B0B29D1E9332863 /* Pods-BarberShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BarberShop/BarberShop.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7397Q73DZ;
