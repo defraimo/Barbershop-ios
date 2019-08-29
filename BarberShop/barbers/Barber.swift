@@ -14,8 +14,6 @@ class Barber:DictionaryConvertible, Equatable, Codable{
     var description:String?
     var image:UIImage?
     var imagePath:String?
-//    var schedule:DatesManager?
-//    var daysSchedule:[Day]?
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -59,9 +57,6 @@ class Barber:DictionaryConvertible, Equatable, Codable{
         if self.description != ""{
             dictionary["description"] = description
         }
-//        if self.image != nil{
-//            dictionary["image"] = image
-//        }
         if self.imagePath != nil{
             dictionary["imagePath"] = imagePath
         }
