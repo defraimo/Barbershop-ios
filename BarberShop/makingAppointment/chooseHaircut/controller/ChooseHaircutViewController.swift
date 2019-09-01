@@ -55,7 +55,7 @@ class ChooseHaircutViewController: UIViewController {
             
             self?.appointment?.servies = prices?[cellIndex]
             
-            self!.chosenBarberIndex = barberIndex
+            self?.chosenBarberIndex = barberIndex
             self?.performSegue(withIdentifier: "toSelectWhenWithOneBarber", sender: specializedBarbers)
         }
         
