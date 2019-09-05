@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#import "FIRMessagingContextManagerService.h"
+#import "Firebase/Messaging/FIRMessagingContextManagerService.h"
 
-#import <UIKit/UIKit.h>
+#import "Firebase/Messaging/FIRMessagingDefines.h"
+#import "Firebase/Messaging/FIRMessagingLogger.h"
+#import "Firebase/Messaging/FIRMessagingUtilities.h"
 
-#import "FIRMessagingDefines.h"
-#import "FIRMessagingLogger.h"
-#import "FIRMessagingUtilities.h"
+#import <GoogleUtilities/GULAppDelegateSwizzler.h>
 
 #define kFIRMessagingContextManagerPrefixKey @"google.c.cm."
 #define kFIRMessagingContextManagerNotificationKeyPrefix @"gcm.notification."
@@ -77,19 +77,16 @@ typedef NS_ENUM(NSUInteger, FIRMessagingContextManagerMessageType) {
 
 + (BOOL)handleContextManagerLocalTimeMessage:(NSDictionary *)message {
   NSString *startTimeString = message[kFIRMessagingContextManagerLocalTimeStart];
+  if (!startTimeString) {
+    FIRMessagingLoggerError(kFIRMessagingMessageCodeContextManagerService002,
+                              @"Invalid local start date format %@. Message dropped",
+                              startTimeString);
+    return NO;
+  }
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
   [dateFormatter setDateFormat:kLocalTimeFormatString];
   NSDate *startDate = [dateFormatter dateFromString:startTimeString];
-
-  _FIRMessagingDevAssert(startDate, @"Invalid local start date format %@", startTimeString);
-  if (!startTimeString) {
-    FIRMessagingLoggerError(kFIRMessagingMessageCodeContextManagerService002,
-                            @"Invalid local start date format %@. Message dropped",
-                            startTimeString);
-    return NO;
-  }
-
   NSDate *currentDate = [NSDate date];
 
   if ([currentDate compare:startDate] == NSOrderedAscending) {
@@ -106,8 +103,6 @@ typedef NS_ENUM(NSUInteger, FIRMessagingContextManagerMessageType) {
     }
 
     NSDate *endDate = [dateFormatter dateFromString:endTimeString];
-
-    _FIRMessagingDevAssert(endDate, @"Invalid local end date format %@", endTimeString);
     if (!endTimeString) {
       FIRMessagingLoggerError(kFIRMessagingMessageCodeContextManagerService004,
                               @"Invalid local end date format %@. Message dropped", endTimeString);
@@ -175,14 +170,11 @@ typedef NS_ENUM(NSUInteger, FIRMessagingContextManagerMessageType) {
   if (userInfo.count) {
     notification.userInfo = userInfo;
   }
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-  UIApplication *application = FIRMessagingUIApplication();
+  UIApplication *application = [GULAppDelegateSwizzler sharedApplication];
   if (!application) {
     return;
   }
   [application scheduleLocalNotification:notification];
-#pragma clang diagnostic pop
 #endif
 }
 

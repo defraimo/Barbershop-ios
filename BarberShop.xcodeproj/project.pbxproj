@@ -14,7 +14,6 @@
 		6335C4BF22E9EC570096D8C7 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C4BE22E9EC570096D8C7 /* AlertViewController.swift */; };
 		6335C4C122E9EC670096D8C7 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6335C4C022E9EC670096D8C7 /* AlertService.swift */; };
 		633ED44522D0C89400D64BAB /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633ED44422D0C89400D64BAB /* Location.storyboard */; };
-		633ED44722D0CC1300D64BAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633ED44622D0CC1300D64BAB /* MapKit.framework */; };
 		633ED44922D0D11400D64BAB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44822D0D11400D64BAB /* Address.swift */; };
 		633ED44B22D0D31000D64BAB /* AddressAnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ED44A22D0D31000D64BAB /* AddressAnotation.swift */; };
 		63489AC122DC8A260055DA64 /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63489AC022DC8A260055DA64 /* Shop.storyboard */; };
@@ -95,7 +94,6 @@
 		6335C4BE22E9EC570096D8C7 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		6335C4C022E9EC670096D8C7 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		633ED44422D0C89400D64BAB /* Location.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
-		633ED44622D0CC1300D64BAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		633ED44822D0D11400D64BAB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		633ED44A22D0D31000D64BAB /* AddressAnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAnotation.swift; sourceTree = "<group>"; };
 		63489AC022DC8A260055DA64 /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				633ED44722D0CC1300D64BAB /* MapKit.framework in Frameworks */,
 				0834385628931BA8E6EDF714 /* Pods_BarberShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,7 +244,6 @@
 		9570C9C248F9A9B2AA373CA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				633ED44622D0CC1300D64BAB /* MapKit.framework */,
 				126DB524BC07E375A4372EA1 /* Pods_BarberShop.framework */,
 			);
 			name = Frameworks;
@@ -708,7 +704,7 @@
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -1009,7 +1005,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7397Q73DZ;
 				INFOPLIST_FILE = BarberShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1032,7 +1028,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7397Q73DZ;
 				INFOPLIST_FILE = BarberShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
