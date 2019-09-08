@@ -329,7 +329,7 @@ class DAO{
         var avialibleDays:[AppointmentDate] = []
         var notificationDays:[AppointmentDate] = []
         
-        for i in 0..<9{
+        for i in 0..<10{
             let current = CurrentDate()
             let currentDate = current.addToCurrentDate(numberOfDays: i)
             let currentWeekDay = current.currentDay + i
@@ -341,7 +341,7 @@ class DAO{
             avialibleDays.append(AppointmentDate(id: currentDate.generateId(), date: currentDate, dayOfWeek: currentWeekDay, namedDayOfWeek: CurrentDate.namedDays[(currentWeekDay-1)%7], time:timeAvailible))
         }
         
-        for i in 9..<15{
+        for i in 10..<16{
             let current = CurrentDate()
             let currentDate = current.addToCurrentDate(numberOfDays: i)
             let currentWeekDay = current.currentDay + i
@@ -351,10 +351,10 @@ class DAO{
         }
         
         //get the barber from the data base
-        allDates = AllDates(barberId: 1, availableDays: avialibleDays, notificationDays: notificationDays)
+        allDates = AllDates(barberId: 3, availableDays: avialibleDays, notificationDays: notificationDays)
         
         
-        ref.child("Dates").child("1").setValue(allDates!.dict)
+        ref.child("Dates").child("3").setValue(allDates!.dict)
     }
 
     func loadScheduleFor(barberId:Int, complition: @escaping (_ allDates:AllDates) -> Void){

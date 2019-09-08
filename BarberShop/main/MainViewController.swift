@@ -478,6 +478,19 @@ class MainViewController: UIViewController {
         adjustsButtonFont(aboutUsButton)
         adjustsButtonFont(howWeGetThereButton)
         
+        checkingIfRewritingTokenRequired()
+        
+    }
+    
+    fileprivate func checkingIfRewritingTokenRequired() {
+        //when downloading the app for the second time
+        //checks if user logged and if true writes his new token to the database
+        if UserDefaults.isFirstLaunch(){
+            if Auth.auth().currentUser != nil{
+                guard let uid = Auth.auth().currentUser?.uid else {return}
+                DAO.shared.writeToken(userId: uid, token: AppDelegate.token!)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
