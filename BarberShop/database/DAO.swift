@@ -49,7 +49,12 @@ class DAO{
     
     func getVerificationId(_ userNumber:String){
         //IL number:
-        let number = "+972\(userNumber)"
+        var number:String
+        if userNumber.elementsEqual("+16505553434"){
+            number = userNumber
+        }else{
+            number = "+972\(userNumber)"
+        }
         
         PhoneAuthProvider.provider().verifyPhoneNumber(number, uiDelegate: nil) { (verId, err) in
             //saving the verification id for if the user breaks the verification flow:

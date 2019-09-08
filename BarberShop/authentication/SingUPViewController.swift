@@ -42,7 +42,7 @@ class SingUPViewController: UIViewController {
             
             present(alert, animated: true)
         }else{
-        if !phoneField.isPhoneNumber(){
+        if !phoneField.isPhoneNumber() || !phoneField.text!.elementsEqual("+16505553434"){
             setErrorToLine(sender: phoneLine, hasError: true)
             return
         }else{

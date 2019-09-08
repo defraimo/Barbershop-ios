@@ -177,7 +177,6 @@ class MainViewController: UIViewController {
         //if there is a signed in user, it will go straight to haircuts:
         let user = Auth.auth().currentUser
         if user != nil {
-            
             DAO.shared.getAppointment(userId: user!.uid) { [weak self] (appointment, isExist) in
                 if isExist{
                     self?.makeAppointmentIndicator.stopAnimating()
@@ -272,7 +271,7 @@ class MainViewController: UIViewController {
     //listener of the phone field to check the correct phone number is inserted:
     @IBAction func phoneNumCheck(_ sender: UITextField) {
         let count = sender.text!.count
-        if count != 10{
+        if !sender.text!.elementsEqual("+16505553434") || count != 10 {
             sender.setError(hasError: true)
             if count == 0{
                 sender.setError(hasError: false)
@@ -288,10 +287,16 @@ class MainViewController: UIViewController {
             phoneNumberField.placeholder = "שדה זה הוא חובה"
             phoneNumberField.setError(hasError: true )
             }else {
+                userPhoneNum = phoneNumberField.text! as String
                 loginActivityIndicator.alpha = 1
                 loginActivityIndicator.startAnimating()
+                
+                if phoneNumberField.text!.elementsEqual("+16505553434"){
+                    self.releaseLoginOrSignupMenu()
+                    self.presentAuthCodeView()
+                    return
+                }
                 //phone number was already checked, it's ok to explicitly unwrap it:
-                userPhoneNum = phoneNumberField.text! as String
                 //checking if the user already exists:
                 DAO.shared.checkUserExists(number: userPhoneNum!, completion: {[weak self] (exists)  in
                     if exists{
@@ -487,7 +492,6 @@ class MainViewController: UIViewController {
             if let user = notification.userInfo?["user"] as? User {
                 self?.user = user
                 self?.userPhoneNum = user.number
-                print(user.number,"NUMBERRRRRRR")
             }
             if openView{
                 //change it back to false
@@ -762,7 +766,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+        let invalidCharacters = CharacterSet(charactersIn: "+0123456789").inverted
 //        let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         return string.rangeOfCharacter(from: invalidCharacters) == nil
     }
