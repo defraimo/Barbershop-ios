@@ -13,9 +13,7 @@ let firstPart = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?"
 let serverPart = "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}"
 let emailRegex = firstPart + "@" + serverPart + "[A-Za-z]{2,8}"
 let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-//full name validation:
-//let fullNameRegex = "^[a-zA-Z]{2,20}$"
-//let fullNamePredicate = NSPredicate(format: "SELF MATCHES %@", fullNameRegex)
+
 
 extension String {
     func isEmail() -> Bool {

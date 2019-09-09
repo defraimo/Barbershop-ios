@@ -59,11 +59,6 @@ class HowToGetThereViewController: UIViewController {
             let url = URL(string: "waze:///ul?q=\(address.streetNum)%20\(address.streetName)%20\(address.city)")!
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
-//        else if UIApplication.shared.canOpenURL(URL(string: "itunes://")!) {
-//            // Waze is not installed. Launch AppStore to install Waze app
-//           let url = URL(string: "http://itunes.apple.com/us/app/id323229106")!
-//                UIApplication.shared.open(url)
-//        }
         else {
             address.addressToCLLocation { (location) in
                 let lat = location.coordinate.latitude
