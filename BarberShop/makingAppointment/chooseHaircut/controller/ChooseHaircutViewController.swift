@@ -33,8 +33,7 @@ class ChooseHaircutViewController: UIViewController {
         
         //init the appointment
         appointment = Appointment()
-        //------------------------------------------------
-        //------------------------------------------------
+
         
         if let uid = Auth.auth().currentUser?.uid{
             appointment?.clientId = uid
@@ -42,10 +41,6 @@ class ChooseHaircutViewController: UIViewController {
         else{
             appointment?.clientId = "none"
         }
-        
-         //SET TO THE CURRENT USER
-        //------------------------------------------------
-        //------------------------------------------------
         
         NotificationCenter.default.addObserver(forName: .barberChosenFromInfo, object: nil, queue: .main) { [weak self] (notification) in
             

@@ -12,7 +12,7 @@ struct DayData:CustomStringConvertible {
     var dayOfWeek:Int
     var namedDayOfWeek:String
     var date:MyDate
-    var timeAvialible:TimeManage?
+    var timeAvialible:TimeManager?
     
     var description:String{
         return "\(namedDayOfWeek) (\(date.description))"

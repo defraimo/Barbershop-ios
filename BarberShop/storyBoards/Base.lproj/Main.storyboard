@@ -911,9 +911,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wHi-hs-Thv">
-                                <rect key="frame" x="103.5" y="385.5" width="207" height="125"/>
+                                <rect key="frame" x="109" y="385.5" width="196" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="wHi-hs-Thv" secondAttribute="height" multiplier="206:125" id="zkf-HK-8Ea"/>
+                                    <constraint firstAttribute="width" secondItem="wHi-hs-Thv" secondAttribute="height" multiplier="100:64" id="zkf-HK-8Ea"/>
                                 </constraints>
                             </imageView>
                         </subviews>

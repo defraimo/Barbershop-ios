@@ -17,58 +17,7 @@ class ScheduleData{
     
     var numberOfUnitsNeeded = 1
     
-//    static let shared = ScheduleData()
-    
-    init() {
-        
-        /*
-        
-        var avialibleDays:[AppointmentDate] = []
-        var notificationDays:[AppointmentDate] = []
-        
-        DAO.shared.loadScheduleFor(barberId: barber.id) { (allDates) in
-            self.allDates = allDates
-            avialibleDays = allDates.availableDays
-            if let notifications = allDates.notificationDays{
-                notificationDays = notifications
-            }
-            print("Schedule is loaded for barber number: ",barber.id)
-        }
-        
-        
-        
-        for i in 0..<7{
-            
-            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
-            
-            //after getting from data base
-            let timeAvailible = TimeManager(id: current.generateId(), minTime: Time(hours: 11, minutes: 30), maxTime: Time(hours: 19, minutes: 0), intervals: 20, freeTime: [TimeRange(fromTime: Time(hours: 13, minutes: 0), toTime: Time(hours: 14, minutes: 0))])
-            
-            
-            avialibleDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:timeAvailible))
-        }
-        
-        for i in 7..<12{
-            let current = CurrentDate().addToCurrentDate(numberOfDays: i)
-            //after getting from data base
-            notificationDays.append(AppointmentDate(id: current.generateId(), date: current, dayOfWeek: i, namedDayOfWeek: CurrentDate.namedDays[i%7], time:nil))
-        }
-        
-        //get the barber from the data base
-        allDates = AllDates(barberId: barber.id, availableDays: avialibleDays, notificationDays: notificationDays)
- 
-        
-        displayedDates = allDates?.getDisplayedDates()
-        
-        avialibleDaysCount = avialibleDays.count
-        notificationDaysCount = notificationDays.count
-        
-        
-         let units = displayedDates?[0].time?.getDailyUnitsFor(date: (displayedDates?[0].date)!)
- 
-        */
-        
-    }
+    init() {}
     
     func fetchScheduleFor(barber:Barber, complition: @escaping (_ schedule:ScheduleData) -> Void){
         var avialibleDays:[AppointmentDate] = []
@@ -97,11 +46,8 @@ class ScheduleData{
     }
     
     func getDisplayTimeFor(dateIndex index:Int) -> [TimeUnit]{
-        //-------------------
-        //change index to id
-        //-------------------
+
         guard let date = displayedDates?[index].date else {return []}
-//        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date) else {return []}
         guard let allUnits = displayedDates?[index].units else {return []}
         
         var customDisplayedUnits:[TimeUnit] = []
@@ -131,10 +77,6 @@ class ScheduleData{
     func getDisplayTimeUnitsWith(intervals:Int, forDateIndex index:Int) -> [TimeUnit]{
         guard let date = displayedDates?[index].date else {return []}
         //get all the units
-//        guard let allUnits = displayedDates?[index].time?.getDailyUnitsFor(date: date),
-//                let unitDuration = allUnits.first?.duration
-//            else {return []}
-        
         guard let allUnits = displayedDates?[index].units,
             let unitDuration = allUnits.first?.duration
             else {return []}
@@ -179,10 +121,6 @@ class ScheduleData{
                         
                         isAvailible = false
                     }
-                    //if the unit is availible so make isAvailible false
-//                    else if availableUnits[num].isAvailable == false{
-//                        isAvailible = false
-//                    }
                         
                     //if the units needed are out of time range make isAvailible false
                     else if num == availableUnits.count-1{
