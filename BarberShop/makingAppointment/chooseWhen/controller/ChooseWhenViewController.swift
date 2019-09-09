@@ -167,21 +167,6 @@ class ChooseWhenViewController: UIViewController {
                         else{
                             view.alpha = 1
                         }
-                        //check if the working time is set atleast on the first day
-//                        if self.timeForChosenDay?.count != 0{
-//                            //animate the timeView
-//                            self.timeViewHeight.constant = self.view.frame.height / 2.5
-//                            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 20, options: [], animations: {
-//                                self.view.layoutIfNeeded()
-//                            })
-//                        }
-//                        else{
-//                            //animate the sendMeNotificationView
-//                            self.sendMeNotificationHeight.constant = self.view.frame.height / 3.2
-//                            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 14, options: [], animations: {
-//                                self.view.layoutIfNeeded()
-//                            })
-//                        }
                     }
                 })
             })
@@ -325,14 +310,7 @@ class ChooseWhenViewController: UIViewController {
                 
                 let dateId = String(self!.datesForBarber![self!.chosenDateIndex].date.generateId())
                 let chosenBarber = self!.barbers![self!.chosenBarberIndex!.row]
-//                NotificationCenter.default.addObserver(forName: .FCMToken, object: nil, queue: .main) { [weak self] (notificate) in
-//
-//                    if let token = notificate.userInfo?["token"] as? String{
-//                        let notification = NotificationModel(barber: self!.appointment!.barber!, date: dateId, token: token)
-//                        DAO.shared.writeNotification(notification: notification)
-//                    }
-//
-//                }
+
                 let notification = NotificationModel(userId: self!.appointment!.clientId!, barber: chosenBarber, date: dateId, token: AppDelegate.token!)
                 DAO.shared.writeNotification(notification: notification)
                 
@@ -473,13 +451,6 @@ extension ChooseWhenViewController: UICollectionViewDataSource,UICollectionViewD
         else{
             firstAlreadyLoaded = true
         }
-        
-//        guard let attrs = barbersCollection.layoutAttributesForItem(at: visible[0]) else {return}
-        
-        
-//        let x = barbersCollection.layoutAttributesForItem(at: IndexPath(item: 1, section: 0))?.frame.origin.x
-        
-//        guard let layout = self.barbersCollection.collectionViewLayout as? UICollectionViewFlowLayout else {return}
         
     }
     

@@ -188,7 +188,7 @@ class DAO{
                         
                         var imageFromData:UIImage?
                         
-                        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                        // Download in memory with a maximum allowed size of 2MB (2 * 1024 * 1024 bytes)
                         imageRef.getData(maxSize: 2 * 1024 * 1024) { data, error in
                             if let error = error {
                                 print(error)
@@ -245,21 +245,20 @@ class DAO{
 
             }
             
-            Timer.scheduledTimer(timeInterval: 0.25, target: self, selector:#selector(self.checkIfAllImagesWereLoaded), userInfo: nil, repeats: true)
+            Timer.scheduledTimer(timeInterval: 0.25, target: self, selector:#selector(self.ImagesLoadingStatus), userInfo: nil, repeats: true)
 
         })
         
     }
     
-    @objc func checkIfAllImagesWereLoaded(_ timer:Timer){
+    @objc func ImagesLoadingStatus(_ statusFunc:Timer){
         if self.areImagesSaved!.count == numOfChanges{
-            timer.invalidate()
+            statusFunc.invalidate()
             //stop checking
             loadImageIntoBarber()
         }
     }
     
-    //allBarbers:[Barber], complition: @escaping (_ barbers:[Barber]) -> Void
     func loadImageIntoBarber(){
         for barber in allBarbers{
             
@@ -452,10 +451,6 @@ class DAO{
             ref.child("Appointments").child(userId).removeValue()
         }
         
-//        let path = ref.child("Dates").child("\(appointment.barber!.id)").child("availableDays").child("\(appointment.date!.generateId())").child("units")
-//
-//        let units = appointment.units!
-        
         setAvailability(to:true, barber: appointment.barber!, dateId: appointment.date!.generateId(), units: appointment.units!, userId: appointment.clientId!) { (_) in
             
         }
@@ -463,12 +458,6 @@ class DAO{
         //removing the appointment from AppointmentsDates field in firebase
     ref.child("AppointmentsDates").child(String(appointment.date!.generateId())).child(userId).removeValue()
         
-//        for unit in units{
-//            //set the units that was taken to available again
-//            path.child("\(unit.index)").child("isAvailable").setValue(true)
-//            //erase the user name that written in the unit
-//            path.child("\(unit.index)").child("user").removeValue()
-//        }
     }
     
     func writeAboutUs(){

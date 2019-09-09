@@ -38,7 +38,6 @@ class MyDate:CustomStringConvertible, Equatable, DictionaryConvertible {
             lhs.month < rhs.month
     }
     
-    //-----------------------
     //remove after site is on
     func generateId() -> Int{
         var monthId = ""
