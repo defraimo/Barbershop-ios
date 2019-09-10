@@ -166,10 +166,94 @@
 		6302287622C76F5600B242C6 /* authentication */ = {
 			isa = PBXGroup;
 			children = (
-				6302287722C76FD800B242C6 /* User.swift */,
-				63EF769A22CA09FA006631E5 /* SingUPViewController.swift */,
+				63EF769822CA0994006631E5 /* SignUp.storyboard */,
+				6303895E2327BD7C000510FD /* model */,
+				6303895D2327BD75000510FD /* controller */,
 			);
 			path = authentication;
+			sourceTree = "<group>";
+		};
+		630389572327BCA8000510FD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				63489AC922DDD3A70055DA64 /* Product.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		630389582327BCBF000510FD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				63489AC322DC8B190055DA64 /* ShopViewController.swift */,
+				63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		630389592327BCE0000510FD /* service */ = {
+			isa = PBXGroup;
+			children = (
+				6335C4C022E9EC670096D8C7 /* AlertService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		6303895A2327BCE5000510FD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6335C4BE22E9EC570096D8C7 /* AlertViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6303895B2327BD23000510FD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A659A00422BD029300274F40 /* HowToGetThereViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6303895C2327BD33000510FD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				633ED44822D0D11400D64BAB /* Address.swift */,
+				633ED44A22D0D31000D64BAB /* AddressAnotation.swift */,
+				A618D59B22D4A9D100A93D5E /* BarbershopAnnotationView.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6303895D2327BD75000510FD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				63EF769A22CA09FA006631E5 /* SingUPViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6303895E2327BD7C000510FD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6302287722C76FD800B242C6 /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6303895F2327BD8E000510FD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		630389602327BDAB000510FD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A61A31C022B7C32500FC20BE /* MainViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		6324AF1B22F83DA8001140E3 /* barberMessage */ = {
@@ -183,9 +267,9 @@
 		6335C4BB22E9EC030096D8C7 /* customAlert */ = {
 			isa = PBXGroup;
 			children = (
+				6303895A2327BCE5000510FD /* controller */,
+				630389592327BCE0000510FD /* service */,
 				6335C4BC22E9EC350096D8C7 /* Alert.storyboard */,
-				6335C4BE22E9EC570096D8C7 /* AlertViewController.swift */,
-				6335C4C022E9EC670096D8C7 /* AlertService.swift */,
 			);
 			path = customAlert;
 			sourceTree = "<group>";
@@ -193,9 +277,9 @@
 		63489AC222DC8AFA0055DA64 /* shop */ = {
 			isa = PBXGroup;
 			children = (
-				63489AC322DC8B190055DA64 /* ShopViewController.swift */,
-				63489AC522DC8B2D0055DA64 /* ShopTableViewCell.swift */,
-				63489AC922DDD3A70055DA64 /* Product.swift */,
+				630389582327BCBF000510FD /* controller */,
+				630389572327BCA8000510FD /* model */,
+				63489AC022DC8A260055DA64 /* Shop.storyboard */,
 			);
 			path = shop;
 			sourceTree = "<group>";
@@ -337,7 +421,6 @@
 				A61A31B622B7BB9A00FC20BE /* prices */,
 				A63F478722EB2544002D5D57 /* launchScreen */,
 				A61A31BF22B7C30400FC20BE /* main */,
-				A6413CFE22C0DBEB00FA1768 /* storyBoards */,
 				A61A31AB22B7AD0000FC20BE /* Assets.xcassets */,
 				A61A31A122B7ACFE00FC20BE /* AppDelegate.swift */,
 				A61A31B022B7AD0000FC20BE /* Info.plist */,
@@ -378,8 +461,9 @@
 		A61A31BF22B7C30400FC20BE /* main */ = {
 			isa = PBXGroup;
 			children = (
+				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
+				630389602327BDAB000510FD /* controller */,
 				A6020EAF22F2E6D6008EFCFE /* sliderShow */,
-				A61A31C022B7C32500FC20BE /* MainViewController.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -467,19 +551,6 @@
 			path = launchScreen;
 			sourceTree = "<group>";
 		};
-		A6413CFE22C0DBEB00FA1768 /* storyBoards */ = {
-			isa = PBXGroup;
-			children = (
-				A61A31A522B7ACFE00FC20BE /* Main.storyboard */,
-				633ED44422D0C89400D64BAB /* Location.storyboard */,
-				A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */,
-				63EF769822CA0994006631E5 /* SignUp.storyboard */,
-				63489AC022DC8A260055DA64 /* Shop.storyboard */,
-				A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */,
-			);
-			path = storyBoards;
-			sourceTree = "<group>";
-		};
 		A659A00222BD021600274F40 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,10 +562,9 @@
 		A659A00322BD023800274F40 /* howToGetThere */ = {
 			isa = PBXGroup;
 			children = (
-				A659A00422BD029300274F40 /* HowToGetThereViewController.swift */,
-				633ED44822D0D11400D64BAB /* Address.swift */,
-				633ED44A22D0D31000D64BAB /* AddressAnotation.swift */,
-				A618D59B22D4A9D100A93D5E /* BarbershopAnnotationView.swift */,
+				6303895C2327BD33000510FD /* model */,
+				6303895B2327BD23000510FD /* controller */,
+				633ED44422D0C89400D64BAB /* Location.storyboard */,
 			);
 			path = howToGetThere;
 			sourceTree = "<group>";
@@ -502,6 +572,7 @@
 		A659A00622BD0F3C00274F40 /* makingAppointment */ = {
 			isa = PBXGroup;
 			children = (
+				A6413CFF22C0DC9700FA1768 /* Schedule.storyboard */,
 				A618D59D22D50DB800A93D5E /* sumUpAppointment */,
 				A61D2D2222CD0899002DC7CB /* chooseHaircut */,
 				A659A00E22BD465D00274F40 /* chooseWhen */,
@@ -571,7 +642,8 @@
 		A68C8BCB22EE26AC00E1E603 /* manageAppointment */ = {
 			isa = PBXGroup;
 			children = (
-				A68C8BCC22EE26D800E1E603 /* ManageAppointmentViewController.swift */,
+				A68C8BC922EE268B00E1E603 /* ManageAppointment.storyboard */,
+				6303895F2327BD8E000510FD /* controller */,
 			);
 			path = manageAppointment;
 			sourceTree = "<group>";
