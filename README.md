@@ -83,8 +83,8 @@ $ git clone https://github.com/radshun/barber-shop-cloud-func.git
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## Authors and acknowledgment
-Daniel Radshun\
-Daniel Fraimovich
+Daniel Fraimovich\
+Daniel Radshun
 
 ## License
-[MIT](https://www.freeprivacypolicy.com/privacy/view/abc9d091521fca9bbaa40d2b6d075995) © Daniel Radshun, Daniel Fraimovich
+[MIT](https://www.freeprivacypolicy.com/privacy/view/abc9d091521fca9bbaa40d2b6d075995) © Daniel Fraimovich ,Daniel Radshun
