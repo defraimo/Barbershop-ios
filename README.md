@@ -45,7 +45,7 @@ The project is created for IOS with:
 
 
 ## Additional Repository
-[Cloud functions repository for the app notifications](https://github.com/radshun/barber-shop-cloud-func)
+[Cloud functions repository for the app notifications](https://github.com/defraimo/Barbershop-ios-cloud-func)
 
 ## Screenshots
 
@@ -72,11 +72,11 @@ To open the cloud functions it's necessary to download [Visual Studio Code](http
 ## Download
 The app project:
 
-$ git clone https://github.com/radshun/barber-shop.git
+$ git clone https://github.com/defraimo/Barbershop-ios.git
 
 The cloud functions:
 
-$ git clone https://github.com/radshun/barber-shop-cloud-func.git
+$ git clone https://github.com/defraimo/Barbershop-ios-cloud-func.git
 
 
 ## Contributing
